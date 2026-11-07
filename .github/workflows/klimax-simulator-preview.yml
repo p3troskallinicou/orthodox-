@@ -13,11 +13,16 @@ jobs:
 
     env:
       DEVELOPER_DIR: /Applications/Xcode_26.5.app/Contents/Developer
-      DERIVED_DATA: ${{ runner.temp }}/klimax-derived-data
-      PACKAGE_CACHE: ${{ runner.temp }}/klimax-packages
-      PREVIEW_OUTPUT: ${{ runner.temp }}/klimax-preview
 
     steps:
+      - name: Set temporary build paths
+        shell: bash
+        run: |
+          set -euo pipefail
+          echo "DERIVED_DATA=$RUNNER_TEMP/klimax-derived-data" >> "$GITHUB_ENV"
+          echo "PACKAGE_CACHE=$RUNNER_TEMP/klimax-packages" >> "$GITHUB_ENV"
+          echo "PREVIEW_OUTPUT=$RUNNER_TEMP/klimax-preview" >> "$GITHUB_ENV"
+
       - name: Check out selected branch
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
         with:
