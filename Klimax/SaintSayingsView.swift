@@ -158,10 +158,12 @@ private struct SaintSayingsGallery: View {
     private func tile(_ saying: SaintSaying, width: CGFloat, height: CGFloat, prominent: Bool, sayings: [SaintSaying]) -> some View {
         Button { selection = SayingSelection(id: saying.id, sayings: sayings) } label: {
             let photo = catalog.photo(for: saying)
-            let textHeight = photo.textBoundary(in: CGSize(width: width, height: height)) - 10
-            let inset: CGFloat = prominent ? 22 : 14
-            let showCategory = textHeight > 110
+            let region = photo.textRegion(in: CGSize(width: width, height: height))
+            let textHeight = max(0, region.height - 10)
             let fontSize: CGFloat = prominent ? 24 : 17
+            let inset: CGFloat = photo.textStart == nil ? (prominent ? 22 : 14)
+                : min(prominent ? 22 : 14, max(6, textHeight - fontSize * 1.3))
+            let showCategory = textHeight > 110
             let lines = max(1, Int((textHeight - inset - (showCategory ? 26 : 0)) / (fontSize * 1.3)))
             ZStack(alignment: .topLeading) {
                 SayingArtwork(photo: photo)
@@ -181,6 +183,7 @@ private struct SaintSayingsGallery: View {
                 .padding(.horizontal, inset).padding(.top, inset)
                 .frame(height: textHeight, alignment: .topLeading)
                 .clipped()
+                .offset(y: region.minY)
             }
             .frame(width: width, height: height)
             .clipShape(RoundedRectangle(cornerRadius: prominent ? 27 : 23, style: .continuous))
@@ -206,13 +209,23 @@ private struct SayingArtwork: View {
                 .frame(width: geometry.size.width, height: geometry.size.height, alignment: .top)
                 .clipped()
                 .overlay {
-                    LinearGradient(stops: [
-                        .init(color: .black.opacity(0.60), location: 0),
-                        .init(color: .black.opacity(0.48), location: max(0, boundary - 0.03)),
-                        .init(color: .clear, location: min(1, boundary + 0.18)),
-                        .init(color: .clear, location: 0.85),
-                        .init(color: .black.opacity(0.25), location: 1)
-                    ], startPoint: .top, endPoint: .bottom)
+                    if photo.textStart != nil {
+                        let start = photo.textRegion(in: geometry.size).minY / geometry.size.height
+                        LinearGradient(stops: [
+                            .init(color: .clear, location: 0),
+                            .init(color: .clear, location: max(0, start - 0.08)),
+                            .init(color: .black.opacity(0.65), location: start),
+                            .init(color: .black.opacity(0.80), location: 1)
+                        ], startPoint: .top, endPoint: .bottom)
+                    } else {
+                        LinearGradient(stops: [
+                            .init(color: .black.opacity(0.60), location: 0),
+                            .init(color: .black.opacity(0.48), location: max(0, boundary - 0.03)),
+                            .init(color: .clear, location: min(1, boundary + 0.18)),
+                            .init(color: .clear, location: 0.85),
+                            .init(color: .black.opacity(0.25), location: 1)
+                        ], startPoint: .top, endPoint: .bottom)
+                    }
             }
         }.accessibilityHidden(true)
     }
@@ -314,7 +327,10 @@ private struct SaintSayingReader: View {
 
     private func readerPage(_ saying: SaintSaying, size: CGSize) -> some View {
         let photo = catalog.photo(for: saying)
-        let textHeight = photo.textBoundary(in: size) - 14
+        let region = photo.textRegion(in: size)
+        let textHeight = region.height - 14
+        let top = photo.textStart == nil ? 74 : region.minY + 12
+        let readingHeight = photo.textStart == nil ? max(30, textHeight - 74) : max(0, size.height - top - 82)
         return ZStack(alignment: .top) {
             SayingArtwork(photo: photo)
             ScrollView {
@@ -333,8 +349,8 @@ private struct SaintSayingReader: View {
             .onScrollGeometryChange(for: Bool.self) { $0.contentOffset.y <= 0 } action: { _, atTop in
                 if saying.id == currentID { textAtTop = atTop }
             }
-            .frame(height: max(30, textHeight - 74))
-            .padding(.top, 74)
+            .frame(height: readingHeight)
+            .padding(.top, top)
         }
         .frame(width: size.width, height: size.height)
         .clipped()

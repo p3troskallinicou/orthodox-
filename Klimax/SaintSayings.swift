@@ -36,6 +36,18 @@ struct SayingPhoto: Codable, Identifiable {
     let subjectTop: Double
     let width: Double
     let height: Double
+    /// Optional lower text region for portraits with no headroom. Measured in
+    /// source-image coordinates below the faces, before the top-aligned crop.
+    let textStart: Double?
+
+    func textRegion(in size: CGSize) -> CGRect {
+        guard let textStart else {
+            return CGRect(x: 0, y: 0, width: size.width, height: textBoundary(in: size))
+        }
+        let scale = max(size.width / width, size.height / height)
+        let start = min(size.height, height * scale * textStart)
+        return CGRect(x: 0, y: start, width: size.width, height: max(0, size.height - start))
+    }
 
     func textBoundary(in size: CGSize) -> CGFloat {
         let scale = max(size.width / width, size.height / height)
@@ -61,7 +73,10 @@ struct SaintSayingsCatalog: Codable {
     var isValid: Bool {
         !saints.isEmpty && !categories.isEmpty && !photos.isEmpty &&
         Set(sayings.map(\.id)).count == sayings.count &&
-        photos.allSatisfy { (0...0.8).contains($0.subjectTop) && $0.width > 0 && $0.height > 0 } &&
+        photos.allSatisfy {
+            (0...0.8).contains($0.subjectTop) && $0.width > 0 && $0.height > 0 &&
+            ($0.textStart.map { (0..<1).contains($0) } ?? true)
+        } &&
         sayings.allSatisfy { saying in
             !saying.text.isEmpty && saints.contains { $0.id == saying.saintID } &&
             categories.contains { $0.id == saying.categoryID } && photos.contains { $0.id == saying.photoID }

@@ -5,7 +5,7 @@ import {spawnSync} from 'node:child_process';
 const catalog = JSON.parse(readFileSync('Klimax/saint-sayings.json'));
 assert.equal(catalog.sayings.length, 74);
 assert.equal(catalog.categories.length, 12);
-assert.equal(catalog.photos.length, 9);
+assert.equal(catalog.photos.length, 15);
 assert.equal(new Set(catalog.sayings.map(s => s.id)).size, catalog.sayings.length);
 assert.equal(catalog.sayings.filter(s => s.featured).length, 5);
 assert(catalog.categories.every(c => catalog.sayings.some(s => s.categoryID === c.id)));
@@ -38,6 +38,16 @@ for (const saying of catalog.sayings) {
   assert(catalog.categories.some(c => c.id === saying.categoryID));
   assert(catalog.photos.some(p => p.id === saying.photoID));
 }
+const portraitIDs = new Set(porfyrios.map(s => s.photoID));
+for (const id of portraitIDs) {
+  const photo = catalog.photos.find(p => p.id === id);
+  assert(photo && photo.textStart > 0 && photo.textStart < 1);
+  for (const [width, height] of [[150,168],[175,262],[362,319],[386,685],[600,800]]) {
+    const start = Math.min(height, photo.height * Math.max(width/photo.width,height/photo.height) * photo.textStart);
+    assert(height - start >= 25, 'Every assigned card needs visible text below the face');
+    if (height >= 685) assert(height - start - 94 >= 100, 'Reader text must clear the face and bottom controls');
+  }
+}
 let imageBytes = 0;
 for (const photo of catalog.photos) {
   const path = `Klimax/Assets.xcassets/${photo.asset}.imageset/`;
@@ -48,13 +58,21 @@ for (const photo of catalog.photos) {
     assert(photo.width * scale >= width - 0.001 && photo.height * scale >= height - 0.001, 'Full-bleed artwork must cover the entire card');
   }
 }
-assert(imageBytes < 4_000_000);
+assert(imageBytes < 6_000_000);
 const source = readFileSync('Klimax/SaintSayings.swift', 'utf8');
 const tests = `
 let data = try Data(contentsOf: URL(fileURLWithPath: "Klimax/saint-sayings.json"))
 let catalog = try JSONDecoder().decode(SaintSayingsCatalog.self, from: data)
 assert(catalog.isValid)
 assert(catalog.filtered(saintID: "porfyrios", categoryID: nil, query: "").count == 33)
+for saying in catalog.filtered(saintID: "porfyrios", categoryID: nil, query: "") {
+    let photo = catalog.photo(for: saying)
+    for size in [CGSize(width: 175, height: 262), CGSize(width: 386, height: 685)] {
+        let region = photo.textRegion(in: size)
+        assert(region.minY > 0 && region.maxY <= size.height)
+        assert(region.height >= 25)
+    }
+}
 assert(catalog.categories(for: "paisios").count == 4)
 assert(catalog.categories(for: "porfyrios").count == 8)
 for category in catalog.categories(for: "porfyrios") {
@@ -108,4 +126,4 @@ assert(readFileSync('Klimax/RootView.swift', 'utf8').includes('case .sayings:'))
 const project = readFileSync('Klimax.xcodeproj/project.pbxproj', 'utf8');
 assert(project.includes('SaintSayingsView.swift in Sources'));
 assert(project.includes('saint-sayings.json in Resources'));
-console.log(`PASS: 74 texts, 12 populated categories, 9 existing image assets (${Math.round(imageBytes / 1024)} KB), protected subject areas, popup geometry and navigation wiring`);
+console.log(`PASS: 74 texts, 12 populated categories, 15 image assets (${Math.round(imageBytes / 1024)} KB), protected subject areas, popup geometry and navigation wiring`);

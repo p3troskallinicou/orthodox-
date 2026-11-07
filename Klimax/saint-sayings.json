@@ -14,7 +14,7 @@
       "name": "Όσιος Πορφύριος ο Καυσοκαλυβίτης",
       "shortName": "Όσιος Πορφύριος",
       "subtitle": "Ο Καυσοκαλυβίτης",
-      "photoID": "porfyrios-icon"
+      "photoID": "porfyrios-05"
     }
   ],
   "categories": [
@@ -149,11 +149,60 @@
       "height": 1440
     },
     {
-      "id": "porfyrios-icon",
-      "asset": "saint-porfyrios",
-      "subjectTop": 0.2,
-      "width": 768,
-      "height": 1024
+      "id": "porfyrios-01",
+      "asset": "SaintSayingPorfyrios01",
+      "subjectTop": 0,
+      "textStart": 0.67,
+      "width": 833,
+      "height": 1387
+    },
+    {
+      "id": "porfyrios-02",
+      "asset": "SaintSayingPorfyrios02",
+      "subjectTop": 0,
+      "textStart": 0.5,
+      "width": 708,
+      "height": 1028
+    },
+    {
+      "id": "porfyrios-03",
+      "asset": "SaintSayingPorfyrios03",
+      "subjectTop": 0,
+      "textStart": 0.81,
+      "width": 744,
+      "height": 1041
+    },
+    {
+      "id": "porfyrios-04",
+      "asset": "SaintSayingPorfyrios04",
+      "subjectTop": 0,
+      "textStart": 0.68,
+      "width": 744,
+      "height": 910
+    },
+    {
+      "id": "porfyrios-05",
+      "asset": "SaintSayingPorfyrios05",
+      "subjectTop": 0,
+      "textStart": 0.54,
+      "width": 794,
+      "height": 959
+    },
+    {
+      "id": "porfyrios-06",
+      "asset": "SaintSayingPorfyrios06",
+      "subjectTop": 0,
+      "textStart": 0.75,
+      "width": 950,
+      "height": 624
+    },
+    {
+      "id": "porfyrios-07",
+      "asset": "SaintSayingPorfyrios07",
+      "subjectTop": 0,
+      "textStart": 0.64,
+      "width": 708,
+      "height": 1028
     }
   ],
   "sayings": [
@@ -659,7 +708,7 @@
       "sourceStatus": "Εκκρεμεί έλεγχος πρωτοτύπου",
       "sourceChecked": false,
       "featured": false,
-      "photoID": "porfyrios-icon"
+      "photoID": "porfyrios-02"
     },
     {
       "id": "porfyrios-0002",
@@ -671,7 +720,7 @@
       "sourceStatus": "Εκκρεμεί έλεγχος πρωτοτύπου",
       "sourceChecked": false,
       "featured": false,
-      "photoID": "porfyrios-icon"
+      "photoID": "porfyrios-05"
     },
     {
       "id": "porfyrios-0003",
@@ -683,7 +732,7 @@
       "sourceStatus": "Εκκρεμεί έλεγχος πρωτοτύπου",
       "sourceChecked": false,
       "featured": false,
-      "photoID": "porfyrios-icon"
+      "photoID": "porfyrios-02"
     },
     {
       "id": "porfyrios-0004",
@@ -695,7 +744,7 @@
       "sourceStatus": "Εκκρεμεί έλεγχος πρωτοτύπου",
       "sourceChecked": false,
       "featured": false,
-      "photoID": "porfyrios-icon"
+      "photoID": "porfyrios-05"
     },
     {
       "id": "porfyrios-0005",
@@ -707,7 +756,7 @@
       "sourceStatus": "Εκκρεμεί έλεγχος πρωτοτύπου",
       "sourceChecked": false,
       "featured": false,
-      "photoID": "porfyrios-icon"
+      "photoID": "porfyrios-02"
     },
     {
       "id": "porfyrios-0006",
@@ -719,7 +768,7 @@
       "sourceStatus": "Εκκρεμεί έλεγχος πρωτοτύπου",
       "sourceChecked": false,
       "featured": false,
-      "photoID": "porfyrios-icon"
+      "photoID": "porfyrios-05"
     },
     {
       "id": "porfyrios-0007",
@@ -731,7 +780,7 @@
       "sourceStatus": "Εκκρεμεί έλεγχος πρωτοτύπου",
       "sourceChecked": false,
       "featured": false,
-      "photoID": "porfyrios-icon"
+      "photoID": "porfyrios-02"
     },
     {
       "id": "porfyrios-0008",
@@ -743,7 +792,7 @@
       "sourceStatus": "Εκκρεμεί έλεγχος πρωτοτύπου",
       "sourceChecked": false,
       "featured": false,
-      "photoID": "porfyrios-icon"
+      "photoID": "porfyrios-05"
     },
     {
       "id": "porfyrios-0009",
@@ -755,7 +804,7 @@
       "sourceStatus": "Εκκρεμεί έλεγχος πρωτοτύπου",
       "sourceChecked": false,
       "featured": false,
-      "photoID": "porfyrios-icon"
+      "photoID": "porfyrios-02"
     },
     {
       "id": "porfyrios-0010",
@@ -767,7 +816,7 @@
       "sourceStatus": "Εκκρεμεί έλεγχος πρωτοτύπου",
       "sourceChecked": false,
       "featured": false,
-      "photoID": "porfyrios-icon"
+      "photoID": "porfyrios-05"
     },
     {
       "id": "porfyrios-0011",
@@ -779,7 +828,7 @@
       "sourceStatus": "Εκκρεμεί έλεγχος πρωτοτύπου",
       "sourceChecked": false,
       "featured": false,
-      "photoID": "porfyrios-icon"
+      "photoID": "porfyrios-02"
     },
     {
       "id": "porfyrios-0012",
@@ -791,7 +840,7 @@
       "sourceStatus": "Εκκρεμεί έλεγχος πρωτοτύπου",
       "sourceChecked": false,
       "featured": false,
-      "photoID": "porfyrios-icon"
+      "photoID": "porfyrios-05"
     },
     {
       "id": "porfyrios-0013",
@@ -803,7 +852,7 @@
       "sourceStatus": "Εκκρεμεί έλεγχος πρωτοτύπου",
       "sourceChecked": false,
       "featured": false,
-      "photoID": "porfyrios-icon"
+      "photoID": "porfyrios-02"
     },
     {
       "id": "porfyrios-0014",
@@ -815,7 +864,7 @@
       "sourceStatus": "Εκκρεμεί έλεγχος πρωτοτύπου",
       "sourceChecked": false,
       "featured": false,
-      "photoID": "porfyrios-icon"
+      "photoID": "porfyrios-05"
     },
     {
       "id": "porfyrios-0015",
@@ -827,7 +876,7 @@
       "sourceStatus": "Εκκρεμεί έλεγχος πρωτοτύπου",
       "sourceChecked": false,
       "featured": false,
-      "photoID": "porfyrios-icon"
+      "photoID": "porfyrios-02"
     },
     {
       "id": "porfyrios-0016",
@@ -839,7 +888,7 @@
       "sourceStatus": "Εκκρεμεί έλεγχος πρωτοτύπου",
       "sourceChecked": false,
       "featured": false,
-      "photoID": "porfyrios-icon"
+      "photoID": "porfyrios-05"
     },
     {
       "id": "porfyrios-0017",
@@ -851,7 +900,7 @@
       "sourceStatus": "Εκκρεμεί έλεγχος πρωτοτύπου",
       "sourceChecked": false,
       "featured": false,
-      "photoID": "porfyrios-icon"
+      "photoID": "porfyrios-02"
     },
     {
       "id": "porfyrios-0018",
@@ -863,7 +912,7 @@
       "sourceStatus": "Εκκρεμεί έλεγχος πρωτοτύπου",
       "sourceChecked": false,
       "featured": false,
-      "photoID": "porfyrios-icon"
+      "photoID": "porfyrios-05"
     },
     {
       "id": "porfyrios-0019",
@@ -875,7 +924,7 @@
       "sourceStatus": "Εκκρεμεί έλεγχος πρωτοτύπου",
       "sourceChecked": false,
       "featured": false,
-      "photoID": "porfyrios-icon"
+      "photoID": "porfyrios-02"
     },
     {
       "id": "porfyrios-0020",
@@ -887,7 +936,7 @@
       "sourceStatus": "Εκκρεμεί έλεγχος πρωτοτύπου",
       "sourceChecked": false,
       "featured": false,
-      "photoID": "porfyrios-icon"
+      "photoID": "porfyrios-05"
     },
     {
       "id": "porfyrios-0021",
@@ -899,7 +948,7 @@
       "sourceStatus": "Εκκρεμεί έλεγχος πρωτοτύπου",
       "sourceChecked": false,
       "featured": false,
-      "photoID": "porfyrios-icon"
+      "photoID": "porfyrios-02"
     },
     {
       "id": "porfyrios-0022",
@@ -911,7 +960,7 @@
       "sourceStatus": "Εκκρεμεί έλεγχος πρωτοτύπου",
       "sourceChecked": false,
       "featured": false,
-      "photoID": "porfyrios-icon"
+      "photoID": "porfyrios-05"
     },
     {
       "id": "porfyrios-0023",
@@ -923,7 +972,7 @@
       "sourceStatus": "Εκκρεμεί έλεγχος πρωτοτύπου",
       "sourceChecked": false,
       "featured": false,
-      "photoID": "porfyrios-icon"
+      "photoID": "porfyrios-02"
     },
     {
       "id": "porfyrios-0024",
@@ -935,7 +984,7 @@
       "sourceStatus": "Εκκρεμεί έλεγχος πρωτοτύπου",
       "sourceChecked": false,
       "featured": false,
-      "photoID": "porfyrios-icon"
+      "photoID": "porfyrios-05"
     },
     {
       "id": "porfyrios-0025",
@@ -947,7 +996,7 @@
       "sourceStatus": "Εκκρεμεί έλεγχος πρωτοτύπου",
       "sourceChecked": false,
       "featured": false,
-      "photoID": "porfyrios-icon"
+      "photoID": "porfyrios-02"
     },
     {
       "id": "porfyrios-0026",
@@ -959,7 +1008,7 @@
       "sourceStatus": "Εκκρεμεί έλεγχος πρωτοτύπου",
       "sourceChecked": false,
       "featured": false,
-      "photoID": "porfyrios-icon"
+      "photoID": "porfyrios-05"
     },
     {
       "id": "porfyrios-0027",
@@ -971,7 +1020,7 @@
       "sourceStatus": "Εκκρεμεί έλεγχος πρωτοτύπου",
       "sourceChecked": false,
       "featured": false,
-      "photoID": "porfyrios-icon"
+      "photoID": "porfyrios-02"
     },
     {
       "id": "porfyrios-0028",
@@ -983,7 +1032,7 @@
       "sourceStatus": "Εκκρεμεί έλεγχος πρωτοτύπου",
       "sourceChecked": false,
       "featured": false,
-      "photoID": "porfyrios-icon"
+      "photoID": "porfyrios-05"
     },
     {
       "id": "porfyrios-0029",
@@ -995,7 +1044,7 @@
       "sourceStatus": "Εκκρεμεί έλεγχος πρωτοτύπου",
       "sourceChecked": false,
       "featured": false,
-      "photoID": "porfyrios-icon"
+      "photoID": "porfyrios-02"
     },
     {
       "id": "porfyrios-0030",
@@ -1007,7 +1056,7 @@
       "sourceStatus": "Εκκρεμεί έλεγχος πρωτοτύπου",
       "sourceChecked": false,
       "featured": false,
-      "photoID": "porfyrios-icon"
+      "photoID": "porfyrios-05"
     },
     {
       "id": "porfyrios-0031",
@@ -1019,7 +1068,7 @@
       "sourceStatus": "Εκκρεμεί έλεγχος πρωτοτύπου",
       "sourceChecked": false,
       "featured": false,
-      "photoID": "porfyrios-icon"
+      "photoID": "porfyrios-02"
     },
     {
       "id": "porfyrios-0032",
@@ -1031,7 +1080,7 @@
       "sourceStatus": "Εκκρεμεί έλεγχος πρωτοτύπου",
       "sourceChecked": false,
       "featured": false,
-      "photoID": "porfyrios-icon"
+      "photoID": "porfyrios-05"
     },
     {
       "id": "porfyrios-0033",
@@ -1043,7 +1092,7 @@
       "sourceStatus": "Εκκρεμεί έλεγχος πρωτοτύπου",
       "sourceChecked": false,
       "featured": false,
-      "photoID": "porfyrios-icon"
+      "photoID": "porfyrios-02"
     }
   ]
 }
