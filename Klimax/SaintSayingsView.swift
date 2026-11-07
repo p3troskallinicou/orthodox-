@@ -30,6 +30,7 @@ private struct SaintSayingsGallery: View {
     }
 
     private var saint: SayingSaint { catalog.saints.first { $0.id == saintID } ?? catalog.saints[0] }
+    private var saintCategories: [SayingCategory] { catalog.categories(for: saintID) }
     private var displayed: [SaintSaying] { catalog.filtered(saintID: saintID, categoryID: categoryID, query: query) }
 
     var body: some View {
@@ -74,7 +75,7 @@ private struct SaintSayingsGallery: View {
                 } else {
                     Text(saint.shortName).font(.system(size: 29, weight: .semibold, design: .serif)).foregroundStyle(Paper.ink)
                 }
-                Text("\(catalog.sayings.filter { $0.saintID == saintID }.count) λόγοι · \(catalog.categories.count) θέματα")
+                Text("\(catalog.sayings.filter { $0.saintID == saintID }.count) λόγοι · \(saintCategories.count) θέματα")
                     .font(.subheadline).foregroundStyle(Paper.inkMute)
             }
             Spacer(minLength: 0)
@@ -104,7 +105,7 @@ private struct SaintSayingsGallery: View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack(spacing: 8) {
                 categoryButton("Όλα", id: nil, symbol: "square.grid.2x2")
-                ForEach(catalog.categories) { category in
+                ForEach(saintCategories) { category in
                     categoryButton(category.shortTitle, id: category.id, symbol: category.symbol)
                 }
             }

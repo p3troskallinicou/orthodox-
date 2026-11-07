@@ -1,6 +1,6 @@
 // Deterministic content import. Supplied text is preserved verbatim; research
 // notes and interpretive paraphrases are not presented as words of the saint.
-import {readFileSync, writeFileSync} from 'node:fs';
+import {readFileSync, writeFileSync, existsSync} from 'node:fs';
 const sourcePath = process.argv[2] ?? '/Users/petroskallinicou/Downloads/agiologio_riton_master.json';
 const source = JSON.parse(readFileSync(sourcePath, 'utf8'));
 const categories = [
@@ -39,5 +39,18 @@ const output = {
   saints: [{id: 'paisios', name: source.saint, shortName: 'Άγιος Παΐσιος', subtitle: 'Ο Αγιορείτης', photoID: 'paisios-07'}],
   categories, photos, sayings
 };
+// This importer owns Paisios only. Preserve saints added from other sources.
+const existingPath = 'Klimax/saint-sayings.json';
+if (existsSync(existingPath)) {
+  const existing = JSON.parse(readFileSync(existingPath, 'utf8'));
+  const others = existing.sayings.filter(s => s.saintID !== 'paisios');
+  const otherSaints = existing.saints.filter(s => s.id !== 'paisios');
+  const categoryIDs = new Set(others.map(s => s.categoryID));
+  const photoIDs = new Set([...others.map(s => s.photoID), ...otherSaints.map(s => s.photoID)]);
+  output.saints.push(...otherSaints);
+  output.sayings.push(...others);
+  output.categories.push(...existing.categories.filter(c => categoryIDs.has(c.id) && !output.categories.some(o => o.id === c.id)));
+  output.photos.push(...existing.photos.filter(p => photoIDs.has(p.id) && !output.photos.some(o => o.id === p.id)));
+}
 writeFileSync('Klimax/saint-sayings.json', JSON.stringify(output, null, 2) + '\n');
 console.log(`Imported ${sayings.length} verbatim excerpts in ${categories.length} categories; original file unchanged.`);

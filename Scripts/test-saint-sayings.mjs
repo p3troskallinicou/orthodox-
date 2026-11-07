@@ -3,9 +3,9 @@ import {readFileSync, existsSync, statSync} from 'node:fs';
 import {spawnSync} from 'node:child_process';
 
 const catalog = JSON.parse(readFileSync('Klimax/saint-sayings.json'));
-assert.equal(catalog.sayings.length, 41);
-assert.equal(catalog.categories.length, 4);
-assert.equal(catalog.photos.length, 8);
+assert.equal(catalog.sayings.length, 74);
+assert.equal(catalog.categories.length, 12);
+assert.equal(catalog.photos.length, 9);
 assert.equal(new Set(catalog.sayings.map(s => s.id)).size, catalog.sayings.length);
 assert.equal(catalog.sayings.filter(s => s.featured).length, 5);
 assert(catalog.categories.every(c => catalog.sayings.some(s => s.categoryID === c.id)));
@@ -15,12 +15,28 @@ const originalPath = process.argv[2] ?? '/Users/petroskallinicou/Downloads/agiol
 if (existsSync(originalPath)) {
   const original = JSON.parse(readFileSync(originalPath));
   const curated = new Map(original.curated_flashcards.map(s => [s.id, s]));
-  for (const saying of catalog.sayings) {
+  for (const saying of catalog.sayings.filter(s => s.saintID === 'paisios')) {
     const record = curated.get(saying.id) ?? original.records.find(s => s.id === saying.id);
     assert.equal(saying.text, record.text, 'Never rewrite an attributed quotation');
     assert.equal(saying.source, record.source);
     assert(record.kind.startsWith('Αυτούσιο') || curated.has(saying.id));
   }
+}
+// Keep every supplied Porphyrios quote and category intact.
+const supplied = JSON.parse(readFileSync('data/porfyrios-sayings.json'));
+const porfyrios = catalog.sayings.filter(s => s.saintID === 'porfyrios');
+assert.equal(porfyrios.length, 33);
+assert.equal(catalog.sayings.filter(s => s.saintID === 'paisios').length, 41);
+assert.deepEqual(porfyrios.map(({id, categoryID, text}) => ({id, categoryID, text})), supplied.sayings);
+assert.deepEqual(catalog.categories.filter(c => c.id.startsWith('porfyrios-')), supplied.categories);
+assert.deepEqual(supplied.categories.map(c => porfyrios.filter(s => s.categoryID === c.id).length), [5,4,6,4,3,5,4,2]);
+assert(porfyrios.every(s => !s.sourceChecked && !s.featured && s.sourceStatus === supplied.sourceStatus));
+assert(porfyrios.every(s => s.photoID.startsWith('porfyrios-')));
+for (const saint of catalog.saints) assert(catalog.photos.some(p => p.id === saint.photoID));
+for (const saying of catalog.sayings) {
+  assert(catalog.saints.some(s => s.id === saying.saintID));
+  assert(catalog.categories.some(c => c.id === saying.categoryID));
+  assert(catalog.photos.some(p => p.id === saying.photoID));
 }
 let imageBytes = 0;
 for (const photo of catalog.photos) {
@@ -32,14 +48,24 @@ for (const photo of catalog.photos) {
     assert(photo.width * scale >= width - 0.001 && photo.height * scale >= height - 0.001, 'Full-bleed artwork must cover the entire card');
   }
 }
-assert(imageBytes < 2_000_000);
+assert(imageBytes < 4_000_000);
 const source = readFileSync('Klimax/SaintSayings.swift', 'utf8');
 const tests = `
 let data = try Data(contentsOf: URL(fileURLWithPath: "Klimax/saint-sayings.json"))
 let catalog = try JSONDecoder().decode(SaintSayingsCatalog.self, from: data)
 assert(catalog.isValid)
+assert(catalog.filtered(saintID: "porfyrios", categoryID: nil, query: "").count == 33)
+assert(catalog.categories(for: "paisios").count == 4)
+assert(catalog.categories(for: "porfyrios").count == 8)
+for category in catalog.categories(for: "porfyrios") {
+    let results = catalog.filtered(saintID: "porfyrios", categoryID: category.id, query: "")
+    assert(!results.isEmpty && results.allSatisfy { $0.saintID == "porfyrios" && $0.categoryID == category.id })
+    assert(catalog.filtered(saintID: "paisios", categoryID: category.id, query: "").isEmpty)
+}
+assert(!catalog.filtered(saintID: "porfyrios", categoryID: nil, query: "ΨΥΧΗ").isEmpty)
+assert(catalog.filtered(saintID: "porfyrios", categoryID: nil, query: "ανύπαρκτηφράση").isEmpty)
 assert(catalog.filtered(saintID: "paisios", categoryID: nil, query: "").count == 41)
-for category in catalog.categories {
+for category in catalog.categories(for: "paisios") {
     let results = catalog.filtered(saintID: "paisios", categoryID: category.id, query: "")
     assert(!results.isEmpty && results.allSatisfy { $0.categoryID == category.id })
 }
@@ -58,10 +84,14 @@ for saying in ordered {
 }
 print("PASS: actual Swift catalog decoding, category/saint isolation, accent-insensitive search and editorial ordering")
 `;
+if (!process.argv.includes('--data-only')) {
 const result = spawnSync('swift', ['-module-cache-path', '/tmp/klimax-prayer-test-cache', '-'], {input: source + tests, encoding: 'utf8'});
 process.stdout.write(result.stdout ?? '');
 process.stderr.write(result.stderr ?? '');
 assert.equal(result.status, 0);
+} else {
+  console.log("SKIP: Swift runtime tests (--data-only); run full suite on a machine with Swift installed");
+}
 const ui = readFileSync('Klimax/SaintSayingsView.swift', 'utf8');
 assert(ui.includes('PrayerInvitationCardLayout(viewport:'));
 assert(ui.includes('.presentationBackground(.clear)'));
@@ -78,4 +108,4 @@ assert(readFileSync('Klimax/RootView.swift', 'utf8').includes('case .sayings:'))
 const project = readFileSync('Klimax.xcodeproj/project.pbxproj', 'utf8');
 assert(project.includes('SaintSayingsView.swift in Sources'));
 assert(project.includes('saint-sayings.json in Resources'));
-console.log(`PASS: 41 verbatim texts, four populated categories, 8 real photo assets (${Math.round(imageBytes / 1024)} KB), protected subject areas, popup geometry and navigation wiring`);
+console.log(`PASS: 74 texts, 12 populated categories, 9 existing image assets (${Math.round(imageBytes / 1024)} KB), protected subject areas, popup geometry and navigation wiring`);

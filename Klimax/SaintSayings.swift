@@ -68,6 +68,11 @@ struct SaintSayingsCatalog: Codable {
         }
     }
 
+    func categories(for saintID: String) -> [SayingCategory] {
+        let ids = Set(sayings.filter { $0.saintID == saintID }.map(\.categoryID))
+        return categories.filter { ids.contains($0.id) }
+    }
+
     func filtered(saintID: String, categoryID: String?, query: String) -> [SaintSaying] {
         let words = Self.searchKey(query).split(separator: " ")
         return sayings.filter { saying in
