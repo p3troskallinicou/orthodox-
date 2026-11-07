@@ -1,0 +1,93 @@
+name: Klimax Simulator Preview
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  simulator-build:
+    runs-on: macos-26-intel
+    timeout-minutes: 45
+
+    env:
+      DEVELOPER_DIR: /Applications/Xcode_26.5.app/Contents/Developer
+      DERIVED_DATA: ${{ runner.temp }}/klimax-derived-data
+      PACKAGE_CACHE: ${{ runner.temp }}/klimax-packages
+      PREVIEW_OUTPUT: ${{ runner.temp }}/klimax-preview
+
+    steps:
+      - name: Check out selected branch
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+
+      - name: Check preinstalled build tools
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -d "$DEVELOPER_DIR"
+          xcodebuild -version
+          xcodebuild -showsdks
+
+      - name: Build unsigned simulator application
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          xcodebuild \
+            -project Klimax.xcodeproj \
+            -scheme Klimax \
+            -configuration Release \
+            -sdk iphonesimulator \
+            -destination 'generic/platform=iOS Simulator' \
+            -derivedDataPath "$DERIVED_DATA" \
+            -clonedSourcePackagesDirPath "$PACKAGE_CACHE" \
+            -onlyUsePackageVersionsFromResolvedFile \
+            CODE_SIGNING_ALLOWED=NO \
+            CODE_SIGNING_REQUIRED=NO \
+            CODE_SIGN_IDENTITY= \
+            ONLY_ACTIVE_ARCH=NO \
+            'ARCHS=arm64 x86_64' \
+            build
+
+      - name: Verify repository files remain unchanged
+        shell: bash
+        run: |
+          set -euo pipefail
+          git diff --exit-code
+          test -z "$(git status --porcelain)"
+
+      - name: Validate and package simulator application
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          APP="$DERIVED_DATA/Build/Products/Release-iphonesimulator/Klimax.app"
+          test -d "$APP"
+
+          EXECUTABLE=$(
+            /usr/libexec/PlistBuddy \
+              -c 'Print :CFBundleExecutable' "$APP/Info.plist"
+          )
+          PLATFORM=$(
+            /usr/libexec/PlistBuddy \
+              -c 'Print :DTPlatformName' "$APP/Info.plist"
+          )
+
+          test "$PLATFORM" = "iphonesimulator"
+          xcrun lipo -verify_arch arm64 x86_64 "$APP/$EXECUTABLE"
+
+          mkdir -p "$PREVIEW_OUTPUT"
+          ditto -c -k --sequesterRsrc --keepParent \
+            "$APP" "$PREVIEW_OUTPUT/Klimax-simulator.zip"
+
+      - name: Upload downloadable preview ZIP
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: Klimax-simulator-${{ github.sha }}
+          path: ${{ runner.temp }}/klimax-preview/Klimax-simulator.zip
+          if-no-files-found: error
+          retention-days: 7
+          compression-level: 0
