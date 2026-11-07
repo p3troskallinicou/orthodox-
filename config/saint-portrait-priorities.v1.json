@@ -1,0 +1,256 @@
+{
+  "schemaVersion": 1,
+  "description": "Curated portrait priority for a primarily Greek Orthodox audience. Lower numbers are selected first. Existing approved and published portraits remain protected.",
+  "records": {
+    "nektarios": {
+      "priority": 5,
+      "group": "greek-orthodox-core",
+      "reason": "Among the most widely venerated modern saints in the Greek Orthodox Church"
+    },
+    "paisios-agioreitis": {
+      "priority": 5,
+      "group": "greek-orthodox-core",
+      "reason": "Among the most widely venerated modern saints in the Greek Orthodox Church"
+    },
+    "porfyrios": {
+      "priority": 5,
+      "group": "greek-orthodox-core",
+      "reason": "Among the most widely venerated modern saints in the Greek Orthodox Church"
+    },
+    "efraimkatoynakiotis": {
+      "priority": 5,
+      "group": "greek-orthodox-core",
+      "reason": "Widely known contemporary Athonite saint in Greek Orthodox life"
+    },
+    "gavriilia": {
+      "priority": 5,
+      "group": "greek-orthodox-core",
+      "reason": "Contemporary Greek Orthodox saint with broad recognition"
+    },
+    "savvasneos": {
+      "priority": 5,
+      "group": "greek-orthodox-core",
+      "reason": "Widely venerated Greek saint of Kalymnos"
+    },
+    "amfilochiosmakris": {
+      "priority": 5,
+      "group": "greek-orthodox-core",
+      "reason": "Widely venerated contemporary Greek saint of Patmos"
+    },
+    "eymeniosneos": {
+      "priority": 5,
+      "group": "greek-orthodox-core",
+      "reason": "Widely loved contemporary Greek Orthodox saint"
+    },
+    "iosifisychastis": {
+      "priority": 5,
+      "group": "greek-orthodox-core",
+      "reason": "Foundational contemporary Athonite saint with broad Greek recognition"
+    },
+    "iakovostheoforos": {
+      "priority": 5,
+      "group": "greek-orthodox-core",
+      "reason": "Widely loved contemporary Greek saint, Iakovos Tsalikis"
+    },
+    "arsenioskappadokis": {
+      "priority": 5,
+      "group": "greek-orthodox-core",
+      "reason": "Widely venerated Greek Orthodox saint of Cappadocia"
+    },
+    "anthimosvagianos": {
+      "priority": 5,
+      "group": "greek-orthodox-core",
+      "reason": "Widely venerated contemporary Greek saint of Chios"
+    },
+    "efraim-neas-makris": {
+      "priority": 5,
+      "group": "greek-orthodox-core",
+      "reason": "One of the most widely venerated saints in contemporary Greek Orthodox life"
+    },
+    "ioannisrosos": {
+      "priority": 5,
+      "group": "greek-orthodox-core",
+      "reason": "Russian by origin but exceptionally widely venerated in the Greek Orthodox Church"
+    },
+    "nikiforos-lepros": {
+      "priority": 5,
+      "group": "greek-orthodox-core",
+      "reason": "Prominent contemporary saint explicitly recognized as widely known in Greek Orthodox life"
+    },
+    "sofia-kleisouras": {
+      "priority": 5,
+      "group": "greek-orthodox-core",
+      "reason": "Widely venerated twentieth century Greek ascetic saint"
+    },
+    "silouanos-athoni": {
+      "priority": 10,
+      "group": "panorthodox-greek-recognition",
+      "reason": "Russian by origin, Athonite in life, and deeply received in Greek Orthodox spirituality"
+    },
+    "sofronios-essex": {
+      "priority": 10,
+      "group": "panorthodox-greek-recognition",
+      "reason": "Russian by origin but exceptionally influential and widely venerated in the Greek Orthodox Church"
+    },
+    "loukas-krimaias": {
+      "priority": 10,
+      "group": "panorthodox-greek-recognition",
+      "reason": "Russian saint with exceptionally broad veneration in Greece and Cyprus"
+    },
+    "serafeimsarof": {
+      "priority": 10,
+      "group": "panorthodox-greek-recognition",
+      "reason": "Russian saint with longstanding and exceptionally broad recognition in the Greek Orthodox Church"
+    },
+    "gervasios-paraskevopoulos": {
+      "priority": 15,
+      "group": "greek-orthodox-recent",
+      "reason": "Contemporary Greek saint formally added to the Orthodox calendar in 2023"
+    },
+    "athanasios-hamakiotis": {
+      "priority": 15,
+      "group": "greek-orthodox-recent",
+      "reason": "Contemporary Greek saint formally added to the Orthodox calendar in 2023"
+    },
+    "vissarion-agathonitis": {
+      "priority": 15,
+      "group": "greek-orthodox-recent",
+      "reason": "Contemporary Greek saint of the Monastery of Agathonos"
+    },
+    "daniilkatoynakiotis": {
+      "priority": 20,
+      "group": "greek-orthodox-secondary",
+      "reason": "Modern Athonite saint already in the catalog"
+    },
+    "ioannis-maximovitch": {
+      "priority": 70,
+      "group": "international-deferred",
+      "reason": "Important Russian saint, but not part of the Greek Orthodox portrait priority"
+    },
+    "ioystinospopovits": {
+      "priority": 70,
+      "group": "international-deferred",
+      "reason": "Important Serbian theologian and saint, but not part of the Greek Orthodox portrait priority"
+    },
+    "nikolaos-zitsis": {
+      "priority": 80,
+      "group": "international-deferred",
+      "reason": "Important Serbian hierarch, outside the Greek Orthodox portrait priority"
+    },
+    "maria-skobtsova": {
+      "priority": 100,
+      "group": "international-deferred",
+      "reason": "Important modern saint, outside the Greek Orthodox portrait priority"
+    },
+    "tikhon-moschas": {
+      "priority": 100,
+      "group": "international-deferred",
+      "reason": "Important modern saint, outside the Greek Orthodox portrait priority"
+    },
+    "elisavet-feodorovna": {
+      "priority": 100,
+      "group": "international-deferred",
+      "reason": "Important modern saint, outside the Greek Orthodox portrait priority"
+    },
+    "olga-kwethluk": {
+      "priority": 120,
+      "group": "international-deferred",
+      "reason": "Recently glorified North American saint, outside the Greek Orthodox portrait priority"
+    },
+    "ioannis-kochurov": {
+      "priority": 120,
+      "group": "international-deferred",
+      "reason": "North American Orthodox significance, outside the Greek Orthodox portrait priority"
+    },
+    "rafael-brooklyn": {
+      "priority": 120,
+      "group": "international-deferred",
+      "reason": "North American Orthodox significance, outside the Greek Orthodox portrait priority"
+    },
+    "alexios-toth": {
+      "priority": 120,
+      "group": "international-deferred",
+      "reason": "North American Orthodox significance, outside the Greek Orthodox portrait priority"
+    },
+    "sofianos-antim": {
+      "priority": 110,
+      "group": "international-deferred",
+      "reason": "Recent Romanian canonization, outside the Greek Orthodox portrait priority"
+    },
+    "dimitrios-staniloae": {
+      "priority": 110,
+      "group": "international-deferred",
+      "reason": "Recent Romanian canonization, outside the Greek Orthodox portrait priority"
+    },
+    "konstantinos-sarbu": {
+      "priority": 110,
+      "group": "international-deferred",
+      "reason": "Recent Romanian canonization, outside the Greek Orthodox portrait priority"
+    },
+    "arsenios-prislop": {
+      "priority": 110,
+      "group": "international-deferred",
+      "reason": "Recent Romanian canonization, outside the Greek Orthodox portrait priority"
+    },
+    "ilias-lacatusu": {
+      "priority": 110,
+      "group": "international-deferred",
+      "reason": "Recent Romanian canonization, outside the Greek Orthodox portrait priority"
+    },
+    "paisios-sihastria": {
+      "priority": 110,
+      "group": "international-deferred",
+      "reason": "Recent Romanian canonization, outside the Greek Orthodox portrait priority"
+    },
+    "kleopas-sihastria": {
+      "priority": 110,
+      "group": "international-deferred",
+      "reason": "Recent Romanian canonization, outside the Greek Orthodox portrait priority"
+    },
+    "dometios-ramet": {
+      "priority": 110,
+      "group": "international-deferred",
+      "reason": "Recent Romanian canonization, outside the Greek Orthodox portrait priority"
+    },
+    "serafeim-sambata": {
+      "priority": 110,
+      "group": "international-deferred",
+      "reason": "Recent Romanian canonization, outside the Greek Orthodox portrait priority"
+    },
+    "livios-galaktion-klouz": {
+      "priority": 110,
+      "group": "international-deferred",
+      "reason": "Recent Romanian canonization, outside the Greek Orthodox portrait priority"
+    },
+    "gerasimos-tismana": {
+      "priority": 110,
+      "group": "international-deferred",
+      "reason": "Recent Romanian canonization, outside the Greek Orthodox portrait priority"
+    },
+    "vissarion-lainici": {
+      "priority": 110,
+      "group": "international-deferred",
+      "reason": "Recent Romanian canonization, outside the Greek Orthodox portrait priority"
+    },
+    "kallistratos-timiseni": {
+      "priority": 110,
+      "group": "international-deferred",
+      "reason": "Recent Romanian canonization, outside the Greek Orthodox portrait priority"
+    },
+    "ilarion-felea": {
+      "priority": 110,
+      "group": "international-deferred",
+      "reason": "Recent Romanian canonization, outside the Greek Orthodox portrait priority"
+    },
+    "irakleios-vissarabia": {
+      "priority": 110,
+      "group": "international-deferred",
+      "reason": "Recent Romanian canonization, outside the Greek Orthodox portrait priority"
+    },
+    "alexandros-vissarabia": {
+      "priority": 110,
+      "group": "international-deferred",
+      "reason": "Recent Romanian canonization, outside the Greek Orthodox portrait priority"
+    }
+  }
+}

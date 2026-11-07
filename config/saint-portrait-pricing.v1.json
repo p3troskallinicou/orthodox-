@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "pricingVersion": "openai-gpt-image-2-2026-04-21",
+  "lastVerifiedAt": "2026-07-29",
+  "source": "https://developers.openai.com/api/docs/pricing#image-generation",
+  "currency": "USD",
+  "model": "gpt-image-2",
+  "perMillionTokens": {
+    "imageInput": 8,
+    "cachedImageInput": 2,
+    "textInput": 5,
+    "cachedTextInput": 1.25,
+    "imageOutput": 30
+  },
+  "estimation": {
+    "textCharactersPerToken": 4,
+    "estimatedInputImageTokensEach": 1250,
+    "estimatedOutputTokensByQuality": {
+      "low": 1100,
+      "medium": 2500,
+      "high": 5200
+    },
+    "safetyMultiplier": 1.15,
+    "batchDiscountMultiplier": 0.5
+  },
+  "controls": {
+    "defaultHardCeilingUsd": 1,
+    "largeRunThreshold": 25,
+    "maximumAutomaticRetries": 0,
+    "rejectionCostWarningAttempts": 2
+  },
+  "warning": "Pricing and token estimates can change. Verify the official pricing page and update this versioned file before every production run."
+}

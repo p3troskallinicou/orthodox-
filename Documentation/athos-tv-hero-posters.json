@@ -1,0 +1,154 @@
+{
+  "project": "Klimax",
+  "feature": "Athos TV hero carousel",
+  "ratio": "2:3",
+  "size_px": [
+    1024,
+    1536
+  ],
+  "number_of_visible_series": 11,
+  "number_of_png_files": 11,
+  "posters": [
+    {
+      "visible_order": 1,
+      "series_title": "Οικογενειακός Καθρέφτης",
+      "original_catalog_rows": [
+        1
+      ],
+      "poster_file": "posters/family_mirror.png",
+      "xcode_suggested_asset": "AthosTVHeroFamilyMirror",
+      "width": 1024,
+      "height": 1536,
+      "sha256": "0e8ad66823d5e71498f0b84ff1ac8f0e9015f1825b0d2e84dd080a24e7e24163"
+    },
+    {
+      "visible_order": 2,
+      "series_title": "Άγιος Σιλουανός",
+      "original_catalog_rows": [
+        2
+      ],
+      "poster_file": "posters/saint_silouan.png",
+      "xcode_suggested_asset": "AthosTVHeroSaintSilouan",
+      "width": 1024,
+      "height": 1536,
+      "sha256": "6998458de28fa8468f8c9102d8ab2cf710d22babd2792c4616107bb3b7e97211"
+    },
+    {
+      "visible_order": 3,
+      "series_title": "Εις ίασιν ψυχής τε και σώματος",
+      "original_catalog_rows": [
+        3
+      ],
+      "poster_file": "posters/healing_soul_body.png",
+      "xcode_suggested_asset": "AthosTVHeroHealingSoulBody",
+      "width": 1024,
+      "height": 1536,
+      "sha256": "d7fd44c2a455c0946b7f580ef7811d1378a17ab3c2332ef2c33ff88328e6278b"
+    },
+    {
+      "visible_order": 4,
+      "series_title": "Αγιασμένων Μορφών Νοσταλγία",
+      "original_catalog_rows": [
+        4
+      ],
+      "poster_file": "posters/holy_figures_nostalgia.png",
+      "xcode_suggested_asset": "AthosTVHeroHolyFiguresNostalgia",
+      "width": 1024,
+      "height": 1536,
+      "sha256": "f06e22e0d9268d7dfb316a95f8be61148e8bf70865fb9d2aae56b28841842ae0"
+    },
+    {
+      "visible_order": 5,
+      "series_title": "Το Μυστήριο του Γάμου",
+      "original_catalog_rows": [
+        5
+      ],
+      "poster_file": "posters/marriage_sacrament.png",
+      "xcode_suggested_asset": "AthosTVHeroMarriageSacrament",
+      "width": 1024,
+      "height": 1536,
+      "sha256": "819efd050c2364032810361df4d018c4bd2c7517635d44988179b03ff9383fbb"
+    },
+    {
+      "visible_order": 6,
+      "series_title": "Ευαγγέλια Κυριακών",
+      "original_catalog_rows": [
+        6
+      ],
+      "poster_file": "posters/sunday_gospels.png",
+      "xcode_suggested_asset": "AthosTVHeroSundayGospels",
+      "width": 1024,
+      "height": 1536,
+      "sha256": "3023fcad8181db3fa6b49149ea8728894f16f07570f3a1f4b92fe9764034675e"
+    },
+    {
+      "visible_order": 7,
+      "series_title": "Κηρύγματα Μητροπολίτου Λεμεσού Αθανασίου",
+      "original_catalog_rows": [
+        7
+      ],
+      "poster_file": "posters/metropolitan_athanasios.png",
+      "xcode_suggested_asset": "AthosTVHeroMetropolitanAthanasios",
+      "width": 1024,
+      "height": 1536,
+      "sha256": "154cb8f59a23b43f314ad1ba3bb63c5bdd76a32daadc8429a3013c2bca4a5517"
+    },
+    {
+      "visible_order": 8,
+      "series_title": "Ομιλίες Μητροπολίτου Λεμεσού Αθανασίου (ζωντανές & βιντεοσκοπημένες)",
+      "original_catalog_rows": [
+        8,
+        10
+      ],
+      "poster_file": "posters/live_recorded_talks.png",
+      "xcode_suggested_asset": "AthosTVHeroLiveRecordedTalks",
+      "width": 1024,
+      "height": 1536,
+      "sha256": "d8f341689d0e573db4f9b92c16cbb38548a3bb176a7eaa6db05659a836210e8b"
+    },
+    {
+      "visible_order": 9,
+      "series_title": "Ερμηνεία των Ευαγγελίων",
+      "original_catalog_rows": [
+        9
+      ],
+      "poster_file": "posters/gospel_interpretation.png",
+      "xcode_suggested_asset": "AthosTVHeroGospelInterpretation",
+      "width": 1024,
+      "height": 1536,
+      "sha256": "627ea345df9d82b76ea04ef02f45401b337c5e0ab56f253330d7e155ee9b3a1c"
+    },
+    {
+      "visible_order": 10,
+      "series_title": "Επερώτησον τον Πατέρα σου",
+      "original_catalog_rows": [
+        13
+      ],
+      "poster_file": "posters/ask_your_father.png",
+      "xcode_suggested_asset": "AthosTVHeroAskYourFather",
+      "width": 1024,
+      "height": 1536,
+      "sha256": "9b3c5eb80bee508b6f7783d820fd16d4b8363ed3ac476762dce3c9f599861aa2"
+    },
+    {
+      "visible_order": 11,
+      "series_title": "Χριστώ τω Θεώ Παραθώμεθα",
+      "original_catalog_rows": [
+        14
+      ],
+      "poster_file": "posters/entrust_to_christ.png",
+      "xcode_suggested_asset": "AthosTVHeroEntrustToChrist",
+      "width": 1024,
+      "height": 1536,
+      "sha256": "38800c6943e1b8766a306e43ef63c663a90b6b59a8376596d30d15252f44a81d"
+    }
+  ],
+  "hidden_but_retained_catalog_rows": [
+    11,
+    12
+  ],
+  "shared_poster_rows": [
+    8,
+    10
+  ]
+}

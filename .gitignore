@@ -1,0 +1,52 @@
+# Local environment and secret files
+.env
+.env.local
+.env.*.local
+
+# Safe environment template
+!.env.example
+
+# Dependencies and temporary files
+node_modules/
+tmp/
+__pycache__/
+*.pyc
+.DS_Store
+
+# Local secrets
+.env
+.env.*
+!.env.example
+
+# Xcode build files
+DerivedData/
+build/
+*.xcuserstate
+xcuserdata/
+
+# Dependencies and temporary files
+node_modules/
+tmp/
+__pycache__/
+*.pyc
+.DS_Store
+
+# Local secrets
+.env
+.env.*
+!.env.example
+
+# Xcode build files
+DerivedData/
+build/
+*.xcuserstate
+xcuserdata/
+Klimax.zip
+
+# Backup and exported applications
+Klimax.zip
+*.ipa
+Klimax/Klimax 2026-07-26 22-43-27/
+
+# Personal Xcode settings
+xcuserdata/

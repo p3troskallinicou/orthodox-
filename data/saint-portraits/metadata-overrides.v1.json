@@ -1,0 +1,1364 @@
+{
+  "schemaVersion": 1,
+  "records": {
+    "antonios-megas": {
+      "identitySourceImagePath": "data/saint-portraits/identity-sources/antonios-megas_identity_wikimedia_cc-by-sa-4.0.jpg",
+      "identitySourceImageUrl": "https://upload.wikimedia.org/wikipedia/commons/9/97/Anthony_the_Great_icon_%28lebanon%29.jpg",
+      "identitySourcePageUrl": "https://commons.wikimedia.org/wiki/File:Anthony_the_Great_icon_(lebanon).jpg",
+      "identitySourceDirectAssetUrl": "https://upload.wikimedia.org/wikipedia/commons/9/97/Anthony_the_Great_icon_%28lebanon%29.jpg",
+      "identitySourceCreator": "Unknown 18th-century icon painter; source photograph uploaded by Michel Bakni",
+      "identitySourceLicence": "Creative Commons Attribution-ShareAlike 4.0 International",
+      "identitySourceInstitution": "Melkite Greek Catholic Archeparchy of Beirut and Byblos, Beirut, Lebanon",
+      "identitySourceAccessedAt": "2026-07-29",
+      "identitySourceChecksumSha256": "dfc20c956a8489bc3dd31d0c9d23785b9319d046f64f6e3c5bf5b63777a078cc",
+      "sourceLicenceOrRightsNotes": "The 18th-century icon is public-domain source art. The Wikimedia Commons digital file is credited to Michel Bakni and licensed CC BY-SA 4.0. Preserve attribution and share-alike obligations for this downloaded identity reference. It is an identity source only, not a Klimax style reference.",
+      "metadataSourceUrls": [
+        "https://www.goarch.org/chapel/saints?contentid=389",
+        "https://www.oca.org/saints/all-lives/1952/01/17",
+        "https://commons.wikimedia.org/wiki/File:Anthony_the_Great_icon_(lebanon).jpg"
+      ],
+      "metadataUncertaintyNotes": [
+        "The repository and ecclesiastical sources verify his advanced age and monastic role, but do not establish exact facial proportions.",
+        "The identity icon shows a small hand cross and a written scroll. The scroll and all writing are excluded from generation to comply with the locked no-text style."
+      ],
+      "traditionalPhysicalDescription": "Elderly Egyptian desert father with a long divided grey beard, calm attentive features, dark monastic clothing, and a blue-black monastic head covering, following the reviewed traditional identity icon.",
+      "approximateAgeCategory": "elderly",
+      "clothing": [
+        "plain dark brown or black monastic tunic",
+        "restrained dark monastic mantle",
+        "blue-black monastic head covering"
+      ],
+      "religiousRoleOrCategory": "Ὅσιος, desert father, and early Egyptian monastic",
+      "identifyingObjectsOrSymbols": [
+        "one small plain hand cross held in the right hand"
+      ],
+      "requiredVisualAttributes": [
+        "long divided grey beard",
+        "elderly ascetic face",
+        "plain dark monastic clothing",
+        "blue-black monastic head covering",
+        "one complete thin circular halo"
+      ],
+      "prohibitedOrUncertainAttributes": [
+        "no readable scroll or writing",
+        "no bishop vestments or episcopal insignia",
+        "no military clothing",
+        "no pig, bell, staff, or other Western attributes",
+        "no background architecture, desert scene, or additional figures"
+      ]
+    },
+    "vasileios": {
+      "identitySourceImagePath": "data/saint-portraits/identity-sources/vasileios_identity_wikimedia_public-domain.jpg",
+      "identitySourceImageUrl": "https://upload.wikimedia.org/wikipedia/commons/6/6c/Basil_of_Caesarea_icon.jpg",
+      "identitySourcePageUrl": "https://commons.wikimedia.org/wiki/File:Basil_of_Caesarea_icon.jpg",
+      "identitySourceDirectAssetUrl": "https://upload.wikimedia.org/wikipedia/commons/6/6c/Basil_of_Caesarea_icon.jpg",
+      "identitySourceCreator": "Unknown 18th-century icon painter",
+      "identitySourceLicence": "Public domain",
+      "identitySourceInstitution": "Wikimedia Commons",
+      "identitySourceAccessedAt": "2026-07-29",
+      "identitySourceChecksumSha256": "0b73db6dd4a4baaacd67f6ac83bce58318822912bd4c5243a18ec0fc8d9987d2",
+      "sourceLicenceOrRightsNotes": "The underlying 18th-century icon and its faithful reproduction are marked public domain on Wikimedia Commons. Identity reference only.",
+      "metadataSourceUrls": [
+        "https://www.oca.org/saints/lives/2026/01/01/100003-saint-basil-the-great-archbishop-of-caesarea-in-cappadocia",
+        "https://commons.wikimedia.org/wiki/File:Basil_of_Caesarea_icon.jpg"
+      ],
+      "metadataUncertaintyNotes": [
+        "Exact facial proportions are traditional rather than historical portrait evidence.",
+        "The source book contains decoration and writing that must not be reproduced."
+      ],
+      "traditionalPhysicalDescription": "Mature Cappadocian hierarch with a tall slender face, dark hair, and a long narrow dark beard, following the reviewed traditional identity icon.",
+      "approximateAgeCategory": "mature adult",
+      "clothing": [
+        "traditional Orthodox episcopal vestments",
+        "white omophorion with restrained dark cross motifs",
+        "deep red and dark green outer vestments"
+      ],
+      "religiousRoleOrCategory": "Ἱεράρχης and Church Father",
+      "identifyingObjectsOrSymbols": [
+        "one closed Gospel book held in the left hand",
+        "right hand raised in blessing"
+      ],
+      "requiredVisualAttributes": [
+        "long narrow dark beard",
+        "tall slender face",
+        "traditional episcopal vestments",
+        "one complete thin circular halo"
+      ],
+      "prohibitedOrUncertainAttributes": [
+        "no readable writing or inscriptions",
+        "no mitre or Western episcopal clothing",
+        "no scenery, throne, architecture, or additional figures"
+      ]
+    },
+    "grigorios-theologos": {
+      "identitySourceImagePath": "data/saint-portraits/identity-sources/grigorios-theologos_identity_wikimedia_public-domain.jpg",
+      "identitySourceImageUrl": "https://upload.wikimedia.org/wikipedia/commons/5/54/Gregory_of_Nazianzus_%281420s%2C_Sergiev_Posad%29.jpg",
+      "identitySourcePageUrl": "https://commons.wikimedia.org/wiki/File:Gregory_of_Nazianzus_(1420s,_Sergiev_Posad).jpg",
+      "identitySourceDirectAssetUrl": "https://upload.wikimedia.org/wikipedia/commons/5/54/Gregory_of_Nazianzus_%281420s%2C_Sergiev_Posad%29.jpg",
+      "identitySourceCreator": "Workshop of Daniel Chorny and Andrey Rublev",
+      "identitySourceLicence": "Public domain",
+      "identitySourceInstitution": "Trinity Cathedral of the Trinity Lavra of St Sergius",
+      "identitySourceAccessedAt": "2026-07-29",
+      "identitySourceChecksumSha256": "719d30d4bdbe93256b1749f55012959d154f9aceea842079051de62a72c98c1e",
+      "sourceLicenceOrRightsNotes": "The early 15th-century icon is marked public domain on Wikimedia Commons. Identity reference only.",
+      "metadataSourceUrls": [
+        "https://www.oca.org/saints/lives/2026/01/25/100298-saint-gregory-the-theologian-archbishop-of-constantinople",
+        "https://commons.wikimedia.org/wiki/File:Gregory_of_Nazianzus_(1420s,_Sergiev_Posad).jpg"
+      ],
+      "metadataUncertaintyNotes": [
+        "Exact facial proportions are traditional rather than historical portrait evidence.",
+        "Do not reproduce writing or decorative details from the source."
+      ],
+      "traditionalPhysicalDescription": "Elderly hierarch with a high balding forehead, short white hair at the sides, and a full pointed white beard, following the reviewed traditional identity icon.",
+      "approximateAgeCategory": "elderly",
+      "clothing": [
+        "traditional Orthodox episcopal vestments",
+        "white omophorion with restrained dark cross motifs",
+        "dark red and olive vestments"
+      ],
+      "religiousRoleOrCategory": "Ἱεράρχης, Theologian, and Church Father",
+      "identifyingObjectsOrSymbols": [
+        "one closed Gospel book",
+        "right hand raised in blessing"
+      ],
+      "requiredVisualAttributes": [
+        "high balding forehead",
+        "full pointed white beard",
+        "traditional episcopal vestments",
+        "one complete thin circular halo"
+      ],
+      "prohibitedOrUncertainAttributes": [
+        "no readable writing or scroll",
+        "no mitre or Western episcopal clothing",
+        "no scenery, throne, architecture, or additional figures"
+      ]
+    },
+    "ioannis-chrysostomos": {
+      "identitySourceImagePath": "data/saint-portraits/identity-sources/ioannis-chrysostomos_identity_wikimedia_public-domain.jpg",
+      "identitySourceImageUrl": "https://upload.wikimedia.org/wikipedia/commons/f/fe/John_Chrysostom_%28Dionisius%29.jpg",
+      "identitySourcePageUrl": "https://commons.wikimedia.org/wiki/File:John_Chrysostom_(Dionisius).jpg",
+      "identitySourceDirectAssetUrl": "https://upload.wikimedia.org/wikipedia/commons/f/fe/John_Chrysostom_%28Dionisius%29.jpg",
+      "identitySourceCreator": "Dionisius and workshop",
+      "identitySourceLicence": "Public domain",
+      "identitySourceInstitution": "Russian Museum",
+      "identitySourceAccessedAt": "2026-07-29",
+      "identitySourceChecksumSha256": "d05b2a410f400ac3edd9e21ff3a875d8825043c78288d4616ce7158039a29504",
+      "sourceLicenceOrRightsNotes": "The 1502 icon is marked public domain on Wikimedia Commons. Identity reference only.",
+      "metadataSourceUrls": [
+        "https://www.oca.org/saints/lives/2026/11/13/103292-saint-john-chrysostom-archbishop-of-constantinople",
+        "https://commons.wikimedia.org/wiki/File:John_Chrysostom_(Dionisius).jpg"
+      ],
+      "metadataUncertaintyNotes": [
+        "Exact facial proportions are traditional rather than historical portrait evidence.",
+        "Do not reproduce inscriptions or elaborate micro-ornament from the source."
+      ],
+      "traditionalPhysicalDescription": "Lean mature hierarch with a high forehead, receding dark hair, a short neat dark beard, and an attentive ascetic expression, following the reviewed traditional identity icon.",
+      "approximateAgeCategory": "mature adult",
+      "clothing": [
+        "traditional Orthodox episcopal vestments",
+        "white omophorion with restrained dark cross motifs",
+        "deep red and muted gold vestments"
+      ],
+      "religiousRoleOrCategory": "Ἱεράρχης and Church Father",
+      "identifyingObjectsOrSymbols": [
+        "one closed Gospel book",
+        "right hand raised in blessing"
+      ],
+      "requiredVisualAttributes": [
+        "high forehead and receding dark hair",
+        "short neat dark beard",
+        "lean ascetic face",
+        "one complete thin circular halo"
+      ],
+      "prohibitedOrUncertainAttributes": [
+        "no readable writing or inscriptions",
+        "no long beard",
+        "no mitre or Western episcopal clothing",
+        "no scenery, throne, architecture, or additional figures"
+      ]
+    },
+    "athanasios-megas": {
+      "identitySourceImagePath": "data/saint-portraits/identity-sources/athanasios-megas_identity_wikimedia_public-domain.jpg",
+      "identitySourceImageUrl": "https://upload.wikimedia.org/wikipedia/commons/3/30/Saint-Athanasius-of-Alexandria-icon-Sozopol-Bulgaria-17century.jpg",
+      "identitySourcePageUrl": "https://commons.wikimedia.org/wiki/File:Saint-Athanasius-of-Alexandria-icon-Sozopol-Bulgaria-17century.jpg",
+      "identitySourceDirectAssetUrl": "https://upload.wikimedia.org/wikipedia/commons/3/30/Saint-Athanasius-of-Alexandria-icon-Sozopol-Bulgaria-17century.jpg",
+      "identitySourceCreator": "Unknown 17th-century Bulgarian icon painter",
+      "identitySourceLicence": "Public domain",
+      "identitySourceInstitution": "National Art Gallery, Sofia",
+      "identitySourceAccessedAt": "2026-07-29",
+      "identitySourceChecksumSha256": "c49a79431e10e9856c78de0654da77390221b0f7bddd63ab6b01dbaca8185112",
+      "sourceLicenceOrRightsNotes": "The late 17th-century icon is marked public domain on Wikimedia Commons. Identity reference only.",
+      "metadataSourceUrls": [
+        "https://www.oca.org/saints/lives/2026/01/18/100226-saints-athanasius-and-cyril-archbishops-of-alexandria",
+        "https://commons.wikimedia.org/wiki/File:Saint-Athanasius-of-Alexandria-icon-Sozopol-Bulgaria-17century.jpg"
+      ],
+      "metadataUncertaintyNotes": [
+        "Exact facial proportions are traditional rather than historical portrait evidence.",
+        "The source contains inscriptions and a decorated book that must be simplified."
+      ],
+      "traditionalPhysicalDescription": "Elderly Alexandrian hierarch with short grey hair, a broad forehead, and a long divided white grey beard, following the reviewed traditional identity icon.",
+      "approximateAgeCategory": "elderly",
+      "clothing": [
+        "traditional Orthodox episcopal vestments",
+        "white omophorion with restrained dark cross motifs",
+        "muted burgundy and ochre vestments"
+      ],
+      "religiousRoleOrCategory": "Ἀρχιεπίσκοπος Ἀλεξανδρείας and Church Father",
+      "identifyingObjectsOrSymbols": [
+        "one closed Gospel book",
+        "right hand raised in blessing"
+      ],
+      "requiredVisualAttributes": [
+        "long divided white grey beard",
+        "broad elderly face",
+        "traditional episcopal vestments",
+        "one complete thin circular halo"
+      ],
+      "prohibitedOrUncertainAttributes": [
+        "no readable writing or inscriptions",
+        "no monastic hood",
+        "no mitre or Western episcopal clothing",
+        "no scenery, throne, architecture, or additional figures"
+      ]
+    },
+    "polykarposepiskopos": {
+      "identitySourceImagePath": "data/saint-portraits/identity-sources/polykarposepiskopos_identity_wikimedia_cc-by-sa-4.0.jpg",
+      "identitySourceImageUrl": "https://upload.wikimedia.org/wikipedia/commons/b/bb/Hosios_Loukas_%28diakonikon%29_-_Polycarp.jpg",
+      "identitySourcePageUrl": "https://commons.wikimedia.org/wiki/File:Hosios_Loukas_(diakonikon)_-_Polycarp.jpg",
+      "identitySourceDirectAssetUrl": "https://upload.wikimedia.org/wikipedia/commons/b/bb/Hosios_Loukas_%28diakonikon%29_-_Polycarp.jpg",
+      "identitySourceCreator": "Photograph by Shakko of the medieval mosaic at Hosios Loukas",
+      "identitySourceLicence": "Creative Commons Attribution-ShareAlike 4.0 International",
+      "identitySourceInstitution": "Monastery of Hosios Loukas, Boeotia, Greece",
+      "identitySourceAccessedAt": "2026-07-29",
+      "identitySourceChecksumSha256": "e96b9d71b9cef8c4ab5a80a337694d2b9f5315f106cc7cba346efe4474934f0d",
+      "sourceLicenceOrRightsNotes": "The Wikimedia Commons photograph is CC BY-SA 4.0. Preserve attribution and share-alike obligations for this downloaded identity reference. Identity reference only.",
+      "metadataSourceUrls": [
+        "https://www.oca.org/saints/lives/2026/02/23/100589-hieromartyr-polycarp-bishop-of-smyrna",
+        "https://commons.wikimedia.org/wiki/File:Hosios_Loukas_(diakonikon)_-_Polycarp.jpg"
+      ],
+      "metadataUncertaintyNotes": [
+        "Exact facial proportions are traditional rather than historical portrait evidence.",
+        "The source is a mosaic detail and does not establish lower vestment colours."
+      ],
+      "traditionalPhysicalDescription": "Elderly apostolic hierarch with short grey hair, a high forehead, and a neat pointed grey beard, following the reviewed Hosios Loukas mosaic.",
+      "approximateAgeCategory": "elderly",
+      "clothing": [
+        "simple traditional Orthodox episcopal vestments",
+        "white omophorion with restrained dark cross motifs",
+        "deep charcoal and muted ochre vestments"
+      ],
+      "religiousRoleOrCategory": "Ἱερομάρτυς and Bishop of Smyrna",
+      "identifyingObjectsOrSymbols": [
+        "one closed Gospel book"
+      ],
+      "requiredVisualAttributes": [
+        "short grey hair",
+        "neat pointed grey beard",
+        "elderly apostolic face",
+        "one complete thin circular halo"
+      ],
+      "prohibitedOrUncertainAttributes": [
+        "no readable writing or inscriptions",
+        "no flames or martyrdom scene",
+        "no mitre or Western episcopal clothing",
+        "no scenery, architecture, or additional figures"
+      ]
+    },
+    "efthymios-megas": {
+      "identitySourceImagePath": "data/saint-portraits/identity-sources/efthymios-megas_identity_wikimedia_public-domain.png",
+      "identitySourceImageUrl": "https://upload.wikimedia.org/wikipedia/commons/9/96/Euthymius_the_Great_%28Tzanes%29.png",
+      "identitySourcePageUrl": "https://commons.wikimedia.org/wiki/File:Euthymius_the_Great_(Tzanes).png",
+      "identitySourceDirectAssetUrl": "https://upload.wikimedia.org/wikipedia/commons/9/96/Euthymius_the_Great_%28Tzanes%29.png",
+      "identitySourceCreator": "Emmanuel Tzanes",
+      "identitySourceLicence": "Public domain",
+      "identitySourceInstitution": "Wikimedia Commons",
+      "identitySourceAccessedAt": "2026-07-29",
+      "identitySourceChecksumSha256": "fd552061cf311aa82d485e3d06b134747706d45e36d7dd1006e6ff183a7faf64",
+      "sourceLicenceOrRightsNotes": "The 17th-century icon is marked public domain on Wikimedia Commons. Identity reference only.",
+      "metadataSourceUrls": [
+        "https://www.oca.org/saints/lives/2026/01/20/100238-venerable-euthymius-the-great",
+        "https://commons.wikimedia.org/wiki/File:Euthymius_the_Great_(Tzanes).png"
+      ],
+      "metadataUncertaintyNotes": [
+        "Exact facial proportions are traditional rather than historical portrait evidence.",
+        "The source scroll, inscription, and small architecture are excluded."
+      ],
+      "traditionalPhysicalDescription": "Very elderly Palestinian desert father with a high forehead, sparse grey hair, and a very long narrow grey beard, following the reviewed traditional icon.",
+      "approximateAgeCategory": "elderly",
+      "clothing": [
+        "plain dark brown monastic tunic",
+        "restrained ochre monastic mantle",
+        "dark monastic schema"
+      ],
+      "religiousRoleOrCategory": "Ὅσιος and Palestinian desert father",
+      "identifyingObjectsOrSymbols": [
+        "right hand raised in blessing"
+      ],
+      "requiredVisualAttributes": [
+        "very long narrow grey beard",
+        "high forehead and sparse grey hair",
+        "plain monastic clothing",
+        "one complete thin circular halo"
+      ],
+      "prohibitedOrUncertainAttributes": [
+        "no readable scroll or writing",
+        "no bishop vestments or episcopal insignia",
+        "no architecture, landscape, or additional figures"
+      ]
+    },
+    "ioannis-klimakos": {
+      "identitySourceImagePath": "data/saint-portraits/identity-sources/ioannis-klimakos_identity_wikimedia_public-domain.jpg",
+      "identitySourceImageUrl": "https://upload.wikimedia.org/wikipedia/commons/0/01/John_Climacus.jpg",
+      "identitySourcePageUrl": "https://commons.wikimedia.org/wiki/File:John_Climacus.jpg",
+      "identitySourceDirectAssetUrl": "https://upload.wikimedia.org/wikipedia/commons/0/01/John_Climacus.jpg",
+      "identitySourceCreator": "Unknown Novgorod icon painter",
+      "identitySourceLicence": "Public domain",
+      "identitySourceInstitution": "State Russian Museum, Saint Petersburg",
+      "identitySourceAccessedAt": "2026-07-29",
+      "identitySourceChecksumSha256": "1015366da10b13f941a69a2c83154a9bde5edc3b226f97cd1c9e4dba777b32cf",
+      "sourceLicenceOrRightsNotes": "The medieval Novgorod icon detail is marked public domain on Wikimedia Commons. Identity reference only.",
+      "metadataSourceUrls": [
+        "https://www.oca.org/saints/lives/2026/03/30/100943-venerable-john-climacus-of-sinai-author-of-the-ladder",
+        "https://commons.wikimedia.org/wiki/File:John_Climacus.jpg"
+      ],
+      "metadataUncertaintyNotes": [
+        "Exact facial proportions are traditional rather than historical portrait evidence.",
+        "The decorated source book must be simplified and contain no writing."
+      ],
+      "traditionalPhysicalDescription": "Elderly Sinaite monk with a high forehead, short grey hair, and a long flowing white beard divided near the end, following the reviewed Novgorod icon.",
+      "approximateAgeCategory": "elderly",
+      "clothing": [
+        "plain dark burgundy monastic tunic",
+        "restrained dark brown monastic mantle"
+      ],
+      "religiousRoleOrCategory": "Ὅσιος, Sinaite abbot, and author of the Ladder",
+      "identifyingObjectsOrSymbols": [
+        "one simple closed book"
+      ],
+      "requiredVisualAttributes": [
+        "long flowing white beard",
+        "high forehead and short grey hair",
+        "plain monastic clothing",
+        "one complete thin circular halo"
+      ],
+      "prohibitedOrUncertainAttributes": [
+        "no readable writing or inscriptions",
+        "no literal ladder or miniature figures",
+        "no bishop vestments or episcopal insignia",
+        "no mountain, monastery, scenery, or additional figures"
+      ]
+    },
+    "efraim-syros": {
+      "identitySourceImagePath": "data/saint-portraits/identity-sources/efraim-syros_identity_wikimedia_cc-by-sa-1.0.jpg",
+      "identitySourceImageUrl": "https://upload.wikimedia.org/wikipedia/commons/c/cd/Ic%C3%B4ne_Ephrem_le_Syrien.jpg",
+      "identitySourcePageUrl": "https://commons.wikimedia.org/wiki/File:Ic%C3%B4ne_Ephrem_le_Syrien.jpg",
+      "identitySourceDirectAssetUrl": "https://upload.wikimedia.org/wikipedia/commons/c/cd/Ic%C3%B4ne_Ephrem_le_Syrien.jpg",
+      "identitySourceCreator": "Unnamed Romanian Orthodox nun near Oradea; photograph transferred from French Wikipedia",
+      "identitySourceLicence": "Creative Commons Attribution-ShareAlike 1.0",
+      "identitySourceInstitution": "Private Orthodox icon",
+      "identitySourceAccessedAt": "2026-07-29",
+      "identitySourceChecksumSha256": "941007833631a0807d122bea4a4ec7bdb49b8d074dcd8c303cc5ce4fe1a909a4",
+      "sourceLicenceOrRightsNotes": "The Wikimedia Commons file is CC BY-SA 1.0. Preserve attribution and share-alike obligations for this downloaded identity reference. Identity reference only.",
+      "metadataSourceUrls": [
+        "https://www.oca.org/saints/lives/2026/01/28/100336-venerable-ephraim-the-syrian",
+        "https://commons.wikimedia.org/wiki/File:Ic%C3%B4ne_Ephrem_le_Syrien.jpg"
+      ],
+      "metadataUncertaintyNotes": [
+        "Exact facial proportions are traditional rather than historical portrait evidence.",
+        "The source inscription and written scroll must not be reproduced."
+      ],
+      "traditionalPhysicalDescription": "Mature Syrian ascetic with a narrow weathered face, short dark grey beard, and a close muted blue grey monastic head covering, following the reviewed traditional identity icon.",
+      "approximateAgeCategory": "mature adult",
+      "clothing": [
+        "plain reddish brown monastic tunic",
+        "muted blue grey monastic mantle and head covering"
+      ],
+      "religiousRoleOrCategory": "Ὅσιος, Syrian deacon, hymnographer, and teacher of repentance",
+      "identifyingObjectsOrSymbols": [
+        "one simple closed book held low"
+      ],
+      "requiredVisualAttributes": [
+        "narrow weathered face",
+        "short dark grey beard",
+        "close blue grey monastic head covering",
+        "one complete thin circular halo"
+      ],
+      "prohibitedOrUncertainAttributes": [
+        "no readable scroll, book text, or inscription",
+        "no bishop vestments or episcopal insignia",
+        "no scenery, architecture, or additional figures"
+      ]
+    },
+    "maria-aigyptia": {
+      "identitySourceImagePath": "data/saint-portraits/identity-sources/maria-aigyptia_identity_wikimedia_public-domain.jpg",
+      "identitySourceImageUrl": "https://upload.wikimedia.org/wikipedia/commons/8/87/Icon_of_Mary_of_Egypt_%2819_c.%2C_Russia%29.jpg",
+      "identitySourcePageUrl": "https://commons.wikimedia.org/wiki/File:Icon_of_Mary_of_Egypt_(19_c.,_Russia).jpg",
+      "identitySourceDirectAssetUrl": "https://upload.wikimedia.org/wikipedia/commons/8/87/Icon_of_Mary_of_Egypt_%2819_c.%2C_Russia%29.jpg",
+      "identitySourceCreator": "Unknown 19th-century Russian icon painter",
+      "identitySourceLicence": "Public domain",
+      "identitySourceInstitution": "Wikimedia Commons",
+      "identitySourceAccessedAt": "2026-07-29",
+      "identitySourceChecksumSha256": "755377c65f22b5cb98abfe818c3a61958f96f3ac42967071f6c1814a4288e402",
+      "sourceLicenceOrRightsNotes": "The 19th-century icon is marked public domain on Wikimedia Commons. Identity reference only.",
+      "metadataSourceUrls": [
+        "https://www.oca.org/saints/lives/2026/04/01/100963-venerable-mary-of-egypt",
+        "https://commons.wikimedia.org/wiki/File:Icon_of_Mary_of_Egypt_(19_c.,_Russia).jpg"
+      ],
+      "metadataUncertaintyNotes": [
+        "The source is a narrative painting and does not establish exact garment construction.",
+        "Only Mary is to appear; the distant monastic figure and landscape are excluded."
+      ],
+      "traditionalPhysicalDescription": "Elderly, very lean desert ascetic woman with sun weathered features and long loose grey brown hair, following the reviewed traditional depiction.",
+      "approximateAgeCategory": "elderly",
+      "clothing": [
+        "simple dark weathered mantle covering the torso and shoulders"
+      ],
+      "religiousRoleOrCategory": "Ὁσία and desert ascetic",
+      "identifyingObjectsOrSymbols": [],
+      "requiredVisualAttributes": [
+        "very lean elderly ascetic face",
+        "long loose grey brown hair",
+        "simple modest dark mantle",
+        "one complete thin circular halo"
+      ],
+      "prohibitedOrUncertainAttributes": [
+        "no additional figures",
+        "no nudity",
+        "no desert landscape, river, bread, animals, or architecture",
+        "no readable writing or inscriptions"
+      ]
+    },
+    "serafeimsarof": {
+      "identitySourceImagePath": "data/saint-portraits/identity-sources/serafeimsarof_identity_wikimedia_public-domain.jpg",
+      "identitySourceImageUrl": "https://upload.wikimedia.org/wikipedia/commons/0/0e/Seraphim_of_Sarov_%28after_1903%2C_priv.coll%29.jpg",
+      "identitySourcePageUrl": "https://commons.wikimedia.org/wiki/File:Seraphim_of_Sarov_(after_1903,_priv.coll).jpg",
+      "identitySourceDirectAssetUrl": "https://upload.wikimedia.org/wikipedia/commons/0/0e/Seraphim_of_Sarov_%28after_1903%2C_priv.coll%29.jpg",
+      "identitySourceCreator": "Workshop of the Seraphim Diveyevo Monastery, attribution uncertain",
+      "identitySourceLicence": "Public domain",
+      "identitySourceInstitution": "Private collection",
+      "identitySourceAccessedAt": "2026-07-29",
+      "identitySourceChecksumSha256": "ef0c23b4673df71bceb793b77bea5462ac31e3386da26452b550f5f9e36a2a2e",
+      "sourceLicenceOrRightsNotes": "The post-1903 Russian icon is marked public domain on Wikimedia Commons. Identity reference only.",
+      "metadataSourceUrls": [
+        "https://www.oca.org/saints/lives/2026/01/02/100008-repose-of-the-venerable-seraphim-the-wonderworker-of-sarov",
+        "https://commons.wikimedia.org/wiki/File:Seraphim_of_Sarov_(after_1903,_priv.coll).jpg"
+      ],
+      "metadataUncertaintyNotes": [
+        "The source is posthumous traditional iconography informed by known likenesses.",
+        "The ornamental border and inscription are excluded."
+      ],
+      "traditionalPhysicalDescription": "Elderly Russian monastic with a broad gentle face, receding grey hair, and a full medium length white grey beard, following the reviewed traditional identity icon.",
+      "approximateAgeCategory": "elderly",
+      "clothing": [
+        "plain dark brown monastic tunic",
+        "restrained dark monastic mantle",
+        "simple light stole with minimal cross motifs"
+      ],
+      "religiousRoleOrCategory": "Ὅσιος and Russian monastic elder",
+      "identifyingObjectsOrSymbols": [
+        "right hand resting gently over the heart"
+      ],
+      "requiredVisualAttributes": [
+        "broad gentle elderly face",
+        "receding grey hair",
+        "full white grey beard",
+        "one complete thin circular halo"
+      ],
+      "prohibitedOrUncertainAttributes": [
+        "no readable writing or inscriptions",
+        "no ornate border",
+        "no bear, forest, rock, staff, or additional figures",
+        "no bishop vestments or episcopal insignia"
+      ]
+    },
+    "timotheosapostolos": {
+      "identitySourceImagePath": "data/saint-portraits/identity-sources/timotheosapostolos_identity_wikimedia_public-domain.jpg",
+      "identitySourceImageUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d2/Saint_Timothy.jpg",
+      "identitySourcePageUrl": "https://commons.wikimedia.org/wiki/File:Saint_Timothy.jpg",
+      "identitySourceDirectAssetUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d2/Saint_Timothy.jpg",
+      "identitySourceCreator": "Unknown Orthodox icon painter",
+      "identitySourceLicence": "Public domain",
+      "identitySourceInstitution": "Wikimedia Commons",
+      "identitySourceAccessedAt": "2026-07-29",
+      "identitySourceChecksumSha256": "d5a8fee8838867cc8bdd844cb9a6a51843089e9f5eec64fe1c0efb7f9060a97c",
+      "sourceLicenceOrRightsNotes": "The traditional icon is marked public domain on Wikimedia Commons. Identity reference only.",
+      "metadataSourceUrls": [
+        "https://www.oca.org/saints/lives/2026/01/22/100262-apostle-timothy-of-the-seventy",
+        "https://commons.wikimedia.org/wiki/File:Saint_Timothy.jpg"
+      ],
+      "metadataUncertaintyNotes": [
+        "Exact facial proportions are traditional rather than historical portrait evidence.",
+        "The source inscription and any writing on the Gospel must not be reproduced."
+      ],
+      "traditionalPhysicalDescription": "Young to mature apostolic bishop with short brown hair, a short neat brown beard, and calm attentive features, following the reviewed traditional identity icon.",
+      "approximateAgeCategory": "young to mature adult",
+      "clothing": [
+        "traditional Orthodox episcopal vestments",
+        "light omophorion with restrained dark cross motifs",
+        "deep red and ochre outer vestments"
+      ],
+      "religiousRoleOrCategory": "Ἀπόστολος of the Seventy and bishop of Ephesus",
+      "identifyingObjectsOrSymbols": [
+        "one closed Gospel book held at chest level",
+        "right hand raised in blessing"
+      ],
+      "requiredVisualAttributes": [
+        "short brown hair",
+        "short neat brown beard",
+        "youthful calm face",
+        "traditional episcopal vestments",
+        "one complete thin circular halo"
+      ],
+      "prohibitedOrUncertainAttributes": [
+        "no readable writing or inscriptions",
+        "no mitre or crown",
+        "no scenery, architecture, or additional figures"
+      ]
+    },
+    "onisimosapostolos": {
+      "identitySourceImagePath": "data/saint-portraits/identity-sources/onisimosapostolos_identity_wikimedia_public-domain.jpg",
+      "identitySourceImageUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f0/St.Onesimus.jpg",
+      "identitySourcePageUrl": "https://commons.wikimedia.org/wiki/File:St.Onesimus.jpg",
+      "identitySourceDirectAssetUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f0/St.Onesimus.jpg",
+      "identitySourceCreator": "Unknown Orthodox icon painter",
+      "identitySourceLicence": "Public domain",
+      "identitySourceInstitution": "Wikimedia Commons",
+      "identitySourceAccessedAt": "2026-07-29",
+      "identitySourceChecksumSha256": "845df8de3d711361c0b2e88e7467c8f910f74c659667cf8a39eba827c3d880f3",
+      "sourceLicenceOrRightsNotes": "The traditional icon is marked public domain on Wikimedia Commons. Identity reference only.",
+      "metadataSourceUrls": [
+        "https://www.oca.org/saints/lives/2026/02/15/100530-apostle-onesimus-of-the-seventy",
+        "https://commons.wikimedia.org/wiki/File:St.Onesimus.jpg"
+      ],
+      "metadataUncertaintyNotes": [
+        "Exact facial proportions are traditional rather than historical portrait evidence.",
+        "The source scroll and its writing are excluded."
+      ],
+      "traditionalPhysicalDescription": "Young to mature apostle with short dark brown hair, a short brown beard, and an open attentive expression, following the reviewed traditional identity icon.",
+      "approximateAgeCategory": "young to mature adult",
+      "clothing": [
+        "simple blue green tunic",
+        "deep red apostolic mantle"
+      ],
+      "religiousRoleOrCategory": "Ἀπόστολος of the Seventy and martyr",
+      "identifyingObjectsOrSymbols": [
+        "one small closed scroll held low"
+      ],
+      "requiredVisualAttributes": [
+        "short dark brown hair",
+        "short brown beard",
+        "red apostolic mantle",
+        "one complete thin circular halo"
+      ],
+      "prohibitedOrUncertainAttributes": [
+        "no readable scroll or inscription",
+        "no episcopal mitre or ornate court clothing",
+        "no chains, prison scene, architecture, or additional figures"
+      ]
+    },
+    "ilias": {
+      "identitySourceImagePath": "data/saint-portraits/identity-sources/ilias_identity_wikimedia_public-domain.jpg",
+      "identitySourceImageUrl": "https://upload.wikimedia.org/wikipedia/commons/8/8e/Elijah_Icon_Sinai_c1200.jpg",
+      "identitySourcePageUrl": "https://commons.wikimedia.org/wiki/File:Elijah_Icon_Sinai_c1200.jpg",
+      "identitySourceDirectAssetUrl": "https://upload.wikimedia.org/wikipedia/commons/8/8e/Elijah_Icon_Sinai_c1200.jpg",
+      "identitySourceCreator": "Unknown icon painter, circa 1200",
+      "identitySourceLicence": "Public domain",
+      "identitySourceInstitution": "Saint Catherine's Monastery, Sinai",
+      "identitySourceAccessedAt": "2026-07-29",
+      "identitySourceChecksumSha256": "6482f0fe00f3c212f6fa7fe33b709ef12aa460f5a53375a72f1803ab713d9208",
+      "sourceLicenceOrRightsNotes": "The circa 1200 Sinai icon and its reproduction are marked public domain on Wikimedia Commons. Identity reference only.",
+      "metadataSourceUrls": [
+        "https://www.oca.org/saints/lives/2026/07/20/102060-holy-glorious-prophet-elijah",
+        "https://commons.wikimedia.org/wiki/File:Elijah_Icon_Sinai_c1200.jpg"
+      ],
+      "metadataUncertaintyNotes": [
+        "The ancient icon establishes a traditional identity rather than exact historical portraiture.",
+        "Narrative attributes such as the fiery chariot, raven, cave, and landscape are excluded."
+      ],
+      "traditionalPhysicalDescription": "Elderly ascetic prophet with strong weathered features, long dark hair streaked with grey, and a full dark grey beard, following the reviewed Sinai icon.",
+      "approximateAgeCategory": "elderly",
+      "clothing": [
+        "plain muted green tunic",
+        "rough dark ochre brown prophetic mantle"
+      ],
+      "religiousRoleOrCategory": "Προφήτης",
+      "identifyingObjectsOrSymbols": [
+        "both hands raised quietly in prayer"
+      ],
+      "requiredVisualAttributes": [
+        "elderly weathered face",
+        "long dark grey hair",
+        "full dark grey beard",
+        "rough prophetic mantle",
+        "one complete thin circular halo"
+      ],
+      "prohibitedOrUncertainAttributes": [
+        "no fiery chariot, flames, raven, cave, landscape, or architecture",
+        "no sword, crown, or military clothing",
+        "no readable writing or additional figures"
+      ]
+    },
+    "moysis": {
+      "identitySourceImagePath": "data/saint-portraits/identity-sources/moysis_identity_wikimedia_public-domain.jpg",
+      "identitySourceImageUrl": "https://upload.wikimedia.org/wikipedia/commons/1/1a/Moses_Icon_Sinai_13th_century_detail.jpg",
+      "identitySourcePageUrl": "https://commons.wikimedia.org/wiki/File:Moses_Icon_Sinai_13th_century_detail.jpg",
+      "identitySourceDirectAssetUrl": "https://upload.wikimedia.org/wikipedia/commons/1/1a/Moses_Icon_Sinai_13th_century_detail.jpg",
+      "identitySourceCreator": "Unknown 13th-century icon painter",
+      "identitySourceLicence": "Public domain",
+      "identitySourceInstitution": "Saint Catherine's Monastery, Sinai",
+      "identitySourceAccessedAt": "2026-07-29",
+      "identitySourceChecksumSha256": "9be628b83d5f6f0a91c18e697809322cbf1301554d7b75caf87b8c06f865aefc",
+      "sourceLicenceOrRightsNotes": "The 13th-century Sinai icon and its reproduction are marked public domain on Wikimedia Commons. Identity reference only.",
+      "metadataSourceUrls": [
+        "https://www.oca.org/saints/lives/2026/09/04/102490-holy-prophet-and-god-seer-moses",
+        "https://commons.wikimedia.org/wiki/File:Moses_Icon_Sinai_13th_century_detail.jpg"
+      ],
+      "metadataUncertaintyNotes": [
+        "The Sinai detail is a traditional sacred depiction and not historical portrait evidence.",
+        "The tablets and narrative scenes are omitted to keep the portrait focused and text free."
+      ],
+      "traditionalPhysicalDescription": "Mature prophet with a broad austere face, thick tousled dark hair, and a sparse short dark beard, following the reviewed Sinai icon.",
+      "approximateAgeCategory": "mature adult",
+      "clothing": [
+        "plain muted blue green tunic",
+        "restrained ochre brown prophetic mantle"
+      ],
+      "religiousRoleOrCategory": "Προφήτης and God seer",
+      "identifyingObjectsOrSymbols": [
+        "right hand raised in a restrained gesture of attention"
+      ],
+      "requiredVisualAttributes": [
+        "broad austere mature face",
+        "thick tousled dark hair",
+        "sparse short dark beard",
+        "one complete thin circular halo"
+      ],
+      "prohibitedOrUncertainAttributes": [
+        "no horns or rays emerging from the head",
+        "no readable tablets, scroll, or inscription",
+        "no burning bush, mountain, landscape, architecture, or additional figures"
+      ]
+    },
+    "isaias": {
+      "identitySourceImagePath": "data/saint-portraits/identity-sources/isaias_identity_wikimedia_public-domain.png",
+      "identitySourceImageUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d7/Isaias_the_Prophet_%28SM_4306z%29.png",
+      "identitySourcePageUrl": "https://commons.wikimedia.org/wiki/File:Isaias_the_Prophet_(SM_4306z).png",
+      "identitySourceDirectAssetUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d7/Isaias_the_Prophet_%28SM_4306z%29.png",
+      "identitySourceCreator": "Unknown historical artist; museum open access reproduction",
+      "identitySourceLicence": "Public Domain Mark",
+      "identitySourceInstitution": "Städel Museum",
+      "identitySourceAccessedAt": "2026-07-29",
+      "identitySourceChecksumSha256": "76210a396c35b3e83e222e66b1a2722a511aff7ad9edb365b0fc2f43e0ee9f9d",
+      "sourceLicenceOrRightsNotes": "The museum reproduction is supplied with a Public Domain Mark on Wikimedia Commons. It is used only as an identity and age reference.",
+      "metadataSourceUrls": [
+        "https://www.oca.org/saints/lives/2026/05/09/101331-prophet-isaiah",
+        "https://commons.wikimedia.org/wiki/File:Isaias_the_Prophet_(SM_4306z).png"
+      ],
+      "metadataUncertaintyNotes": [
+        "The Western museum work is used only for age, beard, and prophetic identity, not for composition or style.",
+        "Any writing, architectural setting, or seated narrative pose is excluded."
+      ],
+      "traditionalPhysicalDescription": "Elderly prophet with a long narrow face, receding grey hair, and a long flowing grey beard, translated into the locked Orthodox portrait style.",
+      "approximateAgeCategory": "elderly",
+      "clothing": [
+        "plain muted blue tunic",
+        "deep ochre and burgundy prophetic mantle"
+      ],
+      "religiousRoleOrCategory": "Προφήτης",
+      "identifyingObjectsOrSymbols": [
+        "one closed uninscribed scroll held low"
+      ],
+      "requiredVisualAttributes": [
+        "long narrow elderly face",
+        "receding grey hair",
+        "long flowing grey beard",
+        "one complete thin circular halo"
+      ],
+      "prohibitedOrUncertainAttributes": [
+        "no readable scroll, book, or inscription",
+        "no throne, architecture, landscape, or additional figures",
+        "no Western Renaissance costume or dramatic seated pose"
+      ]
+    },
+    "ieremias": {
+      "identitySourceImagePath": "data/saint-portraits/identity-sources/ieremias_identity_met_cc0.jpg",
+      "identitySourceImageUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b1/The_Prophet_Jeremiah%2C_from_the_series_of_Prophets_and_Sibyls_in_the_Sistine_Chapel_MET_DP821566.jpg",
+      "identitySourcePageUrl": "https://commons.wikimedia.org/wiki/File:The_Prophet_Jeremiah,_from_the_series_of_Prophets_and_Sibyls_in_the_Sistine_Chapel_MET_DP821566.jpg",
+      "identitySourceDirectAssetUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b1/The_Prophet_Jeremiah%2C_from_the_series_of_Prophets_and_Sibyls_in_the_Sistine_Chapel_MET_DP821566.jpg",
+      "identitySourceCreator": "Giorgio Ghisi after Michelangelo",
+      "identitySourceLicence": "CC0 1.0 Universal",
+      "identitySourceInstitution": "The Metropolitan Museum of Art",
+      "identitySourceAccessedAt": "2026-07-29",
+      "identitySourceChecksumSha256": "25eff8a8dd7510fccbdff45911ae7d873d882837a4bc8bec869c0f6f5630d59c",
+      "sourceLicenceOrRightsNotes": "The Metropolitan Museum of Art Open Access image is released under CC0. It is used only as an identity and age reference.",
+      "metadataSourceUrls": [
+        "https://www.oca.org/saints/lives/2026/05/01/101240-prophet-jeremiah",
+        "https://commons.wikimedia.org/wiki/File:The_Prophet_Jeremiah,_from_the_series_of_Prophets_and_Sibyls_in_the_Sistine_Chapel_MET_DP821566.jpg"
+      ],
+      "metadataUncertaintyNotes": [
+        "The Western print is used only for the elderly sorrowful physiognomy and prophetic identity.",
+        "The seated composition and surrounding figures are excluded."
+      ],
+      "traditionalPhysicalDescription": "Elderly sorrowful prophet with a broad lined forehead, thinning grey hair, and a long full grey beard, translated into the locked Orthodox portrait style.",
+      "approximateAgeCategory": "elderly",
+      "clothing": [
+        "plain deep green tunic",
+        "muted burgundy and ochre prophetic mantle"
+      ],
+      "religiousRoleOrCategory": "Προφήτης",
+      "identifyingObjectsOrSymbols": [
+        "one hand resting quietly near the chest"
+      ],
+      "requiredVisualAttributes": [
+        "elderly contemplative face",
+        "broad lined forehead",
+        "long full grey beard",
+        "one complete thin circular halo"
+      ],
+      "prohibitedOrUncertainAttributes": [
+        "no readable writing or inscriptions",
+        "no throne, architecture, landscape, or additional figures",
+        "no exaggerated despair or theatrical Western pose"
+      ]
+    },
+    "daniil": {
+      "identitySourceImagePath": "data/saint-portraits/identity-sources/daniil_identity_wikimedia_cc0.jpg",
+      "identitySourceImageUrl": "https://upload.wikimedia.org/wikipedia/commons/7/75/Prophet_Daniel_%D0%BF%D1%80%D0%BE%D1%80%D0%BE%D0%BA_%D0%94%D0%B0%D0%BD%D0%B8%D0%B8%D0%BB.jpg",
+      "identitySourcePageUrl": "https://commons.wikimedia.org/wiki/File:Prophet_Daniel_%D0%BF%D1%80%D0%BE%D1%80%D0%BE%D0%BA_%D0%94%D0%B0%D0%BD%D0%B8%D0%B8%D0%BB.jpg",
+      "identitySourceDirectAssetUrl": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Prophet_Daniel_%D0%BF%D1%80%D0%BE%D1%80%D0%BE%D0%BA_%D0%94%D0%B0%D0%BD%D0%B8%D0%B8%D0%BB.jpg",
+      "identitySourceCreator": "PravoslavnyChristianin",
+      "identitySourceLicence": "CC0 1.0 Universal",
+      "identitySourceInstitution": "Wikimedia Commons",
+      "identitySourceAccessedAt": "2026-07-29",
+      "identitySourceChecksumSha256": "c6c525afc1b11d294b8ceec25bae3028cacf1ba9fe4daacf84d08d106a26d60f",
+      "sourceLicenceOrRightsNotes": "The identity reference is released under CC0 on Wikimedia Commons.",
+      "metadataSourceUrls": [
+        "https://www.oca.org/saints/lives/2026/12/17/103559-prophet-daniel",
+        "https://commons.wikimedia.org/wiki/File:Prophet_Daniel_%D0%BF%D1%80%D0%BE%D1%80%D0%BE%D0%BA_%D0%94%D0%B0%D0%BD%D0%B8%D0%B8%D0%BB.jpg"
+      ],
+      "metadataUncertaintyNotes": [
+        "Exact facial proportions are traditional rather than historical portrait evidence.",
+        "Any source inscription and architectural ornament are excluded."
+      ],
+      "traditionalPhysicalDescription": "Youthful beardless prophet with a slender face, large attentive eyes, and short curly dark hair beneath a restrained red cap, following the reviewed traditional identity image.",
+      "approximateAgeCategory": "young adult",
+      "clothing": [
+        "deep blue green tunic",
+        "restrained red and ochre mantle",
+        "small plain red prophetic cap"
+      ],
+      "religiousRoleOrCategory": "Προφήτης",
+      "identifyingObjectsOrSymbols": [
+        "one closed uninscribed scroll held low"
+      ],
+      "requiredVisualAttributes": [
+        "youthful beardless face",
+        "short curly dark hair",
+        "small restrained red cap",
+        "one complete thin circular halo"
+      ],
+      "prohibitedOrUncertainAttributes": [
+        "no lions, den, palace, architecture, or additional figures",
+        "no readable scroll or inscription",
+        "no ornate royal crown or jeweled costume"
+      ]
+    },
+    "ioannis-prodromos": {
+      "identitySourceImagePath": "data/saint-portraits/identity-sources/ioannis-prodromos_identity_wikimedia_public-domain.jpg",
+      "identitySourceImageUrl": "https://upload.wikimedia.org/wikipedia/commons/8/85/Saint_John_the_Baptist.JPG",
+      "identitySourcePageUrl": "https://commons.wikimedia.org/wiki/File:Saint_John_the_Baptist.JPG",
+      "identitySourceDirectAssetUrl": "https://upload.wikimedia.org/wikipedia/commons/8/85/Saint_John_the_Baptist.JPG",
+      "identitySourceCreator": "Roman Zacharij",
+      "identitySourceLicence": "Public domain dedication",
+      "identitySourceInstitution": "Wikimedia Commons",
+      "identitySourceAccessedAt": "2026-07-29",
+      "identitySourceChecksumSha256": "19a49e41b5d744955fc873c54921ad74c9d2844c60164fdd977f52c10ff546a2",
+      "sourceLicenceOrRightsNotes": "The uploader dedicated the image to the public domain on Wikimedia Commons. Identity reference only.",
+      "metadataSourceUrls": [
+        "https://www.oca.org/saints/lives/2026/01/07/100109-synaxis-of-the-holy-glorious-prophet-forerunner-and-baptist-john",
+        "https://commons.wikimedia.org/wiki/File:Saint_John_the_Baptist.JPG"
+      ],
+      "metadataUncertaintyNotes": [
+        "Exact facial proportions are traditional rather than historical portrait evidence.",
+        "Narrative details, wings, severed head imagery, and written scrolls are excluded."
+      ],
+      "traditionalPhysicalDescription": "Lean mature desert ascetic with a narrow weathered face, long wavy dark brown hair, and a long sparse dark beard, following the reviewed traditional identity image.",
+      "approximateAgeCategory": "mature adult",
+      "clothing": [
+        "rough dark brown camel hair garment",
+        "restrained deep green mantle"
+      ],
+      "religiousRoleOrCategory": "Προφήτης, Πρόδρομος, and Βαπτιστής",
+      "identifyingObjectsOrSymbols": [
+        "right hand raised in a restrained gesture of witness"
+      ],
+      "requiredVisualAttributes": [
+        "lean weathered ascetic face",
+        "long wavy dark brown hair",
+        "long sparse dark beard",
+        "rough camel hair garment",
+        "one complete thin circular halo"
+      ],
+      "prohibitedOrUncertainAttributes": [
+        "no wings or angelic costume",
+        "no severed head, platter, river, cross staff, landscape, or additional figures",
+        "no readable scroll or inscription"
+      ]
+    },
+    "nikolaos": {
+      "identitySourceImagePath": "data/saint-portraits/identity-sources/nikolaos_identity_wikimedia_public-domain.jpg",
+      "identitySourceImageUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f1/Icon_with_Saint_Nicholas.jpg",
+      "identitySourcePageUrl": "https://commons.wikimedia.org/wiki/File:Icon_with_Saint_Nicholas.jpg",
+      "identitySourceDirectAssetUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f1/Icon_with_Saint_Nicholas.jpg",
+      "identitySourceCreator": "Unknown 15th-century icon painter",
+      "identitySourceLicence": "Public domain dedication",
+      "identitySourceInstitution": "Byzantine and Christian Museum, Athens; provenance Berroia",
+      "identitySourceAccessedAt": "2026-07-29",
+      "identitySourceChecksumSha256": "6b572f14098612e393bf3cbdd55827d62f21612e5572331926031daf239d4049",
+      "sourceLicenceOrRightsNotes": "The 15th-century icon is public domain and the uploader dedicated the digital file to the public domain. Identity reference only.",
+      "metadataSourceUrls": [
+        "https://www.oca.org/saints/lives/2026/12/06/103484-saint-nicholas-the-wonderworker-archbishop-of-myra-in-lycia",
+        "https://commons.wikimedia.org/wiki/File:Icon_with_Saint_Nicholas.jpg"
+      ],
+      "metadataUncertaintyNotes": [
+        "Exact facial proportions are traditional rather than historical portrait evidence.",
+        "The source inscription and book writing are excluded."
+      ],
+      "traditionalPhysicalDescription": "Elderly hierarch with a high broad forehead, receding white hair, a short rounded white beard, and firm compassionate features, following the reviewed traditional icon.",
+      "approximateAgeCategory": "elderly",
+      "clothing": [
+        "traditional Orthodox episcopal vestments",
+        "light omophorion with restrained dark cross motifs",
+        "deep red and ochre outer vestments"
+      ],
+      "religiousRoleOrCategory": "Ἱεράρχης and wonderworker",
+      "identifyingObjectsOrSymbols": [
+        "one closed Gospel book held in the left hand",
+        "right hand raised in blessing"
+      ],
+      "requiredVisualAttributes": [
+        "high broad forehead",
+        "receding white hair",
+        "short rounded white beard",
+        "traditional episcopal vestments",
+        "one complete thin circular halo"
+      ],
+      "prohibitedOrUncertainAttributes": [
+        "no mitre, Santa Claus clothing, gifts, children, ship, or coins",
+        "no readable book text or inscription",
+        "no architecture or additional figures"
+      ]
+    },
+    "spyridon": {
+      "identitySourceImagePath": "data/saint-portraits/identity-sources/spyridon_identity_wikimedia_public-domain.jpg",
+      "identitySourceImageUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a0/Saint_Spyridon_icon.jpg",
+      "identitySourcePageUrl": "https://commons.wikimedia.org/wiki/File:Saint_Spyridon_icon.jpg",
+      "identitySourceDirectAssetUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a0/Saint_Spyridon_icon.jpg",
+      "identitySourceCreator": "Unknown 17th-century icon painter; digital file uploaded by Michel Bakni",
+      "identitySourceLicence": "Public domain underlying work",
+      "identitySourceInstitution": "Basilian Aleppian Order, Melkite Greek Catholic Church",
+      "identitySourceAccessedAt": "2026-07-29",
+      "identitySourceChecksumSha256": "843812fbca25b35d583cc7a96eea50ba62486fe2c2cfc5217a0e4aa2ea502d2a",
+      "sourceLicenceOrRightsNotes": "The underlying 17th-century icon is public domain according to the Wikimedia Commons file page. Preserve the page attribution for the digital reference. Identity reference only.",
+      "metadataSourceUrls": [
+        "https://www.oca.org/saints/lives/2026/12/12/103516-saint-spyridon-the-wonderworker-bishop-of-tremithus",
+        "https://commons.wikimedia.org/wiki/File:Saint_Spyridon_icon.jpg"
+      ],
+      "metadataUncertaintyNotes": [
+        "Exact facial proportions are traditional rather than historical portrait evidence.",
+        "The seated pose, source inscription, and narrative setting are excluded."
+      ],
+      "traditionalPhysicalDescription": "Elderly Cypriot hierarch with a warm lined face, a full dark grey beard, and the distinctive simple woven shepherd's cap, following the reviewed traditional icon.",
+      "approximateAgeCategory": "elderly",
+      "clothing": [
+        "traditional Orthodox episcopal vestments",
+        "light omophorion with restrained dark cross motifs",
+        "simple woven shepherd's cap"
+      ],
+      "religiousRoleOrCategory": "Ἱεράρχης and wonderworker",
+      "identifyingObjectsOrSymbols": [
+        "one closed Gospel book held low",
+        "right hand raised in blessing"
+      ],
+      "requiredVisualAttributes": [
+        "elderly warm lined face",
+        "full dark grey beard",
+        "distinctive simple woven shepherd's cap",
+        "traditional episcopal vestments",
+        "one complete thin circular halo"
+      ],
+      "prohibitedOrUncertainAttributes": [
+        "no mitre or jeweled crown",
+        "no brick, flame, water, snake, pottery, architecture, or additional figures",
+        "no readable book text or inscription"
+      ]
+    },
+    "porfyrios": {
+      "identitySourceImagePath": "data/saint-portraits/identity-sources/modern-redo-v2/porfyrios_icon_saintgr.jpg",
+      "identitySourceImageUrl": "https://1.bp.blogspot.com/-C4XO6KvPzdU/Us8ncPdv1AI/AAAAAAAABFs/2lYOyueHsgI/s1600/Agios_Porphyrios.jpg",
+      "identitySourceDirectAssetUrl": "https://1.bp.blogspot.com/-C4XO6KvPzdU/Us8ncPdv1AI/AAAAAAAABFs/2lYOyueHsgI/s1600/Agios_Porphyrios.jpg",
+      "identitySourceCreator": "Unknown Orthodox icon painter",
+      "identitySourceLicence": "No redistribution licence identified",
+      "identitySourceInstitution": "Identity icon linked by saint.gr",
+      "identitySourceAccessedAt": "2026-07-29",
+      "identitySourceChecksumSha256": "68468fbeeefec6bc30cc99c0b2f3c2d5da5f316f69e5cc4562ac798fe6a8ebfd",
+      "sourceLicenceOrRightsNotes": "Web published Orthodox icon retained only as an internal identity reference. It is not redistributed as an application asset. The approved application portrait is a newly generated and substantially transformed illustration.",
+      "metadataSourceUrls": [
+        "https://www.saint.gr"
+      ],
+      "metadataUncertaintyNotes": [
+        "Exact facial proportions follow the reviewed identity icon.",
+        "All source inscriptions and scroll writing are excluded."
+      ],
+      "traditionalPhysicalDescription": "Elderly Greek monk with a kind lined face, direct gaze, and a long full white beard.",
+      "approximateAgeCategory": "elderly",
+      "clothing": [
+        "black monastic kalimavkion and veil",
+        "plain black monastic mantle",
+        "small pectoral cross"
+      ],
+      "religiousRoleOrCategory": "Ὅσιος and Athonite elder",
+      "identifyingObjectsOrSymbols": [
+        "walking staff in the right hand",
+        "unwritten scroll in the left hand"
+      ],
+      "requiredVisualAttributes": [
+        "kind elderly face",
+        "long full white beard",
+        "black monastic head covering",
+        "walking staff and blank scroll",
+        "one complete thin circular halo"
+      ],
+      "prohibitedOrUncertainAttributes": [
+        "no readable writing or inscriptions",
+        "no bishop vestments",
+        "no scenery or additional figures"
+      ]
+    },
+    "nektarios": {
+      "identitySourceImagePath": "data/saint-portraits/identity-sources/modern-redo-v2/nektarios_icon_iporta.jpg",
+      "identitySourceImageUrl": "https://iporta.gr/wp-content/uploads/2020/11/agios-nektarios-3.jpg",
+      "identitySourceDirectAssetUrl": "https://iporta.gr/wp-content/uploads/2020/11/agios-nektarios-3.jpg",
+      "identitySourceCreator": "Unknown Orthodox icon painter",
+      "identitySourceLicence": "No redistribution licence identified",
+      "identitySourceInstitution": "iporta.gr",
+      "identitySourceAccessedAt": "2026-07-29",
+      "identitySourceChecksumSha256": "859a85a2bb2c0b47f29b1d80483ecd86b7a819795ab3cb4bdd6e1a1c7795f61d",
+      "sourceLicenceOrRightsNotes": "Web published Orthodox icon retained only as an internal identity reference. It is not redistributed as an application asset. The approved application portrait is a newly generated and substantially transformed illustration.",
+      "metadataSourceUrls": [
+        "https://www.saint.gr",
+        "https://iporta.gr/wp-content/uploads/2020/11/agios-nektarios-3.jpg"
+      ],
+      "metadataUncertaintyNotes": [
+        "Exact facial proportions follow the reviewed identity icon.",
+        "Applied gems, glare, inscriptions, and book writing are excluded."
+      ],
+      "traditionalPhysicalDescription": "Elderly Greek hierarch with a calm frontal gaze and a long grey white beard.",
+      "approximateAgeCategory": "elderly",
+      "clothing": [
+        "black episcopal head covering and veil",
+        "traditional Orthodox episcopal vestments",
+        "white omophorion with dark red crosses"
+      ],
+      "religiousRoleOrCategory": "Ἱεράρχης and wonderworker",
+      "identifyingObjectsOrSymbols": [
+        "decorated closed Gospel book in the left hand",
+        "right hand raised in blessing"
+      ],
+      "requiredVisualAttributes": [
+        "long grey white beard",
+        "black episcopal head covering",
+        "cross patterned omophorion",
+        "Gospel and blessing hand",
+        "one complete thin circular halo"
+      ],
+      "prohibitedOrUncertainAttributes": [
+        "no readable writing or inscriptions",
+        "no mitre",
+        "no scenery or additional figures"
+      ]
+    },
+    "iakovostheoforos": {
+      "identitySourceImagePath": "data/saint-portraits/identity-sources/modern-redo-v2/iakovostheoforos_icon_monastiriaka.jpg",
+      "identitySourceImageUrl": "https://www.monastiriaka.gr/images/styles/original/agiografia-agios-iakovos-tsalikis.jpg",
+      "identitySourceDirectAssetUrl": "https://www.monastiriaka.gr/images/styles/original/agiografia-agios-iakovos-tsalikis.jpg",
+      "identitySourceCreator": "Unknown Orthodox icon painter",
+      "identitySourceLicence": "No redistribution licence identified",
+      "identitySourceInstitution": "Monastiriaka",
+      "identitySourceAccessedAt": "2026-07-29",
+      "identitySourceChecksumSha256": "8dd2cd2de489d25c95d3e54dbf0d45d90ba50a250f256d8c15edd416d429a0e8",
+      "sourceLicenceOrRightsNotes": "Web published Orthodox icon retained only as an internal identity reference. It is not redistributed as an application asset. The approved application portrait is a newly generated and substantially transformed illustration.",
+      "metadataSourceUrls": [
+        "https://www.saint.gr",
+        "https://www.monastiriaka.gr/images/styles/original/agiografia-agios-iakovos-tsalikis.jpg"
+      ],
+      "metadataUncertaintyNotes": [
+        "Exact facial proportions and the slim liturgical attribute follow the reviewed identity icon.",
+        "All source inscriptions and framing are excluded."
+      ],
+      "traditionalPhysicalDescription": "Slender elderly Greek abbot with attentive eyes and a long flowing white beard.",
+      "approximateAgeCategory": "elderly",
+      "clothing": [
+        "black monastic kalimavkion and veil",
+        "blue grey monastic mantle",
+        "large pectoral cross"
+      ],
+      "religiousRoleOrCategory": "Ὅσιος and abbot",
+      "identifyingObjectsOrSymbols": [
+        "right hand raised in blessing",
+        "slim feather shaped liturgical fan or staff in the left hand"
+      ],
+      "requiredVisualAttributes": [
+        "slender elderly face",
+        "long flowing white beard",
+        "blue grey monastic mantle",
+        "pectoral cross and slim staff",
+        "one complete thin circular halo"
+      ],
+      "prohibitedOrUncertainAttributes": [
+        "no readable writing or inscriptions",
+        "no bishop vestments",
+        "no scenery or additional figures"
+      ]
+    },
+    "efraimkatoynakiotis": {
+      "identitySourceImagePath": "data/saint-portraits/identity-sources/modern-redo-v2/efraimkatoynakiotis_icon_saintgr.jpg",
+      "identitySourceImageUrl": "https://files.saint.gr/filesnew/09/4460/photos/OsiosEfraimKatounakiotis37.jpg",
+      "identitySourceDirectAssetUrl": "https://files.saint.gr/filesnew/09/4460/photos/OsiosEfraimKatounakiotis37.jpg",
+      "identitySourceCreator": "Unknown Orthodox icon painter",
+      "identitySourceLicence": "No redistribution licence identified",
+      "identitySourceInstitution": "saint.gr",
+      "identitySourceAccessedAt": "2026-07-29",
+      "identitySourceChecksumSha256": "369fa2bb098ad43e8103717c43f60d4d2d626afbe75582071b212c477fd1138e",
+      "sourceLicenceOrRightsNotes": "Web published Orthodox icon retained only as an internal identity reference. It is not redistributed as an application asset. The approved application portrait is a newly generated and substantially transformed illustration.",
+      "metadataSourceUrls": [
+        "https://www.saint.gr",
+        "https://files.saint.gr/filesnew/09/4460/photos/OsiosEfraimKatounakiotis37.jpg"
+      ],
+      "metadataUncertaintyNotes": [
+        "Exact facial proportions follow the reviewed identity icon.",
+        "Source inscriptions, stamp, and blue field are excluded."
+      ],
+      "traditionalPhysicalDescription": "Elderly Athonite monk with a broad lined face, lowered contemplative eyes, and a full rounded white beard.",
+      "approximateAgeCategory": "elderly",
+      "clothing": [
+        "black monastic kalimavkion and veil",
+        "plain black monastic mantle"
+      ],
+      "religiousRoleOrCategory": "Ὅσιος and Athonite elder",
+      "identifyingObjectsOrSymbols": [
+        "right hand raised in blessing",
+        "wooden walking staff in the left hand"
+      ],
+      "requiredVisualAttributes": [
+        "broad elderly face",
+        "lowered contemplative gaze",
+        "full rounded white beard",
+        "black monastic clothing and staff",
+        "one complete thin circular halo"
+      ],
+      "prohibitedOrUncertainAttributes": [
+        "no readable writing or inscriptions",
+        "no bishop vestments",
+        "no scenery or additional figures"
+      ]
+    },
+    "iosifisychastis": {
+      "identitySourceImagePath": "data/saint-portraits/identity-sources/modern-redo-v2/iosifisychastis_icon_doxologia.jpg",
+      "identitySourceImageUrl": "https://doxologia.ro/sites/default/files/articol/2020/08/sf_iosif_isihastul.jpg",
+      "identitySourceDirectAssetUrl": "https://doxologia.ro/sites/default/files/articol/2020/08/sf_iosif_isihastul.jpg",
+      "identitySourceCreator": "Unknown Orthodox icon painter",
+      "identitySourceLicence": "No redistribution licence identified",
+      "identitySourceInstitution": "Doxologia",
+      "identitySourceAccessedAt": "2026-07-29",
+      "identitySourceChecksumSha256": "36a75d00547c20f3eb2f6b65e4d50ef6d0bca00a27d26747a8da6b495a6a1f1d",
+      "sourceLicenceOrRightsNotes": "Web published Orthodox icon retained only as an internal identity reference. It is not redistributed as an application asset. The approved application portrait is a newly generated and substantially transformed illustration.",
+      "metadataSourceUrls": [
+        "https://www.saint.gr",
+        "https://doxologia.ro/sites/default/files/articol/2020/08/sf_iosif_isihastul.jpg"
+      ],
+      "metadataUncertaintyNotes": [
+        "Exact facial proportions follow the reviewed identity icon.",
+        "Source inscriptions and blue field are excluded."
+      ],
+      "traditionalPhysicalDescription": "Elderly Athonite ascetic with large attentive eyes, high cheekbones, and a split grey white beard.",
+      "approximateAgeCategory": "elderly",
+      "clothing": [
+        "black monastic skufia with a tiny simple cross",
+        "black monastic veil and mantle"
+      ],
+      "religiousRoleOrCategory": "Ὅσιος and Athonite hesychast",
+      "identifyingObjectsOrSymbols": [
+        "wooden walking staff",
+        "dark prayer rope"
+      ],
+      "requiredVisualAttributes": [
+        "large attentive eyes",
+        "split grey white beard",
+        "black skufia and veil",
+        "walking staff and prayer rope",
+        "one complete thin circular halo"
+      ],
+      "prohibitedOrUncertainAttributes": [
+        "no readable writing or inscriptions",
+        "no bishop vestments",
+        "no cave, scenery, or additional figures"
+      ]
+    },
+    "savvasneos": {
+      "identitySourceImagePath": "data/saint-portraits/identity-sources/modern-redo-v2/savvasneos_icon_saintgr.jpg",
+      "identitySourceImageUrl": "https://files.saint.gr/filesnew/01/0204/photos/OsiosSavvas04.jpg",
+      "identitySourceDirectAssetUrl": "https://files.saint.gr/filesnew/01/0204/photos/OsiosSavvas04.jpg",
+      "identitySourceCreator": "Unknown Orthodox icon painter",
+      "identitySourceLicence": "No redistribution licence identified",
+      "identitySourceInstitution": "saint.gr",
+      "identitySourceAccessedAt": "2026-07-29",
+      "identitySourceChecksumSha256": "abe4158d038a6ce1aadeb9c6407dafc2bee341fd63dffdf9e2b950b9ef036504",
+      "sourceLicenceOrRightsNotes": "Web published Orthodox icon retained only as an internal identity reference. It is not redistributed as an application asset. The approved application portrait is a newly generated and substantially transformed illustration.",
+      "metadataSourceUrls": [
+        "https://www.saint.gr",
+        "https://files.saint.gr/filesnew/01/0204/photos/OsiosSavvas04.jpg"
+      ],
+      "metadataUncertaintyNotes": [
+        "Exact facial proportions follow the reviewed identity icon.",
+        "Source inscriptions and border are excluded."
+      ],
+      "traditionalPhysicalDescription": "Elderly Greek monk with a narrow face, large quiet eyes, and a long pointed white beard.",
+      "approximateAgeCategory": "elderly",
+      "clothing": [
+        "black monastic kalimavkion and veil",
+        "plain black monastic mantle"
+      ],
+      "religiousRoleOrCategory": "Ὅσιος, priest monk, and iconographer",
+      "identifyingObjectsOrSymbols": [
+        "right hand raised in blessing",
+        "decorated red Gospel book in the left arm"
+      ],
+      "requiredVisualAttributes": [
+        "narrow elderly face",
+        "long pointed white beard",
+        "black monastic clothing",
+        "blessing hand and decorated Gospel",
+        "one complete thin circular halo"
+      ],
+      "prohibitedOrUncertainAttributes": [
+        "no readable writing or inscriptions",
+        "no bishop vestments",
+        "no scenery or additional figures"
+      ]
+    },
+    "amfilochiosmakris": {
+      "identitySourceImagePath": "data/saint-portraits/identity-sources/modern-redo-v2/amfilochiosmakris_icon_orthodoxes-eikones.jpg",
+      "identitySourceImageUrl": "https://www.orthodoxes-eikones.gr/image/cache/AGIOI-NEW/eikona-agios-amfiloxios-makris-3-a-800x800.jpg",
+      "identitySourceDirectAssetUrl": "https://www.orthodoxes-eikones.gr/image/cache/AGIOI-NEW/eikona-agios-amfiloxios-makris-3-a-800x800.jpg",
+      "identitySourceCreator": "Unknown Orthodox icon painter",
+      "identitySourceLicence": "No redistribution licence identified",
+      "identitySourceInstitution": "orthodoxes-eikones.gr",
+      "identitySourceAccessedAt": "2026-07-29",
+      "identitySourceChecksumSha256": "40e4e359c756b0dbba2a5922969a8f4adef912fe98f7b1eeead757e611e23f27",
+      "sourceLicenceOrRightsNotes": "Web published Orthodox icon retained only as an internal identity reference. It is not redistributed as an application asset. The approved application portrait is a newly generated and substantially transformed illustration.",
+      "metadataSourceUrls": [
+        "https://www.saint.gr",
+        "https://www.orthodoxes-eikones.gr/image/cache/AGIOI-NEW/eikona-agios-amfiloxios-makris-3-a-800x800.jpg"
+      ],
+      "metadataUncertaintyNotes": [
+        "Exact facial proportions and monastery model follow the reviewed identity icon.",
+        "Source inscriptions, border, and white margin are excluded."
+      ],
+      "traditionalPhysicalDescription": "Elderly Patmian monk with a warm attentive face and a long straight grey white beard.",
+      "approximateAgeCategory": "elderly",
+      "clothing": [
+        "simple black rounded monastic cap",
+        "plain black monastic mantle"
+      ],
+      "religiousRoleOrCategory": "Ὅσιος and abbot",
+      "identifyingObjectsOrSymbols": [
+        "right hand raised in blessing",
+        "small monastery model with red roofs and a tree",
+        "dark prayer rope"
+      ],
+      "requiredVisualAttributes": [
+        "warm elderly face turned slightly left",
+        "long straight grey white beard",
+        "simple black cap",
+        "monastery model and prayer rope",
+        "one complete thin circular halo"
+      ],
+      "prohibitedOrUncertainAttributes": [
+        "no readable writing or inscriptions",
+        "no bishop vestments",
+        "no additional scenery or figures"
+      ]
+    },
+    "eymeniosneos": {
+      "identitySourceImagePath": "data/saint-portraits/identity-sources/modern-redo-v2/eymeniosneos_icon_orthodoxes-eikones.jpg",
+      "identitySourceImageUrl": "https://www.orthodoxes-eikones.gr/image/cache/AGIOI-NEW/eikona-agios-eymenios-saridakis-5-800x800.jpg",
+      "identitySourceDirectAssetUrl": "https://www.orthodoxes-eikones.gr/image/cache/AGIOI-NEW/eikona-agios-eymenios-saridakis-5-800x800.jpg",
+      "identitySourceCreator": "Unknown Orthodox icon painter",
+      "identitySourceLicence": "No redistribution licence identified",
+      "identitySourceInstitution": "orthodoxes-eikones.gr",
+      "identitySourceAccessedAt": "2026-07-29",
+      "identitySourceChecksumSha256": "b6924c777feee6c8f754cb9b5514cdbf98fcba065715422ee66295e9ecf5dcf4",
+      "sourceLicenceOrRightsNotes": "Web published Orthodox icon retained only as an internal identity reference. It is not redistributed as an application asset. The approved application portrait is a newly generated and substantially transformed illustration.",
+      "metadataSourceUrls": [
+        "https://www.saint.gr",
+        "https://www.orthodoxes-eikones.gr/image/cache/AGIOI-NEW/eikona-agios-eymenios-saridakis-5-800x800.jpg"
+      ],
+      "metadataUncertaintyNotes": [
+        "Exact facial proportions and vestment colours follow the reviewed identity icon.",
+        "The ornate source halo, inscriptions, border, and white margin are excluded."
+      ],
+      "traditionalPhysicalDescription": "Elderly Cretan priest monk with a gentle smiling face and a full long white beard.",
+      "approximateAgeCategory": "elderly",
+      "clothing": [
+        "simple black cylindrical clerical kalimavkion",
+        "plain black outer robe",
+        "blue epitrachelion with restrained gold floral ornament"
+      ],
+      "religiousRoleOrCategory": "Ὅσιος and priest monk",
+      "identifyingObjectsOrSymbols": [
+        "plain wooden hand cross held at the chest"
+      ],
+      "requiredVisualAttributes": [
+        "gentle elderly face",
+        "full long white beard",
+        "black cylindrical kalimavkion",
+        "blue epitrachelion and wooden cross",
+        "one complete thin circular halo"
+      ],
+      "prohibitedOrUncertainAttributes": [
+        "no ornate patterned halo",
+        "no readable writing or inscriptions",
+        "no scenery or additional figures"
+      ]
+    },
+    "paisios-agioreitis": {
+      "identitySourceImagePath": "data/saint-portraits/identity-sources/modern-redo/paisios-agioreitis_icon_doxologia.jpg",
+      "identitySourceCreator": "Unknown Orthodox icon painter",
+      "identitySourceLicence": "No redistribution licence identified",
+      "identitySourceInstitution": "User provided Orthodox icon reference",
+      "identitySourceAccessedAt": "2026-07-29",
+      "identitySourceChecksumSha256": "e4f7ae726af941a8315890cab912b17fb25e041cab38f28158bc06b18fe0c830",
+      "sourceLicenceOrRightsNotes": "The user provided Orthodox icon is retained only as an internal identity and iconographic reference. It is not redistributed as an application asset. The approved application portrait is a newly generated and substantially transformed illustration.",
+      "metadataSourceUrls": [
+        "https://www.saint.gr"
+      ],
+      "metadataUncertaintyNotes": [
+        "Exact facial proportions, folded hands, monastic clothing, and halo placement follow the user approved identity icon.",
+        "Source inscriptions and border are excluded."
+      ],
+      "traditionalPhysicalDescription": "Elderly Athonite monk with a narrow kindly face, a full white beard, and a black knitted monastic cap.",
+      "approximateAgeCategory": "elderly",
+      "clothing": [
+        "black knitted monastic cap",
+        "plain dark monastic tunic and sleeveless outer garment",
+        "dark prayer rope"
+      ],
+      "religiousRoleOrCategory": "Ὅσιος and Athonite monk",
+      "identifyingObjectsOrSymbols": [
+        "hands folded gently at the waist",
+        "long dark prayer rope"
+      ],
+      "requiredVisualAttributes": [
+        "narrow elderly face with a gentle attentive gaze",
+        "full white beard",
+        "black knitted monastic cap",
+        "folded hands and dark prayer rope",
+        "one complete thin circular halo with clear space above the cap"
+      ],
+      "prohibitedOrUncertainAttributes": [
+        "no readable writing or inscriptions",
+        "no clerical kalimavkion or veil",
+        "no priestly or bishop vestments",
+        "no scenery or additional figures"
+      ]
+    },
+    "arsenioskappadokis": {
+      "identitySourceImagePath": "data/saint-portraits/identity-sources/modern-redo-v2/arsenioskappadokis_icon_oca.jpg",
+      "identitySourceImageUrl": "https://www.oca.org/Images/About/Bible/arsenioscapad.jpg",
+      "identitySourcePageUrl": "https://www.oca.org/saints/lives/2026/11/10/103285-venerable-arsenius-of-cappadocia",
+      "identitySourceDirectAssetUrl": "https://www.oca.org/Images/About/Bible/arsenioscapad.jpg",
+      "identitySourceCreator": "Unknown Orthodox icon painter",
+      "identitySourceLicence": "No redistribution licence identified",
+      "identitySourceInstitution": "Orthodox Church in America",
+      "identitySourceAccessedAt": "2026-07-29",
+      "identitySourceChecksumSha256": "d6e1c4bf3ffa4c37691981f6f19d8709dbc4030e7d0a6874ed8347a46feeb89c",
+      "sourceLicenceOrRightsNotes": "Official OCA saint icon retained only as an internal identity reference. It is not redistributed as an application asset. The approved application portrait is a newly generated and substantially transformed illustration.",
+      "metadataSourceUrls": [
+        "https://www.oca.org/saints/lives/2026/11/10/103285-venerable-arsenius-of-cappadocia",
+        "https://www.saint.gr"
+      ],
+      "metadataUncertaintyNotes": [
+        "Exact facial proportions follow the reviewed identity icon.",
+        "Source inscriptions and border are excluded."
+      ],
+      "traditionalPhysicalDescription": "Elderly Cappadocian priest monk with a narrow ascetic face and a very long flowing white beard.",
+      "approximateAgeCategory": "elderly",
+      "clothing": [
+        "black monastic kalimavkion and veil",
+        "plain black monastic mantle",
+        "small pectoral cross"
+      ],
+      "religiousRoleOrCategory": "Ὅσιος and priest monk",
+      "identifyingObjectsOrSymbols": [
+        "right hand raised in blessing",
+        "decorated red Gospel book in the left hand"
+      ],
+      "requiredVisualAttributes": [
+        "narrow ascetic elderly face",
+        "very long flowing white beard",
+        "black monastic head covering",
+        "pectoral cross, blessing hand, and Gospel",
+        "one complete thin circular halo"
+      ],
+      "prohibitedOrUncertainAttributes": [
+        "no readable writing or inscriptions",
+        "no bishop vestments",
+        "no scenery or additional figures"
+      ]
+    },
+    "anthimosvagianos": {
+      "identitySourceImagePath": "data/saint-portraits/identity-sources/modern-redo-v2/anthimosvagianos_icon_oca.jpg",
+      "identitySourceImageUrl": "https://images.oca.org/icons/lg/february/0215anthimos-chios.jpg",
+      "identitySourcePageUrl": "https://www.oca.org/saints/lives/2026/02/15/100539-venerable-anthimus-of-chios",
+      "identitySourceDirectAssetUrl": "https://images.oca.org/icons/lg/february/0215anthimos-chios.jpg",
+      "identitySourceCreator": "Unknown Orthodox icon painter",
+      "identitySourceLicence": "No redistribution licence identified",
+      "identitySourceInstitution": "Orthodox Church in America",
+      "identitySourceAccessedAt": "2026-07-29",
+      "identitySourceChecksumSha256": "ed5c0880bf7390e54dfe3c832c44d5f07c060713cf6bc6915d741053a86e68d7",
+      "sourceLicenceOrRightsNotes": "Official OCA saint icon retained only as an internal identity reference. It is not redistributed as an application asset. The approved application portrait is a newly generated and substantially transformed illustration.",
+      "metadataSourceUrls": [
+        "https://www.oca.org/saints/lives/2026/02/15/100539-venerable-anthimus-of-chios",
+        "https://www.saint.gr"
+      ],
+      "metadataUncertaintyNotes": [
+        "Exact facial proportions and vestment pattern follow the reviewed identity icon.",
+        "Source inscriptions are excluded."
+      ],
+      "traditionalPhysicalDescription": "Elderly Chiot priest monk with a solemn frontal gaze and a broad flowing white beard.",
+      "approximateAgeCategory": "elderly",
+      "clothing": [
+        "black monastic kalimavkion and veil",
+        "priestly phelonion with dark red and ivory crosses"
+      ],
+      "religiousRoleOrCategory": "Ὅσιος and priest monk",
+      "identifyingObjectsOrSymbols": [
+        "right hand raised in blessing",
+        "decorated red Gospel book in the left arm"
+      ],
+      "requiredVisualAttributes": [
+        "solemn elderly face",
+        "broad flowing white beard",
+        "black monastic head covering",
+        "cross patterned vestment, blessing hand, and Gospel",
+        "one complete thin circular halo"
+      ],
+      "prohibitedOrUncertainAttributes": [
+        "no readable writing or inscriptions",
+        "no mitre",
+        "no scenery or additional figures"
+      ]
+    }
+  }
+}

@@ -1,0 +1,204 @@
+{
+  "schemaVersion": 1,
+  "language": "grc-polytonic",
+  "calendarSystem": "new",
+  "source": "Ὀρθόδοξος Συναξαριστής (saint.gr)",
+  "note": "Πρόγραμμα νηστείας ὡς κανόνες (ὄχι παγωμένες ἡμερομηνίες). Οἱ κινητὲς περίοδοι ὁρίζονται ὡς ἀποστάσεις ἡμερῶν ἀπὸ τὸ Ὀρθόδοξο Πάσχα καὶ ὑπολογίζονται μαζὶ μὲ τὸ Paschalion· οἱ σταθερὲς ὡς ἡμερομηνίες MM-DD. Ἐπικυρωμένο 100% (365/365) στὰ δεδομένα τοῦ 2026 τοῦ saint.gr.",
+  "levels": {
+    "free": {
+      "label": "Κατάλυσις εἰς πάντα",
+      "fast": false,
+      "order": 0
+    },
+    "no_meat": {
+      "label": "Κατάλυσις εἰς πάντα πλὴν κρέατος",
+      "fast": true,
+      "order": 1
+    },
+    "fish": {
+      "label": "Νηστεία — ἐπιτρέπεται ἰχθύς",
+      "fast": true,
+      "order": 2
+    },
+    "oil_wine": {
+      "label": "Νηστεία — ἐπιτρέπεται ἔλαιον καὶ οἶνος",
+      "fast": true,
+      "order": 3
+    },
+    "xerophagy": {
+      "label": "Νηστεία (ξηροφαγία)",
+      "fast": true,
+      "order": 4
+    }
+  },
+  "weekly": {
+    "comment": "Ἡμέρες ἑβδομαδιαίας νηστείας. 0=Δευτέρα … 2=Τετάρτη, 4=Παρασκευή, 6=Κυριακή.",
+    "fastWeekdays": [
+      2,
+      4
+    ],
+    "default": "xerophagy",
+    "pentecostarion": "oil_wine"
+  },
+  "fixed": {
+    "greatFeastsFree": [
+      "12-25",
+      "01-06",
+      "08-15",
+      "06-29"
+    ],
+    "dodekaimeronFree": {
+      "from": "12-25",
+      "to": "01-04"
+    },
+    "strictDays": [
+      "01-05",
+      "09-14"
+    ],
+    "overrideDays": {
+      "08-29": "oil_wine",
+      "03-25": "fish",
+      "08-06": "fish",
+      "11-21": "fish"
+    },
+    "periods": [
+      {
+        "id": "nativity",
+        "name": "Νηστεία τῶν Χριστουγέννων",
+        "from": "11-15",
+        "to": "12-24",
+        "phases": [
+          {
+            "from": "11-15",
+            "to": "12-17",
+            "weekdayFastLevel": "xerophagy",
+            "otherwiseLevel": "fish",
+            "rule": "Τετάρτη & Παρασκευή ξηροφαγία· τὶς ὑπόλοιπες ἡμέρες ἰχθύς."
+          },
+          {
+            "from": "12-18",
+            "to": "12-24",
+            "weekendLevel": "oil_wine",
+            "otherwiseLevel": "xerophagy",
+            "rule": "Σάββατο & Κυριακὴ ἔλαιον/οἶνος· τὶς ὑπόλοιπες ξηροφαγία."
+          }
+        ]
+      },
+      {
+        "id": "dormition",
+        "name": "Νηστεία τοῦ Δεκαπενταυγούστου",
+        "from": "08-01",
+        "to": "08-14",
+        "weekendLevel": "oil_wine",
+        "otherwiseLevel": "xerophagy",
+        "rule": "Σάββατο & Κυριακὴ ἔλαιον/οἶνος· τὶς ὑπόλοιπες ξηροφαγία (πλὴν 06/08 Μεταμορφώσεως → ἰχθύς)."
+      }
+    ],
+    "feastOil": [
+      "01-16",
+      "01-30",
+      "02-11",
+      "02-24",
+      "03-09",
+      "03-26",
+      "07-01",
+      "07-17",
+      "07-22",
+      "09-09",
+      "09-23",
+      "10-28",
+      "11-13",
+      "11-25",
+      "12-04",
+      "12-09"
+    ],
+    "feastFish": [
+      "01-07",
+      "06-24"
+    ],
+    "feastRelaxationComment": "Ἑορτὲς πολυελέων ἁγίων: χαλαρώνουν τὴ νηστεία (feastOil→ἔλαιον/οἶνος, feastFish→ἰχθύς) ΜΟΝΟΝ ἂν ἡ ἡμέρα εἶναι ἤδη νηστίσιμη. Σὲ μὴ-νηστίσιμη ἡμέρα ἀγνοοῦνται. Δὲν αὐστηροποιοῦν ποτέ."
+  },
+  "movable": {
+    "comment": "Ἀποστάσεις ἡμερῶν ἀπὸ τὸ Ὀρθόδοξο Πάσχα (offset 0 = Κυριακὴ τοῦ Πάσχα).",
+    "feastsFreeOffsets": [
+      0,
+      49
+    ],
+    "freePeriods": [
+      {
+        "id": "bright",
+        "name": "Διακαινήσιμος ἑβδομάς",
+        "fromOffset": 1,
+        "toOffset": 7
+      },
+      {
+        "id": "pentecost_week",
+        "name": "Ἑβδομὰς τῆς Πεντηκοστῆς",
+        "fromOffset": 50,
+        "toOffset": 56
+      },
+      {
+        "id": "publican",
+        "name": "Ἑβδομὰς Τελώνου & Φαρισαίου",
+        "fromOffset": -69,
+        "toOffset": -64
+      }
+    ],
+    "tyrini": {
+      "name": "Τυρινή (Τυροφάγου)",
+      "fromOffset": -55,
+      "toOffset": -49,
+      "level": "no_meat"
+    },
+    "greatLent": {
+      "name": "Μεγάλη Τεσσαρακοστὴ & Μεγάλη Ἑβδομάς",
+      "fromOffset": -48,
+      "toOffset": -1,
+      "holyWeekFromOffset": -6,
+      "weekendLevel": "oil_wine",
+      "weekdayLevel": "xerophagy",
+      "holyWeekLevel": "xerophagy",
+      "rule": "Σάββατα/Κυριακὲς ἔλαιον-οἶνος· καθημερινὲς ξηροφαγία· ὅλη ἡ Μ. Ἑβδομὰς ξηροφαγία."
+    },
+    "apostles": {
+      "name": "Νηστεία τῶν Ἁγίων Ἀποστόλων",
+      "startOffset": 57,
+      "endFixed": "06-28",
+      "wedFriLevel": "xerophagy",
+      "otherwiseLevel": "fish",
+      "note": "Κινητὴ ἀρχή (Δευτέρα μετὰ τῶν Ἁγίων Πάντων = Πάσχα+57), σταθερὸ τέλος 28/06. Ἂν τὸ Πάσχα εἶναι ὄψιμο, μπορεῖ νὰ ἐκμηδενιστεῖ."
+    },
+    "overrideOffsets": {
+      "-8": "oil_wine",
+      "-7": "fish",
+      "24": "fish",
+      "38": "fish"
+    },
+    "overrideOffsetsComment": "-8 Σάββατο Λαζάρου, -7 Κυριακὴ Βαΐων, +24 Μεσοπεντηκοστή, +38 Ἀπόδοσις τοῦ Πάσχα."
+  },
+  "resolutionOrder": [
+    "1. Σταθερὲς μεγάλες ἑορτὲς (fixed.greatFeastsFree) → free",
+    "2. Κινητὲς ἑορτὲς/περίοδοι ἐλευθερίας (movable.feastsFreeOffsets, freePeriods) → free",
+    "3. Δωδεκαήμερο (fixed.dodekaimeronFree) → free",
+    "4. Σταθερὲς αὐστηρές (fixed.strictDays) & σταθερὲς ἐξαιρέσεις (fixed.overrideDays)",
+    "5. Κινητὲς ἐξαιρέσεις (movable.overrideOffsets)",
+    "6. Τυρινή (movable.tyrini) → no_meat",
+    "7. Μ. Τεσσαρακοστή (movable.greatLent)",
+    "8. Νηστεία Ἀποστόλων (movable.apostles)",
+    "9. Νηστεία Δεκαπενταυγούστου (fixed.periods:dormition)",
+    "10. Νηστεία Χριστουγέννων (fixed.periods:nativity)",
+    "11. Ἑβδομαδιαία Τετάρτη/Παρασκευή (weekly)",
+    "12. Ἀλλιῶς → free",
+    "ΤΕΛΟΣ: ἐφαρμογὴ χαλαρώσεων ἑορτῆς (fixed.feastOil / fixed.feastFish) μόνο ἂν τὸ ἀποτέλεσμα εἶναι νηστίσιμο."
+  ],
+  "validation": {
+    "against": "saint.gr 2026 (365 ἡμέρες)",
+    "match": "365/365 (100%)",
+    "paschaUsed": "2026-04-12"
+  },
+  "_review": [
+    "Οἱ λίστες feastOil/feastFish προέκυψαν ἀπὸ ἐπαλήθευση μὲ τὸ 2026· ἀντιστοιχοῦν σὲ ἑορτὲς πολυελέων ἁγίων. Καλὸ εἶναι νὰ τὶς ἐπιθεωρήσει κληρικός/τυπικάρης.",
+    "Ἡ αὐστηρότητα Τετ/Παρ σὲ κοινὸ χρόνο ὁρίστηκε ξηροφαγία (αὐστηρὸ τυπικό)· πολλὲς ἐνορίες ἐπιτρέπουν ἔλαιον. Ἀλλάζει μὲ τὸ weekly.default.",
+    "Τὸ ἀρχεῖο δίνει ΚΑΝΟΝΕΣ· ὁ τελικὸς χαρακτηρισμὸς ἀνὰ ἡμέρα προκύπτει σὲ συνδυασμὸ μὲ τὸ Paschalion (κινητὲς περίοδοι)."
+  ]
+}

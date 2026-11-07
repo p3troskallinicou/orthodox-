@@ -1,0 +1,206 @@
+{
+  "schemaVersion": 1,
+  "referenceSetVersion": "saint-master-references.v1",
+  "generatedAt": "2026-07-29T15:43:40.081Z",
+  "maximumReferencesPerRequest": 3,
+  "selectionMethod": "Deterministic farthest point sampling over dimensions, edge colour, dominant colour, and subject bounds, followed by human visual inspection.",
+  "limitations": [
+    "All completed repository portraits currently depict male Apostles.",
+    "The set cannot yet establish female, monastic, hierarch, martyr, or royal category variants.",
+    "Those categories must remain metadata review items until approved references exist."
+  ],
+  "references": [
+    {
+      "id": "master-01-petros",
+      "saintId": "petros",
+      "canonicalName": "Ἀπόστολος Πέτρος",
+      "imagePath": "Klimax/Assets.xcassets/petros.imageset/petros.png",
+      "categories": [
+        "male",
+        "apostle",
+        "Ἀπόστολος, Πρωτοκορυφαῖος",
+        "bust",
+        "outlined-halo"
+      ],
+      "visuallyInspected": true,
+      "visualInspectionNotes": "Visually inspected. Use the iconographic composition, restrained modelling, gold field, halo treatment, and garment language only.",
+      "checksum": "226f85cabf0cf0afb71f2385ab033eba54ea6ec7a07004b99a0ee77b673b6f17"
+    },
+    {
+      "id": "master-02-simon-zilotis",
+      "saintId": "simon-zilotis",
+      "canonicalName": "Ἀπόστολος Σίμων ὁ Ζηλωτής",
+      "imagePath": "Klimax/Assets.xcassets/simon-zilotis.imageset/simon-zilotis.png",
+      "categories": [
+        "male",
+        "apostle",
+        "Ἀπόστολος, ἐκ τῶν Δώδεκα",
+        "bust",
+        "outlined-halo"
+      ],
+      "visuallyInspected": true,
+      "visualInspectionNotes": "Useful blue and gold garment treatment. Painted lettering and the hard outer border are source defects and must not be reproduced.",
+      "checksum": "5b2a0ffe0c71811d00aa1e503c2e2c0a24b23a3b62b9145897a0eb9671a0a03e"
+    },
+    {
+      "id": "master-03-vasileios",
+      "saintId": "vasileios",
+      "canonicalName": "Ἅγιος Βασίλειος ὁ Μέγας",
+      "imagePath": "Klimax/Assets.xcassets/saint-vasileios.imageset/saint-vasileios.png",
+      "categories": [
+        "male",
+        "apostle",
+        "Ἱεράρχης",
+        "bust",
+        "outlined-halo"
+      ],
+      "visuallyInspected": true,
+      "visualInspectionNotes": "Visually inspected. Use the iconographic composition, restrained modelling, gold field, halo treatment, and garment language only.",
+      "checksum": "a7da920a3af9c9c8c814fa1b4b82cb25eb74c18d2eea1f1363e8db56d9fc9bf6"
+    },
+    {
+      "id": "master-04-ioudas-thaddaios",
+      "saintId": "ioudas-thaddaios",
+      "canonicalName": "Ἀπόστολος Ἰούδας ὁ Θαδδαῖος",
+      "imagePath": "Klimax/Assets.xcassets/ioudas-thaddaios.imageset/ioudas-thaddaios.png",
+      "categories": [
+        "male",
+        "apostle",
+        "Ἀπόστολος, ἐκ τῶν Δώδεκα",
+        "bust",
+        "outlined-halo"
+      ],
+      "visuallyInspected": true,
+      "visualInspectionNotes": "Strong frontal composition and garment rendering. Painted lettering and the hard outer border are source defects and must not be reproduced.",
+      "checksum": "6584323564f345730d768d6afc2ee0b5e629f36b90b7a6ad8b78c6870cdd2cb3"
+    },
+    {
+      "id": "master-05-matthaios",
+      "saintId": "matthaios",
+      "canonicalName": "Ἀπόστολος Ματθαῖος ὁ Εὐαγγελιστής",
+      "imagePath": "Klimax/Assets.xcassets/matthaios.imageset/matthaios.png",
+      "categories": [
+        "male",
+        "apostle",
+        "Ἀπόστολος & Εὐαγγελιστής",
+        "bust",
+        "outlined-halo"
+      ],
+      "visuallyInspected": true,
+      "visualInspectionNotes": "Strong elder facial treatment and green garment variation. Painted writing inside the open book is a source defect and must not be reproduced.",
+      "checksum": "2cf10c289b15ad11ec2810cd5d1df6c511692338c046a7e48dde2835e5b8d1e6"
+    },
+    {
+      "id": "master-06-andreas",
+      "saintId": "andreas",
+      "canonicalName": "Ἀπόστολος Ἀνδρέας ὁ Πρωτόκλητος",
+      "imagePath": "Klimax/Assets.xcassets/andreas.imageset/andreas.png",
+      "categories": [
+        "male",
+        "apostle",
+        "Ἀπόστολος, Πρωτόκλητος",
+        "bust",
+        "outlined-halo"
+      ],
+      "visuallyInspected": true,
+      "visualInspectionNotes": "Visually inspected. Use the iconographic composition, restrained modelling, gold field, halo treatment, and garment language only.",
+      "checksum": "73f9eabdfb7545eedfa21864bd97e7d84783cc3afede6f90ababfc547800c4da"
+    },
+    {
+      "id": "master-07-athanasios-megas",
+      "saintId": "athanasios-megas",
+      "canonicalName": "Ἅγιος Ἀθανάσιος ὁ Μέγας",
+      "imagePath": "Klimax/Assets.xcassets/saint-athanasios-megas.imageset/saint-athanasios-megas.png",
+      "categories": [
+        "male",
+        "apostle",
+        "Ἀρχιεπίσκοπος Ἀλεξανδρείας, Στύλος τῆς Ὀρθοδοξίας",
+        "bust",
+        "outlined-halo"
+      ],
+      "visuallyInspected": true,
+      "visualInspectionNotes": "Visually inspected. Use the iconographic composition, restrained modelling, gold field, halo treatment, and garment language only.",
+      "checksum": "641f3571124ad69a209b96c8d67c380090a9c43aa0472db2caee74a9f560ddfb"
+    },
+    {
+      "id": "master-08-ilias",
+      "saintId": "ilias",
+      "canonicalName": "Προφήτης Ἠλίας ὁ Θεσβίτης",
+      "imagePath": "Klimax/Assets.xcassets/saint-ilias.imageset/saint-ilias.png",
+      "categories": [
+        "male",
+        "apostle",
+        "Προφήτης",
+        "bust",
+        "outlined-halo"
+      ],
+      "visuallyInspected": true,
+      "visualInspectionNotes": "Visually inspected. Use the iconographic composition, restrained modelling, gold field, halo treatment, and garment language only.",
+      "checksum": "935acbb86d3dcfffab217decbbc2c95eff2f1592e7891246a252351b93cc84f2"
+    },
+    {
+      "id": "master-09-ioannis-chrysostomos",
+      "saintId": "ioannis-chrysostomos",
+      "canonicalName": "Ἅγιος Ἰωάννης ὁ Χρυσόστομος",
+      "imagePath": "Klimax/Assets.xcassets/saint-ioannis-chrysostomos.imageset/saint-ioannis-chrysostomos.png",
+      "categories": [
+        "male",
+        "apostle",
+        "Ἱεράρχης",
+        "bust",
+        "outlined-halo"
+      ],
+      "visuallyInspected": true,
+      "visualInspectionNotes": "Visually inspected. Use the iconographic composition, restrained modelling, gold field, halo treatment, and garment language only.",
+      "checksum": "36c0bdf3ce5bed8ca49835eb0ae2c5949ca9e6f81a5275673ff5001d4ef7d40b"
+    },
+    {
+      "id": "master-10-matthias",
+      "saintId": "matthias",
+      "canonicalName": "Ἀπόστολος Ματθίας",
+      "imagePath": "Klimax/Assets.xcassets/matthias.imageset/matthias.png",
+      "categories": [
+        "male",
+        "apostle",
+        "Ἀπόστολος, ἐκ τῶν Δώδεκα (ἀντὶ τοῦ Ἰούδα)",
+        "bust",
+        "outlined-halo"
+      ],
+      "visuallyInspected": true,
+      "visualInspectionNotes": "Visually inspected. Use the iconographic composition, restrained modelling, gold field, halo treatment, and garment language only.",
+      "checksum": "cd73593bef20170de3334662642edc8978cced0c9b0e055d2890bf99c25ec42c"
+    },
+    {
+      "id": "master-11-paulos",
+      "saintId": "paulos",
+      "canonicalName": "Ἀπόστολος Παῦλος",
+      "imagePath": "Klimax/Assets.xcassets/paulos.imageset/paulos.png",
+      "categories": [
+        "male",
+        "apostle",
+        "Ἀπόστολος, Πρωτοκορυφαῖος",
+        "bust",
+        "outlined-halo"
+      ],
+      "visuallyInspected": true,
+      "visualInspectionNotes": "Visually inspected. Use the iconographic composition, restrained modelling, gold field, halo treatment, and garment language only.",
+      "checksum": "6252869e0ff0ae76165231102cc51fb49bd64f208cf10fc54beb5f0f061238cc"
+    },
+    {
+      "id": "master-12-iakovos-zevedaiou",
+      "saintId": "iakovos-zevedaiou",
+      "canonicalName": "Ἀπόστολος Ἰάκωβος ὁ τοῦ Ζεβεδαίου",
+      "imagePath": "Klimax/Assets.xcassets/iakovos-zevedaiou.imageset/iakovos-zevedaiou.png",
+      "categories": [
+        "male",
+        "apostle",
+        "Ἀπόστολος, ἐκ τῶν Δώδεκα",
+        "bust",
+        "outlined-halo"
+      ],
+      "visuallyInspected": true,
+      "visualInspectionNotes": "Visually inspected. Use the iconographic composition, restrained modelling, gold field, halo treatment, and garment language only.",
+      "checksum": "31dcf495a16c405626a1d11a0cfd96559dbaf118e7fc5e9a73e51170eaf9d1e5"
+    }
+  ]
+}

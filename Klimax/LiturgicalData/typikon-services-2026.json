@@ -1,0 +1,859 @@
+{
+  "schema_version": 1,
+  "year": 2026,
+  "jurisdiction": "Ἐκκλησία τῆς Κύπρου",
+  "status": "reviewed_annual_index",
+  "generated_at": "2026-08-14",
+  "sources": [
+    "https://churchofcyprus.org.cy/all/διακονια/χρησιμες-πληροφοριες/τυπική-διάταξη/έτους-2026",
+    "https://www.ec-patr.net/typikon/TYPIKO_2/2026/"
+  ],
+  "note": "Κατάλογος προβλεπόμενων τελέσεων· όχι ωρολόγιο συγκεκριμένου ναού.",
+  "entries": [
+    {
+      "date": "2026-01-01",
+      "title": "Περιτομὴ τοῦ Κυρίου — Μέγας Βασίλειος",
+      "vespers": true,
+      "orthros": true,
+      "divine_liturgy": true,
+      "office_basis": "fixed_feast",
+      "liturgy_kind": "basil"
+    },
+    {
+      "date": "2026-01-04",
+      "title": "Κυριακή",
+      "vespers": true,
+      "orthros": true,
+      "divine_liturgy": true,
+      "office_basis": "sunday",
+      "liturgy_kind": "chrysostom"
+    },
+    {
+      "date": "2026-01-05",
+      "title": "Παραμονὴ Θεοφανείων",
+      "vespers": true,
+      "orthros": true,
+      "divine_liturgy": true,
+      "office_basis": "fixed_feast",
+      "liturgy_kind": "basil"
+    },
+    {
+      "date": "2026-01-06",
+      "title": "Τὰ Ἅγια Θεοφάνεια",
+      "vespers": true,
+      "orthros": true,
+      "divine_liturgy": true,
+      "office_basis": "fixed_feast",
+      "liturgy_kind": "chrysostom"
+    },
+    {
+      "date": "2026-01-11",
+      "title": "Κυριακή",
+      "vespers": true,
+      "orthros": true,
+      "divine_liturgy": true,
+      "office_basis": "sunday",
+      "liturgy_kind": "chrysostom"
+    },
+    {
+      "date": "2026-01-18",
+      "title": "Κυριακή",
+      "vespers": true,
+      "orthros": true,
+      "divine_liturgy": true,
+      "office_basis": "sunday",
+      "liturgy_kind": "chrysostom"
+    },
+    {
+      "date": "2026-01-25",
+      "title": "Κυριακή",
+      "vespers": true,
+      "orthros": true,
+      "divine_liturgy": true,
+      "office_basis": "sunday",
+      "liturgy_kind": "chrysostom"
+    },
+    {
+      "date": "2026-02-01",
+      "title": "Κυριακή",
+      "vespers": true,
+      "orthros": true,
+      "divine_liturgy": true,
+      "office_basis": "sunday",
+      "liturgy_kind": "chrysostom"
+    },
+    {
+      "date": "2026-02-02",
+      "title": "Ὑπαπαντὴ τοῦ Κυρίου",
+      "vespers": true,
+      "orthros": true,
+      "divine_liturgy": true,
+      "office_basis": "fixed_feast",
+      "liturgy_kind": "chrysostom"
+    },
+    {
+      "date": "2026-02-08",
+      "title": "Κυριακή",
+      "vespers": true,
+      "orthros": true,
+      "divine_liturgy": true,
+      "office_basis": "sunday",
+      "liturgy_kind": "chrysostom"
+    },
+    {
+      "date": "2026-02-14",
+      "title": "Ψυχοσάββατον πρὸ τῆς Ἀπόκρεω",
+      "vespers": true,
+      "orthros": true,
+      "divine_liturgy": true,
+      "office_basis": "movable_feast",
+      "liturgy_kind": "chrysostom"
+    },
+    {
+      "date": "2026-02-15",
+      "title": "Κυριακή",
+      "vespers": true,
+      "orthros": true,
+      "divine_liturgy": true,
+      "office_basis": "sunday",
+      "liturgy_kind": "chrysostom"
+    },
+    {
+      "date": "2026-02-21",
+      "title": "Ψυχοσάββατον πρὸ τῆς Τυρινῆς",
+      "vespers": true,
+      "orthros": true,
+      "divine_liturgy": true,
+      "office_basis": "movable_feast",
+      "liturgy_kind": "chrysostom"
+    },
+    {
+      "date": "2026-02-22",
+      "title": "Κυριακή",
+      "vespers": true,
+      "orthros": true,
+      "divine_liturgy": true,
+      "office_basis": "sunday",
+      "liturgy_kind": "chrysostom"
+    },
+    {
+      "date": "2026-02-24",
+      "title": "Θεία Λειτουργία τῶν Προηγιασμένων Τιμίων Δώρων",
+      "vespers": true,
+      "orthros": true,
+      "divine_liturgy": true,
+      "office_basis": "great_lent",
+      "liturgy_kind": "presanctified"
+    },
+    {
+      "date": "2026-02-25",
+      "title": "Θεία Λειτουργία τῶν Προηγιασμένων Τιμίων Δώρων",
+      "vespers": true,
+      "orthros": true,
+      "divine_liturgy": true,
+      "office_basis": "great_lent",
+      "liturgy_kind": "presanctified"
+    },
+    {
+      "date": "2026-02-27",
+      "title": "Θεία Λειτουργία τῶν Προηγιασμένων Τιμίων Δώρων",
+      "vespers": true,
+      "orthros": true,
+      "divine_liturgy": true,
+      "office_basis": "great_lent",
+      "liturgy_kind": "presanctified"
+    },
+    {
+      "date": "2026-03-01",
+      "title": "Κυριακή",
+      "vespers": true,
+      "orthros": true,
+      "divine_liturgy": true,
+      "office_basis": "sunday",
+      "liturgy_kind": "chrysostom"
+    },
+    {
+      "date": "2026-03-04",
+      "title": "Θεία Λειτουργία τῶν Προηγιασμένων Τιμίων Δώρων",
+      "vespers": true,
+      "orthros": true,
+      "divine_liturgy": true,
+      "office_basis": "great_lent",
+      "liturgy_kind": "presanctified"
+    },
+    {
+      "date": "2026-03-06",
+      "title": "Θεία Λειτουργία τῶν Προηγιασμένων Τιμίων Δώρων",
+      "vespers": true,
+      "orthros": true,
+      "divine_liturgy": true,
+      "office_basis": "great_lent",
+      "liturgy_kind": "presanctified"
+    },
+    {
+      "date": "2026-03-08",
+      "title": "Κυριακή",
+      "vespers": true,
+      "orthros": true,
+      "divine_liturgy": true,
+      "office_basis": "sunday",
+      "liturgy_kind": "chrysostom"
+    },
+    {
+      "date": "2026-03-09",
+      "title": "Θεία Λειτουργία τῶν Προηγιασμένων Τιμίων Δώρων",
+      "vespers": true,
+      "orthros": true,
+      "divine_liturgy": true,
+      "office_basis": "great_lent",
+      "liturgy_kind": "presanctified"
+    },
+    {
+      "date": "2026-03-11",
+      "title": "Θεία Λειτουργία τῶν Προηγιασμένων Τιμίων Δώρων",
+      "vespers": true,
+      "orthros": true,
+      "divine_liturgy": true,
+      "office_basis": "great_lent",
+      "liturgy_kind": "presanctified"
+    },
+    {
+      "date": "2026-03-13",
+      "title": "Θεία Λειτουργία τῶν Προηγιασμένων Τιμίων Δώρων",
+      "vespers": true,
+      "orthros": true,
+      "divine_liturgy": true,
+      "office_basis": "great_lent",
+      "liturgy_kind": "presanctified"
+    },
+    {
+      "date": "2026-03-15",
+      "title": "Κυριακή",
+      "vespers": true,
+      "orthros": true,
+      "divine_liturgy": true,
+      "office_basis": "sunday",
+      "liturgy_kind": "chrysostom"
+    },
+    {
+      "date": "2026-03-18",
+      "title": "Θεία Λειτουργία τῶν Προηγιασμένων Τιμίων Δώρων",
+      "vespers": true,
+      "orthros": true,
+      "divine_liturgy": true,
+      "office_basis": "great_lent",
+      "liturgy_kind": "presanctified"
+    },
+    {
+      "date": "2026-03-20",
+      "title": "Θεία Λειτουργία τῶν Προηγιασμένων Τιμίων Δώρων",
+      "vespers": true,
+      "orthros": true,
+      "divine_liturgy": true,
+      "office_basis": "great_lent",
+      "liturgy_kind": "presanctified"
+    },
+    {
+      "date": "2026-03-22",
+      "title": "Κυριακή",
+      "vespers": true,
+      "orthros": true,
+      "divine_liturgy": true,
+      "office_basis": "sunday",
+      "liturgy_kind": "chrysostom"
+    },
+    {
+      "date": "2026-03-25",
+      "title": "Εὐαγγελισμὸς τῆς Θεοτόκου",
+      "vespers": true,
+      "orthros": true,
+      "divine_liturgy": true,
+      "office_basis": "fixed_feast",
+      "liturgy_kind": "chrysostom"
+    },
+    {
+      "date": "2026-03-27",
+      "title": "Θεία Λειτουργία τῶν Προηγιασμένων Τιμίων Δώρων",
+      "vespers": true,
+      "orthros": true,
+      "divine_liturgy": true,
+      "office_basis": "great_lent",
+      "liturgy_kind": "presanctified"
+    },
+    {
+      "date": "2026-03-29",
+      "title": "Κυριακή",
+      "vespers": true,
+      "orthros": true,
+      "divine_liturgy": true,
+      "office_basis": "sunday",
+      "liturgy_kind": "chrysostom"
+    },
+    {
+      "date": "2026-04-01",
+      "title": "Θεία Λειτουργία τῶν Προηγιασμένων Τιμίων Δώρων",
+      "vespers": true,
+      "orthros": true,
+      "divine_liturgy": true,
+      "office_basis": "great_lent",
+      "liturgy_kind": "presanctified"
+    },
+    {
+      "date": "2026-04-03",
+      "title": "Θεία Λειτουργία τῶν Προηγιασμένων Τιμίων Δώρων",
+      "vespers": true,
+      "orthros": true,
+      "divine_liturgy": true,
+      "office_basis": "great_lent",
+      "liturgy_kind": "presanctified"
+    },
+    {
+      "date": "2026-04-04",
+      "title": "Σάββατον τοῦ Λαζάρου",
+      "vespers": true,
+      "orthros": true,
+      "divine_liturgy": true,
+      "office_basis": "movable_feast",
+      "liturgy_kind": "chrysostom"
+    },
+    {
+      "date": "2026-04-05",
+      "title": "Κυριακή",
+      "vespers": true,
+      "orthros": true,
+      "divine_liturgy": true,
+      "office_basis": "sunday",
+      "liturgy_kind": "chrysostom"
+    },
+    {
+      "date": "2026-04-06",
+      "title": "Μεγάλη Δευτέρα",
+      "vespers": true,
+      "orthros": true,
+      "divine_liturgy": true,
+      "office_basis": "movable_feast",
+      "liturgy_kind": "presanctified"
+    },
+    {
+      "date": "2026-04-07",
+      "title": "Μεγάλη Τρίτη",
+      "vespers": true,
+      "orthros": true,
+      "divine_liturgy": true,
+      "office_basis": "movable_feast",
+      "liturgy_kind": "presanctified"
+    },
+    {
+      "date": "2026-04-08",
+      "title": "Μεγάλη Τετάρτη",
+      "vespers": true,
+      "orthros": true,
+      "divine_liturgy": true,
+      "office_basis": "movable_feast",
+      "liturgy_kind": "presanctified"
+    },
+    {
+      "date": "2026-04-09",
+      "title": "Μεγάλη Πέμπτη",
+      "vespers": true,
+      "orthros": true,
+      "divine_liturgy": true,
+      "office_basis": "movable_feast",
+      "liturgy_kind": "basil"
+    },
+    {
+      "date": "2026-04-10",
+      "title": "Μεγάλη Παρασκευή",
+      "vespers": true,
+      "orthros": true,
+      "divine_liturgy": false,
+      "office_basis": "holy_week"
+    },
+    {
+      "date": "2026-04-11",
+      "title": "Μέγα Σάββατον",
+      "vespers": true,
+      "orthros": true,
+      "divine_liturgy": true,
+      "office_basis": "movable_feast",
+      "liturgy_kind": "basil"
+    },
+    {
+      "date": "2026-04-12",
+      "title": "Κυριακή",
+      "vespers": true,
+      "orthros": true,
+      "divine_liturgy": true,
+      "office_basis": "sunday",
+      "liturgy_kind": "chrysostom"
+    },
+    {
+      "date": "2026-04-13",
+      "title": "Δευτέρα τῆς Διακαινησίμου",
+      "vespers": true,
+      "orthros": true,
+      "divine_liturgy": true,
+      "office_basis": "movable_feast",
+      "liturgy_kind": "chrysostom"
+    },
+    {
+      "date": "2026-04-17",
+      "title": "Παρασκευὴ τῆς Διακαινησίμου — Ζωοδόχος Πηγή",
+      "vespers": true,
+      "orthros": true,
+      "divine_liturgy": true,
+      "office_basis": "movable_feast",
+      "liturgy_kind": "chrysostom"
+    },
+    {
+      "date": "2026-04-19",
+      "title": "Κυριακή",
+      "vespers": true,
+      "orthros": true,
+      "divine_liturgy": true,
+      "office_basis": "sunday",
+      "liturgy_kind": "chrysostom"
+    },
+    {
+      "date": "2026-04-26",
+      "title": "Κυριακή",
+      "vespers": true,
+      "orthros": true,
+      "divine_liturgy": true,
+      "office_basis": "sunday",
+      "liturgy_kind": "chrysostom"
+    },
+    {
+      "date": "2026-05-03",
+      "title": "Κυριακή",
+      "vespers": true,
+      "orthros": true,
+      "divine_liturgy": true,
+      "office_basis": "sunday",
+      "liturgy_kind": "chrysostom"
+    },
+    {
+      "date": "2026-05-06",
+      "title": "Μεσοπεντηκοστή",
+      "vespers": true,
+      "orthros": true,
+      "divine_liturgy": true,
+      "office_basis": "movable_feast",
+      "liturgy_kind": "chrysostom"
+    },
+    {
+      "date": "2026-05-10",
+      "title": "Κυριακή",
+      "vespers": true,
+      "orthros": true,
+      "divine_liturgy": true,
+      "office_basis": "sunday",
+      "liturgy_kind": "chrysostom"
+    },
+    {
+      "date": "2026-05-17",
+      "title": "Κυριακή",
+      "vespers": true,
+      "orthros": true,
+      "divine_liturgy": true,
+      "office_basis": "sunday",
+      "liturgy_kind": "chrysostom"
+    },
+    {
+      "date": "2026-05-21",
+      "title": "Ἀνάληψις τοῦ Κυρίου",
+      "vespers": true,
+      "orthros": true,
+      "divine_liturgy": true,
+      "office_basis": "movable_feast",
+      "liturgy_kind": "chrysostom"
+    },
+    {
+      "date": "2026-05-24",
+      "title": "Κυριακή",
+      "vespers": true,
+      "orthros": true,
+      "divine_liturgy": true,
+      "office_basis": "sunday",
+      "liturgy_kind": "chrysostom"
+    },
+    {
+      "date": "2026-05-30",
+      "title": "Ψυχοσάββατον πρὸ τῆς Πεντηκοστῆς",
+      "vespers": true,
+      "orthros": true,
+      "divine_liturgy": true,
+      "office_basis": "movable_feast",
+      "liturgy_kind": "chrysostom"
+    },
+    {
+      "date": "2026-05-31",
+      "title": "Κυριακή",
+      "vespers": true,
+      "orthros": true,
+      "divine_liturgy": true,
+      "office_basis": "sunday",
+      "liturgy_kind": "chrysostom"
+    },
+    {
+      "date": "2026-06-01",
+      "title": "Δευτέρα τοῦ Ἁγίου Πνεύματος",
+      "vespers": true,
+      "orthros": true,
+      "divine_liturgy": true,
+      "office_basis": "movable_feast",
+      "liturgy_kind": "chrysostom"
+    },
+    {
+      "date": "2026-06-07",
+      "title": "Κυριακή",
+      "vespers": true,
+      "orthros": true,
+      "divine_liturgy": true,
+      "office_basis": "sunday",
+      "liturgy_kind": "chrysostom"
+    },
+    {
+      "date": "2026-06-14",
+      "title": "Κυριακή",
+      "vespers": true,
+      "orthros": true,
+      "divine_liturgy": true,
+      "office_basis": "sunday",
+      "liturgy_kind": "chrysostom"
+    },
+    {
+      "date": "2026-06-21",
+      "title": "Κυριακή",
+      "vespers": true,
+      "orthros": true,
+      "divine_liturgy": true,
+      "office_basis": "sunday",
+      "liturgy_kind": "chrysostom"
+    },
+    {
+      "date": "2026-06-24",
+      "title": "Γενέθλιον τοῦ Τιμίου Προδρόμου",
+      "vespers": true,
+      "orthros": true,
+      "divine_liturgy": true,
+      "office_basis": "fixed_feast",
+      "liturgy_kind": "chrysostom"
+    },
+    {
+      "date": "2026-06-28",
+      "title": "Κυριακή",
+      "vespers": true,
+      "orthros": true,
+      "divine_liturgy": true,
+      "office_basis": "sunday",
+      "liturgy_kind": "chrysostom"
+    },
+    {
+      "date": "2026-06-29",
+      "title": "Ἅγιοι Πρωτοκορυφαῖοι Ἀπόστολοι Πέτρος καὶ Παῦλος",
+      "vespers": true,
+      "orthros": true,
+      "divine_liturgy": true,
+      "office_basis": "fixed_feast",
+      "liturgy_kind": "chrysostom"
+    },
+    {
+      "date": "2026-07-05",
+      "title": "Κυριακή",
+      "vespers": true,
+      "orthros": true,
+      "divine_liturgy": true,
+      "office_basis": "sunday",
+      "liturgy_kind": "chrysostom"
+    },
+    {
+      "date": "2026-07-12",
+      "title": "Κυριακή",
+      "vespers": true,
+      "orthros": true,
+      "divine_liturgy": true,
+      "office_basis": "sunday",
+      "liturgy_kind": "chrysostom"
+    },
+    {
+      "date": "2026-07-19",
+      "title": "Κυριακή",
+      "vespers": true,
+      "orthros": true,
+      "divine_liturgy": true,
+      "office_basis": "sunday",
+      "liturgy_kind": "chrysostom"
+    },
+    {
+      "date": "2026-07-26",
+      "title": "Κυριακή",
+      "vespers": true,
+      "orthros": true,
+      "divine_liturgy": true,
+      "office_basis": "sunday",
+      "liturgy_kind": "chrysostom"
+    },
+    {
+      "date": "2026-08-02",
+      "title": "Κυριακή",
+      "vespers": true,
+      "orthros": true,
+      "divine_liturgy": true,
+      "office_basis": "sunday",
+      "liturgy_kind": "chrysostom"
+    },
+    {
+      "date": "2026-08-06",
+      "title": "Μεταμόρφωσις τοῦ Σωτῆρος",
+      "vespers": true,
+      "orthros": true,
+      "divine_liturgy": true,
+      "office_basis": "fixed_feast",
+      "liturgy_kind": "chrysostom"
+    },
+    {
+      "date": "2026-08-09",
+      "title": "Κυριακή",
+      "vespers": true,
+      "orthros": true,
+      "divine_liturgy": true,
+      "office_basis": "sunday",
+      "liturgy_kind": "chrysostom"
+    },
+    {
+      "date": "2026-08-15",
+      "title": "Κοίμησις τῆς Θεοτόκου",
+      "vespers": true,
+      "orthros": true,
+      "divine_liturgy": true,
+      "office_basis": "fixed_feast",
+      "liturgy_kind": "chrysostom"
+    },
+    {
+      "date": "2026-08-16",
+      "title": "Κυριακή",
+      "vespers": true,
+      "orthros": true,
+      "divine_liturgy": true,
+      "office_basis": "sunday",
+      "liturgy_kind": "chrysostom"
+    },
+    {
+      "date": "2026-08-23",
+      "title": "Κυριακή",
+      "vespers": true,
+      "orthros": true,
+      "divine_liturgy": true,
+      "office_basis": "sunday",
+      "liturgy_kind": "chrysostom"
+    },
+    {
+      "date": "2026-08-30",
+      "title": "Κυριακή",
+      "vespers": true,
+      "orthros": true,
+      "divine_liturgy": true,
+      "office_basis": "sunday",
+      "liturgy_kind": "chrysostom"
+    },
+    {
+      "date": "2026-09-06",
+      "title": "Κυριακή",
+      "vespers": true,
+      "orthros": true,
+      "divine_liturgy": true,
+      "office_basis": "sunday",
+      "liturgy_kind": "chrysostom"
+    },
+    {
+      "date": "2026-09-08",
+      "title": "Γενέσιον τῆς Θεοτόκου",
+      "vespers": true,
+      "orthros": true,
+      "divine_liturgy": true,
+      "office_basis": "fixed_feast",
+      "liturgy_kind": "chrysostom"
+    },
+    {
+      "date": "2026-09-13",
+      "title": "Κυριακή",
+      "vespers": true,
+      "orthros": true,
+      "divine_liturgy": true,
+      "office_basis": "sunday",
+      "liturgy_kind": "chrysostom"
+    },
+    {
+      "date": "2026-09-14",
+      "title": "Ὕψωσις τοῦ Τιμίου Σταυροῦ",
+      "vespers": true,
+      "orthros": true,
+      "divine_liturgy": true,
+      "office_basis": "fixed_feast",
+      "liturgy_kind": "chrysostom"
+    },
+    {
+      "date": "2026-09-20",
+      "title": "Κυριακή",
+      "vespers": true,
+      "orthros": true,
+      "divine_liturgy": true,
+      "office_basis": "sunday",
+      "liturgy_kind": "chrysostom"
+    },
+    {
+      "date": "2026-09-27",
+      "title": "Κυριακή",
+      "vespers": true,
+      "orthros": true,
+      "divine_liturgy": true,
+      "office_basis": "sunday",
+      "liturgy_kind": "chrysostom"
+    },
+    {
+      "date": "2026-10-04",
+      "title": "Κυριακή",
+      "vespers": true,
+      "orthros": true,
+      "divine_liturgy": true,
+      "office_basis": "sunday",
+      "liturgy_kind": "chrysostom"
+    },
+    {
+      "date": "2026-10-11",
+      "title": "Κυριακή",
+      "vespers": true,
+      "orthros": true,
+      "divine_liturgy": true,
+      "office_basis": "sunday",
+      "liturgy_kind": "chrysostom"
+    },
+    {
+      "date": "2026-10-18",
+      "title": "Κυριακή",
+      "vespers": true,
+      "orthros": true,
+      "divine_liturgy": true,
+      "office_basis": "sunday",
+      "liturgy_kind": "chrysostom"
+    },
+    {
+      "date": "2026-10-25",
+      "title": "Κυριακή",
+      "vespers": true,
+      "orthros": true,
+      "divine_liturgy": true,
+      "office_basis": "sunday",
+      "liturgy_kind": "chrysostom"
+    },
+    {
+      "date": "2026-11-01",
+      "title": "Κυριακή",
+      "vespers": true,
+      "orthros": true,
+      "divine_liturgy": true,
+      "office_basis": "sunday",
+      "liturgy_kind": "chrysostom"
+    },
+    {
+      "date": "2026-11-08",
+      "title": "Κυριακή",
+      "vespers": true,
+      "orthros": true,
+      "divine_liturgy": true,
+      "office_basis": "sunday",
+      "liturgy_kind": "chrysostom"
+    },
+    {
+      "date": "2026-11-15",
+      "title": "Κυριακή",
+      "vespers": true,
+      "orthros": true,
+      "divine_liturgy": true,
+      "office_basis": "sunday",
+      "liturgy_kind": "chrysostom"
+    },
+    {
+      "date": "2026-11-21",
+      "title": "Εἴσοδος τῆς Θεοτόκου",
+      "vespers": true,
+      "orthros": true,
+      "divine_liturgy": true,
+      "office_basis": "fixed_feast",
+      "liturgy_kind": "chrysostom"
+    },
+    {
+      "date": "2026-11-22",
+      "title": "Κυριακή",
+      "vespers": true,
+      "orthros": true,
+      "divine_liturgy": true,
+      "office_basis": "sunday",
+      "liturgy_kind": "chrysostom"
+    },
+    {
+      "date": "2026-11-29",
+      "title": "Κυριακή",
+      "vespers": true,
+      "orthros": true,
+      "divine_liturgy": true,
+      "office_basis": "sunday",
+      "liturgy_kind": "chrysostom"
+    },
+    {
+      "date": "2026-12-06",
+      "title": "Κυριακή",
+      "vespers": true,
+      "orthros": true,
+      "divine_liturgy": true,
+      "office_basis": "sunday",
+      "liturgy_kind": "chrysostom"
+    },
+    {
+      "date": "2026-12-13",
+      "title": "Κυριακή",
+      "vespers": true,
+      "orthros": true,
+      "divine_liturgy": true,
+      "office_basis": "sunday",
+      "liturgy_kind": "chrysostom"
+    },
+    {
+      "date": "2026-12-20",
+      "title": "Κυριακή",
+      "vespers": true,
+      "orthros": true,
+      "divine_liturgy": true,
+      "office_basis": "sunday",
+      "liturgy_kind": "chrysostom"
+    },
+    {
+      "date": "2026-12-24",
+      "title": "Παραμονὴ Χριστουγέννων",
+      "vespers": true,
+      "orthros": true,
+      "divine_liturgy": true,
+      "office_basis": "fixed_feast",
+      "liturgy_kind": "basil"
+    },
+    {
+      "date": "2026-12-25",
+      "title": "Ἡ Γέννησις τοῦ Χριστοῦ",
+      "vespers": true,
+      "orthros": true,
+      "divine_liturgy": true,
+      "office_basis": "fixed_feast",
+      "liturgy_kind": "chrysostom"
+    },
+    {
+      "date": "2026-12-27",
+      "title": "Κυριακή",
+      "vespers": true,
+      "orthros": true,
+      "divine_liturgy": true,
+      "office_basis": "sunday",
+      "liturgy_kind": "chrysostom"
+    }
+  ]
+}

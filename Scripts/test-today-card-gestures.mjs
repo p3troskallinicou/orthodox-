@@ -1,0 +1,17 @@
+import { readFileSync } from 'node:fs';
+import assert from 'node:assert/strict';
+const source = readFileSync('Klimax/TodayView.swift', 'utf8');
+const swipe = source.slice(source.indexOf('private struct SwipeDeleteContainer'), source.indexOf('private struct PlannerHorizontalSwipe'));
+assert(swipe.indexOf('content\n') < swipe.indexOf('Button(role: .destructive)'));
+assert(swipe.indexOf('.contentShape(Rectangle())') < swipe.indexOf('.offset(x:'));
+assert(swipe.includes('.zIndex(1)'));
+assert(swipe.includes('revealed = (revealed ? -74 : 0) + translation < -44'));
+assert(swipe.includes('.accessibilityAction(named: Text("Διαγραφή από την ημέρα"))'));
+const planner = source.slice(source.indexOf('private var dailyJourneyPage:'), source.indexOf('private func journeyPersonalRow'));
+assert(/journeyPlanRow\(item\)\s*\.onDrag/.test(planner));
+const handle = source.slice(source.indexOf('private func journeyDragHandle'), source.indexOf('private func addGoal('));
+assert(!handle.includes('.onDrag'));
+const board = source.slice(source.indexOf('private var dashboardPage:'), source.indexOf('private func syncPhoneWidgets'));
+assert(board.includes('.onDrag') && board.includes('WidgetDropDelegate('));
+assert(source.includes('.contextMenu'));
+console.log('PASS: delete hit-test ordering, open-row swipe state, whole-card planner/widget drag sources, menus retained');

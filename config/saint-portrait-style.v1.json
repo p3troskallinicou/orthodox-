@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "styleVersion": "saint-portrait-style.v1",
+  "editable": true,
+  "derivedFromRepositoryInventory": "data/saint-portraits/completed-inventory.v1.json",
+  "masterReferenceSet": "config/saint-portrait-master-references.v1.json",
+  "generationCanvas": {
+    "batchOrchestrationModel": "gpt-5.6-luna",
+    "width": 1024,
+    "height": 1536,
+    "aspectRatio": 0.666667,
+    "format": "png",
+    "quality": "high",
+    "background": "opaque"
+  },
+  "applicationAsset": {
+    "width": 768,
+    "height": 1024,
+    "aspectRatio": 0.75,
+    "resizeMode": "aspectFit",
+    "format": "png",
+    "assetCatalogRoot": "Klimax/Assets.xcassets"
+  },
+  "measurableTargets": {
+    "edgeBackgroundRgb": [200, 145, 37],
+    "edgeBackgroundTolerance": 95,
+    "maximumEdgeBackgroundStandardDeviation": 50,
+    "minimumFileBytes": 50000,
+    "maximumFileBytes": 12000000,
+    "allowTransparency": false,
+    "minimumSubjectEdgeClearanceFraction": 0.015,
+    "haloTopClearanceFraction": 0.02,
+    "headCenterYFractionRange": [0.20, 0.38],
+    "subjectBottomYFractionRange": [0.93, 1.0]
+  },
+  "instruction": {
+    "composition": "Create one principal Orthodox saint in a calm frontal or gentle three quarter bust portrait. Keep the head and complete halo comfortably inside the canvas. The torso may reach the lower edge, with balanced empty space around the head and shoulders.",
+    "crop": "Use a vertical portrait crop from approximately mid torso or waist upward. Do not crop the halo, head, identifying object, hands when shown, or principal vestment details.",
+    "background": "Use a quiet, nearly uniform warm ochre gold field with subtle paper or tempera texture. No scenery, architecture, rays, clouds, patterns, text, or narrative background.",
+    "lighting": "Use soft, even, icon inspired illumination with restrained warm highlights. Avoid theatrical rim light, lens effects, glossy photography, dramatic shadows, and neon glow.",
+    "renderingTechnique": "Use a polished contemporary Orthodox icon illustration derived from egg tempera conventions, with clean controlled contours, layered planar modelling, restrained brush texture, and a finished editorial quality.",
+    "levelOfDetail": "Use clear facial, hair, vestment, hand, and object definition without photoreal pores, hyper detailed ornament, game art rendering, or busy micro texture.",
+    "facialTreatment": "Use dignified, attentive features, elongated but natural proportions, calm eyes, restrained expression, and carefully modelled hair and beard appropriate only to verified metadata.",
+    "clothingTreatment": "Render verified traditional clothing with broad coherent folds, restrained highlights, and a limited harmonious palette. Do not invent rank, vestments, insignia, jewellery, or attributes.",
+    "haloTreatment": "Use one thin, complete, circular dark red brown or muted ochre outline halo behind the head, centered and unobstructed. Do not use a glowing disc, cropped halo, decorative halo, or inscription.",
+    "colourRestraint": "Prefer warm ochre gold, deep muted blue, brick red, olive, umber, charcoal, and parchment. Keep saturation controlled and preserve strong but quiet value separation.",
+    "perspective": "Use a flat icon inspired spatial treatment with subtle dimensional modelling. Avoid photographic depth of field, extreme foreshortening, cinematic perspective, or wide angle distortion.",
+    "prohibitedElements": [
+      "writing",
+      "labels",
+      "captions",
+      "watermarks",
+      "decorative borders",
+      "multiple people unless explicitly required by approved metadata",
+      "modern objects",
+      "arbitrary scenery",
+      "unrelated religious figures",
+      "duplicated objects",
+      "malformed hands",
+      "extra limbs",
+      "cropped halos",
+      "inconsistent background treatment",
+      "photorealism",
+      "open world game art",
+      "children's playground styling"
+    ]
+  }
+}

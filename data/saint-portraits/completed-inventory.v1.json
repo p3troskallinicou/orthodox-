@@ -1,0 +1,3610 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-07-29T15:43:40.075Z",
+  "sourceSaintsPath": "Klimax/saints.json",
+  "totalCompleted": 36,
+  "groups": [
+    {
+      "key": "png:768x1024",
+      "format": "png",
+      "width": 768,
+      "height": 1024,
+      "count": 32,
+      "saintIds": [
+        "petros",
+        "iakovos-zevedaiou",
+        "ioannis-theologos",
+        "bartholomaios",
+        "thomas",
+        "matthaios",
+        "iakovos-alfaiou",
+        "ioudas-thaddaios",
+        "simon-zilotis",
+        "paulos",
+        "loukas",
+        "timotheosapostolos",
+        "onisimosapostolos",
+        "ilias",
+        "moysis",
+        "isaias",
+        "ieremias",
+        "daniil",
+        "ioannis-prodromos",
+        "vasileios",
+        "grigorios-theologos",
+        "ioannis-chrysostomos",
+        "nikolaos",
+        "spyridon",
+        "athanasios-megas",
+        "polykarposepiskopos",
+        "antonios-megas",
+        "efthymios-megas",
+        "ioannis-klimakos",
+        "efraim-syros",
+        "maria-aigyptia",
+        "serafeimsarof"
+      ]
+    },
+    {
+      "key": "png:685x1024",
+      "format": "png",
+      "width": 685,
+      "height": 1024,
+      "count": 1,
+      "saintIds": [
+        "andreas"
+      ]
+    },
+    {
+      "key": "png:767x1024",
+      "format": "png",
+      "width": 767,
+      "height": 1024,
+      "count": 2,
+      "saintIds": [
+        "filippos",
+        "matthias"
+      ]
+    },
+    {
+      "key": "png:766x1024",
+      "format": "png",
+      "width": 766,
+      "height": 1024,
+      "count": 1,
+      "saintIds": [
+        "markos"
+      ]
+    }
+  ],
+  "completed": [
+    {
+      "saintId": "petros",
+      "canonicalName": "Ἀπόστολος Πέτρος",
+      "nameEnglish": "Apostle Peter",
+      "rankId": "apostoloi",
+      "rankTitle": "Ἀπόστολοι",
+      "role": "Ἀπόστολος, Πρωτοκορυφαῖος",
+      "imagePath": "Klimax/Assets.xcassets/petros.imageset/petros.png",
+      "imagesetPath": "Klimax/Assets.xcassets/petros.imageset",
+      "analysis": {
+        "format": "png",
+        "width": 768,
+        "height": 1024,
+        "aspectRatio": 0.75,
+        "bytes": 1231678,
+        "checksum": "226f85cabf0cf0afb71f2385ab033eba54ea6ec7a07004b99a0ee77b673b6f17",
+        "hasAlphaChannel": false,
+        "edgeBackgroundRgb": [
+          244,
+          197,
+          81
+        ],
+        "edgeBackgroundStandardDeviation": 12.1,
+        "dominantColors": [
+          {
+            "rgb": [
+              224,
+              192,
+              64
+            ],
+            "sampleCount": 58713
+          },
+          {
+            "rgb": [
+              224,
+              192,
+              96
+            ],
+            "sampleCount": 28994
+          },
+          {
+            "rgb": [
+              224,
+              160,
+              64
+            ],
+            "sampleCount": 12468
+          },
+          {
+            "rgb": [
+              160,
+              64,
+              0
+            ],
+            "sampleCount": 10278
+          },
+          {
+            "rgb": [
+              96,
+              32,
+              0
+            ],
+            "sampleCount": 6924
+          },
+          {
+            "rgb": [
+              192,
+              96,
+              0
+            ],
+            "sampleCount": 5816
+          },
+          {
+            "rgb": [
+              128,
+              64,
+              0
+            ],
+            "sampleCount": 5318
+          },
+          {
+            "rgb": [
+              128,
+              32,
+              0
+            ],
+            "sampleCount": 5220
+          }
+        ],
+        "subjectBounds": {
+          "x": 0.08333333333333333,
+          "y": 0.04296875,
+          "width": 0.8723958333333334,
+          "height": 0.951171875
+        },
+        "sampledTransparentFraction": 0
+      }
+    },
+    {
+      "saintId": "andreas",
+      "canonicalName": "Ἀπόστολος Ἀνδρέας ὁ Πρωτόκλητος",
+      "nameEnglish": "Andrew the First-Called",
+      "rankId": "apostoloi",
+      "rankTitle": "Ἀπόστολοι",
+      "role": "Ἀπόστολος, Πρωτόκλητος",
+      "imagePath": "Klimax/Assets.xcassets/andreas.imageset/andreas.png",
+      "imagesetPath": "Klimax/Assets.xcassets/andreas.imageset",
+      "analysis": {
+        "format": "png",
+        "width": 685,
+        "height": 1024,
+        "aspectRatio": 0.6689453125,
+        "bytes": 796955,
+        "checksum": "73f9eabdfb7545eedfa21864bd97e7d84783cc3afede6f90ababfc547800c4da",
+        "hasAlphaChannel": false,
+        "edgeBackgroundRgb": [
+          211,
+          181,
+          102
+        ],
+        "edgeBackgroundStandardDeviation": 47.51,
+        "dominantColors": [
+          {
+            "rgb": [
+              224,
+              192,
+              96
+            ],
+            "sampleCount": 30641
+          },
+          {
+            "rgb": [
+              224,
+              224,
+              128
+            ],
+            "sampleCount": 25659
+          },
+          {
+            "rgb": [
+              224,
+              192,
+              128
+            ],
+            "sampleCount": 17779
+          },
+          {
+            "rgb": [
+              64,
+              32,
+              0
+            ],
+            "sampleCount": 8195
+          },
+          {
+            "rgb": [
+              96,
+              96,
+              64
+            ],
+            "sampleCount": 7642
+          },
+          {
+            "rgb": [
+              96,
+              64,
+              32
+            ],
+            "sampleCount": 7025
+          },
+          {
+            "rgb": [
+              96,
+              96,
+              32
+            ],
+            "sampleCount": 5950
+          },
+          {
+            "rgb": [
+              96,
+              64,
+              0
+            ],
+            "sampleCount": 5626
+          }
+        ],
+        "subjectBounds": {
+          "x": 0,
+          "y": 0,
+          "width": 1.0014598540145985,
+          "height": 1
+        },
+        "sampledTransparentFraction": 0
+      }
+    },
+    {
+      "saintId": "iakovos-zevedaiou",
+      "canonicalName": "Ἀπόστολος Ἰάκωβος ὁ τοῦ Ζεβεδαίου",
+      "nameEnglish": "James, son of Zebedee",
+      "rankId": "apostoloi",
+      "rankTitle": "Ἀπόστολοι",
+      "role": "Ἀπόστολος, ἐκ τῶν Δώδεκα",
+      "imagePath": "Klimax/Assets.xcassets/iakovos-zevedaiou.imageset/iakovos-zevedaiou.png",
+      "imagesetPath": "Klimax/Assets.xcassets/iakovos-zevedaiou.imageset",
+      "analysis": {
+        "format": "png",
+        "width": 768,
+        "height": 1024,
+        "aspectRatio": 0.75,
+        "bytes": 1173563,
+        "checksum": "31dcf495a16c405626a1d11a0cfd96559dbaf118e7fc5e9a73e51170eaf9d1e5",
+        "hasAlphaChannel": false,
+        "edgeBackgroundRgb": [
+          205,
+          144,
+          23
+        ],
+        "edgeBackgroundStandardDeviation": 46.04,
+        "dominantColors": [
+          {
+            "rgb": [
+              224,
+              160,
+              32
+            ],
+            "sampleCount": 33766
+          },
+          {
+            "rgb": [
+              0,
+              0,
+              0
+            ],
+            "sampleCount": 29043
+          },
+          {
+            "rgb": [
+              224,
+              160,
+              0
+            ],
+            "sampleCount": 23090
+          },
+          {
+            "rgb": [
+              224,
+              192,
+              32
+            ],
+            "sampleCount": 18379
+          },
+          {
+            "rgb": [
+              192,
+              128,
+              0
+            ],
+            "sampleCount": 11717
+          },
+          {
+            "rgb": [
+              0,
+              32,
+              32
+            ],
+            "sampleCount": 9983
+          },
+          {
+            "rgb": [
+              224,
+              128,
+              0
+            ],
+            "sampleCount": 9541
+          },
+          {
+            "rgb": [
+              224,
+              192,
+              64
+            ],
+            "sampleCount": 6487
+          }
+        ],
+        "subjectBounds": {
+          "x": 0.049479166666666664,
+          "y": 0,
+          "width": 0.875,
+          "height": 1
+        },
+        "sampledTransparentFraction": 0
+      }
+    },
+    {
+      "saintId": "ioannis-theologos",
+      "canonicalName": "Ἀπόστολος Ἰωάννης ὁ Θεολόγος",
+      "nameEnglish": "John the Theologian",
+      "rankId": "apostoloi",
+      "rankTitle": "Ἀπόστολοι",
+      "role": "Ἀπόστολος & Εὐαγγελιστής, Θεολόγος",
+      "imagePath": "Klimax/Assets.xcassets/ioannis-theologos.imageset/ioannis-theologos.png",
+      "imagesetPath": "Klimax/Assets.xcassets/ioannis-theologos.imageset",
+      "analysis": {
+        "format": "png",
+        "width": 768,
+        "height": 1024,
+        "aspectRatio": 0.75,
+        "bytes": 1426497,
+        "checksum": "f2418c3a8015f5de4a1bbecc475d8fc67394970638e090c69fe74ac2d91bcef7",
+        "hasAlphaChannel": false,
+        "edgeBackgroundRgb": [
+          194,
+          140,
+          32
+        ],
+        "edgeBackgroundStandardDeviation": 32.72,
+        "dominantColors": [
+          {
+            "rgb": [
+              224,
+              160,
+              32
+            ],
+            "sampleCount": 67272
+          },
+          {
+            "rgb": [
+              64,
+              32,
+              0
+            ],
+            "sampleCount": 28905
+          },
+          {
+            "rgb": [
+              32,
+              0,
+              0
+            ],
+            "sampleCount": 13450
+          },
+          {
+            "rgb": [
+              192,
+              128,
+              32
+            ],
+            "sampleCount": 11011
+          },
+          {
+            "rgb": [
+              192,
+              160,
+              32
+            ],
+            "sampleCount": 9855
+          },
+          {
+            "rgb": [
+              96,
+              32,
+              0
+            ],
+            "sampleCount": 7233
+          },
+          {
+            "rgb": [
+              224,
+              192,
+              32
+            ],
+            "sampleCount": 4567
+          },
+          {
+            "rgb": [
+              192,
+              128,
+              0
+            ],
+            "sampleCount": 4393
+          }
+        ],
+        "subjectBounds": {
+          "x": 0.0078125,
+          "y": 0,
+          "width": 0.9921875,
+          "height": 1
+        },
+        "sampledTransparentFraction": 0
+      }
+    },
+    {
+      "saintId": "filippos",
+      "canonicalName": "Ἀπόστολος Φίλιππος",
+      "nameEnglish": "Apostle Philip",
+      "rankId": "apostoloi",
+      "rankTitle": "Ἀπόστολοι",
+      "role": "Ἀπόστολος, ἐκ τῶν Δώδεκα",
+      "imagePath": "Klimax/Assets.xcassets/filippos.imageset/filippos.png",
+      "imagesetPath": "Klimax/Assets.xcassets/filippos.imageset",
+      "analysis": {
+        "format": "png",
+        "width": 767,
+        "height": 1024,
+        "aspectRatio": 0.7490234375,
+        "bytes": 1259769,
+        "checksum": "a2b26ffbc25b7364026a9de30280b93b2d838ba6b7cee5062414b4a49d410d5a",
+        "hasAlphaChannel": false,
+        "edgeBackgroundRgb": [
+          215,
+          164,
+          44
+        ],
+        "edgeBackgroundStandardDeviation": 19.49,
+        "dominantColors": [
+          {
+            "rgb": [
+              224,
+              160,
+              32
+            ],
+            "sampleCount": 48546
+          },
+          {
+            "rgb": [
+              96,
+              32,
+              0
+            ],
+            "sampleCount": 27963
+          },
+          {
+            "rgb": [
+              224,
+              192,
+              64
+            ],
+            "sampleCount": 22252
+          },
+          {
+            "rgb": [
+              64,
+              32,
+              0
+            ],
+            "sampleCount": 14943
+          },
+          {
+            "rgb": [
+              192,
+              160,
+              32
+            ],
+            "sampleCount": 10772
+          },
+          {
+            "rgb": [
+              64,
+              0,
+              0
+            ],
+            "sampleCount": 10623
+          },
+          {
+            "rgb": [
+              224,
+              192,
+              32
+            ],
+            "sampleCount": 9163
+          },
+          {
+            "rgb": [
+              192,
+              128,
+              32
+            ],
+            "sampleCount": 7779
+          }
+        ],
+        "subjectBounds": {
+          "x": 0,
+          "y": 0,
+          "width": 1.001303780964798,
+          "height": 1
+        },
+        "sampledTransparentFraction": 0
+      }
+    },
+    {
+      "saintId": "bartholomaios",
+      "canonicalName": "Ἀπόστολος Βαρθολομαῖος (Ναθαναήλ)",
+      "nameEnglish": "Bartholomew (Nathanael)",
+      "rankId": "apostoloi",
+      "rankTitle": "Ἀπόστολοι",
+      "role": "Ἀπόστολος, ἐκ τῶν Δώδεκα",
+      "imagePath": "Klimax/Assets.xcassets/bartholomaios.imageset/bartholomaios.png",
+      "imagesetPath": "Klimax/Assets.xcassets/bartholomaios.imageset",
+      "analysis": {
+        "format": "png",
+        "width": 768,
+        "height": 1024,
+        "aspectRatio": 0.75,
+        "bytes": 1470713,
+        "checksum": "9c9e950e03934b4109e4445fdbf672a517bb5d8e8b60983002d3cec3adad285e",
+        "hasAlphaChannel": false,
+        "edgeBackgroundRgb": [
+          173,
+          128,
+          10
+        ],
+        "edgeBackgroundStandardDeviation": 27.2,
+        "dominantColors": [
+          {
+            "rgb": [
+              192,
+              128,
+              0
+            ],
+            "sampleCount": 33764
+          },
+          {
+            "rgb": [
+              224,
+              160,
+              0
+            ],
+            "sampleCount": 27168
+          },
+          {
+            "rgb": [
+              32,
+              64,
+              0
+            ],
+            "sampleCount": 12284
+          },
+          {
+            "rgb": [
+              160,
+              128,
+              0
+            ],
+            "sampleCount": 11550
+          },
+          {
+            "rgb": [
+              160,
+              96,
+              0
+            ],
+            "sampleCount": 10682
+          },
+          {
+            "rgb": [
+              0,
+              32,
+              0
+            ],
+            "sampleCount": 10161
+          },
+          {
+            "rgb": [
+              32,
+              32,
+              0
+            ],
+            "sampleCount": 10149
+          },
+          {
+            "rgb": [
+              192,
+              160,
+              0
+            ],
+            "sampleCount": 9678
+          }
+        ],
+        "subjectBounds": {
+          "x": 0,
+          "y": 0,
+          "width": 1,
+          "height": 1
+        },
+        "sampledTransparentFraction": 0
+      }
+    },
+    {
+      "saintId": "thomas",
+      "canonicalName": "Ἀπόστολος Θωμᾶς",
+      "nameEnglish": "Apostle Thomas",
+      "rankId": "apostoloi",
+      "rankTitle": "Ἀπόστολοι",
+      "role": "Ἀπόστολος, ἐκ τῶν Δώδεκα",
+      "imagePath": "Klimax/Assets.xcassets/thomas.imageset/thomas.png",
+      "imagesetPath": "Klimax/Assets.xcassets/thomas.imageset",
+      "analysis": {
+        "format": "png",
+        "width": 768,
+        "height": 1024,
+        "aspectRatio": 0.75,
+        "bytes": 1336712,
+        "checksum": "a6025d7d9deb65358e4bb1c5d75f9dd21031febce3c5c08701cc42a8e6904349",
+        "hasAlphaChannel": false,
+        "edgeBackgroundRgb": [
+          212,
+          157,
+          41
+        ],
+        "edgeBackgroundStandardDeviation": 15.47,
+        "dominantColors": [
+          {
+            "rgb": [
+              224,
+              160,
+              32
+            ],
+            "sampleCount": 57975
+          },
+          {
+            "rgb": [
+              224,
+              192,
+              32
+            ],
+            "sampleCount": 16771
+          },
+          {
+            "rgb": [
+              0,
+              0,
+              0
+            ],
+            "sampleCount": 12611
+          },
+          {
+            "rgb": [
+              192,
+              128,
+              32
+            ],
+            "sampleCount": 11081
+          },
+          {
+            "rgb": [
+              128,
+              32,
+              0
+            ],
+            "sampleCount": 10037
+          },
+          {
+            "rgb": [
+              192,
+              160,
+              32
+            ],
+            "sampleCount": 9632
+          },
+          {
+            "rgb": [
+              160,
+              32,
+              0
+            ],
+            "sampleCount": 8873
+          },
+          {
+            "rgb": [
+              32,
+              32,
+              0
+            ],
+            "sampleCount": 8624
+          }
+        ],
+        "subjectBounds": {
+          "x": 0.015625,
+          "y": 0,
+          "width": 0.984375,
+          "height": 0.998046875
+        },
+        "sampledTransparentFraction": 0
+      }
+    },
+    {
+      "saintId": "matthaios",
+      "canonicalName": "Ἀπόστολος Ματθαῖος ὁ Εὐαγγελιστής",
+      "nameEnglish": "Matthew the Evangelist",
+      "rankId": "apostoloi",
+      "rankTitle": "Ἀπόστολοι",
+      "role": "Ἀπόστολος & Εὐαγγελιστής",
+      "imagePath": "Klimax/Assets.xcassets/matthaios.imageset/matthaios.png",
+      "imagesetPath": "Klimax/Assets.xcassets/matthaios.imageset",
+      "analysis": {
+        "format": "png",
+        "width": 768,
+        "height": 1024,
+        "aspectRatio": 0.75,
+        "bytes": 1401454,
+        "checksum": "2cf10c289b15ad11ec2810cd5d1df6c511692338c046a7e48dde2835e5b8d1e6",
+        "hasAlphaChannel": false,
+        "edgeBackgroundRgb": [
+          208,
+          155,
+          41
+        ],
+        "edgeBackgroundStandardDeviation": 14.4,
+        "dominantColors": [
+          {
+            "rgb": [
+              224,
+              160,
+              32
+            ],
+            "sampleCount": 52134
+          },
+          {
+            "rgb": [
+              192,
+              128,
+              32
+            ],
+            "sampleCount": 19920
+          },
+          {
+            "rgb": [
+              32,
+              32,
+              0
+            ],
+            "sampleCount": 17099
+          },
+          {
+            "rgb": [
+              192,
+              160,
+              32
+            ],
+            "sampleCount": 15813
+          },
+          {
+            "rgb": [
+              224,
+              192,
+              32
+            ],
+            "sampleCount": 13295
+          },
+          {
+            "rgb": [
+              64,
+              64,
+              0
+            ],
+            "sampleCount": 7700
+          },
+          {
+            "rgb": [
+              224,
+              192,
+              96
+            ],
+            "sampleCount": 6792
+          },
+          {
+            "rgb": [
+              96,
+              96,
+              32
+            ],
+            "sampleCount": 5874
+          }
+        ],
+        "subjectBounds": {
+          "x": 0.013020833333333334,
+          "y": 0,
+          "width": 0.8984375,
+          "height": 0.9765625
+        },
+        "sampledTransparentFraction": 0
+      }
+    },
+    {
+      "saintId": "iakovos-alfaiou",
+      "canonicalName": "Ἀπόστολος Ἰάκωβος ὁ τοῦ Ἀλφαίου",
+      "nameEnglish": "James, son of Alphaeus",
+      "rankId": "apostoloi",
+      "rankTitle": "Ἀπόστολοι",
+      "role": "Ἀπόστολος, ἐκ τῶν Δώδεκα",
+      "imagePath": "Klimax/Assets.xcassets/iakovos-alfaiou.imageset/iakovos-alfaiou.png",
+      "imagesetPath": "Klimax/Assets.xcassets/iakovos-alfaiou.imageset",
+      "analysis": {
+        "format": "png",
+        "width": 768,
+        "height": 1024,
+        "aspectRatio": 0.75,
+        "bytes": 1223623,
+        "checksum": "17378047c504693fca1ea6e7bc62028dbf92423a8c58e60c97e01937c2f70c8f",
+        "hasAlphaChannel": false,
+        "edgeBackgroundRgb": [
+          227,
+          163,
+          46
+        ],
+        "edgeBackgroundStandardDeviation": 24.16,
+        "dominantColors": [
+          {
+            "rgb": [
+              224,
+              160,
+              32
+            ],
+            "sampleCount": 42020
+          },
+          {
+            "rgb": [
+              224,
+              192,
+              64
+            ],
+            "sampleCount": 24046
+          },
+          {
+            "rgb": [
+              224,
+              192,
+              32
+            ],
+            "sampleCount": 15727
+          },
+          {
+            "rgb": [
+              160,
+              64,
+              32
+            ],
+            "sampleCount": 13001
+          },
+          {
+            "rgb": [
+              160,
+              96,
+              64
+            ],
+            "sampleCount": 9430
+          },
+          {
+            "rgb": [
+              128,
+              32,
+              0
+            ],
+            "sampleCount": 9240
+          },
+          {
+            "rgb": [
+              192,
+              128,
+              96
+            ],
+            "sampleCount": 8144
+          },
+          {
+            "rgb": [
+              96,
+              32,
+              0
+            ],
+            "sampleCount": 7154
+          }
+        ],
+        "subjectBounds": {
+          "x": 0.06510416666666667,
+          "y": 0.01171875,
+          "width": 0.8880208333333334,
+          "height": 0.98828125
+        },
+        "sampledTransparentFraction": 0
+      }
+    },
+    {
+      "saintId": "ioudas-thaddaios",
+      "canonicalName": "Ἀπόστολος Ἰούδας ὁ Θαδδαῖος",
+      "nameEnglish": "Jude (Thaddaeus)",
+      "rankId": "apostoloi",
+      "rankTitle": "Ἀπόστολοι",
+      "role": "Ἀπόστολος, ἐκ τῶν Δώδεκα",
+      "imagePath": "Klimax/Assets.xcassets/ioudas-thaddaios.imageset/ioudas-thaddaios.png",
+      "imagesetPath": "Klimax/Assets.xcassets/ioudas-thaddaios.imageset",
+      "analysis": {
+        "format": "png",
+        "width": 768,
+        "height": 1024,
+        "aspectRatio": 0.75,
+        "bytes": 1518899,
+        "checksum": "6584323564f345730d768d6afc2ee0b5e629f36b90b7a6ad8b78c6870cdd2cb3",
+        "hasAlphaChannel": false,
+        "edgeBackgroundRgb": [
+          148,
+          99,
+          5
+        ],
+        "edgeBackgroundStandardDeviation": 15.87,
+        "dominantColors": [
+          {
+            "rgb": [
+              192,
+              128,
+              0
+            ],
+            "sampleCount": 41025
+          },
+          {
+            "rgb": [
+              192,
+              160,
+              0
+            ],
+            "sampleCount": 17622
+          },
+          {
+            "rgb": [
+              0,
+              32,
+              32
+            ],
+            "sampleCount": 17312
+          },
+          {
+            "rgb": [
+              224,
+              160,
+              0
+            ],
+            "sampleCount": 15171
+          },
+          {
+            "rgb": [
+              224,
+              160,
+              32
+            ],
+            "sampleCount": 11652
+          },
+          {
+            "rgb": [
+              0,
+              0,
+              32
+            ],
+            "sampleCount": 9117
+          },
+          {
+            "rgb": [
+              160,
+              96,
+              0
+            ],
+            "sampleCount": 6729
+          },
+          {
+            "rgb": [
+              0,
+              0,
+              0
+            ],
+            "sampleCount": 6071
+          }
+        ],
+        "subjectBounds": {
+          "x": 0.0026041666666666665,
+          "y": 0,
+          "width": 0.9973958333333334,
+          "height": 0.998046875
+        },
+        "sampledTransparentFraction": 0
+      }
+    },
+    {
+      "saintId": "simon-zilotis",
+      "canonicalName": "Ἀπόστολος Σίμων ὁ Ζηλωτής",
+      "nameEnglish": "Simon the Zealot",
+      "rankId": "apostoloi",
+      "rankTitle": "Ἀπόστολοι",
+      "role": "Ἀπόστολος, ἐκ τῶν Δώδεκα",
+      "imagePath": "Klimax/Assets.xcassets/simon-zilotis.imageset/simon-zilotis.png",
+      "imagesetPath": "Klimax/Assets.xcassets/simon-zilotis.imageset",
+      "analysis": {
+        "format": "png",
+        "width": 768,
+        "height": 1024,
+        "aspectRatio": 0.75,
+        "bytes": 1374832,
+        "checksum": "5b2a0ffe0c71811d00aa1e503c2e2c0a24b23a3b62b9145897a0eb9671a0a03e",
+        "hasAlphaChannel": false,
+        "edgeBackgroundRgb": [
+          112,
+          13,
+          2
+        ],
+        "edgeBackgroundStandardDeviation": 1.34,
+        "dominantColors": [
+          {
+            "rgb": [
+              192,
+              128,
+              0
+            ],
+            "sampleCount": 32975
+          },
+          {
+            "rgb": [
+              0,
+              0,
+              0
+            ],
+            "sampleCount": 31245
+          },
+          {
+            "rgb": [
+              224,
+              160,
+              32
+            ],
+            "sampleCount": 21637
+          },
+          {
+            "rgb": [
+              224,
+              160,
+              0
+            ],
+            "sampleCount": 17536
+          },
+          {
+            "rgb": [
+              96,
+              0,
+              0
+            ],
+            "sampleCount": 17467
+          },
+          {
+            "rgb": [
+              192,
+              160,
+              0
+            ],
+            "sampleCount": 13457
+          },
+          {
+            "rgb": [
+              0,
+              32,
+              32
+            ],
+            "sampleCount": 6791
+          },
+          {
+            "rgb": [
+              128,
+              64,
+              0
+            ],
+            "sampleCount": 6555
+          }
+        ],
+        "subjectBounds": {
+          "x": 0.0234375,
+          "y": 0.01953125,
+          "width": 0.953125,
+          "height": 0.9609375
+        },
+        "sampledTransparentFraction": 0
+      }
+    },
+    {
+      "saintId": "matthias",
+      "canonicalName": "Ἀπόστολος Ματθίας",
+      "nameEnglish": "Apostle Matthias",
+      "rankId": "apostoloi",
+      "rankTitle": "Ἀπόστολοι",
+      "role": "Ἀπόστολος, ἐκ τῶν Δώδεκα (ἀντὶ τοῦ Ἰούδα)",
+      "imagePath": "Klimax/Assets.xcassets/matthias.imageset/matthias.png",
+      "imagesetPath": "Klimax/Assets.xcassets/matthias.imageset",
+      "analysis": {
+        "format": "png",
+        "width": 767,
+        "height": 1024,
+        "aspectRatio": 0.7490234375,
+        "bytes": 1519902,
+        "checksum": "cd73593bef20170de3334662642edc8978cced0c9b0e055d2890bf99c25ec42c",
+        "hasAlphaChannel": false,
+        "edgeBackgroundRgb": [
+          201,
+          137,
+          11
+        ],
+        "edgeBackgroundStandardDeviation": 33.64,
+        "dominantColors": [
+          {
+            "rgb": [
+              192,
+              128,
+              0
+            ],
+            "sampleCount": 42333
+          },
+          {
+            "rgb": [
+              224,
+              160,
+              0
+            ],
+            "sampleCount": 27896
+          },
+          {
+            "rgb": [
+              32,
+              0,
+              0
+            ],
+            "sampleCount": 13575
+          },
+          {
+            "rgb": [
+              160,
+              96,
+              0
+            ],
+            "sampleCount": 11801
+          },
+          {
+            "rgb": [
+              224,
+              160,
+              32
+            ],
+            "sampleCount": 11265
+          },
+          {
+            "rgb": [
+              0,
+              0,
+              0
+            ],
+            "sampleCount": 10500
+          },
+          {
+            "rgb": [
+              192,
+              96,
+              0
+            ],
+            "sampleCount": 7903
+          },
+          {
+            "rgb": [
+              128,
+              64,
+              0
+            ],
+            "sampleCount": 6819
+          }
+        ],
+        "subjectBounds": {
+          "x": 0,
+          "y": 0,
+          "width": 1.001303780964798,
+          "height": 1
+        },
+        "sampledTransparentFraction": 0
+      }
+    },
+    {
+      "saintId": "paulos",
+      "canonicalName": "Ἀπόστολος Παῦλος",
+      "nameEnglish": "Apostle Paul",
+      "rankId": "apostoloi",
+      "rankTitle": "Ἀπόστολοι",
+      "role": "Ἀπόστολος, Πρωτοκορυφαῖος",
+      "imagePath": "Klimax/Assets.xcassets/paulos.imageset/paulos.png",
+      "imagesetPath": "Klimax/Assets.xcassets/paulos.imageset",
+      "analysis": {
+        "format": "png",
+        "width": 768,
+        "height": 1024,
+        "aspectRatio": 0.75,
+        "bytes": 1253874,
+        "checksum": "6252869e0ff0ae76165231102cc51fb49bd64f208cf10fc54beb5f0f061238cc",
+        "hasAlphaChannel": false,
+        "edgeBackgroundRgb": [
+          243,
+          191,
+          64
+        ],
+        "edgeBackgroundStandardDeviation": 11.05,
+        "dominantColors": [
+          {
+            "rgb": [
+              224,
+              192,
+              64
+            ],
+            "sampleCount": 70191
+          },
+          {
+            "rgb": [
+              224,
+              160,
+              32
+            ],
+            "sampleCount": 22888
+          },
+          {
+            "rgb": [
+              96,
+              32,
+              0
+            ],
+            "sampleCount": 15496
+          },
+          {
+            "rgb": [
+              128,
+              32,
+              0
+            ],
+            "sampleCount": 8743
+          },
+          {
+            "rgb": [
+              32,
+              0,
+              0
+            ],
+            "sampleCount": 8258
+          },
+          {
+            "rgb": [
+              64,
+              0,
+              0
+            ],
+            "sampleCount": 7788
+          },
+          {
+            "rgb": [
+              128,
+              64,
+              32
+            ],
+            "sampleCount": 6325
+          },
+          {
+            "rgb": [
+              128,
+              64,
+              0
+            ],
+            "sampleCount": 6291
+          }
+        ],
+        "subjectBounds": {
+          "x": 0.08854166666666667,
+          "y": 0.0390625,
+          "width": 0.8385416666666666,
+          "height": 0.94921875
+        },
+        "sampledTransparentFraction": 0
+      }
+    },
+    {
+      "saintId": "loukas",
+      "canonicalName": "Ἀπόστολος Λουκᾶς ὁ Εὐαγγελιστής",
+      "nameEnglish": "Luke the Evangelist",
+      "rankId": "apostoloi",
+      "rankTitle": "Ἀπόστολοι",
+      "role": "Εὐαγγελιστής, ἐκ τῶν Ἑβδομήκοντα",
+      "imagePath": "Klimax/Assets.xcassets/loukas.imageset/loukas.png",
+      "imagesetPath": "Klimax/Assets.xcassets/loukas.imageset",
+      "analysis": {
+        "format": "png",
+        "width": 768,
+        "height": 1024,
+        "aspectRatio": 0.75,
+        "bytes": 1431021,
+        "checksum": "0f30785eec47a989ed62ba7dac26709e2f9969d5cdd669b6ea4dbc83cd370401",
+        "hasAlphaChannel": false,
+        "edgeBackgroundRgb": [
+          202,
+          148,
+          26
+        ],
+        "edgeBackgroundStandardDeviation": 15.84,
+        "dominantColors": [
+          {
+            "rgb": [
+              224,
+              160,
+              32
+            ],
+            "sampleCount": 59042
+          },
+          {
+            "rgb": [
+              192,
+              128,
+              0
+            ],
+            "sampleCount": 22208
+          },
+          {
+            "rgb": [
+              128,
+              32,
+              0
+            ],
+            "sampleCount": 15092
+          },
+          {
+            "rgb": [
+              96,
+              32,
+              0
+            ],
+            "sampleCount": 9961
+          },
+          {
+            "rgb": [
+              64,
+              0,
+              0
+            ],
+            "sampleCount": 7444
+          },
+          {
+            "rgb": [
+              224,
+              192,
+              32
+            ],
+            "sampleCount": 6841
+          },
+          {
+            "rgb": [
+              96,
+              0,
+              0
+            ],
+            "sampleCount": 6452
+          },
+          {
+            "rgb": [
+              64,
+              32,
+              0
+            ],
+            "sampleCount": 5299
+          }
+        ],
+        "subjectBounds": {
+          "x": 0,
+          "y": 0,
+          "width": 0.9609375,
+          "height": 0.99609375
+        },
+        "sampledTransparentFraction": 0
+      }
+    },
+    {
+      "saintId": "markos",
+      "canonicalName": "Ἀπόστολος Μᾶρκος ὁ Εὐαγγελιστής",
+      "nameEnglish": "Mark the Evangelist",
+      "rankId": "apostoloi",
+      "rankTitle": "Ἀπόστολοι",
+      "role": "Εὐαγγελιστής, ἐκ τῶν Ἑβδομήκοντα",
+      "imagePath": "Klimax/Assets.xcassets/markos.imageset/markos.png",
+      "imagesetPath": "Klimax/Assets.xcassets/markos.imageset",
+      "analysis": {
+        "format": "png",
+        "width": 766,
+        "height": 1024,
+        "aspectRatio": 0.748046875,
+        "bytes": 1433822,
+        "checksum": "4732ae9ba3916689175ccb57d14bfd77cdb3118eb8d8ba7d6131377ba1a74a9d",
+        "hasAlphaChannel": false,
+        "edgeBackgroundRgb": [
+          208,
+          151,
+          23
+        ],
+        "edgeBackgroundStandardDeviation": 12.46,
+        "dominantColors": [
+          {
+            "rgb": [
+              224,
+              160,
+              0
+            ],
+            "sampleCount": 34093
+          },
+          {
+            "rgb": [
+              0,
+              0,
+              0
+            ],
+            "sampleCount": 29047
+          },
+          {
+            "rgb": [
+              192,
+              128,
+              0
+            ],
+            "sampleCount": 23372
+          },
+          {
+            "rgb": [
+              224,
+              160,
+              32
+            ],
+            "sampleCount": 21444
+          },
+          {
+            "rgb": [
+              192,
+              160,
+              0
+            ],
+            "sampleCount": 12206
+          },
+          {
+            "rgb": [
+              32,
+              32,
+              0
+            ],
+            "sampleCount": 7465
+          },
+          {
+            "rgb": [
+              128,
+              32,
+              0
+            ],
+            "sampleCount": 6776
+          },
+          {
+            "rgb": [
+              32,
+              32,
+              32
+            ],
+            "sampleCount": 5945
+          }
+        ],
+        "subjectBounds": {
+          "x": 0.0026109660574412533,
+          "y": 0.001953125,
+          "width": 0.9843342036553525,
+          "height": 0.982421875
+        },
+        "sampledTransparentFraction": 0
+      }
+    },
+    {
+      "saintId": "timotheosapostolos",
+      "canonicalName": "Άγιος Τιμόθεος ο Απόστολος",
+      "nameEnglish": "",
+      "rankId": "apostoloi",
+      "rankTitle": "Ἀπόστολοι",
+      "role": "Ἀπόστολος",
+      "imagePath": "Klimax/Assets.xcassets/saint-timotheosapostolos.imageset/saint-timotheosapostolos.png",
+      "imagesetPath": "Klimax/Assets.xcassets/saint-timotheosapostolos.imageset",
+      "analysis": {
+        "format": "png",
+        "width": 768,
+        "height": 1024,
+        "aspectRatio": 0.75,
+        "bytes": 1459106,
+        "checksum": "6bbbfb9e790e49cc708df36c9079f0987cbe250a9dcc86aeb7c13ecfb9ec6f19",
+        "hasAlphaChannel": false,
+        "edgeBackgroundRgb": [
+          208,
+          140,
+          19
+        ],
+        "edgeBackgroundStandardDeviation": 33.36,
+        "dominantColors": [
+          {
+            "rgb": [
+              224,
+              160,
+              0
+            ],
+            "sampleCount": 29271
+          },
+          {
+            "rgb": [
+              224,
+              160,
+              32
+            ],
+            "sampleCount": 25416
+          },
+          {
+            "rgb": [
+              192,
+              128,
+              0
+            ],
+            "sampleCount": 21756
+          },
+          {
+            "rgb": [
+              128,
+              32,
+              0
+            ],
+            "sampleCount": 18597
+          },
+          {
+            "rgb": [
+              96,
+              32,
+              0
+            ],
+            "sampleCount": 9792
+          },
+          {
+            "rgb": [
+              160,
+              64,
+              0
+            ],
+            "sampleCount": 9123
+          },
+          {
+            "rgb": [
+              96,
+              0,
+              0
+            ],
+            "sampleCount": 7852
+          },
+          {
+            "rgb": [
+              64,
+              32,
+              0
+            ],
+            "sampleCount": 7063
+          }
+        ],
+        "subjectBounds": {
+          "x": 0,
+          "y": 0,
+          "width": 0.9557291666666666,
+          "height": 1
+        },
+        "sampledTransparentFraction": 0
+      }
+    },
+    {
+      "saintId": "onisimosapostolos",
+      "canonicalName": "Άγιος Ονήσιμος ο Απόστολος",
+      "nameEnglish": "",
+      "rankId": "apostoloi",
+      "rankTitle": "Ἀπόστολοι",
+      "role": "Ἀπόστολος",
+      "imagePath": "Klimax/Assets.xcassets/saint-onisimosapostolos.imageset/saint-onisimosapostolos.png",
+      "imagesetPath": "Klimax/Assets.xcassets/saint-onisimosapostolos.imageset",
+      "analysis": {
+        "format": "png",
+        "width": 768,
+        "height": 1024,
+        "aspectRatio": 0.75,
+        "bytes": 1429549,
+        "checksum": "87a5ae49d14e525cae33b15f777bc9653041220ac2ed7994f501e3c2d39cfcb9",
+        "hasAlphaChannel": false,
+        "edgeBackgroundRgb": [
+          193,
+          132,
+          22
+        ],
+        "edgeBackgroundStandardDeviation": 33.73,
+        "dominantColors": [
+          {
+            "rgb": [
+              192,
+              128,
+              0
+            ],
+            "sampleCount": 36550
+          },
+          {
+            "rgb": [
+              224,
+              160,
+              32
+            ],
+            "sampleCount": 28662
+          },
+          {
+            "rgb": [
+              64,
+              0,
+              0
+            ],
+            "sampleCount": 21458
+          },
+          {
+            "rgb": [
+              96,
+              0,
+              0
+            ],
+            "sampleCount": 16640
+          },
+          {
+            "rgb": [
+              128,
+              32,
+              0
+            ],
+            "sampleCount": 15494
+          },
+          {
+            "rgb": [
+              160,
+              96,
+              0
+            ],
+            "sampleCount": 8900
+          },
+          {
+            "rgb": [
+              160,
+              64,
+              32
+            ],
+            "sampleCount": 6974
+          },
+          {
+            "rgb": [
+              192,
+              160,
+              0
+            ],
+            "sampleCount": 6213
+          }
+        ],
+        "subjectBounds": {
+          "x": 0.033854166666666664,
+          "y": 0,
+          "width": 0.9661458333333334,
+          "height": 1
+        },
+        "sampledTransparentFraction": 0
+      }
+    },
+    {
+      "saintId": "ilias",
+      "canonicalName": "Προφήτης Ἠλίας ὁ Θεσβίτης",
+      "nameEnglish": "Prophet Elijah",
+      "rankId": "profitai",
+      "rankTitle": "Προφῆται",
+      "role": "Προφήτης",
+      "imagePath": "Klimax/Assets.xcassets/saint-ilias.imageset/saint-ilias.png",
+      "imagesetPath": "Klimax/Assets.xcassets/saint-ilias.imageset",
+      "analysis": {
+        "format": "png",
+        "width": 768,
+        "height": 1024,
+        "aspectRatio": 0.75,
+        "bytes": 1410928,
+        "checksum": "935acbb86d3dcfffab217decbbc2c95eff2f1592e7891246a252351b93cc84f2",
+        "hasAlphaChannel": false,
+        "edgeBackgroundRgb": [
+          182,
+          120,
+          12
+        ],
+        "edgeBackgroundStandardDeviation": 38.53,
+        "dominantColors": [
+          {
+            "rgb": [
+              64,
+              32,
+              0
+            ],
+            "sampleCount": 31003
+          },
+          {
+            "rgb": [
+              32,
+              32,
+              0
+            ],
+            "sampleCount": 29528
+          },
+          {
+            "rgb": [
+              192,
+              128,
+              0
+            ],
+            "sampleCount": 22002
+          },
+          {
+            "rgb": [
+              224,
+              160,
+              0
+            ],
+            "sampleCount": 20578
+          },
+          {
+            "rgb": [
+              32,
+              0,
+              0
+            ],
+            "sampleCount": 18588
+          },
+          {
+            "rgb": [
+              96,
+              32,
+              0
+            ],
+            "sampleCount": 12958
+          },
+          {
+            "rgb": [
+              224,
+              160,
+              32
+            ],
+            "sampleCount": 10247
+          },
+          {
+            "rgb": [
+              128,
+              64,
+              0
+            ],
+            "sampleCount": 8832
+          }
+        ],
+        "subjectBounds": {
+          "x": 0,
+          "y": 0,
+          "width": 1,
+          "height": 1
+        },
+        "sampledTransparentFraction": 0
+      }
+    },
+    {
+      "saintId": "moysis",
+      "canonicalName": "Προφήτης Μωυσῆς ὁ Θεόπτης",
+      "nameEnglish": "Prophet Moses",
+      "rankId": "profitai",
+      "rankTitle": "Προφῆται",
+      "role": "Προφήτης",
+      "imagePath": "Klimax/Assets.xcassets/saint-moysis.imageset/saint-moysis.png",
+      "imagesetPath": "Klimax/Assets.xcassets/saint-moysis.imageset",
+      "analysis": {
+        "format": "png",
+        "width": 768,
+        "height": 1024,
+        "aspectRatio": 0.75,
+        "bytes": 1424239,
+        "checksum": "eeaef6973d93ad8eddaadce3c5f9f62893e742217710403f3f3e73efa25526af",
+        "hasAlphaChannel": false,
+        "edgeBackgroundRgb": [
+          189,
+          130,
+          18
+        ],
+        "edgeBackgroundStandardDeviation": 36.13,
+        "dominantColors": [
+          {
+            "rgb": [
+              192,
+              128,
+              0
+            ],
+            "sampleCount": 45328
+          },
+          {
+            "rgb": [
+              224,
+              160,
+              32
+            ],
+            "sampleCount": 18682
+          },
+          {
+            "rgb": [
+              128,
+              64,
+              0
+            ],
+            "sampleCount": 16273
+          },
+          {
+            "rgb": [
+              96,
+              32,
+              0
+            ],
+            "sampleCount": 16083
+          },
+          {
+            "rgb": [
+              64,
+              32,
+              0
+            ],
+            "sampleCount": 12981
+          },
+          {
+            "rgb": [
+              224,
+              160,
+              0
+            ],
+            "sampleCount": 12374
+          },
+          {
+            "rgb": [
+              160,
+              96,
+              0
+            ],
+            "sampleCount": 11130
+          },
+          {
+            "rgb": [
+              32,
+              32,
+              0
+            ],
+            "sampleCount": 6780
+          }
+        ],
+        "subjectBounds": {
+          "x": 0.0026041666666666665,
+          "y": 0,
+          "width": 0.9973958333333334,
+          "height": 1
+        },
+        "sampledTransparentFraction": 0
+      }
+    },
+    {
+      "saintId": "isaias",
+      "canonicalName": "Προφήτης Ἠσαΐας",
+      "nameEnglish": "Prophet Isaiah",
+      "rankId": "profitai",
+      "rankTitle": "Προφῆται",
+      "role": "Προφήτης",
+      "imagePath": "Klimax/Assets.xcassets/saint-isaias.imageset/saint-isaias.png",
+      "imagesetPath": "Klimax/Assets.xcassets/saint-isaias.imageset",
+      "analysis": {
+        "format": "png",
+        "width": 768,
+        "height": 1024,
+        "aspectRatio": 0.75,
+        "bytes": 1423607,
+        "checksum": "77fe295be642d46d42af84b7e838ecf479682ee75a6244a2583d60e06e902fc2",
+        "hasAlphaChannel": false,
+        "edgeBackgroundRgb": [
+          194,
+          131,
+          19
+        ],
+        "edgeBackgroundStandardDeviation": 37.42,
+        "dominantColors": [
+          {
+            "rgb": [
+              224,
+              160,
+              32
+            ],
+            "sampleCount": 24937
+          },
+          {
+            "rgb": [
+              192,
+              128,
+              0
+            ],
+            "sampleCount": 23675
+          },
+          {
+            "rgb": [
+              224,
+              160,
+              0
+            ],
+            "sampleCount": 16883
+          },
+          {
+            "rgb": [
+              96,
+              32,
+              0
+            ],
+            "sampleCount": 16435
+          },
+          {
+            "rgb": [
+              64,
+              0,
+              0
+            ],
+            "sampleCount": 16250
+          },
+          {
+            "rgb": [
+              128,
+              64,
+              0
+            ],
+            "sampleCount": 11093
+          },
+          {
+            "rgb": [
+              224,
+              128,
+              0
+            ],
+            "sampleCount": 10879
+          },
+          {
+            "rgb": [
+              160,
+              96,
+              0
+            ],
+            "sampleCount": 7623
+          }
+        ],
+        "subjectBounds": {
+          "x": 0,
+          "y": 0,
+          "width": 0.9713541666666666,
+          "height": 1
+        },
+        "sampledTransparentFraction": 0
+      }
+    },
+    {
+      "saintId": "ieremias",
+      "canonicalName": "Προφήτης Ἱερεμίας",
+      "nameEnglish": "Prophet Jeremiah",
+      "rankId": "profitai",
+      "rankTitle": "Προφῆται",
+      "role": "Προφήτης",
+      "imagePath": "Klimax/Assets.xcassets/saint-ieremias.imageset/saint-ieremias.png",
+      "imagesetPath": "Klimax/Assets.xcassets/saint-ieremias.imageset",
+      "analysis": {
+        "format": "png",
+        "width": 768,
+        "height": 1024,
+        "aspectRatio": 0.75,
+        "bytes": 1441709,
+        "checksum": "a60efe5bcbae367a7340ee1c515ef46533c9dd3303d0c1e22a22fee21fcf4c6f",
+        "hasAlphaChannel": false,
+        "edgeBackgroundRgb": [
+          210,
+          148,
+          29
+        ],
+        "edgeBackgroundStandardDeviation": 39.75,
+        "dominantColors": [
+          {
+            "rgb": [
+              224,
+              160,
+              32
+            ],
+            "sampleCount": 33246
+          },
+          {
+            "rgb": [
+              192,
+              128,
+              0
+            ],
+            "sampleCount": 19491
+          },
+          {
+            "rgb": [
+              64,
+              0,
+              0
+            ],
+            "sampleCount": 16269
+          },
+          {
+            "rgb": [
+              224,
+              160,
+              0
+            ],
+            "sampleCount": 13536
+          },
+          {
+            "rgb": [
+              224,
+              192,
+              32
+            ],
+            "sampleCount": 10723
+          },
+          {
+            "rgb": [
+              32,
+              32,
+              0
+            ],
+            "sampleCount": 10465
+          },
+          {
+            "rgb": [
+              96,
+              0,
+              0
+            ],
+            "sampleCount": 9992
+          },
+          {
+            "rgb": [
+              0,
+              0,
+              0
+            ],
+            "sampleCount": 9255
+          }
+        ],
+        "subjectBounds": {
+          "x": 0,
+          "y": 0,
+          "width": 0.9635416666666666,
+          "height": 1
+        },
+        "sampledTransparentFraction": 0
+      }
+    },
+    {
+      "saintId": "daniil",
+      "canonicalName": "Προφήτης Δανιήλ",
+      "nameEnglish": "Prophet Daniel",
+      "rankId": "profitai",
+      "rankTitle": "Προφῆται",
+      "role": "Προφήτης",
+      "imagePath": "Klimax/Assets.xcassets/saint-daniil.imageset/saint-daniil.png",
+      "imagesetPath": "Klimax/Assets.xcassets/saint-daniil.imageset",
+      "analysis": {
+        "format": "png",
+        "width": 768,
+        "height": 1024,
+        "aspectRatio": 0.75,
+        "bytes": 1444264,
+        "checksum": "237049c293f5d1a3a1a684689209030df538b8abdb6b9f1d25a74668fd55f736",
+        "hasAlphaChannel": false,
+        "edgeBackgroundRgb": [
+          185,
+          130,
+          28
+        ],
+        "edgeBackgroundStandardDeviation": 37.73,
+        "dominantColors": [
+          {
+            "rgb": [
+              192,
+              128,
+              0
+            ],
+            "sampleCount": 31023
+          },
+          {
+            "rgb": [
+              224,
+              160,
+              32
+            ],
+            "sampleCount": 24535
+          },
+          {
+            "rgb": [
+              160,
+              96,
+              0
+            ],
+            "sampleCount": 15922
+          },
+          {
+            "rgb": [
+              192,
+              128,
+              32
+            ],
+            "sampleCount": 14246
+          },
+          {
+            "rgb": [
+              192,
+              160,
+              32
+            ],
+            "sampleCount": 9863
+          },
+          {
+            "rgb": [
+              128,
+              32,
+              0
+            ],
+            "sampleCount": 9776
+          },
+          {
+            "rgb": [
+              64,
+              0,
+              0
+            ],
+            "sampleCount": 9307
+          },
+          {
+            "rgb": [
+              96,
+              0,
+              0
+            ],
+            "sampleCount": 8890
+          }
+        ],
+        "subjectBounds": {
+          "x": 0,
+          "y": 0,
+          "width": 0.9869791666666666,
+          "height": 1
+        },
+        "sampledTransparentFraction": 0
+      }
+    },
+    {
+      "saintId": "ioannis-prodromos",
+      "canonicalName": "Ἰωάννης ὁ Πρόδρομος καὶ Βαπτιστής",
+      "nameEnglish": "John the Forerunner",
+      "rankId": "profitai",
+      "rankTitle": "Προφῆται",
+      "role": "Προφήτης, Πρόδρομος",
+      "imagePath": "Klimax/Assets.xcassets/saint-ioannis-prodromos.imageset/saint-ioannis-prodromos.png",
+      "imagesetPath": "Klimax/Assets.xcassets/saint-ioannis-prodromos.imageset",
+      "analysis": {
+        "format": "png",
+        "width": 768,
+        "height": 1024,
+        "aspectRatio": 0.75,
+        "bytes": 1396463,
+        "checksum": "519ad2594285d6d53d6f17d14acba0fe29272ef9dd2085f8f57cd25c8feb3db0",
+        "hasAlphaChannel": false,
+        "edgeBackgroundRgb": [
+          204,
+          146,
+          25
+        ],
+        "edgeBackgroundStandardDeviation": 45.04,
+        "dominantColors": [
+          {
+            "rgb": [
+              224,
+              160,
+              0
+            ],
+            "sampleCount": 35106
+          },
+          {
+            "rgb": [
+              0,
+              32,
+              0
+            ],
+            "sampleCount": 28914
+          },
+          {
+            "rgb": [
+              32,
+              32,
+              0
+            ],
+            "sampleCount": 28497
+          },
+          {
+            "rgb": [
+              224,
+              160,
+              32
+            ],
+            "sampleCount": 22257
+          },
+          {
+            "rgb": [
+              64,
+              32,
+              0
+            ],
+            "sampleCount": 17957
+          },
+          {
+            "rgb": [
+              192,
+              128,
+              0
+            ],
+            "sampleCount": 14270
+          },
+          {
+            "rgb": [
+              224,
+              128,
+              0
+            ],
+            "sampleCount": 8057
+          },
+          {
+            "rgb": [
+              32,
+              0,
+              0
+            ],
+            "sampleCount": 5454
+          }
+        ],
+        "subjectBounds": {
+          "x": 0,
+          "y": 0,
+          "width": 1,
+          "height": 1
+        },
+        "sampledTransparentFraction": 0
+      }
+    },
+    {
+      "saintId": "vasileios",
+      "canonicalName": "Ἅγιος Βασίλειος ὁ Μέγας",
+      "nameEnglish": "Basil the Great",
+      "rankId": "ierarchai",
+      "rankTitle": "Ἱεράρχαι & Πατέρες",
+      "role": "Ἱεράρχης",
+      "imagePath": "Klimax/Assets.xcassets/saint-vasileios.imageset/saint-vasileios.png",
+      "imagesetPath": "Klimax/Assets.xcassets/saint-vasileios.imageset",
+      "analysis": {
+        "format": "png",
+        "width": 768,
+        "height": 1024,
+        "aspectRatio": 0.75,
+        "bytes": 1405601,
+        "checksum": "a7da920a3af9c9c8c814fa1b4b82cb25eb74c18d2eea1f1363e8db56d9fc9bf6",
+        "hasAlphaChannel": false,
+        "edgeBackgroundRgb": [
+          220,
+          162,
+          43
+        ],
+        "edgeBackgroundStandardDeviation": 31.86,
+        "dominantColors": [
+          {
+            "rgb": [
+              224,
+              160,
+              32
+            ],
+            "sampleCount": 65657
+          },
+          {
+            "rgb": [
+              32,
+              0,
+              0
+            ],
+            "sampleCount": 11137
+          },
+          {
+            "rgb": [
+              32,
+              32,
+              0
+            ],
+            "sampleCount": 10957
+          },
+          {
+            "rgb": [
+              192,
+              128,
+              32
+            ],
+            "sampleCount": 9165
+          },
+          {
+            "rgb": [
+              224,
+              192,
+              32
+            ],
+            "sampleCount": 9154
+          },
+          {
+            "rgb": [
+              64,
+              32,
+              0
+            ],
+            "sampleCount": 7989
+          },
+          {
+            "rgb": [
+              128,
+              64,
+              0
+            ],
+            "sampleCount": 7492
+          },
+          {
+            "rgb": [
+              224,
+              192,
+              128
+            ],
+            "sampleCount": 7380
+          }
+        ],
+        "subjectBounds": {
+          "x": 0.03125,
+          "y": 0,
+          "width": 0.9375,
+          "height": 1
+        },
+        "sampledTransparentFraction": 0
+      }
+    },
+    {
+      "saintId": "grigorios-theologos",
+      "canonicalName": "Ἅγιος Γρηγόριος ὁ Θεολόγος",
+      "nameEnglish": "Gregory the Theologian",
+      "rankId": "ierarchai",
+      "rankTitle": "Ἱεράρχαι & Πατέρες",
+      "role": "Ἱεράρχης",
+      "imagePath": "Klimax/Assets.xcassets/saint-grigorios-theologos.imageset/saint-grigorios-theologos.png",
+      "imagesetPath": "Klimax/Assets.xcassets/saint-grigorios-theologos.imageset",
+      "analysis": {
+        "format": "png",
+        "width": 768,
+        "height": 1024,
+        "aspectRatio": 0.75,
+        "bytes": 1475459,
+        "checksum": "4354008f6e56395e1b264a504c88fc2c9a9c8d2ea3e647488c14f8d2e06e805b",
+        "hasAlphaChannel": false,
+        "edgeBackgroundRgb": [
+          210,
+          163,
+          45
+        ],
+        "edgeBackgroundStandardDeviation": 45.69,
+        "dominantColors": [
+          {
+            "rgb": [
+              224,
+              160,
+              32
+            ],
+            "sampleCount": 54629
+          },
+          {
+            "rgb": [
+              224,
+              192,
+              32
+            ],
+            "sampleCount": 18909
+          },
+          {
+            "rgb": [
+              0,
+              32,
+              32
+            ],
+            "sampleCount": 9389
+          },
+          {
+            "rgb": [
+              0,
+              32,
+              64
+            ],
+            "sampleCount": 8632
+          },
+          {
+            "rgb": [
+              192,
+              160,
+              96
+            ],
+            "sampleCount": 7275
+          },
+          {
+            "rgb": [
+              224,
+              192,
+              128
+            ],
+            "sampleCount": 6313
+          },
+          {
+            "rgb": [
+              32,
+              64,
+              96
+            ],
+            "sampleCount": 6032
+          },
+          {
+            "rgb": [
+              128,
+              64,
+              0
+            ],
+            "sampleCount": 5595
+          }
+        ],
+        "subjectBounds": {
+          "x": 0.0026041666666666665,
+          "y": 0,
+          "width": 0.9583333333333334,
+          "height": 1
+        },
+        "sampledTransparentFraction": 0
+      }
+    },
+    {
+      "saintId": "ioannis-chrysostomos",
+      "canonicalName": "Ἅγιος Ἰωάννης ὁ Χρυσόστομος",
+      "nameEnglish": "John Chrysostom",
+      "rankId": "ierarchai",
+      "rankTitle": "Ἱεράρχαι & Πατέρες",
+      "role": "Ἱεράρχης",
+      "imagePath": "Klimax/Assets.xcassets/saint-ioannis-chrysostomos.imageset/saint-ioannis-chrysostomos.png",
+      "imagesetPath": "Klimax/Assets.xcassets/saint-ioannis-chrysostomos.imageset",
+      "analysis": {
+        "format": "png",
+        "width": 768,
+        "height": 1024,
+        "aspectRatio": 0.75,
+        "bytes": 1466640,
+        "checksum": "36c0bdf3ce5bed8ca49835eb0ae2c5949ca9e6f81a5275673ff5001d4ef7d40b",
+        "hasAlphaChannel": false,
+        "edgeBackgroundRgb": [
+          230,
+          177,
+          50
+        ],
+        "edgeBackgroundStandardDeviation": 30.22,
+        "dominantColors": [
+          {
+            "rgb": [
+              224,
+              160,
+              32
+            ],
+            "sampleCount": 51836
+          },
+          {
+            "rgb": [
+              224,
+              192,
+              32
+            ],
+            "sampleCount": 25748
+          },
+          {
+            "rgb": [
+              64,
+              32,
+              0
+            ],
+            "sampleCount": 14750
+          },
+          {
+            "rgb": [
+              224,
+              192,
+              128
+            ],
+            "sampleCount": 13166
+          },
+          {
+            "rgb": [
+              96,
+              32,
+              0
+            ],
+            "sampleCount": 7026
+          },
+          {
+            "rgb": [
+              224,
+              192,
+              160
+            ],
+            "sampleCount": 6997
+          },
+          {
+            "rgb": [
+              192,
+              160,
+              64
+            ],
+            "sampleCount": 6495
+          },
+          {
+            "rgb": [
+              128,
+              64,
+              0
+            ],
+            "sampleCount": 6402
+          }
+        ],
+        "subjectBounds": {
+          "x": 0.0234375,
+          "y": 0,
+          "width": 0.96875,
+          "height": 1
+        },
+        "sampledTransparentFraction": 0
+      }
+    },
+    {
+      "saintId": "nikolaos",
+      "canonicalName": "Ἅγιος Νικόλαος Μύρων τῆς Λυκίας",
+      "nameEnglish": "Nicholas of Myra",
+      "rankId": "ierarchai",
+      "rankTitle": "Ἱεράρχαι & Πατέρες",
+      "role": "Ἱεράρχης",
+      "imagePath": "Klimax/Assets.xcassets/saint-nikolaos.imageset/saint-nikolaos.png",
+      "imagesetPath": "Klimax/Assets.xcassets/saint-nikolaos.imageset",
+      "analysis": {
+        "format": "png",
+        "width": 768,
+        "height": 1024,
+        "aspectRatio": 0.75,
+        "bytes": 1446228,
+        "checksum": "eab1aa5e1f73e6a315e5b02e3b2b17066228cd438c3ad8723e857aff5be29929",
+        "hasAlphaChannel": false,
+        "edgeBackgroundRgb": [
+          204,
+          140,
+          29
+        ],
+        "edgeBackgroundStandardDeviation": 35.08,
+        "dominantColors": [
+          {
+            "rgb": [
+              224,
+              160,
+              32
+            ],
+            "sampleCount": 35880
+          },
+          {
+            "rgb": [
+              192,
+              128,
+              0
+            ],
+            "sampleCount": 32983
+          },
+          {
+            "rgb": [
+              96,
+              32,
+              0
+            ],
+            "sampleCount": 19666
+          },
+          {
+            "rgb": [
+              128,
+              64,
+              0
+            ],
+            "sampleCount": 12764
+          },
+          {
+            "rgb": [
+              64,
+              0,
+              0
+            ],
+            "sampleCount": 10840
+          },
+          {
+            "rgb": [
+              128,
+              32,
+              0
+            ],
+            "sampleCount": 6732
+          },
+          {
+            "rgb": [
+              160,
+              64,
+              0
+            ],
+            "sampleCount": 6225
+          },
+          {
+            "rgb": [
+              160,
+              96,
+              0
+            ],
+            "sampleCount": 5542
+          }
+        ],
+        "subjectBounds": {
+          "x": 0,
+          "y": 0,
+          "width": 0.9817708333333334,
+          "height": 1
+        },
+        "sampledTransparentFraction": 0
+      }
+    },
+    {
+      "saintId": "spyridon",
+      "canonicalName": "Ἅγιος Σπυρίδων Τριμυθοῦντος",
+      "nameEnglish": "Spyridon of Trimythous",
+      "rankId": "ierarchai",
+      "rankTitle": "Ἱεράρχαι & Πατέρες",
+      "role": "Ἱεράρχης",
+      "imagePath": "Klimax/Assets.xcassets/saint-spyridon.imageset/saint-spyridon.png",
+      "imagesetPath": "Klimax/Assets.xcassets/saint-spyridon.imageset",
+      "analysis": {
+        "format": "png",
+        "width": 768,
+        "height": 1024,
+        "aspectRatio": 0.75,
+        "bytes": 1429263,
+        "checksum": "dcd54d400bb802e9a41bf970bd99b4bba9dfe49a262d67c79471184861c5dc23",
+        "hasAlphaChannel": false,
+        "edgeBackgroundRgb": [
+          191,
+          129,
+          24
+        ],
+        "edgeBackgroundStandardDeviation": 28.19,
+        "dominantColors": [
+          {
+            "rgb": [
+              192,
+              128,
+              0
+            ],
+            "sampleCount": 43060
+          },
+          {
+            "rgb": [
+              224,
+              160,
+              32
+            ],
+            "sampleCount": 22293
+          },
+          {
+            "rgb": [
+              128,
+              32,
+              0
+            ],
+            "sampleCount": 18537
+          },
+          {
+            "rgb": [
+              96,
+              32,
+              0
+            ],
+            "sampleCount": 15421
+          },
+          {
+            "rgb": [
+              160,
+              96,
+              0
+            ],
+            "sampleCount": 13631
+          },
+          {
+            "rgb": [
+              192,
+              128,
+              32
+            ],
+            "sampleCount": 8464
+          },
+          {
+            "rgb": [
+              128,
+              64,
+              0
+            ],
+            "sampleCount": 6423
+          },
+          {
+            "rgb": [
+              64,
+              32,
+              0
+            ],
+            "sampleCount": 6260
+          }
+        ],
+        "subjectBounds": {
+          "x": 0,
+          "y": 0,
+          "width": 0.9453125,
+          "height": 1
+        },
+        "sampledTransparentFraction": 0
+      }
+    },
+    {
+      "saintId": "athanasios-megas",
+      "canonicalName": "Ἅγιος Ἀθανάσιος ὁ Μέγας",
+      "nameEnglish": "Athanasius the Great",
+      "rankId": "ierarchai",
+      "rankTitle": "Ἱεράρχαι & Πατέρες",
+      "role": "Ἀρχιεπίσκοπος Ἀλεξανδρείας, Στύλος τῆς Ὀρθοδοξίας",
+      "imagePath": "Klimax/Assets.xcassets/saint-athanasios-megas.imageset/saint-athanasios-megas.png",
+      "imagesetPath": "Klimax/Assets.xcassets/saint-athanasios-megas.imageset",
+      "analysis": {
+        "format": "png",
+        "width": 768,
+        "height": 1024,
+        "aspectRatio": 0.75,
+        "bytes": 1430492,
+        "checksum": "641f3571124ad69a209b96c8d67c380090a9c43aa0472db2caee74a9f560ddfb",
+        "hasAlphaChannel": false,
+        "edgeBackgroundRgb": [
+          212,
+          153,
+          38
+        ],
+        "edgeBackgroundStandardDeviation": 33.23,
+        "dominantColors": [
+          {
+            "rgb": [
+              224,
+              160,
+              32
+            ],
+            "sampleCount": 68729
+          },
+          {
+            "rgb": [
+              128,
+              64,
+              0
+            ],
+            "sampleCount": 9786
+          },
+          {
+            "rgb": [
+              96,
+              32,
+              0
+            ],
+            "sampleCount": 9168
+          },
+          {
+            "rgb": [
+              192,
+              160,
+              128
+            ],
+            "sampleCount": 9108
+          },
+          {
+            "rgb": [
+              160,
+              96,
+              0
+            ],
+            "sampleCount": 8730
+          },
+          {
+            "rgb": [
+              64,
+              32,
+              0
+            ],
+            "sampleCount": 7023
+          },
+          {
+            "rgb": [
+              192,
+              128,
+              32
+            ],
+            "sampleCount": 6690
+          },
+          {
+            "rgb": [
+              128,
+              32,
+              0
+            ],
+            "sampleCount": 5497
+          }
+        ],
+        "subjectBounds": {
+          "x": 0.005208333333333333,
+          "y": 0,
+          "width": 0.9869791666666666,
+          "height": 1
+        },
+        "sampledTransparentFraction": 0
+      }
+    },
+    {
+      "saintId": "polykarposepiskopos",
+      "canonicalName": "Άγιος Πολύκαρπος Επίσκοπος Σμύρνης",
+      "nameEnglish": "",
+      "rankId": "ierarchai",
+      "rankTitle": "Ἱεράρχαι & Πατέρες",
+      "role": "Ἱεράρχης",
+      "imagePath": "Klimax/Assets.xcassets/saint-polykarposepiskopos.imageset/saint-polykarposepiskopos.png",
+      "imagesetPath": "Klimax/Assets.xcassets/saint-polykarposepiskopos.imageset",
+      "analysis": {
+        "format": "png",
+        "width": 768,
+        "height": 1024,
+        "aspectRatio": 0.75,
+        "bytes": 1397117,
+        "checksum": "22f0656cf61bfb5853dccefa4635c3352a6ec9d273a3bd1f050af9836df49ad5",
+        "hasAlphaChannel": false,
+        "edgeBackgroundRgb": [
+          208,
+          150,
+          42
+        ],
+        "edgeBackgroundStandardDeviation": 41.48,
+        "dominantColors": [
+          {
+            "rgb": [
+              224,
+              160,
+              32
+            ],
+            "sampleCount": 57142
+          },
+          {
+            "rgb": [
+              32,
+              0,
+              0
+            ],
+            "sampleCount": 12939
+          },
+          {
+            "rgb": [
+              64,
+              32,
+              32
+            ],
+            "sampleCount": 12423
+          },
+          {
+            "rgb": [
+              64,
+              32,
+              0
+            ],
+            "sampleCount": 11445
+          },
+          {
+            "rgb": [
+              224,
+              192,
+              64
+            ],
+            "sampleCount": 9329
+          },
+          {
+            "rgb": [
+              192,
+              128,
+              32
+            ],
+            "sampleCount": 9154
+          },
+          {
+            "rgb": [
+              96,
+              32,
+              32
+            ],
+            "sampleCount": 5759
+          },
+          {
+            "rgb": [
+              192,
+              160,
+              96
+            ],
+            "sampleCount": 5443
+          }
+        ],
+        "subjectBounds": {
+          "x": 0.018229166666666668,
+          "y": 0,
+          "width": 0.9609375,
+          "height": 1
+        },
+        "sampledTransparentFraction": 0
+      }
+    },
+    {
+      "saintId": "antonios-megas",
+      "canonicalName": "Ὅσιος Ἀντώνιος ὁ Μέγας",
+      "nameEnglish": "Anthony the Great",
+      "rankId": "osioi",
+      "rankTitle": "Ὅσιοι & Ἀββάδες",
+      "role": "Ὅσιος, ὁ Καθηγητὴς τῆς Ἐρήμου",
+      "imagePath": "Klimax/Assets.xcassets/saint-antonios-megas.imageset/saint-antonios-megas.png",
+      "imagesetPath": "Klimax/Assets.xcassets/saint-antonios-megas.imageset",
+      "analysis": {
+        "format": "png",
+        "width": 768,
+        "height": 1024,
+        "aspectRatio": 0.75,
+        "bytes": 1340951,
+        "checksum": "5baf672fdc187c36ac5827bad9692f927fd43541b45f720e03a42aa5575bb15f",
+        "hasAlphaChannel": false,
+        "edgeBackgroundRgb": [
+          197,
+          145,
+          27
+        ],
+        "edgeBackgroundStandardDeviation": 51.92,
+        "dominantColors": [
+          {
+            "rgb": [
+              0,
+              0,
+              0
+            ],
+            "sampleCount": 52140
+          },
+          {
+            "rgb": [
+              224,
+              160,
+              32
+            ],
+            "sampleCount": 38275
+          },
+          {
+            "rgb": [
+              224,
+              160,
+              0
+            ],
+            "sampleCount": 28008
+          },
+          {
+            "rgb": [
+              32,
+              0,
+              0
+            ],
+            "sampleCount": 15045
+          },
+          {
+            "rgb": [
+              32,
+              32,
+              0
+            ],
+            "sampleCount": 10411
+          },
+          {
+            "rgb": [
+              192,
+              128,
+              0
+            ],
+            "sampleCount": 8069
+          },
+          {
+            "rgb": [
+              64,
+              32,
+              0
+            ],
+            "sampleCount": 4411
+          },
+          {
+            "rgb": [
+              0,
+              32,
+              32
+            ],
+            "sampleCount": 4347
+          }
+        ],
+        "subjectBounds": {
+          "x": 0,
+          "y": 0,
+          "width": 1,
+          "height": 1
+        },
+        "sampledTransparentFraction": 0
+      }
+    },
+    {
+      "saintId": "efthymios-megas",
+      "canonicalName": "Ὅσιος Εὐθύμιος ὁ Μέγας",
+      "nameEnglish": "Euthymios the Great",
+      "rankId": "osioi",
+      "rankTitle": "Ὅσιοι & Ἀββάδες",
+      "role": "Ὅσιος",
+      "imagePath": "Klimax/Assets.xcassets/saint-efthymios-megas.imageset/saint-efthymios-megas.png",
+      "imagesetPath": "Klimax/Assets.xcassets/saint-efthymios-megas.imageset",
+      "analysis": {
+        "format": "png",
+        "width": 768,
+        "height": 1024,
+        "aspectRatio": 0.75,
+        "bytes": 1358821,
+        "checksum": "7d77e8faa1967c7bce855506b589562a8cff07b8da52c49f430029323bc2c017",
+        "hasAlphaChannel": false,
+        "edgeBackgroundRgb": [
+          196,
+          139,
+          27
+        ],
+        "edgeBackgroundStandardDeviation": 44.82,
+        "dominantColors": [
+          {
+            "rgb": [
+              224,
+              160,
+              32
+            ],
+            "sampleCount": 50251
+          },
+          {
+            "rgb": [
+              32,
+              0,
+              0
+            ],
+            "sampleCount": 28278
+          },
+          {
+            "rgb": [
+              64,
+              32,
+              0
+            ],
+            "sampleCount": 23156
+          },
+          {
+            "rgb": [
+              192,
+              128,
+              0
+            ],
+            "sampleCount": 16599
+          },
+          {
+            "rgb": [
+              0,
+              0,
+              0
+            ],
+            "sampleCount": 11241
+          },
+          {
+            "rgb": [
+              96,
+              64,
+              32
+            ],
+            "sampleCount": 8860
+          },
+          {
+            "rgb": [
+              96,
+              32,
+              0
+            ],
+            "sampleCount": 7041
+          },
+          {
+            "rgb": [
+              224,
+              160,
+              0
+            ],
+            "sampleCount": 6574
+          }
+        ],
+        "subjectBounds": {
+          "x": 0.0026041666666666665,
+          "y": 0,
+          "width": 0.9973958333333334,
+          "height": 1
+        },
+        "sampledTransparentFraction": 0
+      }
+    },
+    {
+      "saintId": "ioannis-klimakos",
+      "canonicalName": "Ὅσιος Ἰωάννης τῆς Κλίμακος",
+      "nameEnglish": "John of the Ladder",
+      "rankId": "osioi",
+      "rankTitle": "Ὅσιοι & Ἀββάδες",
+      "role": "Ὅσιος",
+      "imagePath": "Klimax/Assets.xcassets/saint-ioannis-klimakos.imageset/saint-ioannis-klimakos.png",
+      "imagesetPath": "Klimax/Assets.xcassets/saint-ioannis-klimakos.imageset",
+      "analysis": {
+        "format": "png",
+        "width": 768,
+        "height": 1024,
+        "aspectRatio": 0.75,
+        "bytes": 1351231,
+        "checksum": "9b48b857af16554f5242717714f9e95a3bfae0ed46171410dae6201964024c3d",
+        "hasAlphaChannel": false,
+        "edgeBackgroundRgb": [
+          211,
+          155,
+          40
+        ],
+        "edgeBackgroundStandardDeviation": 47.14,
+        "dominantColors": [
+          {
+            "rgb": [
+              224,
+              160,
+              32
+            ],
+            "sampleCount": 69449
+          },
+          {
+            "rgb": [
+              32,
+              0,
+              0
+            ],
+            "sampleCount": 36166
+          },
+          {
+            "rgb": [
+              64,
+              32,
+              0
+            ],
+            "sampleCount": 24573
+          },
+          {
+            "rgb": [
+              32,
+              32,
+              0
+            ],
+            "sampleCount": 11330
+          },
+          {
+            "rgb": [
+              224,
+              192,
+              32
+            ],
+            "sampleCount": 9347
+          },
+          {
+            "rgb": [
+              64,
+              0,
+              0
+            ],
+            "sampleCount": 6836
+          },
+          {
+            "rgb": [
+              0,
+              0,
+              0
+            ],
+            "sampleCount": 4595
+          },
+          {
+            "rgb": [
+              96,
+              32,
+              0
+            ],
+            "sampleCount": 4480
+          }
+        ],
+        "subjectBounds": {
+          "x": 0.0026041666666666665,
+          "y": 0,
+          "width": 0.9765625,
+          "height": 1
+        },
+        "sampledTransparentFraction": 0
+      }
+    },
+    {
+      "saintId": "efraim-syros",
+      "canonicalName": "Ὅσιος Ἐφραὶμ ὁ Σῦρος",
+      "nameEnglish": "Ephraim the Syrian",
+      "rankId": "osioi",
+      "rankTitle": "Ὅσιοι & Ἀββάδες",
+      "role": "Ὅσιος",
+      "imagePath": "Klimax/Assets.xcassets/saint-efraim-syros.imageset/saint-efraim-syros.png",
+      "imagesetPath": "Klimax/Assets.xcassets/saint-efraim-syros.imageset",
+      "analysis": {
+        "format": "png",
+        "width": 768,
+        "height": 1024,
+        "aspectRatio": 0.75,
+        "bytes": 1356106,
+        "checksum": "033b3f294a7c92be3912c38a4d0954a5f3d1ff759ccda5bb0502e827414f5714",
+        "hasAlphaChannel": false,
+        "edgeBackgroundRgb": [
+          193,
+          137,
+          24
+        ],
+        "edgeBackgroundStandardDeviation": 43.49,
+        "dominantColors": [
+          {
+            "rgb": [
+              224,
+              160,
+              32
+            ],
+            "sampleCount": 37489
+          },
+          {
+            "rgb": [
+              32,
+              32,
+              32
+            ],
+            "sampleCount": 22478
+          },
+          {
+            "rgb": [
+              224,
+              160,
+              0
+            ],
+            "sampleCount": 22186
+          },
+          {
+            "rgb": [
+              192,
+              128,
+              0
+            ],
+            "sampleCount": 19938
+          },
+          {
+            "rgb": [
+              32,
+              64,
+              64
+            ],
+            "sampleCount": 8846
+          },
+          {
+            "rgb": [
+              64,
+              64,
+              64
+            ],
+            "sampleCount": 8460
+          },
+          {
+            "rgb": [
+              0,
+              32,
+              32
+            ],
+            "sampleCount": 8311
+          },
+          {
+            "rgb": [
+              96,
+              32,
+              0
+            ],
+            "sampleCount": 7123
+          }
+        ],
+        "subjectBounds": {
+          "x": 0.005208333333333333,
+          "y": 0,
+          "width": 0.9791666666666666,
+          "height": 1
+        },
+        "sampledTransparentFraction": 0
+      }
+    },
+    {
+      "saintId": "maria-aigyptia",
+      "canonicalName": "Ὁσία Μαρία ἡ Αἰγυπτία",
+      "nameEnglish": "Mary of Egypt",
+      "rankId": "osioi",
+      "rankTitle": "Ὅσιοι & Ἀββάδες",
+      "role": "Ὁσία",
+      "imagePath": "Klimax/Assets.xcassets/saint-maria-aigyptia.imageset/saint-maria-aigyptia.png",
+      "imagesetPath": "Klimax/Assets.xcassets/saint-maria-aigyptia.imageset",
+      "analysis": {
+        "format": "png",
+        "width": 768,
+        "height": 1024,
+        "aspectRatio": 0.75,
+        "bytes": 1402689,
+        "checksum": "eb44283d063a4733887ff237aaffff5776de77af28465e658b729226dbcc54e2",
+        "hasAlphaChannel": false,
+        "edgeBackgroundRgb": [
+          202,
+          147,
+          34
+        ],
+        "edgeBackgroundStandardDeviation": 51.32,
+        "dominantColors": [
+          {
+            "rgb": [
+              224,
+              160,
+              32
+            ],
+            "sampleCount": 62745
+          },
+          {
+            "rgb": [
+              32,
+              32,
+              0
+            ],
+            "sampleCount": 35495
+          },
+          {
+            "rgb": [
+              0,
+              0,
+              0
+            ],
+            "sampleCount": 21687
+          },
+          {
+            "rgb": [
+              32,
+              0,
+              0
+            ],
+            "sampleCount": 19986
+          },
+          {
+            "rgb": [
+              192,
+              128,
+              0
+            ],
+            "sampleCount": 9061
+          },
+          {
+            "rgb": [
+              64,
+              32,
+              0
+            ],
+            "sampleCount": 6366
+          },
+          {
+            "rgb": [
+              64,
+              32,
+              32
+            ],
+            "sampleCount": 4834
+          },
+          {
+            "rgb": [
+              128,
+              64,
+              0
+            ],
+            "sampleCount": 4134
+          }
+        ],
+        "subjectBounds": {
+          "x": 0,
+          "y": 0,
+          "width": 1,
+          "height": 1
+        },
+        "sampledTransparentFraction": 0
+      }
+    },
+    {
+      "saintId": "serafeimsarof",
+      "canonicalName": "Όσιος Σεραφείμ του Σαρώφ",
+      "nameEnglish": "",
+      "rankId": "osioi",
+      "rankTitle": "Ὅσιοι & Ἀββάδες",
+      "role": "Ὅσιος",
+      "imagePath": "Klimax/Assets.xcassets/saint-serafeimsarof.imageset/saint-serafeimsarof.png",
+      "imagesetPath": "Klimax/Assets.xcassets/saint-serafeimsarof.imageset",
+      "analysis": {
+        "format": "png",
+        "width": 768,
+        "height": 1024,
+        "aspectRatio": 0.75,
+        "bytes": 1322378,
+        "checksum": "bb27bed1327033c0f57477ec17459b612fb9775177fdccacf9c137903b72dd97",
+        "hasAlphaChannel": false,
+        "edgeBackgroundRgb": [
+          194,
+          135,
+          23
+        ],
+        "edgeBackgroundStandardDeviation": 50.49,
+        "dominantColors": [
+          {
+            "rgb": [
+              224,
+              160,
+              32
+            ],
+            "sampleCount": 32211
+          },
+          {
+            "rgb": [
+              32,
+              0,
+              0
+            ],
+            "sampleCount": 31595
+          },
+          {
+            "rgb": [
+              224,
+              160,
+              0
+            ],
+            "sampleCount": 25544
+          },
+          {
+            "rgb": [
+              64,
+              32,
+              0
+            ],
+            "sampleCount": 15274
+          },
+          {
+            "rgb": [
+              32,
+              32,
+              0
+            ],
+            "sampleCount": 10893
+          },
+          {
+            "rgb": [
+              224,
+              128,
+              0
+            ],
+            "sampleCount": 8598
+          },
+          {
+            "rgb": [
+              192,
+              128,
+              0
+            ],
+            "sampleCount": 8383
+          },
+          {
+            "rgb": [
+              0,
+              0,
+              0
+            ],
+            "sampleCount": 6824
+          }
+        ],
+        "subjectBounds": {
+          "x": 0.0026041666666666665,
+          "y": 0,
+          "width": 0.9973958333333334,
+          "height": 1
+        },
+        "sampledTransparentFraction": 0
+      }
+    }
+  ]
+}

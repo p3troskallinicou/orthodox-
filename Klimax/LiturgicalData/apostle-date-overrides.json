@@ -1,0 +1,1028 @@
+[
+  {
+    "id": "peritomitoy_01_01",
+    "date_new_calendar": "01-01",
+    "apostle": {
+      "book": "colossians",
+      "ref": "2:8-12",
+      "display_el": "Κολ. 2:8–12"
+    }
+  },
+  {
+    "id": "proeortiaton_01_02",
+    "date_new_calendar": "01-02",
+    "apostle": {
+      "book": "hebrews",
+      "ref": "5:4-10",
+      "display_el": "Ἑβρ. 5:4–10"
+    }
+  },
+  {
+    "id": "agiatheofaneia_01_06",
+    "date_new_calendar": "01-06",
+    "apostle": {
+      "book": "titus",
+      "ref": "2:11-14,3:4-7",
+      "display_el": "Τίτ. 2:11–14, 3:4–7"
+    }
+  },
+  {
+    "id": "synaxistoy_01_07",
+    "date_new_calendar": "01-07",
+    "apostle": {
+      "book": "acts",
+      "ref": "19:1-8",
+      "display_el": "Πράξ. 19:1–8"
+    }
+  },
+  {
+    "id": "metheortiaton_01_08",
+    "date_new_calendar": "01-08",
+    "apostle": {
+      "book": "romans",
+      "ref": "6:3-11",
+      "display_el": "Ρωμ. 6:3–11"
+    }
+  },
+  {
+    "id": "metheortiaton_01_09",
+    "date_new_calendar": "01-09",
+    "apostle": {
+      "book": "2timothy",
+      "ref": "2:1-10",
+      "display_el": "Β΄ Τιμ. 2:1–10"
+    }
+  },
+  {
+    "id": "kyriakimeta_01_11",
+    "date_new_calendar": "01-11",
+    "apostle": {
+      "book": "hebrews",
+      "ref": "13:7-16",
+      "display_el": "Ἑβρ. 13:7–16"
+    }
+  },
+  {
+    "id": "apodosiston_01_14",
+    "date_new_calendar": "01-14",
+    "apostle": {
+      "book": "acts",
+      "ref": "2:38-43",
+      "display_el": "Πράξ. 2:38–43"
+    }
+  },
+  {
+    "id": "paylosthivaios_01_15",
+    "date_new_calendar": "01-15",
+    "apostle": {
+      "book": "galatians",
+      "ref": "5:22-26,6:1-2",
+      "display_el": "Γαλ. 5:22–26, 6:1–2"
+    }
+  },
+  {
+    "id": "proskynisisalyseos_01_16",
+    "date_new_calendar": "01-16",
+    "apostle": {
+      "book": "acts",
+      "ref": "12:1-11",
+      "display_el": "Πράξ. 12:1–11"
+    }
+  },
+  {
+    "id": "antoniosmegas_01_17",
+    "date_new_calendar": "01-17",
+    "apostle": {
+      "book": "hebrews",
+      "ref": "13:17-21",
+      "display_el": "Ἑβρ. 13:17–21"
+    }
+  },
+  {
+    "id": "loyka_01_18",
+    "date_new_calendar": "01-18",
+    "apostle": {
+      "book": "hebrews",
+      "ref": "13:7-16",
+      "display_el": "Ἑβρ. 13:7–16"
+    }
+  },
+  {
+    "id": "makariosaigyptios_01_19",
+    "date_new_calendar": "01-19",
+    "apostle": {
+      "book": "galatians",
+      "ref": "5:22-26,6:1-2",
+      "display_el": "Γαλ. 5:22–26, 6:1–2"
+    }
+  },
+  {
+    "id": "osioseythymios_01_20",
+    "date_new_calendar": "01-20",
+    "apostle": {
+      "book": "2corinthians",
+      "ref": "4:6-15",
+      "display_el": "Β΄ Κορ. 4:6–15"
+    }
+  },
+  {
+    "id": "maximosomologitis_01_21",
+    "date_new_calendar": "01-21",
+    "apostle": {
+      "book": "philippians",
+      "ref": "1:12-20",
+      "display_el": "Φιλιπ. 1:12–20"
+    }
+  },
+  {
+    "id": "timotheosapostolos_01_22",
+    "date_new_calendar": "01-22",
+    "apostle": {
+      "book": "2timothy",
+      "ref": "1:3-8",
+      "display_el": "Β΄ Τιμ. 1:3–8"
+    }
+  },
+  {
+    "id": "ieromartyrosklimentos_01_23",
+    "date_new_calendar": "01-23",
+    "apostle": {
+      "book": "philippians",
+      "ref": "3:20-21,4:1-3",
+      "display_el": "Φιλιπ. 3:20–21, 4:1–3"
+    }
+  },
+  {
+    "id": "osiaxeni_01_24",
+    "date_new_calendar": "01-24",
+    "apostle": {
+      "book": "galatians",
+      "ref": "5:22-26,6:1-2",
+      "display_el": "Γαλ. 5:22–26, 6:1–2"
+    }
+  },
+  {
+    "id": "loyka_01_25",
+    "date_new_calendar": "01-25",
+    "apostle": {
+      "book": "hebrews",
+      "ref": "7:26-28,8:1-2",
+      "display_el": "Ἑβρ. 7:26–28, 8:1–2"
+    }
+  },
+  {
+    "id": "anakomidileipsanon_01_27",
+    "date_new_calendar": "01-27",
+    "apostle": {
+      "book": "hebrews",
+      "ref": "7:26-28,8:1-2",
+      "display_el": "Ἑβρ. 7:26–28, 8:1–2"
+    }
+  },
+  {
+    "id": "osiosefraim_01_28",
+    "date_new_calendar": "01-28",
+    "apostle": {
+      "book": "galatians",
+      "ref": "5:22-26,6:1-2",
+      "display_el": "Γαλ. 5:22–26, 6:1–2"
+    }
+  },
+  {
+    "id": "anakomidileipsanon_01_29",
+    "date_new_calendar": "01-29",
+    "apostle": {
+      "book": "hebrews",
+      "ref": "10:32-38",
+      "display_el": "Ἑβρ. 10:32–38"
+    }
+  },
+  {
+    "id": "agioitreis_01_30",
+    "date_new_calendar": "01-30",
+    "apostle": {
+      "book": "hebrews",
+      "ref": "13:7-16",
+      "display_el": "Ἑβρ. 13:7–16"
+    }
+  },
+  {
+    "id": "kyroskai_01_31",
+    "date_new_calendar": "01-31",
+    "apostle": {
+      "book": "1corinthians",
+      "ref": "12:27-31,13:1-8",
+      "display_el": "Α΄ Κορ. 12:27–31, 13:1–8"
+    }
+  },
+  {
+    "id": "istloyka_02_01",
+    "date_new_calendar": "02-01",
+    "apostle": {
+      "book": "romans",
+      "ref": "8:28-39",
+      "display_el": "Ρωμ. 8:28–39"
+    }
+  },
+  {
+    "id": "ypapantitoy_02_02",
+    "date_new_calendar": "02-02",
+    "apostle": {
+      "book": "hebrews",
+      "ref": "7:7-17",
+      "display_el": "Ἑβρ. 7:7–17"
+    }
+  },
+  {
+    "id": "fotiospatriarchis_02_06",
+    "date_new_calendar": "02-06",
+    "apostle": {
+      "book": "hebrews",
+      "ref": "7:26-28,8:1-2",
+      "display_el": "Ἑβρ. 7:26–28, 8:1–2"
+    }
+  },
+  {
+    "id": "charalamposieromartys_02_10",
+    "date_new_calendar": "02-10",
+    "apostle": {
+      "book": "2timothy",
+      "ref": "2:1-10",
+      "display_el": "Β΄ Τιμ. 2:1–10"
+    }
+  },
+  {
+    "id": "ieromartyrosvlasioy_02_11",
+    "date_new_calendar": "02-11",
+    "apostle": {
+      "book": "hebrews",
+      "ref": "4:14-16,5:1-6",
+      "display_el": "Ἑβρ. 4:14–16, 5:1–6"
+    }
+  },
+  {
+    "id": "mnimitis_02_24",
+    "date_new_calendar": "02-24",
+    "apostle": {
+      "book": "2corinthians",
+      "ref": "4:6-15",
+      "display_el": "Β΄ Κορ. 4:6–15"
+    }
+  },
+  {
+    "id": "martyressevasteia_03_09",
+    "date_new_calendar": "03-09",
+    "apostle": {
+      "book": "hebrews",
+      "ref": "12:1-10",
+      "display_el": "Ἑβρ. 12:1–10"
+    }
+  },
+  {
+    "id": "eyaggelismostis_03_25",
+    "date_new_calendar": "03-25",
+    "apostle": {
+      "book": "hebrews",
+      "ref": "2:11-18",
+      "display_el": "Ἑβρ. 2:11–18"
+    }
+  },
+  {
+    "id": "georgioymegalomartyros_04_23",
+    "date_new_calendar": "04-23",
+    "apostle": {
+      "book": "acts",
+      "ref": "12:1-11",
+      "display_el": "Πράξ. 12:1–11"
+    }
+  },
+  {
+    "id": "anakomidileipsanon_05_02",
+    "date_new_calendar": "05-02",
+    "apostle": {
+      "book": "hebrews",
+      "ref": "13:7-16",
+      "display_el": "Ἑβρ. 13:7–16"
+    }
+  },
+  {
+    "id": "anamnisistoy_05_07",
+    "date_new_calendar": "05-07",
+    "apostle": {
+      "book": "acts",
+      "ref": "26:1,12-20",
+      "display_el": "Πράξ. 26:1, 12–20"
+    }
+  },
+  {
+    "id": "endoxoyapostoloy_05_08",
+    "date_new_calendar": "05-08",
+    "apostle": {
+      "book": "1john",
+      "ref": "1:1-7",
+      "display_el": "Α΄ Ἰω. 1:1–7"
+    }
+  },
+  {
+    "id": "pemptitis_05_21",
+    "date_new_calendar": "05-21",
+    "apostle": {
+      "book": "acts",
+      "ref": "26:1,12-20",
+      "display_el": "Πράξ. 26:1, 12–20"
+    }
+  },
+  {
+    "id": "tritieyresis_05_25",
+    "date_new_calendar": "05-25",
+    "apostle": {
+      "book": "2corinthians",
+      "ref": "4:6-15",
+      "display_el": "Β΄ Κορ. 4:6–15"
+    }
+  },
+  {
+    "id": "agiosmitrofanis_06_04",
+    "date_new_calendar": "06-04",
+    "apostle": {
+      "book": "hebrews",
+      "ref": "7:26-28,8:1-2",
+      "display_el": "Ἑβρ. 7:26–28, 8:1–2"
+    }
+  },
+  {
+    "id": "anakomidileipsanoy_06_08",
+    "date_new_calendar": "06-08",
+    "apostle": {
+      "book": "ephesians",
+      "ref": "2:4-10",
+      "display_el": "Ἐφεσ. 2:4–10"
+    }
+  },
+  {
+    "id": "vartholomaiosapostolos_06_11",
+    "date_new_calendar": "06-11",
+    "apostle": {
+      "book": "acts",
+      "ref": "11:19-30",
+      "display_el": "Πράξ. 11:19–30"
+    }
+  },
+  {
+    "id": "ioydasapostolos_06_19",
+    "date_new_calendar": "06-19",
+    "apostle": {
+      "book": "jude",
+      "ref": "1:1-25",
+      "display_el": "Ἰούδα 1:1–25"
+    }
+  },
+  {
+    "id": "genethliontoy_06_24",
+    "date_new_calendar": "06-24",
+    "apostle": {
+      "book": "romans",
+      "ref": "13:11-14,14:1-4",
+      "display_el": "Ρωμ. 13:11–14, 14:1–4"
+    }
+  },
+  {
+    "id": "apostoloipetros_06_29",
+    "date_new_calendar": "06-29",
+    "apostle": {
+      "book": "2corinthians",
+      "ref": "11:21-33,12:1-9",
+      "display_el": "Β΄ Κορ. 11:21–33, 12:1–9"
+    }
+  },
+  {
+    "id": "synaxiston_06_30",
+    "date_new_calendar": "06-30",
+    "apostle": {
+      "book": "1corinthians",
+      "ref": "4:9-16",
+      "display_el": "Α΄ Κορ. 4:9–16"
+    }
+  },
+  {
+    "id": "anargyroikosmas_07_01",
+    "date_new_calendar": "07-01",
+    "apostle": {
+      "book": "1corinthians",
+      "ref": "12:27-31,13:1-8",
+      "display_el": "Α΄ Κορ. 12:27–31, 13:1–8"
+    }
+  },
+  {
+    "id": "katathesisesthitos_07_02",
+    "date_new_calendar": "07-02",
+    "apostle": {
+      "book": "hebrews",
+      "ref": "9:1-7",
+      "display_el": "Ἑβρ. 9:1–7"
+    }
+  },
+  {
+    "id": "matthaioy_07_05",
+    "date_new_calendar": "07-05",
+    "apostle": {
+      "book": "galatians",
+      "ref": "5:22-26,6:1-2",
+      "display_el": "Γαλ. 5:22–26, 6:1–2"
+    }
+  },
+  {
+    "id": "kyriakimegalomartys_07_07",
+    "date_new_calendar": "07-07",
+    "apostle": {
+      "book": "galatians",
+      "ref": "3:23-29,4:1-5",
+      "display_el": "Γαλ. 3:23–29, 4:1–5"
+    }
+  },
+  {
+    "id": "prokopiosmegalomartys_07_08",
+    "date_new_calendar": "07-08",
+    "apostle": {
+      "book": "1timothy",
+      "ref": "4:9-15",
+      "display_el": "Α΄ Τιμ. 4:9–15"
+    }
+  },
+  {
+    "id": "eyfimiamegalomartys_07_11",
+    "date_new_calendar": "07-11",
+    "apostle": {
+      "book": "2corinthians",
+      "ref": "6:1-10",
+      "display_el": "Β΄ Κορ. 6:1–10"
+    }
+  },
+  {
+    "id": "synaxisarchaggeloy_07_13",
+    "date_new_calendar": "07-13",
+    "apostle": {
+      "book": "hebrews",
+      "ref": "2:2-10",
+      "display_el": "Ἑβρ. 2:2–10"
+    }
+  },
+  {
+    "id": "kirykoskai_07_15",
+    "date_new_calendar": "07-15",
+    "apostle": {
+      "book": "1corinthians",
+      "ref": "13:11-14,14:1-5",
+      "display_el": "Α΄ Κορ. 13:11–14, 14:1–5"
+    }
+  },
+  {
+    "id": "marinamegalomartys_07_17",
+    "date_new_calendar": "07-17",
+    "apostle": {
+      "book": "galatians",
+      "ref": "3:23-29,4:1-5",
+      "display_el": "Γαλ. 3:23–29, 4:1–5"
+    }
+  },
+  {
+    "id": "profitisilias_07_20",
+    "date_new_calendar": "07-20",
+    "apostle": {
+      "book": "james",
+      "ref": "5:10-20",
+      "display_el": "Ἰακ. 5:10–20"
+    }
+  },
+  {
+    "id": "mariamagdalini_07_22",
+    "date_new_calendar": "07-22",
+    "apostle": {
+      "book": "1corinthians",
+      "ref": "9:2-12",
+      "display_el": "Α΄ Κορ. 9:2–12"
+    }
+  },
+  {
+    "id": "koimisisagias_07_25",
+    "date_new_calendar": "07-25",
+    "apostle": {
+      "book": "galatians",
+      "ref": "4:22-27",
+      "display_el": "Γαλ. 4:22–27"
+    }
+  },
+  {
+    "id": "matthaioy_07_26",
+    "date_new_calendar": "07-26",
+    "apostle": {
+      "book": "galatians",
+      "ref": "3:23-29,4:1-5",
+      "display_el": "Γαλ. 3:23–29, 4:1–5"
+    }
+  },
+  {
+    "id": "megalomartyspanteleimo_07_27",
+    "date_new_calendar": "07-27",
+    "apostle": {
+      "book": "2timothy",
+      "ref": "2:1-10",
+      "display_el": "Β΄ Τιμ. 2:1–10"
+    }
+  },
+  {
+    "id": "silasiloyanoy_07_30",
+    "date_new_calendar": "07-30",
+    "apostle": {
+      "book": "acts",
+      "ref": "15:35-41",
+      "display_el": "Πράξ. 15:35–41"
+    }
+  },
+  {
+    "id": "makkavaioisolomoni_08_01",
+    "date_new_calendar": "08-01",
+    "apostle": {
+      "book": "hebrews",
+      "ref": "11:33-40,12:1-2",
+      "display_el": "Ἑβρ. 11:33–40, 12:1–2"
+    }
+  },
+  {
+    "id": "proeortiametamorfoseos_08_05",
+    "date_new_calendar": "08-05",
+    "apostle": {
+      "book": "1peter",
+      "ref": "1:1-25,2:1-10",
+      "display_el": "Α΄ Πέτρ. 1:1–25, 2:1–10"
+    }
+  },
+  {
+    "id": "metamorfosistoy_08_06",
+    "date_new_calendar": "08-06",
+    "apostle": {
+      "book": "2peter",
+      "ref": "1:10-19",
+      "display_el": "Β΄ Πέτρ. 1:10–19"
+    }
+  },
+  {
+    "id": "koimisistis_08_15",
+    "date_new_calendar": "08-15",
+    "apostle": {
+      "book": "philippians",
+      "ref": "2:5-11",
+      "display_el": "Φιλιπ. 2:5–11"
+    }
+  },
+  {
+    "id": "apotomikefalis_08_29",
+    "date_new_calendar": "08-29",
+    "apostle": {
+      "book": "acts",
+      "ref": "13:25-33",
+      "display_el": "Πράξ. 13:25–33"
+    }
+  },
+  {
+    "id": "katathesiszonis_08_31",
+    "date_new_calendar": "08-31",
+    "apostle": {
+      "book": "hebrews",
+      "ref": "9:1-7",
+      "display_el": "Ἑβρ. 9:1–7"
+    }
+  },
+  {
+    "id": "architis_09_01",
+    "date_new_calendar": "09-01",
+    "apostle": {
+      "book": "1timothy",
+      "ref": "2:1-7",
+      "display_el": "Α΄ Τιμ. 2:1–7"
+    }
+  },
+  {
+    "id": "thaymachonais_09_06",
+    "date_new_calendar": "09-06",
+    "apostle": {
+      "book": "hebrews",
+      "ref": "2:2-10",
+      "display_el": "Ἑβρ. 2:2–10"
+    }
+  },
+  {
+    "id": "genethliontis_09_08",
+    "date_new_calendar": "09-08",
+    "apostle": {
+      "book": "philippians",
+      "ref": "2:5-11",
+      "display_el": "Φιλιπ. 2:5–11"
+    }
+  },
+  {
+    "id": "ypsosistoy_09_14",
+    "date_new_calendar": "09-14",
+    "apostle": {
+      "book": "1corinthians",
+      "ref": "1:18-24",
+      "display_el": "Α΄ Κορ. 1:18–24"
+    }
+  },
+  {
+    "id": "nikitasmegalomartys_09_15",
+    "date_new_calendar": "09-15",
+    "apostle": {
+      "book": "colossians",
+      "ref": "1:24-29,2:1",
+      "display_el": "Κολ. 1:24–29, 2:1"
+    }
+  },
+  {
+    "id": "savvatonmeta_09_20",
+    "date_new_calendar": "09-20",
+    "apostle": {
+      "book": "ephesians",
+      "ref": "6:10-17",
+      "display_el": "Ἐφεσ. 6:10–17"
+    }
+  },
+  {
+    "id": "syllipsisprodromoy_09_23",
+    "date_new_calendar": "09-23",
+    "apostle": {
+      "book": "galatians",
+      "ref": "4:22-27",
+      "display_el": "Γαλ. 4:22–27"
+    }
+  },
+  {
+    "id": "anamnisistoy_09_24",
+    "date_new_calendar": "09-24",
+    "apostle": {
+      "book": "2timothy",
+      "ref": "3:10-15",
+      "display_el": "Β΄ Τιμ. 3:10–15"
+    }
+  },
+  {
+    "id": "metastasistoy_09_26",
+    "date_new_calendar": "09-26",
+    "apostle": {
+      "book": "1john",
+      "ref": "4:12-19",
+      "display_el": "Α΄ Ἰω. 4:12–19"
+    }
+  },
+  {
+    "id": "kyriakosanachoritis_09_29",
+    "date_new_calendar": "09-29",
+    "apostle": {
+      "book": "galatians",
+      "ref": "5:22-26,6:1-2",
+      "display_el": "Γαλ. 5:22–26, 6:1–2"
+    }
+  },
+  {
+    "id": "agiaskepi_10_01",
+    "date_new_calendar": "10-01",
+    "apostle": {
+      "book": "acts",
+      "ref": "9:10-19",
+      "display_el": "Πράξ. 9:10–19"
+    }
+  },
+  {
+    "id": "ieromartyroskyprianoy_10_02",
+    "date_new_calendar": "10-02",
+    "apostle": {
+      "book": "1timothy",
+      "ref": "1:12-17",
+      "display_el": "Α΄ Τιμ. 1:12–17"
+    }
+  },
+  {
+    "id": "ieromartyrosdionysioy_10_03",
+    "date_new_calendar": "10-03",
+    "apostle": {
+      "book": "acts",
+      "ref": "17:16-34",
+      "display_el": "Πράξ. 17:16–34"
+    }
+  },
+  {
+    "id": "thomasapostolos_10_06",
+    "date_new_calendar": "10-06",
+    "apostle": {
+      "book": "1corinthians",
+      "ref": "4:9-16",
+      "display_el": "Α΄ Κορ. 4:9–16"
+    }
+  },
+  {
+    "id": "apostoloyiakovoy_10_09",
+    "date_new_calendar": "10-09",
+    "apostle": {
+      "book": "1corinthians",
+      "ref": "4:9-16",
+      "display_el": "Α΄ Κορ. 4:9–16"
+    }
+  },
+  {
+    "id": "apostoloyfilippoy_10_11",
+    "date_new_calendar": "10-11",
+    "apostle": {
+      "book": "acts",
+      "ref": "8:26-39",
+      "display_el": "Πράξ. 8:26–39"
+    }
+  },
+  {
+    "id": "osieprofitis_10_17",
+    "date_new_calendar": "10-17",
+    "apostle": {
+      "book": "romans",
+      "ref": "9:18-33",
+      "display_el": "Ρωμ. 9:18–33"
+    }
+  },
+  {
+    "id": "eyaggelistisloykas_10_18",
+    "date_new_calendar": "10-18",
+    "apostle": {
+      "book": "colossians",
+      "ref": "4:5-11,14-18",
+      "display_el": "Κολ. 4:5–11, 14–18"
+    }
+  },
+  {
+    "id": "artemiomegalomartys_10_20",
+    "date_new_calendar": "10-20",
+    "apostle": {
+      "book": "2timothy",
+      "ref": "2:1-10",
+      "display_el": "Β΄ Τιμ. 2:1–10"
+    }
+  },
+  {
+    "id": "apostoloyiakovoy_10_23",
+    "date_new_calendar": "10-23",
+    "apostle": {
+      "book": "galatians",
+      "ref": "1:11-19",
+      "display_el": "Γαλ. 1:11–19"
+    }
+  },
+  {
+    "id": "loyka_10_26",
+    "date_new_calendar": "10-26",
+    "apostle": {
+      "book": "2timothy",
+      "ref": "2:1-10",
+      "display_el": "Β΄ Τιμ. 2:1–10"
+    }
+  },
+  {
+    "id": "apostolonstachyos_10_31",
+    "date_new_calendar": "10-31",
+    "apostle": {
+      "book": "romans",
+      "ref": "16:1-16",
+      "display_el": "Ρωμ. 16:1–16"
+    }
+  },
+  {
+    "id": "thaymatoyrgonanargyron_11_01",
+    "date_new_calendar": "11-01",
+    "apostle": {
+      "book": "1corinthians",
+      "ref": "12:27-31,13:1-8",
+      "display_el": "Α΄ Κορ. 12:27–31, 13:1–8"
+    }
+  },
+  {
+    "id": "payloyarchiepiskopoy_11_06",
+    "date_new_calendar": "11-06",
+    "apostle": {
+      "book": "hebrews",
+      "ref": "8:1-6",
+      "display_el": "Ἑβρ. 8:1–6"
+    }
+  },
+  {
+    "id": "synaxiston_11_08",
+    "date_new_calendar": "11-08",
+    "apostle": {
+      "book": "hebrews",
+      "ref": "2:2-10",
+      "display_el": "Ἑβρ. 2:2–10"
+    }
+  },
+  {
+    "id": "apostoloiolympas_11_10",
+    "date_new_calendar": "11-10",
+    "apostle": {
+      "book": "1corinthians",
+      "ref": "4:9-16",
+      "display_el": "Α΄ Κορ. 4:9–16"
+    }
+  },
+  {
+    "id": "minasmartys_11_11",
+    "date_new_calendar": "11-11",
+    "apostle": {
+      "book": "2corinthians",
+      "ref": "4:6-15",
+      "display_el": "Β΄ Κορ. 4:6–15"
+    }
+  },
+  {
+    "id": "ioannoytoy_11_12",
+    "date_new_calendar": "11-12",
+    "apostle": {
+      "book": "2corinthians",
+      "ref": "9:6-11",
+      "display_el": "Β΄ Κορ. 9:6–11"
+    }
+  },
+  {
+    "id": "ioannischrysostomos_11_13",
+    "date_new_calendar": "11-13",
+    "apostle": {
+      "book": "hebrews",
+      "ref": "7:26-28,8:1-2",
+      "display_el": "Ἑβρ. 7:26–28, 8:1–2"
+    }
+  },
+  {
+    "id": "filipposapostolos_11_14",
+    "date_new_calendar": "11-14",
+    "apostle": {
+      "book": "1corinthians",
+      "ref": "4:9-16",
+      "display_el": "Α΄ Κορ. 4:9–16"
+    }
+  },
+  {
+    "id": "apostoloskai_11_16",
+    "date_new_calendar": "11-16",
+    "apostle": {
+      "book": "romans",
+      "ref": "10:11-21,11:1-2",
+      "display_el": "Ρωμ. 10:11–21, 11:1–2"
+    }
+  },
+  {
+    "id": "grigoriosthaymatoyrgos_11_17",
+    "date_new_calendar": "11-17",
+    "apostle": {
+      "book": "1corinthians",
+      "ref": "12:7-11",
+      "display_el": "Α΄ Κορ. 12:7–11"
+    }
+  },
+  {
+    "id": "naoeisodos_11_21",
+    "date_new_calendar": "11-21",
+    "apostle": {
+      "book": "hebrews",
+      "ref": "9:1-7",
+      "display_el": "Ἑβρ. 9:1–7"
+    }
+  },
+  {
+    "id": "apostoloyfilimonos_11_22",
+    "date_new_calendar": "11-22",
+    "apostle": {
+      "book": "philemon",
+      "ref": "1:1-25",
+      "display_el": "Φιλήμ. 1:1–25"
+    }
+  },
+  {
+    "id": "klimisepiskopos_11_24",
+    "date_new_calendar": "11-24",
+    "apostle": {
+      "book": "philippians",
+      "ref": "3:20-21,4:1-3",
+      "display_el": "Φιλιπ. 3:20–21, 4:1–3"
+    }
+  },
+  {
+    "id": "aikaterinimegalomartys_11_25",
+    "date_new_calendar": "11-25",
+    "apostle": {
+      "book": "galatians",
+      "ref": "3:23-29,4:1-5",
+      "display_el": "Γαλ. 3:23–29, 4:1–5"
+    }
+  },
+  {
+    "id": "andreasprotoklitos_11_30",
+    "date_new_calendar": "11-30",
+    "apostle": {
+      "book": "1corinthians",
+      "ref": "4:9-16",
+      "display_el": "Α΄ Κορ. 4:9–16"
+    }
+  },
+  {
+    "id": "varvaramegalomartys_12_04",
+    "date_new_calendar": "12-04",
+    "apostle": {
+      "book": "galatians",
+      "ref": "3:23-29,4:1-5",
+      "display_el": "Γαλ. 3:23–29, 4:1–5"
+    }
+  },
+  {
+    "id": "savasigiasmenos_12_05",
+    "date_new_calendar": "12-05",
+    "apostle": {
+      "book": "galatians",
+      "ref": "5:22-26,6:1-2",
+      "display_el": "Γαλ. 5:22–26, 6:1–2"
+    }
+  },
+  {
+    "id": "nikolaoyarchiepiskopoy_12_06",
+    "date_new_calendar": "12-06",
+    "apostle": {
+      "book": "hebrews",
+      "ref": "13:17-21",
+      "display_el": "Ἑβρ. 13:17–21"
+    }
+  },
+  {
+    "id": "syllipsisagias_12_09",
+    "date_new_calendar": "12-09",
+    "apostle": {
+      "book": "galatians",
+      "ref": "4:22-27",
+      "display_el": "Γαλ. 4:22–27"
+    }
+  },
+  {
+    "id": "spyridonosepiskopoy_12_12",
+    "date_new_calendar": "12-12",
+    "apostle": {
+      "book": "ephesians",
+      "ref": "5:8-19",
+      "display_el": "Ἐφεσ. 5:8–19"
+    }
+  },
+  {
+    "id": "ieromartyroseleytherio_12_15",
+    "date_new_calendar": "12-15",
+    "apostle": {
+      "book": "2timothy",
+      "ref": "1:8-18",
+      "display_el": "Β΄ Τιμ. 1:8–18"
+    }
+  },
+  {
+    "id": "profitoydaniil_12_17",
+    "date_new_calendar": "12-17",
+    "apostle": {
+      "book": "hebrews",
+      "ref": "11:33-40,12:1-2",
+      "display_el": "Ἑβρ. 11:33–40, 12:1–2"
+    }
+  },
+  {
+    "id": "paramonitis_12_24",
+    "date_new_calendar": "12-24",
+    "apostle": {
+      "book": "hebrews",
+      "ref": "1:1-12",
+      "display_el": "Ἑβρ. 1:1–12"
+    }
+  },
+  {
+    "id": "gennisistoy_12_25",
+    "date_new_calendar": "12-25",
+    "apostle": {
+      "book": "galatians",
+      "ref": "4:4-7",
+      "display_el": "Γαλ. 4:4–7"
+    }
+  },
+  {
+    "id": "synaxistis_12_26",
+    "date_new_calendar": "12-26",
+    "apostle": {
+      "book": "hebrews",
+      "ref": "2:11-18",
+      "display_el": "Ἑβρ. 2:11–18"
+    }
+  },
+  {
+    "id": "metheortiaton_12_27",
+    "date_new_calendar": "12-27",
+    "apostle": {
+      "book": "acts",
+      "ref": "6:8-15,7:1-5,47-60",
+      "display_el": "Πράξ. 6:8–15, 7:1–5, 47–60"
+    }
+  }
+]

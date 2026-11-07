@@ -1,0 +1,970 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 70;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C0DEFA110000000000000201 /* PrayerInvitationSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DEFA110000000000000101 /* PrayerInvitationSchedule.swift */; };
+		C0DEFA110000000000000202 /* PrayerInvitationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DEFA110000000000000102 /* PrayerInvitationView.swift */; };
+		C0DEFA120000000000000201 /* SaintSayings.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DEFA120000000000000101 /* SaintSayings.swift */; };
+		C0DEFA120000000000000202 /* SaintSayingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DEFA120000000000000102 /* SaintSayingsView.swift */; };
+		C0DEFA120000000000000203 /* saint-sayings.json in Resources */ = {isa = PBXBuildFile; fileRef = C0DEFA120000000000000103 /* saint-sayings.json */; };
+		665A5EB42FF16D86002F07EC /* prayers.json in Resources */ = {isa = PBXBuildFile; fileRef = 665A5EB32FF16D86002F07EC /* prayers.json */; };
+		665A5EB62FF28F38002F07EC /* PrayerSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665A5EB52FF28F38002F07EC /* PrayerSection.swift */; };
+		665A5EBA2FF3EEE0002F07EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 665A5EB92FF3EEE0002F07EC /* Assets.xcassets */; };
+		665A5EBC2FF3FBB7002F07EC /* LadderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665A5EBB2FF3FBB7002F07EC /* LadderView.swift */; };
+		665A5EBE2FF3FEDF002F07EC /* SaintsCatalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665A5EBD2FF3FED1002F07EC /* SaintsCatalog.swift */; };
+		665A5EC02FF3FF40002F07EC /* saints.json in Resources */ = {isa = PBXBuildFile; fileRef = 665A5EBF2FF3FF40002F07EC /* saints.json */; };
+		665A5EC32FF65234002F07EC /* LessonModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665A5EC12FF65234002F07EC /* LessonModels.swift */; };
+		665A5EC42FF65234002F07EC /* LessonPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665A5EC22FF65234002F07EC /* LessonPlayerView.swift */; };
+		665A5EC62FF66178002F07EC /* VirtueLessonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665A5EC52FF66177002F07EC /* VirtueLessonsView.swift */; };
+		665A5ECA2FF664E8002F07EC /* GentiumBookPlus-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 665A5EC92FF664E8002F07EC /* GentiumBookPlus-Regular.ttf */; };
+		665A5ECB2FF664E8002F07EC /* GentiumBookPlus-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 665A5EC82FF664E8002F07EC /* GentiumBookPlus-Italic.ttf */; };
+		665A5ECC2FF664E8002F07EC /* GentiumBookPlus-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 665A5EC72FF664E8002F07EC /* GentiumBookPlus-Bold.ttf */; };
+		665A5ED32FF7B841002F07EC /* ChurchMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665A5ED12FF7B841002F07EC /* ChurchMapView.swift */; };
+		665A5ED42FF7B841002F07EC /* TodayPagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665A5ED22FF7B841002F07EC /* TodayPagerView.swift */; };
+		665A5ED52FF7B841002F07EC /* ChurchLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665A5ED02FF7B841002F07EC /* ChurchLocationManager.swift */; };
+		665A5ED72FF7C5E7002F07EC /* ChurchSearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665A5ED62FF7C5E7002F07EC /* ChurchSearchService.swift */; };
+		665A5EDF2FF90258002F07EC /* orthodox_places.json in Resources */ = {isa = PBXBuildFile; fileRef = 665A5EDE2FF90258002F07EC /* orthodox_places.json */; };
+		665A5EE12FF95EC7002F07EC /* Paschalion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665A5EE02FF95EC7002F07EC /* Paschalion.swift */; };
+		665A5EE32FF96001002F07EC /* OrthodoxCalendarModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665A5EE22FF96001002F07EC /* OrthodoxCalendarModels.swift */; };
+		665A5EE42FFA6FC4002F07EC /* fasting.json in Resources */ = {isa = PBXBuildFile; fileRef = 665A5EE22FFA6FC4002F07EC /* fasting.json */; };
+		665A5EE52FF96002002F07EC /* OrthodoxFeastCalendarService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665A5EE42FF96002002F07EC /* OrthodoxFeastCalendarService.swift */; };
+		665A5EE52FFA6FC4002F07EC /* FastingCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665A5EE32FFA6FC4002F07EC /* FastingCalendar.swift */; };
+		665A5EE72FF96003002F07EC /* OrthodoxFeastCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665A5EE62FF96003002F07EC /* OrthodoxFeastCalendarView.swift */; };
+		665A5EE72FFA7136002F07EC /* TodayFastingCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665A5EE62FFA7136002F07EC /* TodayFastingCard.swift */; };
+		665A5EE92FF96004002F07EC /* calendar.json in Resources */ = {isa = PBXBuildFile; fileRef = 665A5EE82FF96004002F07EC /* calendar.json */; };
+		665A5EEA2FFA79CA002F07EC /* FastingCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665A5EE82FFA79CA002F07EC /* FastingCalendarView.swift */; };
+		665A5EEB2FFA79CA002F07EC /* FastingLevel+UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665A5EE92FFA79CA002F07EC /* FastingLevel+UI.swift */; };
+		665A5EED2FFAA7D2002F07EC /* koinonika.json in Resources */ = {isa = PBXBuildFile; fileRef = 665A5EEC2FFAA7D2002F07EC /* koinonika.json */; };
+		665A5EEF2FFAAC5F002F07EC /* kontakia.json in Resources */ = {isa = PBXBuildFile; fileRef = 665A5EEE2FFAAC5F002F07EC /* kontakia.json */; };
+		665A5EF12FFA6001002F07EC /* LiturgicalServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665A5EF02FFA6001002F07EC /* LiturgicalServices.swift */; };
+		665A5EF12FFAB7FB002F07EC /* prokeimena.json in Resources */ = {isa = PBXBuildFile; fileRef = 665A5EF02FFAB7FB002F07EC /* prokeimena.json */; };
+		665A5EF32FFA6002002F07EC /* LiturgicalServiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665A5EF22FFA6002002F07EC /* LiturgicalServiceView.swift */; };
+		665A5EF32FFABC37002F07EC /* apolytikia.json in Resources */ = {isa = PBXBuildFile; fileRef = 665A5EF22FFABC37002F07EC /* apolytikia.json */; };
+		665A5EF52FFA6003002F07EC /* sunday-gospels.json in Resources */ = {isa = PBXBuildFile; fileRef = 665A5EF42FFA6003002F07EC /* sunday-gospels.json */; };
+		665A5EF52FFD31FC002F07EC /* LogosDidaches.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665A5EF42FFD31FC002F07EC /* LogosDidaches.swift */; };
+		665A5EF72FFA6004002F07EC /* eothina-gospels.json in Resources */ = {isa = PBXBuildFile; fileRef = 665A5EF62FFA6004002F07EC /* eothina-gospels.json */; };
+		665A5EF72FFD97FC002F07EC /* KlimaxShortStories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665A5EF62FFD97FC002F07EC /* KlimaxShortStories.swift */; };
+		665A5EF92FFA6005002F07EC /* fixed-feast-overrides.json in Resources */ = {isa = PBXBuildFile; fileRef = 665A5EF82FFA6005002F07EC /* fixed-feast-overrides.json */; };
+		665A5EF930011FE1002F07EC /* KlimaxFoundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665A5EF830011FE1002F07EC /* KlimaxFoundation.swift */; };
+		665A5EFB2FFA6006002F07EC /* chrysostom.el.json in Resources */ = {isa = PBXBuildFile; fileRef = 665A5EFA2FFA6006002F07EC /* chrysostom.el.json */; };
+		665A5EFB3004F084002F07EC /* PlayerProgressStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665A5EFA3004F084002F07EC /* PlayerProgressStore.swift */; };
+		665A5EFD2FFA6007002F07EC /* basil.el.json in Resources */ = {isa = PBXBuildFile; fileRef = 665A5EFC2FFA6007002F07EC /* basil.el.json */; };
+		665A5EFF2FFA6008002F07EC /* presanctified.el.json in Resources */ = {isa = PBXBuildFile; fileRef = 665A5EFE2FFA6008002F07EC /* presanctified.el.json */; };
+		665A5F012FFB1001002F07EC /* apostle-date-overrides.json in Resources */ = {isa = PBXBuildFile; fileRef = 665A5F002FFB1001002F07EC /* apostle-date-overrides.json */; };
+		665A5F032FFB2001002F07EC /* kanonion-2026.json in Resources */ = {isa = PBXBuildFile; fileRef = 665A5F022FFB2001002F07EC /* kanonion-2026.json */; };
+		665A5F04300544F0002F07EC /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 665A5F03300544F0002F07EC /* WidgetKit.framework */; };
+		665A5F06300544F0002F07EC /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 665A5F05300544F0002F07EC /* SwiftUI.framework */; };
+		665A5F17300544F2002F07EC /* WidgetsExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 665A5F01300544F0002F07EC /* WidgetsExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		665A5F2630054D12002F07EC /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665A5F2530054D12002F07EC /* NotificationManager.swift */; };
+		665A5F2730055318002F07EC /* GentiumBookPlus-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 665A5EC82FF664E8002F07EC /* GentiumBookPlus-Italic.ttf */; };
+		665A5F2830055318002F07EC /* GentiumBookPlus-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 665A5EC72FF664E8002F07EC /* GentiumBookPlus-Bold.ttf */; };
+		665A5F293005531C002F07EC /* GentiumBookPlus-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 665A5EC92FF664E8002F07EC /* GentiumBookPlus-Regular.ttf */; };
+		665A5F2B300553DF002F07EC /* WeeklyRecapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665A5F2A300553DF002F07EC /* WeeklyRecapView.swift */; };
+		665A5F2D3008C001002F07EC /* ProgressionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665A5F2C3008C001002F07EC /* ProgressionStore.swift */; };
+		665A5F443007ED97002F07EC /* HomilyMiniPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665A5F433007ED97002F07EC /* HomilyMiniPlayer.swift */; };
+		66D0A2A7301B71D900FE8D24 /* MediaProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D0A2A6301B71D800FE8D24 /* MediaProgress.swift */; };
+		66D0A2B230265E1400FE8D24 /* AthosDesignKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D0A2B130265E1400FE8D24 /* AthosDesignKit.swift */; };
+		BB0000000000000000000010 /* BookChaptersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000010 /* BookChaptersView.swift */; };
+		BB0000000000000000000011 /* ChapterReadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000011 /* ChapterReadingView.swift */; };
+		BB0000000000000000000012 /* ContentModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000012 /* ContentModels.swift */; };
+		BB0000000000000000000013 /* GildTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000013 /* GildTheme.swift */; };
+		BB0000000000000000000014 /* KlimaxApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000014 /* KlimaxApp.swift */; };
+		BB0000000000000000000015 /* LessonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000015 /* LessonView.swift */; };
+		BB0000000000000000000016 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000016 /* RootView.swift */; };
+		BB0000000000000000000017 /* SaintTeachingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000017 /* SaintTeachingsView.swift */; };
+		BB0000000000000000000018 /* SaintsMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000018 /* SaintsMenuView.swift */; };
+		BB0000000000000000000019 /* ScriptureLibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000019 /* ScriptureLibraryView.swift */; };
+		BB0000000000000000000020 /* ScriptureModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000020 /* ScriptureModels.swift */; };
+		BB0000000000000000000021 /* ScriptureStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000021 /* ScriptureStore.swift */; };
+		BB0000000000000000000022 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000022 /* Theme.swift */; };
+		BB0000000000000000000023 /* TodayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000023 /* TodayView.swift */; };
+		BB0000000000000000000024 /* VirtueLibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000024 /* VirtueLibraryView.swift */; };
+		BB0000000000000000000025 /* scripture.json in Resources */ = {isa = PBXBuildFile; fileRef = AA0000000000000000000025 /* scripture.json */; };
+		C0DE00000000000000000101 /* CharacterModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DE00000000000000000100 /* CharacterModels.swift */; };
+		C0DE00000000000000000103 /* CharacterCatalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DE00000000000000000102 /* CharacterCatalog.swift */; };
+		C0DE00000000000000000105 /* CharacterProgressStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DE00000000000000000104 /* CharacterProgressStore.swift */; };
+		C0DE00000000000000000107 /* CharacterAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DE00000000000000000106 /* CharacterAnimation.swift */; };
+		C0DE00000000000000000109 /* CharactersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DE00000000000000000108 /* CharactersView.swift */; };
+		C0DE0000000000000000010B /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DE0000000000000000010A /* ProfileView.swift */; };
+		C0DE0000000000000000010D /* NotebookLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DE0000000000000000010C /* NotebookLibrary.swift */; };
+		C0DE0000000000000000010F /* VirtualIconostasis.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DE0000000000000000010E /* VirtualIconostasis.swift */; };
+		C0DE0E010000000000000002 /* pateric-stories.json in Resources */ = {isa = PBXBuildFile; fileRef = C0DE0E010000000000000001 /* pateric-stories.json */; };
+		C0DE0E020000000000000002 /* saint-quizzes.json in Resources */ = {isa = PBXBuildFile; fileRef = C0DE0E020000000000000001 /* saint-quizzes.json */; };
+		C0DE0FF10000000000000002 /* sunday-offices-2026.json in Resources */ = {isa = PBXBuildFile; fileRef = C0DE0FF10000000000000001 /* sunday-offices-2026.json */; };
+		C0DE0FF20000000000000002 /* typikon-services-2026.json in Resources */ = {isa = PBXBuildFile; fileRef = C0DE0FF20000000000000001 /* typikon-services-2026.json */; };
+		C0DEA7000000000000000001 /* AthosTVView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DEA7000000000000000101 /* AthosTVView.swift */; };
+		C0DEAC000000000000000001 /* AthosTVCollections.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DEAC000000000000000101 /* AthosTVCollections.swift */; };
+		C0DEA7000000000000000002 /* athos_tv_page.json in Resources */ = {isa = PBXBuildFile; fileRef = C0DEA7000000000000000102 /* athos_tv_page.json */; };
+		C0DEA7000000000000000003 /* YouTubePlayerKit in Frameworks */ = {isa = PBXBuildFile; productRef = C0DEA7000000000000000202 /* YouTubePlayerKit */; };
+		C0DEA7000000000000000004 /* GFSDidot.otf in Resources */ = {isa = PBXBuildFile; fileRef = C0DEA7000000000000000103 /* GFSDidot.otf */; };
+		C0DEA8000000000000000001 /* AthosAudioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DEA8000000000000000101 /* AthosAudioView.swift */; };
+		C0DEA8000000000000000002 /* AthosAudioSpeakers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DEA8000000000000000102 /* AthosAudioSpeakers.swift */; };
+		C0DEAA110000000000000002 /* homily-archive.json in Resources */ = {isa = PBXBuildFile; fileRef = C0DEAA110000000000000001 /* homily-archive.json */; };
+		C0DEB1010000000000000002 /* genesis-1.json in Resources */ = {isa = PBXBuildFile; fileRef = C0DEB1010000000000000001 /* genesis-1.json */; };
+		C0DEC0110000000000000001 /* SaintCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DEC0110000000000000101 /* SaintCollection.swift */; };
+		C0DECA510000000000000001 /* ScriptureLearningActivityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DECA510000000000000101 /* ScriptureLearningActivityManager.swift */; };
+		C0DECA510000000000000002 /* ScriptureLearningActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DECA510000000000000102 /* ScriptureLearningActivity.swift */; };
+		C0DECA7E0000000000000001 /* PlannerCategories.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DECA7E0000000000000101 /* PlannerCategories.swift */; };
+		C0DEDE150000000000000201 /* Diptycha.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DEDE150000000000000101 /* Diptycha.swift */; };
+		C0DEDE150000000000000202 /* DiptychaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DEDE150000000000000102 /* DiptychaView.swift */; };
+		C0DEDE150000000000000203 /* DeisisSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DEDE150000000000000103 /* DeisisSection.swift */; };
+		C0DEDE150000000000000204 /* deiseis_kosmou.json in Resources */ = {isa = PBXBuildFile; fileRef = C0DEDE150000000000000104 /* deiseis_kosmou.json */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		665A5F15300544F2002F07EC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EE0000000000000000000002 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 665A5F00300544F0002F07EC;
+			remoteInfo = WidgetsExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		665A5F1C300544F2002F07EC /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				665A5F17300544F2002F07EC /* WidgetsExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		C0DEFA110000000000000101 /* PrayerInvitationSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayerInvitationSchedule.swift; sourceTree = "<group>"; };
+		C0DEFA110000000000000102 /* PrayerInvitationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayerInvitationView.swift; sourceTree = "<group>"; };
+		C0DEFA120000000000000101 /* SaintSayings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaintSayings.swift; sourceTree = "<group>"; };
+		C0DEFA120000000000000102 /* SaintSayingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaintSayingsView.swift; sourceTree = "<group>"; };
+		C0DEFA120000000000000103 /* saint-sayings.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "saint-sayings.json"; sourceTree = "<group>"; };
+		665A5EB32FF16D86002F07EC /* prayers.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = prayers.json; sourceTree = "<group>"; };
+		665A5EB52FF28F38002F07EC /* PrayerSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayerSection.swift; sourceTree = "<group>"; };
+		665A5EB92FF3EEE0002F07EC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		665A5EBB2FF3FBB7002F07EC /* LadderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LadderView.swift; sourceTree = "<group>"; };
+		665A5EBD2FF3FED1002F07EC /* SaintsCatalog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaintsCatalog.swift; sourceTree = "<group>"; };
+		665A5EBF2FF3FF40002F07EC /* saints.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = saints.json; sourceTree = "<group>"; };
+		665A5EC12FF65234002F07EC /* LessonModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonModels.swift; sourceTree = "<group>"; };
+		665A5EC22FF65234002F07EC /* LessonPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonPlayerView.swift; sourceTree = "<group>"; };
+		665A5EC52FF66177002F07EC /* VirtueLessonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtueLessonsView.swift; sourceTree = "<group>"; };
+		665A5EC72FF664E8002F07EC /* GentiumBookPlus-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GentiumBookPlus-Bold.ttf"; sourceTree = "<group>"; };
+		665A5EC82FF664E8002F07EC /* GentiumBookPlus-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GentiumBookPlus-Italic.ttf"; sourceTree = "<group>"; };
+		665A5EC92FF664E8002F07EC /* GentiumBookPlus-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GentiumBookPlus-Regular.ttf"; sourceTree = "<group>"; };
+		665A5ECF2FF7B543002F07EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		665A5ED02FF7B841002F07EC /* ChurchLocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChurchLocationManager.swift; sourceTree = "<group>"; };
+		665A5ED12FF7B841002F07EC /* ChurchMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChurchMapView.swift; sourceTree = "<group>"; };
+		665A5ED22FF7B841002F07EC /* TodayPagerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayPagerView.swift; sourceTree = "<group>"; };
+		665A5ED62FF7C5E7002F07EC /* ChurchSearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChurchSearchService.swift; sourceTree = "<group>"; };
+		665A5EDE2FF90258002F07EC /* orthodox_places.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = orthodox_places.json; sourceTree = "<group>"; };
+		665A5EE02FF95EC7002F07EC /* Paschalion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Paschalion.swift; sourceTree = "<group>"; };
+		665A5EE22FF96001002F07EC /* OrthodoxCalendarModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrthodoxCalendarModels.swift; sourceTree = "<group>"; };
+		665A5EE22FFA6FC4002F07EC /* fasting.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = fasting.json; sourceTree = "<group>"; };
+		665A5EE32FFA6FC4002F07EC /* FastingCalendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FastingCalendar.swift; sourceTree = "<group>"; };
+		665A5EE42FF96002002F07EC /* OrthodoxFeastCalendarService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrthodoxFeastCalendarService.swift; sourceTree = "<group>"; };
+		665A5EE62FF96003002F07EC /* OrthodoxFeastCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrthodoxFeastCalendarView.swift; sourceTree = "<group>"; };
+		665A5EE62FFA7136002F07EC /* TodayFastingCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayFastingCard.swift; sourceTree = "<group>"; };
+		665A5EE82FF96004002F07EC /* calendar.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = calendar.json; sourceTree = "<group>"; };
+		665A5EE82FFA79CA002F07EC /* FastingCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FastingCalendarView.swift; sourceTree = "<group>"; };
+		665A5EE92FFA79CA002F07EC /* FastingLevel+UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FastingLevel+UI.swift"; sourceTree = "<group>"; };
+		665A5EEC2FFAA7D2002F07EC /* koinonika.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = koinonika.json; sourceTree = "<group>"; };
+		665A5EEE2FFAAC5F002F07EC /* kontakia.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = kontakia.json; sourceTree = "<group>"; };
+		665A5EF02FFA6001002F07EC /* LiturgicalServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiturgicalServices.swift; sourceTree = "<group>"; };
+		665A5EF02FFAB7FB002F07EC /* prokeimena.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = prokeimena.json; sourceTree = "<group>"; };
+		665A5EF22FFA6002002F07EC /* LiturgicalServiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiturgicalServiceView.swift; sourceTree = "<group>"; };
+		665A5EF22FFABC37002F07EC /* apolytikia.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = apolytikia.json; sourceTree = "<group>"; };
+		665A5EF42FFA6003002F07EC /* sunday-gospels.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = "sunday-gospels.json"; path = "LiturgicalData/sunday-gospels.json"; sourceTree = "<group>"; };
+		665A5EF42FFD31FC002F07EC /* LogosDidaches.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogosDidaches.swift; sourceTree = "<group>"; };
+		665A5EF62FFA6004002F07EC /* eothina-gospels.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = "eothina-gospels.json"; path = "LiturgicalData/eothina-gospels.json"; sourceTree = "<group>"; };
+		665A5EF62FFD97FC002F07EC /* KlimaxShortStories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KlimaxShortStories.swift; sourceTree = "<group>"; };
+		665A5EF82FFA6005002F07EC /* fixed-feast-overrides.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = "fixed-feast-overrides.json"; path = "LiturgicalData/fixed-feast-overrides.json"; sourceTree = "<group>"; };
+		665A5EF830011FE1002F07EC /* KlimaxFoundation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KlimaxFoundation.swift; sourceTree = "<group>"; };
+		665A5EFA2FFA6006002F07EC /* chrysostom.el.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = chrysostom.el.json; path = LiturgicalData/BaseLiturgies/chrysostom.el.json; sourceTree = "<group>"; };
+		665A5EFA3004F084002F07EC /* PlayerProgressStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerProgressStore.swift; sourceTree = "<group>"; };
+		665A5EFC2FFA6007002F07EC /* basil.el.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = basil.el.json; path = LiturgicalData/BaseLiturgies/basil.el.json; sourceTree = "<group>"; };
+		665A5EFC30054407002F07EC /* Klimax.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Klimax.entitlements; sourceTree = "<group>"; };
+		665A5EFE2FFA6008002F07EC /* presanctified.el.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = presanctified.el.json; path = LiturgicalData/BaseLiturgies/presanctified.el.json; sourceTree = "<group>"; };
+		665A5F002FFB1001002F07EC /* apostle-date-overrides.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = "apostle-date-overrides.json"; path = "LiturgicalData/apostle-date-overrides.json"; sourceTree = "<group>"; };
+		665A5F01300544F0002F07EC /* WidgetsExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = WidgetsExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		665A5F022FFB2001002F07EC /* kanonion-2026.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = "kanonion-2026.json"; path = "LiturgicalData/kanonion-2026.json"; sourceTree = "<group>"; };
+		665A5F03300544F0002F07EC /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		665A5F05300544F0002F07EC /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		665A5F1D30054632002F07EC /* WidgetsExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WidgetsExtension.entitlements; sourceTree = "<group>"; };
+		665A5F2530054D12002F07EC /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
+		665A5F2A300553DF002F07EC /* WeeklyRecapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyRecapView.swift; sourceTree = "<group>"; };
+		665A5F2C3008C001002F07EC /* ProgressionStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressionStore.swift; sourceTree = "<group>"; };
+		665A5F433007ED97002F07EC /* HomilyMiniPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomilyMiniPlayer.swift; sourceTree = "<group>"; };
+		66D0A2A6301B71D800FE8D24 /* MediaProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaProgress.swift; sourceTree = "<group>"; };
+		66D0A2B130265E1400FE8D24 /* AthosDesignKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AthosDesignKit.swift; sourceTree = "<group>"; };
+		AA0000000000000000000001 /* Klimax.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Klimax.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA0000000000000000000010 /* BookChaptersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookChaptersView.swift; sourceTree = "<group>"; };
+		AA0000000000000000000011 /* ChapterReadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterReadingView.swift; sourceTree = "<group>"; };
+		AA0000000000000000000012 /* ContentModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentModels.swift; sourceTree = "<group>"; };
+		AA0000000000000000000013 /* GildTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GildTheme.swift; sourceTree = "<group>"; };
+		AA0000000000000000000014 /* KlimaxApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KlimaxApp.swift; sourceTree = "<group>"; };
+		AA0000000000000000000015 /* LessonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonView.swift; sourceTree = "<group>"; };
+		AA0000000000000000000016 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		AA0000000000000000000017 /* SaintTeachingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaintTeachingsView.swift; sourceTree = "<group>"; };
+		AA0000000000000000000018 /* SaintsMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaintsMenuView.swift; sourceTree = "<group>"; };
+		AA0000000000000000000019 /* ScriptureLibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScriptureLibraryView.swift; sourceTree = "<group>"; };
+		AA0000000000000000000020 /* ScriptureModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScriptureModels.swift; sourceTree = "<group>"; };
+		AA0000000000000000000021 /* ScriptureStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScriptureStore.swift; sourceTree = "<group>"; };
+		AA0000000000000000000022 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		AA0000000000000000000023 /* TodayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayView.swift; sourceTree = "<group>"; };
+		AA0000000000000000000024 /* VirtueLibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtueLibraryView.swift; sourceTree = "<group>"; };
+		AA0000000000000000000025 /* scripture.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = scripture.json; sourceTree = "<group>"; };
+		C0DE00000000000000000100 /* CharacterModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterModels.swift; sourceTree = "<group>"; };
+		C0DE00000000000000000102 /* CharacterCatalog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCatalog.swift; sourceTree = "<group>"; };
+		C0DE00000000000000000104 /* CharacterProgressStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterProgressStore.swift; sourceTree = "<group>"; };
+		C0DE00000000000000000106 /* CharacterAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterAnimation.swift; sourceTree = "<group>"; };
+		C0DE00000000000000000108 /* CharactersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersView.swift; sourceTree = "<group>"; };
+		C0DE0000000000000000010A /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		C0DE0000000000000000010C /* NotebookLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotebookLibrary.swift; sourceTree = "<group>"; };
+		C0DE0000000000000000010E /* VirtualIconostasis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualIconostasis.swift; sourceTree = "<group>"; };
+		C0DE0E010000000000000001 /* pateric-stories.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "pateric-stories.json"; sourceTree = "<group>"; };
+		C0DE0E020000000000000001 /* saint-quizzes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "saint-quizzes.json"; sourceTree = "<group>"; };
+		C0DE0FF10000000000000001 /* sunday-offices-2026.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = "sunday-offices-2026.json"; path = "LiturgicalData/sunday-offices-2026.json"; sourceTree = "<group>"; };
+		C0DE0FF20000000000000001 /* typikon-services-2026.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = "typikon-services-2026.json"; path = "LiturgicalData/typikon-services-2026.json"; sourceTree = "<group>"; };
+		C0DEA7000000000000000101 /* AthosTVView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AthosTVView.swift; sourceTree = "<group>"; };
+		C0DEAC000000000000000101 /* AthosTVCollections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AthosTVCollections.swift; sourceTree = "<group>"; };
+		C0DEA7000000000000000102 /* athos_tv_page.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = athos_tv_page.json; sourceTree = "<group>"; };
+		C0DEA7000000000000000103 /* GFSDidot.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GFSDidot.otf; sourceTree = "<group>"; };
+		C0DEA8000000000000000101 /* AthosAudioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AthosAudioView.swift; sourceTree = "<group>"; };
+		C0DEA8000000000000000102 /* AthosAudioSpeakers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AthosAudioSpeakers.swift; sourceTree = "<group>"; };
+		C0DEAA110000000000000001 /* homily-archive.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "homily-archive.json"; sourceTree = "<group>"; };
+		C0DEB1010000000000000001 /* genesis-1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "genesis-1.json"; sourceTree = "<group>"; };
+		C0DEC0110000000000000101 /* SaintCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaintCollection.swift; sourceTree = "<group>"; };
+		C0DECA510000000000000101 /* ScriptureLearningActivityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScriptureLearningActivityManager.swift; sourceTree = "<group>"; };
+		C0DECA510000000000000102 /* ScriptureLearningActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ScriptureLearningActivity.swift; path = Widgets/ScriptureLearningActivity.swift; sourceTree = SOURCE_ROOT; };
+		C0DECA7E0000000000000101 /* PlannerCategories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlannerCategories.swift; sourceTree = "<group>"; };
+		C0DEDE150000000000000101 /* Diptycha.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Diptycha.swift; sourceTree = "<group>"; };
+		C0DEDE150000000000000102 /* DiptychaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiptychaView.swift; sourceTree = "<group>"; };
+		C0DEDE150000000000000103 /* DeisisSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeisisSection.swift; sourceTree = "<group>"; };
+		C0DEDE150000000000000104 /* deiseis_kosmou.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = deiseis_kosmou.json; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		665A5F18300544F2002F07EC /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 665A5F00300544F0002F07EC /* WidgetsExtension */;
+		};
+		665A5F2430054C94002F07EC /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				WidgetSharedData.swift,
+			);
+			target = EE0000000000000000000001 /* Klimax */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		665A5F07300544F0002F07EC /* Widgets */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (665A5F2430054C94002F07EC /* PBXFileSystemSynchronizedBuildFileExceptionSet */, 665A5F18300544F2002F07EC /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Widgets; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		665A5EFE300544F0002F07EC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				665A5F06300544F0002F07EC /* SwiftUI.framework in Frameworks */,
+				665A5F04300544F0002F07EC /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DD0000000000000000000002 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C0DEA7000000000000000003 /* YouTubePlayerKit in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		665A5F02300544F0002F07EC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				665A5F03300544F0002F07EC /* WidgetKit.framework */,
+				665A5F05300544F0002F07EC /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CC0000000000000000000001 = {
+			isa = PBXGroup;
+			children = (
+				C0DECA510000000000000102 /* ScriptureLearningActivity.swift */,
+				665A5F1D30054632002F07EC /* WidgetsExtension.entitlements */,
+				CC0000000000000000000002 /* Klimax */,
+				665A5F07300544F0002F07EC /* Widgets */,
+				665A5F02300544F0002F07EC /* Frameworks */,
+				CC0000000000000000000003 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CC0000000000000000000002 /* Klimax */ = {
+			isa = PBXGroup;
+			children = (
+				C0DECA510000000000000101 /* ScriptureLearningActivityManager.swift */,
+				665A5EFC30054407002F07EC /* Klimax.entitlements */,
+				665A5ECF2FF7B543002F07EC /* Info.plist */,
+				66D0A2B130265E1400FE8D24 /* AthosDesignKit.swift */,
+				C0DEA7000000000000000101 /* AthosTVView.swift */,
+				C0DEAC000000000000000101 /* AthosTVCollections.swift */,
+				C0DEA8000000000000000101 /* AthosAudioView.swift */,
+				C0DEA8000000000000000102 /* AthosAudioSpeakers.swift */,
+				C0DEA7000000000000000102 /* athos_tv_page.json */,
+				C0DEA7000000000000000103 /* GFSDidot.otf */,
+				665A5F2530054D12002F07EC /* NotificationManager.swift */,
+				665A5EBD2FF3FED1002F07EC /* SaintsCatalog.swift */,
+				C0DEC0110000000000000101 /* SaintCollection.swift */,
+				AA0000000000000000000010 /* BookChaptersView.swift */,
+				AA0000000000000000000011 /* ChapterReadingView.swift */,
+				AA0000000000000000000012 /* ContentModels.swift */,
+				C0DE00000000000000000100 /* CharacterModels.swift */,
+				C0DE00000000000000000102 /* CharacterCatalog.swift */,
+				C0DE00000000000000000104 /* CharacterProgressStore.swift */,
+				C0DE00000000000000000106 /* CharacterAnimation.swift */,
+				C0DE00000000000000000108 /* CharactersView.swift */,
+				AA0000000000000000000013 /* GildTheme.swift */,
+				AA0000000000000000000014 /* KlimaxApp.swift */,
+				AA0000000000000000000015 /* LessonView.swift */,
+				C0DE0000000000000000010A /* ProfileView.swift */,
+				C0DE0000000000000000010C /* NotebookLibrary.swift */,
+				C0DE0000000000000000010E /* VirtualIconostasis.swift */,
+				665A5F2C3008C001002F07EC /* ProgressionStore.swift */,
+				665A5F2A300553DF002F07EC /* WeeklyRecapView.swift */,
+				AA0000000000000000000016 /* RootView.swift */,
+				AA0000000000000000000017 /* SaintTeachingsView.swift */,
+				665A5EB32FF16D86002F07EC /* prayers.json */,
+				AA0000000000000000000018 /* SaintsMenuView.swift */,
+				AA0000000000000000000019 /* ScriptureLibraryView.swift */,
+				AA0000000000000000000020 /* ScriptureModels.swift */,
+				AA0000000000000000000021 /* ScriptureStore.swift */,
+				AA0000000000000000000022 /* Theme.swift */,
+				AA0000000000000000000023 /* TodayView.swift */,
+				C0DECA7E0000000000000101 /* PlannerCategories.swift */,
+				AA0000000000000000000024 /* VirtueLibraryView.swift */,
+				AA0000000000000000000025 /* scripture.json */,
+				C0DEB1010000000000000001 /* genesis-1.json */,
+				665A5EB52FF28F38002F07EC /* PrayerSection.swift */,
+				C0DEFA110000000000000101 /* PrayerInvitationSchedule.swift */,
+				C0DEFA110000000000000102 /* PrayerInvitationView.swift */,
+				C0DEFA120000000000000101 /* SaintSayings.swift */,
+				C0DEFA120000000000000102 /* SaintSayingsView.swift */,
+				C0DEFA120000000000000103 /* saint-sayings.json */,
+				C0DEDE150000000000000101 /* Diptycha.swift */,
+				C0DEDE150000000000000102 /* DiptychaView.swift */,
+				C0DEDE150000000000000103 /* DeisisSection.swift */,
+				C0DEDE150000000000000104 /* deiseis_kosmou.json */,
+				C0DEAA110000000000000001 /* homily-archive.json */,
+				665A5EB92FF3EEE0002F07EC /* Assets.xcassets */,
+				665A5EBB2FF3FBB7002F07EC /* LadderView.swift */,
+				665A5EBF2FF3FF40002F07EC /* saints.json */,
+				665A5EC12FF65234002F07EC /* LessonModels.swift */,
+				665A5EC22FF65234002F07EC /* LessonPlayerView.swift */,
+				665A5EC52FF66177002F07EC /* VirtueLessonsView.swift */,
+				665A5EC72FF664E8002F07EC /* GentiumBookPlus-Bold.ttf */,
+				665A5EC82FF664E8002F07EC /* GentiumBookPlus-Italic.ttf */,
+				665A5EFA3004F084002F07EC /* PlayerProgressStore.swift */,
+				665A5EC92FF664E8002F07EC /* GentiumBookPlus-Regular.ttf */,
+				665A5ED02FF7B841002F07EC /* ChurchLocationManager.swift */,
+				665A5ED12FF7B841002F07EC /* ChurchMapView.swift */,
+				665A5ED22FF7B841002F07EC /* TodayPagerView.swift */,
+				665A5ED62FF7C5E7002F07EC /* ChurchSearchService.swift */,
+				665A5EDE2FF90258002F07EC /* orthodox_places.json */,
+				665A5EE02FF95EC7002F07EC /* Paschalion.swift */,
+				665A5EE22FF96001002F07EC /* OrthodoxCalendarModels.swift */,
+				665A5EE42FF96002002F07EC /* OrthodoxFeastCalendarService.swift */,
+				665A5EE62FF96003002F07EC /* OrthodoxFeastCalendarView.swift */,
+				665A5EE82FF96004002F07EC /* calendar.json */,
+				665A5EF02FFA6001002F07EC /* LiturgicalServices.swift */,
+				665A5EF22FFA6002002F07EC /* LiturgicalServiceView.swift */,
+				665A5EF42FFA6003002F07EC /* sunday-gospels.json */,
+				665A5EF62FFA6004002F07EC /* eothina-gospels.json */,
+				665A5EF82FFA6005002F07EC /* fixed-feast-overrides.json */,
+				665A5EFA2FFA6006002F07EC /* chrysostom.el.json */,
+				665A5EFC2FFA6007002F07EC /* basil.el.json */,
+				665A5EFE2FFA6008002F07EC /* presanctified.el.json */,
+				665A5EE22FFA6FC4002F07EC /* fasting.json */,
+				665A5EE32FFA6FC4002F07EC /* FastingCalendar.swift */,
+				665A5EE62FFA7136002F07EC /* TodayFastingCard.swift */,
+				665A5EE82FFA79CA002F07EC /* FastingCalendarView.swift */,
+				665A5EE92FFA79CA002F07EC /* FastingLevel+UI.swift */,
+				665A5EEC2FFAA7D2002F07EC /* koinonika.json */,
+				665A5EEE2FFAAC5F002F07EC /* kontakia.json */,
+				665A5F002FFB1001002F07EC /* apostle-date-overrides.json */,
+				665A5F022FFB2001002F07EC /* kanonion-2026.json */,
+				C0DE0FF10000000000000001 /* sunday-offices-2026.json */,
+				C0DE0FF20000000000000001 /* typikon-services-2026.json */,
+				665A5EF02FFAB7FB002F07EC /* prokeimena.json */,
+				665A5EF22FFABC37002F07EC /* apolytikia.json */,
+				665A5EF42FFD31FC002F07EC /* LogosDidaches.swift */,
+				665A5EF62FFD97FC002F07EC /* KlimaxShortStories.swift */,
+				C0DE0E010000000000000001 /* pateric-stories.json */,
+				C0DE0E020000000000000001 /* saint-quizzes.json */,
+				665A5EF830011FE1002F07EC /* KlimaxFoundation.swift */,
+				665A5F433007ED97002F07EC /* HomilyMiniPlayer.swift */,
+				66D0A2A6301B71D800FE8D24 /* MediaProgress.swift */,
+			);
+			path = Klimax;
+			sourceTree = "<group>";
+		};
+		CC0000000000000000000003 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AA0000000000000000000001 /* Klimax.app */,
+				665A5F01300544F0002F07EC /* WidgetsExtension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		665A5F00300544F0002F07EC /* WidgetsExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 665A5F19300544F2002F07EC /* Build configuration list for PBXNativeTarget "WidgetsExtension" */;
+			buildPhases = (
+				665A5EFD300544F0002F07EC /* Sources */,
+				665A5EFE300544F0002F07EC /* Frameworks */,
+				665A5EFF300544F0002F07EC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				665A5F07300544F0002F07EC /* Widgets */,
+			);
+			name = WidgetsExtension;
+			packageProductDependencies = (
+			);
+			productName = WidgetsExtension;
+			productReference = 665A5F01300544F0002F07EC /* WidgetsExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		EE0000000000000000000001 /* Klimax */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FF0000000000000000000006 /* Build configuration list for PBXNativeTarget "Klimax" */;
+			buildPhases = (
+				DD0000000000000000000001 /* Sources */,
+				DD0000000000000000000002 /* Frameworks */,
+				DD0000000000000000000003 /* Resources */,
+				665A5F1C300544F2002F07EC /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				665A5F16300544F2002F07EC /* PBXTargetDependency */,
+			);
+			name = Klimax;
+			packageProductDependencies = (
+				C0DEA7000000000000000202 /* YouTubePlayerKit */,
+			);
+			productName = Klimax;
+			productReference = AA0000000000000000000001 /* Klimax.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EE0000000000000000000002 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2650;
+				LastUpgradeCheck = 2600;
+				TargetAttributes = {
+					665A5F00300544F0002F07EC = {
+						CreatedOnToolsVersion = 26.5;
+						LastSwiftMigration = 2650;
+					};
+					EE0000000000000000000001 = {
+						CreatedOnToolsVersion = 26.0;
+					};
+				};
+			};
+			buildConfigurationList = FF0000000000000000000005 /* Build configuration list for PBXProject "Klimax" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CC0000000000000000000001;
+			packageReferences = (
+				C0DEA7000000000000000201 /* XCRemoteSwiftPackageReference "YouTubePlayerKit" */,
+			);
+			productRefGroup = CC0000000000000000000003 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EE0000000000000000000001 /* Klimax */,
+				665A5F00300544F0002F07EC /* WidgetsExtension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		665A5EFF300544F0002F07EC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				665A5F2730055318002F07EC /* GentiumBookPlus-Italic.ttf in Resources */,
+				665A5F293005531C002F07EC /* GentiumBookPlus-Regular.ttf in Resources */,
+				665A5F2830055318002F07EC /* GentiumBookPlus-Bold.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DD0000000000000000000003 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				665A5EE42FFA6FC4002F07EC /* fasting.json in Resources */,
+				BB0000000000000000000025 /* scripture.json in Resources */,
+				C0DEB1010000000000000002 /* genesis-1.json in Resources */,
+				665A5EF32FFABC37002F07EC /* apolytikia.json in Resources */,
+				665A5EC02FF3FF40002F07EC /* saints.json in Resources */,
+				665A5EF12FFAB7FB002F07EC /* prokeimena.json in Resources */,
+				665A5EDF2FF90258002F07EC /* orthodox_places.json in Resources */,
+				665A5ECA2FF664E8002F07EC /* GentiumBookPlus-Regular.ttf in Resources */,
+				665A5ECB2FF664E8002F07EC /* GentiumBookPlus-Italic.ttf in Resources */,
+				665A5ECC2FF664E8002F07EC /* GentiumBookPlus-Bold.ttf in Resources */,
+				665A5EBA2FF3EEE0002F07EC /* Assets.xcassets in Resources */,
+				665A5EB42FF16D86002F07EC /* prayers.json in Resources */,
+				665A5EEF2FFAAC5F002F07EC /* kontakia.json in Resources */,
+				665A5F012FFB1001002F07EC /* apostle-date-overrides.json in Resources */,
+				665A5F032FFB2001002F07EC /* kanonion-2026.json in Resources */,
+				C0DE0FF10000000000000002 /* sunday-offices-2026.json in Resources */,
+				C0DE0FF20000000000000002 /* typikon-services-2026.json in Resources */,
+				665A5EED2FFAA7D2002F07EC /* koinonika.json in Resources */,
+				665A5EE92FF96004002F07EC /* calendar.json in Resources */,
+				665A5EF52FFA6003002F07EC /* sunday-gospels.json in Resources */,
+				665A5EF72FFA6004002F07EC /* eothina-gospels.json in Resources */,
+				665A5EF92FFA6005002F07EC /* fixed-feast-overrides.json in Resources */,
+				665A5EFB2FFA6006002F07EC /* chrysostom.el.json in Resources */,
+				665A5EFD2FFA6007002F07EC /* basil.el.json in Resources */,
+				665A5EFF2FFA6008002F07EC /* presanctified.el.json in Resources */,
+				C0DEA7000000000000000002 /* athos_tv_page.json in Resources */,
+				C0DEA7000000000000000004 /* GFSDidot.otf in Resources */,
+				C0DE0E010000000000000002 /* pateric-stories.json in Resources */,
+				C0DEFA120000000000000203 /* saint-sayings.json in Resources */,
+				C0DE0E020000000000000002 /* saint-quizzes.json in Resources */,
+				C0DEDE150000000000000204 /* deiseis_kosmou.json in Resources */,
+				C0DEAA110000000000000002 /* homily-archive.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		665A5EFD300544F0002F07EC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DD0000000000000000000001 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C0DECA510000000000000001 /* ScriptureLearningActivityManager.swift in Sources */,
+				C0DECA510000000000000002 /* ScriptureLearningActivity.swift in Sources */,
+				BB0000000000000000000010 /* BookChaptersView.swift in Sources */,
+				C0DEA7000000000000000001 /* AthosTVView.swift in Sources */,
+				C0DEAC000000000000000001 /* AthosTVCollections.swift in Sources */,
+				C0DEA8000000000000000001 /* AthosAudioView.swift in Sources */,
+				C0DEA8000000000000000002 /* AthosAudioSpeakers.swift in Sources */,
+				665A5EBC2FF3FBB7002F07EC /* LadderView.swift in Sources */,
+				BB0000000000000000000011 /* ChapterReadingView.swift in Sources */,
+				BB0000000000000000000012 /* ContentModels.swift in Sources */,
+				C0DE00000000000000000101 /* CharacterModels.swift in Sources */,
+				C0DE00000000000000000103 /* CharacterCatalog.swift in Sources */,
+				665A5F2630054D12002F07EC /* NotificationManager.swift in Sources */,
+				66D0A2B230265E1400FE8D24 /* AthosDesignKit.swift in Sources */,
+				C0DE00000000000000000105 /* CharacterProgressStore.swift in Sources */,
+				C0DE00000000000000000107 /* CharacterAnimation.swift in Sources */,
+				C0DE00000000000000000109 /* CharactersView.swift in Sources */,
+				665A5EC32FF65234002F07EC /* LessonModels.swift in Sources */,
+				665A5EC42FF65234002F07EC /* LessonPlayerView.swift in Sources */,
+				665A5EEA2FFA79CA002F07EC /* FastingCalendarView.swift in Sources */,
+				665A5EEB2FFA79CA002F07EC /* FastingLevel+UI.swift in Sources */,
+				665A5EFB3004F084002F07EC /* PlayerProgressStore.swift in Sources */,
+				BB0000000000000000000013 /* GildTheme.swift in Sources */,
+				665A5ED32FF7B841002F07EC /* ChurchMapView.swift in Sources */,
+				665A5ED42FF7B841002F07EC /* TodayPagerView.swift in Sources */,
+				665A5ED52FF7B841002F07EC /* ChurchLocationManager.swift in Sources */,
+				665A5EBE2FF3FEDF002F07EC /* SaintsCatalog.swift in Sources */,
+				C0DEC0110000000000000001 /* SaintCollection.swift in Sources */,
+				BB0000000000000000000014 /* KlimaxApp.swift in Sources */,
+				665A5ED72FF7C5E7002F07EC /* ChurchSearchService.swift in Sources */,
+				665A5F2B300553DF002F07EC /* WeeklyRecapView.swift in Sources */,
+				665A5F2D3008C001002F07EC /* ProgressionStore.swift in Sources */,
+				665A5EF52FFD31FC002F07EC /* LogosDidaches.swift in Sources */,
+				66D0A2A7301B71D900FE8D24 /* MediaProgress.swift in Sources */,
+				665A5F443007ED97002F07EC /* HomilyMiniPlayer.swift in Sources */,
+				BB0000000000000000000015 /* LessonView.swift in Sources */,
+				C0DE0000000000000000010B /* ProfileView.swift in Sources */,
+				C0DE0000000000000000010D /* NotebookLibrary.swift in Sources */,
+				C0DE0000000000000000010F /* VirtualIconostasis.swift in Sources */,
+				BB0000000000000000000016 /* RootView.swift in Sources */,
+				BB0000000000000000000017 /* SaintTeachingsView.swift in Sources */,
+				BB0000000000000000000018 /* SaintsMenuView.swift in Sources */,
+				665A5EF72FFD97FC002F07EC /* KlimaxShortStories.swift in Sources */,
+				665A5EB62FF28F38002F07EC /* PrayerSection.swift in Sources */,
+				C0DEFA110000000000000201 /* PrayerInvitationSchedule.swift in Sources */,
+				C0DEFA110000000000000202 /* PrayerInvitationView.swift in Sources */,
+				C0DEFA120000000000000201 /* SaintSayings.swift in Sources */,
+				C0DEFA120000000000000202 /* SaintSayingsView.swift in Sources */,
+				C0DEDE150000000000000201 /* Diptycha.swift in Sources */,
+				C0DEDE150000000000000202 /* DiptychaView.swift in Sources */,
+				C0DEDE150000000000000203 /* DeisisSection.swift in Sources */,
+				BB0000000000000000000019 /* ScriptureLibraryView.swift in Sources */,
+				665A5EE12FF95EC7002F07EC /* Paschalion.swift in Sources */,
+				665A5EE32FF96001002F07EC /* OrthodoxCalendarModels.swift in Sources */,
+				665A5EE52FF96002002F07EC /* OrthodoxFeastCalendarService.swift in Sources */,
+				665A5EF930011FE1002F07EC /* KlimaxFoundation.swift in Sources */,
+				665A5EE52FFA6FC4002F07EC /* FastingCalendar.swift in Sources */,
+				665A5EE72FF96003002F07EC /* OrthodoxFeastCalendarView.swift in Sources */,
+				665A5EF12FFA6001002F07EC /* LiturgicalServices.swift in Sources */,
+				665A5EF32FFA6002002F07EC /* LiturgicalServiceView.swift in Sources */,
+				665A5EE72FFA7136002F07EC /* TodayFastingCard.swift in Sources */,
+				BB0000000000000000000020 /* ScriptureModels.swift in Sources */,
+				BB0000000000000000000021 /* ScriptureStore.swift in Sources */,
+				665A5EC62FF66178002F07EC /* VirtueLessonsView.swift in Sources */,
+				BB0000000000000000000022 /* Theme.swift in Sources */,
+				BB0000000000000000000023 /* TodayView.swift in Sources */,
+				C0DECA7E0000000000000001 /* PlannerCategories.swift in Sources */,
+				BB0000000000000000000024 /* VirtueLibraryView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		665A5F16300544F2002F07EC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 665A5F00300544F0002F07EC /* WidgetsExtension */;
+			targetProxy = 665A5F15300544F2002F07EC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		665A5F1A300544F2002F07EC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_ENTITLEMENTS = WidgetsExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = HM45Z78F82;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Widgets/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Widgets;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 26.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.petroskallinicou.Klimax.Widgets;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG WIDGET_EXTENSION $(inherited)";
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		665A5F1B300544F2002F07EC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_ENTITLEMENTS = WidgetsExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = HM45Z78F82;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Widgets/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Widgets;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 26.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.petroskallinicou.Klimax.Widgets;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "WIDGET_EXTENSION $(inherited)";
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		FF0000000000000000000001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FF0000000000000000000002 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FF0000000000000000000003 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Klimax/Klimax.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = HM45Z78F82;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Klimax/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Χρειαζόμαστε την τοποθεσία σου για να σου δείξουμε τους κοντινούς Ορθόδοξους ναούς και μοναστήρια!";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.petroskallinicou.Klimax;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FF0000000000000000000004 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Klimax/Klimax.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = HM45Z78F82;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Klimax/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Χρειαζόμαστε την τοποθεσία σου για να σου δείξουμε τους κοντινούς Ορθόδοξους ναούς και μοναστήρια!";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.petroskallinicou.Klimax;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		665A5F19300544F2002F07EC /* Build configuration list for PBXNativeTarget "WidgetsExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				665A5F1A300544F2002F07EC /* Debug */,
+				665A5F1B300544F2002F07EC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FF0000000000000000000005 /* Build configuration list for PBXProject "Klimax" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FF0000000000000000000001 /* Debug */,
+				FF0000000000000000000002 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FF0000000000000000000006 /* Build configuration list for PBXNativeTarget "Klimax" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FF0000000000000000000003 /* Debug */,
+				FF0000000000000000000004 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C0DEA7000000000000000201 /* XCRemoteSwiftPackageReference "YouTubePlayerKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SvenTiigi/YouTubePlayerKit.git";
+			requirement = {
+				kind = exactVersion;
+				version = 2.0.5;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C0DEA7000000000000000202 /* YouTubePlayerKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C0DEA7000000000000000201 /* XCRemoteSwiftPackageReference "YouTubePlayerKit" */;
+			productName = YouTubePlayerKit;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = EE0000000000000000000002 /* Project object */;
+}

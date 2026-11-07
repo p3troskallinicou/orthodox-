@@ -1,0 +1,13 @@
+[
+  {"eothinon":1,"title_el":"Α΄ Εωθινόν","gospel":{"book":"Matthew","ref":"28:16-20","display_el":"Ματθ. 28:16–20"}},
+  {"eothinon":2,"title_el":"Β΄ Εωθινόν","gospel":{"book":"Mark","ref":"16:1-8","display_el":"Μάρκ. 16:1–8"}},
+  {"eothinon":3,"title_el":"Γ΄ Εωθινόν","gospel":{"book":"Mark","ref":"16:9-20","display_el":"Μάρκ. 16:9–20"}},
+  {"eothinon":4,"title_el":"Δ΄ Εωθινόν","gospel":{"book":"Luke","ref":"24:1-12","display_el":"Λουκ. 24:1–12"}},
+  {"eothinon":5,"title_el":"Ε΄ Εωθινόν","gospel":{"book":"Luke","ref":"24:13-35","display_el":"Λουκ. 24:13–35"}},
+  {"eothinon":6,"title_el":"ΣΤ΄ Εωθινόν","gospel":{"book":"Luke","ref":"24:36-53","display_el":"Λουκ. 24:36–53"}},
+  {"eothinon":7,"title_el":"Ζ΄ Εωθινόν","gospel":{"book":"John","ref":"20:1-10","display_el":"Ἰω. 20:1–10"}},
+  {"eothinon":8,"title_el":"Η΄ Εωθινόν","gospel":{"book":"John","ref":"20:11-18","display_el":"Ἰω. 20:11–18"}},
+  {"eothinon":9,"title_el":"Θ΄ Εωθινόν","gospel":{"book":"John","ref":"20:19-31","display_el":"Ἰω. 20:19–31"}},
+  {"eothinon":10,"title_el":"Ι΄ Εωθινόν","gospel":{"book":"John","ref":"21:1-14","display_el":"Ἰω. 21:1–14"}},
+  {"eothinon":11,"title_el":"ΙΑ΄ Εωθινόν","gospel":{"book":"John","ref":"21:15-25","display_el":"Ἰω. 21:15–25"}}
+]

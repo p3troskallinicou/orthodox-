@@ -1,0 +1,591 @@
+{
+  "version": 1,
+  "sourceVersion": "2.7",
+  "saints": [
+    {
+      "id": "paisios",
+      "name": "Άγιος Παΐσιος ο Αγιορείτης",
+      "shortName": "Άγιος Παΐσιος",
+      "subtitle": "Ο Αγιορείτης",
+      "photoID": "paisios-07"
+    }
+  ],
+  "categories": [
+    {
+      "id": "love",
+      "title": "Αγάπη και καλοσύνη",
+      "shortTitle": "Αγάπη",
+      "symbol": "heart"
+    },
+    {
+      "id": "humility",
+      "title": "Ταπείνωση και εγωισμός",
+      "shortTitle": "Ταπείνωση",
+      "symbol": "leaf"
+    },
+    {
+      "id": "forgiveness",
+      "title": "Συγχώρεση και κατάκριση",
+      "shortTitle": "Συγχώρεση",
+      "symbol": "hands.sparkles"
+    },
+    {
+      "id": "thoughts",
+      "title": "Λογισμοί και εσωτερική ειρήνη",
+      "shortTitle": "Λογισμοί",
+      "symbol": "sun.horizon"
+    }
+  ],
+  "photos": [
+    {
+      "id": "paisios-01",
+      "asset": "SaintSayingPaisios01",
+      "subjectTop": 0.05,
+      "width": 511,
+      "height": 444
+    },
+    {
+      "id": "paisios-02",
+      "asset": "SaintSayingPaisios02",
+      "subjectTop": 0.28,
+      "width": 356,
+      "height": 544
+    },
+    {
+      "id": "paisios-03",
+      "asset": "SaintSayingPaisios03",
+      "subjectTop": 0.02,
+      "width": 609,
+      "height": 503
+    },
+    {
+      "id": "paisios-04",
+      "asset": "SaintSayingPaisios04",
+      "subjectTop": 0,
+      "width": 181,
+      "height": 278
+    },
+    {
+      "id": "paisios-05",
+      "asset": "SaintSayingPaisios05",
+      "subjectTop": 0.04,
+      "width": 510,
+      "height": 601
+    },
+    {
+      "id": "paisios-06",
+      "asset": "SaintSayingPaisios06",
+      "subjectTop": 0.18,
+      "width": 403,
+      "height": 496
+    },
+    {
+      "id": "paisios-07",
+      "asset": "SaintSayingPaisios07",
+      "subjectTop": 0.38,
+      "width": 595,
+      "height": 711
+    },
+    {
+      "id": "paisios-08",
+      "asset": "SaintSayingPaisios08",
+      "subjectTop": 0.04,
+      "width": 1029,
+      "height": 1440
+    }
+  ],
+  "sayings": [
+    {
+      "id": "PAI-001",
+      "saintID": "paisios",
+      "categoryID": "humility",
+      "text": "Μία είναι η αρετή, η ταπείνωση· επειδή όμως δεν το καταλαβαίνετε, άντε, να σάς πω και την αγάπη. Αλλά, όποιος έχει ταπείνωση, δεν έχει και αγάπη;",
+      "source": "https://agiospaisios.gr/books/logoi-e",
+      "sourceNote": "",
+      "sourceStatus": "Σημειωμένο ως ελεγμένο στη συλλογή",
+      "sourceChecked": true,
+      "featured": true,
+      "photoID": "paisios-07"
+    },
+    {
+      "id": "PAI-002",
+      "saintID": "paisios",
+      "categoryID": "humility",
+      "text": "Καλλιεργήστε απλά την ταπείνωση και την αγάπη, και, μόλις αυξηθούν αυτές οι αρετές, η υπερηφάνεια και η κακία θα μείνουν ατροφικές και τα πάθη θα αρχίσουν να ψυχορραγούν",
+      "source": "https://agiospaisios.gr/books/logoi-e",
+      "sourceNote": "",
+      "sourceStatus": "Σημειωμένο ως ελεγμένο στη συλλογή",
+      "sourceChecked": true,
+      "featured": true,
+      "photoID": "paisios-07"
+    },
+    {
+      "id": "PAI-008",
+      "saintID": "paisios",
+      "categoryID": "humility",
+      "text": "Ο πιο σύντομος, σίγουρος και εύκολος δρόμος προς την άνω Ιερουσαλήμ είναι η ταπείνωση.",
+      "source": "https://agiospaisios.gr/books/logoi-e",
+      "sourceNote": "Πρώην συλλογή· επιπλέον έλεγχος κειμένου/συμφραζομένων πριν από δημοσίευση.",
+      "sourceStatus": "Σημειωμένο ως ελεγμένο στη συλλογή",
+      "sourceChecked": true,
+      "featured": true,
+      "photoID": "paisios-02"
+    },
+    {
+      "id": "PAI-026",
+      "saintID": "paisios",
+      "categoryID": "humility",
+      "text": "Όσοι βρήκαν τον δρόμο της ταπεινοφροσύνης, προχωρούν στην πνευματική ζωή σύντομα, σταθερά και χωρίς κόπο.",
+      "source": "https://agiospaisios.gr/books/logoi-e",
+      "sourceNote": "Πρώην συλλογή· επιπλέον έλεγχος κειμένου/συμφραζομένων πριν από δημοσίευση.",
+      "sourceStatus": "Σημειωμένο ως ελεγμένο στη συλλογή",
+      "sourceChecked": true,
+      "featured": true,
+      "photoID": "paisios-07"
+    },
+    {
+      "id": "PAI-081",
+      "saintID": "paisios",
+      "categoryID": "love",
+      "text": "Ο Θεός [...] κάνει το θαύμα, όταν συμμετέχει κανείς με την καρδιά του στον πόνο του άλλου.",
+      "source": "https://agiospaisios.gr/books/logoi-a",
+      "sourceNote": "Διατηρείται η αποσιώπηση, καθώς η φράση εμφανίζεται στον πρόλογο ως λόγος του Αγίου.",
+      "sourceStatus": "Εκκρεμεί έλεγχος πρωτοτύπου",
+      "sourceChecked": false,
+      "featured": false,
+      "photoID": "paisios-02"
+    },
+    {
+      "id": "PAI-091",
+      "saintID": "paisios",
+      "categoryID": "love",
+      "text": "Για να το καταλάβης, να εξετάσης αν αγαπάς όλους τους ανθρώπους εξίσου",
+      "source": "https://agiazoni.gr/%E1%BC%A1-%E1%BC%80%CE%BA%CF%81%CE%B9%CE%B2%E1%BD%B4-%E1%BC%80%CE%BB%CE%B7%CE%B8%CE%B9%CE%BD%E1%BD%B4-%E1%BC%80%CE%B3%CE%AC%CF%80%CE%B7/",
+      "sourceNote": "Η ερώτηση ελέγχει την αμεροληψία της αγάπης. Για πλήρες συμφραζόμενο άνοιξε την πηγή.",
+      "sourceStatus": "Εκκρεμεί έλεγχος πρωτοτύπου",
+      "sourceChecked": false,
+      "featured": false,
+      "photoID": "paisios-07"
+    },
+    {
+      "id": "PAI-092",
+      "saintID": "paisios",
+      "categoryID": "love",
+      "text": "Σπείρε την λίγη αγάπη που σου έμεινε, για να φυτρώση αγάπη",
+      "source": "https://www.diakonima.gr/pdf.php?id=312622",
+      "sourceNote": "Προέρχεται από μεγαλύτερη απάντηση· ελέγχθηκε σε αναδημοσίευση, όχι απευθείας στην έντυπη έκδοση.",
+      "sourceStatus": "Εκκρεμεί έλεγχος πρωτοτύπου",
+      "sourceChecked": false,
+      "featured": false,
+      "photoID": "paisios-06"
+    },
+    {
+      "id": "PAI-093",
+      "saintID": "paisios",
+      "categoryID": "love",
+      "text": "Αγάπη είναι να ακούσεις με πόνο την στενοχώρια του άλλου.",
+      "source": "https://www.vimaorthodoxias.gr/gerontas-paisios/agios-pa-sios-agapi-einai-na-akoyseis-me-pono-tin-stenochoria-toy-alloy/",
+      "sourceNote": "Η αγάπη διακρίνεται από την αληθινή συμπαράσταση.",
+      "sourceStatus": "Εκκρεμεί έλεγχος πρωτοτύπου",
+      "sourceChecked": false,
+      "featured": false,
+      "photoID": "paisios-07"
+    },
+    {
+      "id": "PAI-094",
+      "saintID": "paisios",
+      "categoryID": "love",
+      "text": "Η αληθινή αγάπη πληροφορεί τον άλλον χωρίς εξωτερικές εκδηλώσεις.",
+      "source": "https://www.vimaorthodoxias.gr/gerontas-paisios/agios-pa-sios-agapi-einai-na-akoyseis-me-pono-tin-stenochoria-toy-alloy/",
+      "sourceNote": "Χρειάζεται να διαβαστεί μαζί με το ερώτημα «πώς θα δείξω αγάπη;».",
+      "sourceStatus": "Εκκρεμεί έλεγχος πρωτοτύπου",
+      "sourceChecked": false,
+      "featured": false,
+      "photoID": "paisios-02"
+    },
+    {
+      "id": "PAI-099",
+      "saintID": "paisios",
+      "categoryID": "love",
+      "text": "Για να αυξηθή η αγάπη, πρέπει να την δώσης.",
+      "source": "https://agiazoni.gr/%E1%BC%A1-%E1%BC%80%CE%BA%CF%81%CE%B9%CE%B2%E1%BD%B4-%E1%BC%80%CE%BB%CE%B7%CE%B8%CE%B9%CE%BD%E1%BD%B4-%E1%BC%80%CE%B3%CE%AC%CF%80%CE%B7/",
+      "sourceNote": "Ο σπόρος της αγάπης καρποφορεί όταν προσφέρεται.",
+      "sourceStatus": "Εκκρεμεί έλεγχος πρωτοτύπου",
+      "sourceChecked": false,
+      "featured": false,
+      "photoID": "paisios-06"
+    },
+    {
+      "id": "PAI-107",
+      "saintID": "paisios",
+      "categoryID": "humility",
+      "text": "Όταν ο άνθρωπος παίρνει όλο το σφάλμα πάνω του, τον λούζει η Χάρις του Θεού.",
+      "source": "https://agiazoni.gr/enas-tapeinos-logismos-kanei-ames/",
+      "sourceNote": "Λόγοι Ε΄. Σύντομο απόσπασμα· ελέγχθηκε στη διαδικτυακή αναδημοσίευση, όχι αντιπαραβολή έντυπης σελίδας.",
+      "sourceStatus": "Εκκρεμεί έλεγχος πρωτοτύπου",
+      "sourceChecked": false,
+      "featured": false,
+      "photoID": "paisios-02"
+    },
+    {
+      "id": "PAI-108",
+      "saintID": "paisios",
+      "categoryID": "humility",
+      "text": "Όταν πληγώνεται ο εγωισμός σου, μην τον περιθάλπης· άφησέ τον να πεθάνη.",
+      "source": "https://www.diakonima.gr/2015/09/28/άγιος-παΐσιος-ο-εγωισμός-είναι-το-αναρ/",
+      "sourceNote": "Λόγοι Ε΄, περί εγωισμού· ορθογραφική στίξη εξομαλύνθηκε.",
+      "sourceStatus": "Εκκρεμεί έλεγχος πρωτοτύπου",
+      "sourceChecked": false,
+      "featured": false,
+      "photoID": "paisios-07"
+    },
+    {
+      "id": "PAI-109",
+      "saintID": "paisios",
+      "categoryID": "humility",
+      "text": "Και στον ταπεινό έρχονται υπερήφανοι λογισμοί, αλλά γελάει μ’ αυτούς, γιατί γνωρίζει τον εαυτόν του.",
+      "source": "https://www.rimata-zois.gr/syggrafeas/agios-paisios-o-agioreitis/22",
+      "sourceNote": "Αποδίδεται στον Άγιο· δεν δίνεται συγκεκριμένη σελίδα πρωτοτύπου.",
+      "sourceStatus": "Εκκρεμεί έλεγχος πρωτοτύπου",
+      "sourceChecked": false,
+      "featured": false,
+      "photoID": "paisios-02"
+    },
+    {
+      "id": "PAI-117",
+      "saintID": "paisios",
+      "categoryID": "humility",
+      "text": "Ο εγωισμός είναι το αναρχικό παιδί της υπερηφανείας· δεν το βάζει κάτω, επιμένει.",
+      "source": "https://www.xfe.gr/wp-content/uploads/2023/06/Paremvoli_125.pdf",
+      "sourceNote": "Από Λόγοι Ε΄ όπως παρατίθεται σε άρθρο· για δημοσίευση απαιτείται τελική αντιπαραβολή με έντυπο.",
+      "sourceStatus": "Εκκρεμεί έλεγχος πρωτοτύπου",
+      "sourceChecked": false,
+      "featured": false,
+      "photoID": "paisios-07"
+    },
+    {
+      "id": "PAI-118",
+      "saintID": "paisios",
+      "categoryID": "humility",
+      "text": "Ο Θεός δεν δίνει στον άνθρωπο ελαττώματα αλλά δυνάμεις. Ανάλογα με το πώς θα χρησιμοποιήση ο άνθρωπος τις δυνάμεις αυτές, μπορεί να γίνη καλός ή κακός",
+      "source": "https://agiospaisios.gr/books/logoi-e",
+      "sourceNote": "Στον πρόλογο του Λόγοι Ε΄ ως λόγια του Αγίου.",
+      "sourceStatus": "Σημειωμένο ως ελεγμένο στη συλλογή",
+      "sourceChecked": true,
+      "featured": true,
+      "photoID": "paisios-07"
+    },
+    {
+      "id": "PAI-119",
+      "saintID": "paisios",
+      "categoryID": "humility",
+      "text": "Όταν λέω να πετάξουμε τον εαυτό μας, εννοώ να πετάξουμε τα πάθη μας",
+      "source": "https://agiospaisios.gr/books/logoi-e",
+      "sourceNote": "Μέρος μεγαλύτερης φράσης στον εκδοτικό πρόλογο.",
+      "sourceStatus": "Εκκρεμεί έλεγχος πρωτοτύπου",
+      "sourceChecked": false,
+      "featured": false,
+      "photoID": "paisios-07"
+    },
+    {
+      "id": "PAI-125",
+      "saintID": "paisios",
+      "categoryID": "humility",
+      "text": "Όπως τα δένδρα που δεν λυγίζουν, σπάζουν τελικά από τον αέρα.",
+      "source": "https://www.xfe.gr/wp-content/uploads/2023/06/Paremvoli_125.pdf",
+      "sourceNote": "Η εικόνα της ακαμψίας δείχνει πώς η υπερηφάνεια καταλήγει σε φθορά.",
+      "sourceStatus": "Εκκρεμεί έλεγχος πρωτοτύπου",
+      "sourceChecked": false,
+      "featured": false,
+      "photoID": "paisios-02"
+    },
+    {
+      "id": "PAI-126",
+      "saintID": "paisios",
+      "categoryID": "humility",
+      "text": "Ας κανονίσουμε λοιπόν ποιο από τα δύο θα διαλέξουμε: την ταπείνωση που δίνει ανάπαυση ή τον εγωισμό που φέρνει στενοχώρια, άγχος και ταραχή;",
+      "source": "https://xristianos.gr/agios-paisios-kalos-theos-prostateuei/",
+      "sourceNote": "Ξεχωριστή αντιπαραβολή της εσωτερικής ανάπαυσης με την ταραχή της αυτοδικαίωσης.",
+      "sourceStatus": "Εκκρεμεί έλεγχος πρωτοτύπου",
+      "sourceChecked": false,
+      "featured": false,
+      "photoID": "paisios-07"
+    },
+    {
+      "id": "PAI-129",
+      "saintID": "paisios",
+      "categoryID": "humility",
+      "text": "Κοίταξε να πετάξεις τον εαυτό σου, γιατί αν δεν πετάξεις τον εαυτό σου, θα σε πετάξει ο εαυτός σου.",
+      "source": "https://agiazoni.gr/i-alithini-tapeinosi/",
+      "sourceNote": "Η διδασκαλία στρέφεται κατά της προσκόλλησης στον εγωισμό, όχι κατά της προσωπικής αξίας.",
+      "sourceStatus": "Εκκρεμεί έλεγχος πρωτοτύπου",
+      "sourceChecked": false,
+      "featured": false,
+      "photoID": "paisios-02"
+    },
+    {
+      "id": "PAI-130",
+      "saintID": "paisios",
+      "categoryID": "humility",
+      "text": "Η υπερηφάνεια είναι το Γενικό Επιτελείο όλων των παθών.",
+      "source": "https://analogion.gr/logos/sp-life/190-agios-paisios-yperhfaneia",
+      "sourceNote": "Αφετηρία για κατανόηση των άλλων παθών· δεν επαναλαμβάνει απλώς ότι η ταπείνωση είναι αρετή.",
+      "sourceStatus": "Εκκρεμεί έλεγχος πρωτοτύπου",
+      "sourceChecked": false,
+      "featured": false,
+      "photoID": "paisios-07"
+    },
+    {
+      "id": "PAI-131",
+      "saintID": "paisios",
+      "categoryID": "humility",
+      "text": "Όταν όμως υπάρχουν πνευματικές επιδιώξεις ποτισμένες με κενοδοξία, τότε η ψυχή ζορίζεται.",
+      "source": "https://analogion.gr/logos/sp-life/190-agios-paisios-yperhfaneia",
+      "sourceNote": "Η καλή πράξη μπορεί να επιβαρύνεται από την επιθυμία εντυπωσιασμού.",
+      "sourceStatus": "Εκκρεμεί έλεγχος πρωτοτύπου",
+      "sourceChecked": false,
+      "featured": false,
+      "photoID": "paisios-02"
+    },
+    {
+      "id": "PAI-134",
+      "saintID": "paisios",
+      "categoryID": "humility",
+      "text": "Όταν υπάρχει ταπείνωση, ο διάβολος δεν μπορεί να ρίξη την ψυχή. Ο ταπεινός δεν πέφτει, γιατί βαδίζει χαμηλά.",
+      "source": "https://iporta.gr/wp-content/uploads/2022/05/a.Paisiou_2006_Logoi-5-polytoniko.pdf",
+      "sourceNote": "Λόγοι Ε΄, σ. 99 στο ψηφιακό αντίγραφο. Νόημα διαφορετικό: η ασφάλεια της ταπείνωσης.",
+      "sourceStatus": "Εκκρεμεί έλεγχος πρωτοτύπου",
+      "sourceChecked": false,
+      "featured": false,
+      "photoID": "paisios-07"
+    },
+    {
+      "id": "PAI-136",
+      "saintID": "paisios",
+      "categoryID": "forgiveness",
+      "text": "Η καρδιά σου γίνεται πάγος, μάρμαρο.",
+      "source": "https://www.monastiria.gr/katakrisi/",
+      "sourceNote": "Λόγος για την κατάκριση· διατηρείται μόνο ως εύρημα για μεγαλύτερο χωρίο.",
+      "sourceStatus": "Εκκρεμεί έλεγχος πρωτοτύπου",
+      "sourceChecked": false,
+      "featured": false,
+      "photoID": "paisios-02"
+    },
+    {
+      "id": "PAI-144",
+      "saintID": "paisios",
+      "categoryID": "forgiveness",
+      "text": "Να είσαι αυστηρή με τον εαυτό σου και όχι με τους άλλους.",
+      "source": "https://agiazoni.gr/%E1%BD%81-%E1%BC%80%CE%B3%CF%8E%CE%BD%CE%B1%CF%82-%CE%BA%CE%B1%CF%84%E1%BD%B0-%CF%84%E1%BF%86%CF%82-%CE%BA%CE%B1%CF%84%CE%B1%CE%BA%CF%81%CE%AF%CF%83%CE%B5%CF%89%CF%82/",
+      "sourceNote": "Ο έλεγχος του εαυτού προηγείται της κριτικής των άλλων.",
+      "sourceStatus": "Εκκρεμεί έλεγχος πρωτοτύπου",
+      "sourceChecked": false,
+      "featured": false,
+      "photoID": "paisios-07"
+    },
+    {
+      "id": "PAI-145",
+      "saintID": "paisios",
+      "categoryID": "forgiveness",
+      "text": "Πρέπει όμως να αποκτήσης διάκριση, ώστε να δίνης στους άλλους ελαφρυντικά και να τους δικαιολογής.",
+      "source": "https://www.sostis.gr/blog/item/3182-o-agonas-kata-tis-katakriseos",
+      "sourceNote": "Δεν βλέπουμε πάντοτε ολόκληρη την ιστορία ενός ανθρώπου.",
+      "sourceStatus": "Εκκρεμεί έλεγχος πρωτοτύπου",
+      "sourceChecked": false,
+      "featured": false,
+      "photoID": "paisios-02"
+    },
+    {
+      "id": "PAI-146",
+      "saintID": "paisios",
+      "categoryID": "forgiveness",
+      "text": "Η δικαιοσύνη του Θεού είναι η αγάπη, η μακροθυμία.",
+      "source": "https://agiazoni.gr/peri-sygchoresis-rixte-to-palio-kata/",
+      "sourceNote": "Το απόσπασμα παραπέμπει στη θεία δικαιοσύνη ως έλεος και μακροθυμία.",
+      "sourceStatus": "Εκκρεμεί έλεγχος πρωτοτύπου",
+      "sourceChecked": false,
+      "featured": false,
+      "photoID": "paisios-07"
+    },
+    {
+      "id": "PAI-149",
+      "saintID": "paisios",
+      "categoryID": "forgiveness",
+      "text": "Ο καθένας μας λίγο- πολύ έχει περιπτώσεις που έπεσε έξω στην κρίση του.",
+      "source": "https://www.impantokratoros.gr/geron-paisios-katakrish.el.aspx",
+      "sourceNote": "Εξέτασε τις φορές που έκανες λανθασμένη κρίση· η ανάμνηση λειτουργεί ως φρένο στην κατάκριση.",
+      "sourceStatus": "Εκκρεμεί έλεγχος πρωτοτύπου",
+      "sourceChecked": false,
+      "featured": false,
+      "photoID": "paisios-02"
+    },
+    {
+      "id": "PAI-150",
+      "saintID": "paisios",
+      "categoryID": "forgiveness",
+      "text": "Αν και στην πραγματικότητα με την κατάκριση αδικούμε τον εαυτό μας και όχι τους άλλους.",
+      "source": "https://agiazoni.gr/%CE%BC%CE%B7-%CE%BA%CF%81%CE%AF%CE%BD%CE%B5%CF%84%CE%B5-%E1%BC%B4%CE%BD%CE%B1-%CE%BC%CE%B7-%CE%BA%CF%81%CE%B9%CE%B8%E1%BF%86%CF%84%CE%B5/",
+      "sourceNote": "Η κατάκριση δεν αποτελεί μόνο αδικία προς άλλους, αλλά διαβρώνει και τη δική μας πνευματική στάση.",
+      "sourceStatus": "Εκκρεμεί έλεγχος πρωτοτύπου",
+      "sourceChecked": false,
+      "featured": false,
+      "photoID": "paisios-07"
+    },
+    {
+      "id": "PAI-151",
+      "saintID": "paisios",
+      "categoryID": "forgiveness",
+      "text": "Είναι σαν να σου χάρισε δέκα χιλιάδες τάλαντα κι εσύ να μη θέλεις να χαρίσης στον άλλον εκατό δηνάρια.",
+      "source": "https://agiazoni.gr/peri-sygchoresis-rixte-to-palio-kata/",
+      "sourceNote": "Εικόνα από την ευαγγελική παραβολή του ανελεήμονα δούλου: η συγχώρεση που λαμβάνουμε αποτελεί κίνητρο να συγχωρούμε.",
+      "sourceStatus": "Εκκρεμεί έλεγχος πρωτοτύπου",
+      "sourceChecked": false,
+      "featured": false,
+      "photoID": "paisios-02"
+    },
+    {
+      "id": "PAI-154",
+      "saintID": "paisios",
+      "categoryID": "forgiveness",
+      "text": "Να μη βγάζουμε εύκολα συμπεράσματα.",
+      "source": "https://www.diakonima.gr/2022/03/29/%E1%BD%81-%E1%BC%80gonas-kat%E1%BD%B0-t%E1%BF%86s-katakriseos-%E1%BC%85gios-pa%CE%90sios-%E1%BD%81-%E1%BC%81gioritis/",
+      "sourceNote": "Ο σύντομος πυρήνας μιας εκτενέστερης διδασκαλίας: δεν ξέρουμε πάντα τα κίνητρα ή τις συνθήκες. Να εξεταστεί μαζί με PAI-145, PAI-149, όχι ως οπωσδήποτε ξεχωριστή flashcard.",
+      "sourceStatus": "Εκκρεμεί έλεγχος πρωτοτύπου",
+      "sourceChecked": false,
+      "featured": false,
+      "photoID": "paisios-07"
+    },
+    {
+      "id": "PAI-155",
+      "saintID": "paisios",
+      "categoryID": "forgiveness",
+      "text": "Γιατί, όταν στον κόσμο ζει κανείς λίγο πνευματικά, μπορεί να βλέπει πολλά κουσούρια στους άλλους και να μη βλέπει αρετές.",
+      "source": "https://www.diakonima.gr/2022/03/29/%E1%BD%81-%E1%BC%80gonas-kat%E1%BD%B0-t%E1%BF%86s-katakriseos-%E1%BC%85gios-pa%CE%90sios-%E1%BD%81-%E1%BC%81gioritis/",
+      "sourceNote": "Διαφορετικό νόημα: η ψευδαίσθηση της πνευματικής ανωτερότητας μπορεί να μας κάνει να βλέπουμε μόνο ελαττώματα.",
+      "sourceStatus": "Εκκρεμεί έλεγχος πρωτοτύπου",
+      "sourceChecked": false,
+      "featured": false,
+      "photoID": "paisios-07"
+    },
+    {
+      "id": "PAI-156",
+      "saintID": "paisios",
+      "categoryID": "forgiveness",
+      "text": "Μπορεί κάποιος να σφάλλη, αλλά αν μετανοή, κλαίη, ζητάη με συστολή συγχώρηση, αγωνίζεται να διορθωθή",
+      "source": "https://www.vimaorthodoxias.gr/didaxes-geronta-paisiou/%CE%AC%CE%B3%CE%B9%CE%BF%CF%82-%CF%80%CE%B1%CE%90%CF%83%CE%B9%CE%BF%CF%82-%CE%B7-%CE%BA%CE%B1%CE%BB%CE%BF%CF%83%CF%8D%CE%BD%CE%B7-%CE%B2%CE%BB%CE%AC%CF%80%CF%84%CE%B5%CE%B9-%CF%84%CE%BF%CE%BD-%CE%B1/",
+      "sourceNote": "Απόσπασμα από μεγαλύτερη πρόταση. Η συγχώρεση συνδέεται εδώ με ειλικρινή μετάνοια, αλλά δεν είναι πλήρες αυτοτελές ρητό· χρειάζεται έλεγχος στο ευρύτερο χωρίο.",
+      "sourceStatus": "Εκκρεμεί έλεγχος πρωτοτύπου",
+      "sourceChecked": false,
+      "featured": false,
+      "photoID": "paisios-07"
+    },
+    {
+      "id": "PAI-157",
+      "saintID": "paisios",
+      "categoryID": "forgiveness",
+      "text": "Με την κατάκριση φεύγει αυτομάτως η Χάρις του Θεού και δημιουργείται αμέσως ψυχρότητα στην επικοινωνία σου με τον Θεό.",
+      "source": "https://www.monastiria.gr/katakrisi/",
+      "sourceNote": "Η κατάκριση ως εμπόδιο στην προσευχή. Συγγενές με PAI-137, αλλά περιέχει αυτοτελή πρωτότυπη διατύπωση· έλεγχος για συγχώνευση.",
+      "sourceStatus": "Εκκρεμεί έλεγχος πρωτοτύπου",
+      "sourceChecked": false,
+      "featured": false,
+      "photoID": "paisios-07"
+    },
+    {
+      "id": "PAI-158",
+      "saintID": "paisios",
+      "categoryID": "forgiveness",
+      "text": "Αλλά και μία φορά να μην έπεσε έξω και να έχει δίκαιο, πού ξέρει τα ελατήρια του άλλου;",
+      "source": "https://www.diakonima.gr/2022/03/29/%E1%BD%81-%E1%BC%80gonas-kat%E1%BD%B0-t%E1%BF%86s-katakriseos-%E1%BC%85gios-pa%CE%90sios-%E1%BD%81-%E1%BC%81gioritis/",
+      "sourceNote": "Ακόμη και μια σωστή παρατήρηση δεν αποκαλύπτει τις προθέσεις του άλλου. Επικάλυψη με PAI-154, αλλά άλλη οπτική.",
+      "sourceStatus": "Εκκρεμεί έλεγχος πρωτοτύπου",
+      "sourceChecked": false,
+      "featured": false,
+      "photoID": "paisios-07"
+    },
+    {
+      "id": "PAI-159",
+      "saintID": "paisios",
+      "categoryID": "forgiveness",
+      "text": "Με αυτούς τους λογισμούς διώχνουμε την κατάκριση και ανοίγουμε μία ρωγμή στην σκληρή καρδιά μας.",
+      "source": "https://www.sostis.gr/blog/item/3182-o-agonas-kata-tis-katakriseos",
+      "sourceNote": "Εικόνα της ρωγμής στην καρδιά· αναφέρεται στη σκέψη για τις διαφορετικές συνθήκες ζωής των άλλων.",
+      "sourceStatus": "Εκκρεμεί έλεγχος πρωτοτύπου",
+      "sourceChecked": false,
+      "featured": false,
+      "photoID": "paisios-02"
+    },
+    {
+      "id": "PAI-162",
+      "saintID": "paisios",
+      "categoryID": "forgiveness",
+      "text": "Αν δεν συγχωρέσης, ευλογημένε, εσύ τους άλλους, πώς θα σε συγχωρέση εσένα ο Θεός;",
+      "source": "https://agiazoni.gr/peri-sygchoresis-rixte-to-palio-kata/",
+      "sourceNote": "Αυτοτελές χωρίο από διάλογο. Διαφορετικό από την παρομοίωση των ταλάντων, αν και συγγενές θεολογικά. Επαληθεύτηκε σε δύο αναδημοσιεύσεις· εκκρεμεί αντιπαραβολή με την έντυπη έκδοση.",
+      "sourceStatus": "Εκκρεμεί έλεγχος πρωτοτύπου",
+      "sourceChecked": false,
+      "featured": false,
+      "photoID": "paisios-07"
+    },
+    {
+      "id": "PAI-163",
+      "saintID": "paisios",
+      "categoryID": "thoughts",
+      "text": "Αυτοί που μοιάζουν με την μέλισσα βρίσκουν παντού ό,τι καλό υπάρχει.",
+      "source": "https://www.esphigmenou.gr/2016/09/osios.paisios.logismoi.html",
+      "sourceNote": "Η αντιπαραβολή με τη μύγα φωτίζει την επιλογή του ανθρώπου να αναζητά το καλό· δεν είναι νέα γενική συμβουλή περί θετικής σκέψης.",
+      "sourceStatus": "Εκκρεμεί έλεγχος πρωτοτύπου",
+      "sourceChecked": false,
+      "featured": false,
+      "photoID": "paisios-02"
+    },
+    {
+      "id": "PAI-164",
+      "saintID": "paisios",
+      "categoryID": "thoughts",
+      "text": "Αὐτὸ ὅμως δὲν γίνεται… ἀπὸ τὴν μία μέρα στὴν ἄλλη· χρειάζεται χρόνος καὶ συνεχὴς ἀγώνας",
+      "source": "https://theomitoros.gr/ἅγιος-παΐσιος-ὁ-ἁγιορείτης-ἡ-καλλι/",
+      "sourceNote": "Η μεταβολή της συνήθειας του νου γίνεται σταδιακά. Το απόσπασμα είναι μέρος εκτενέστερης απάντησης, για το πλαίσιο βλ. πηγή.",
+      "sourceStatus": "Εκκρεμεί έλεγχος πρωτοτύπου",
+      "sourceChecked": false,
+      "featured": false,
+      "photoID": "paisios-07"
+    },
+    {
+      "id": "PAI-168",
+      "saintID": "paisios",
+      "categoryID": "thoughts",
+      "text": "Εφόσον όμως εσύ δεν τους δέχεσαι, δεν έχεις ευθύνη.",
+      "source": "https://theomitoros.gr/%CF%84%E1%BD%B6-%CE%BD%E1%BD%B0-%CE%BE%CE%AD%CF%81%CE%BF%CF%85%CE%BC%CE%B5-%CE%B3%CE%B9%E1%BD%B0-%CF%84%E1%BD%B8%CE%BD-%E1%BC%80%CE%B3%E1%BF%B6%CE%BD%CE%B1-%CE%BA%CE%B1%CF%84%E1%BD%B0-%CF%84%E1%BF%B6/",
+      "sourceNote": "Διαφορά ανάμεσα στην ακούσια εμφάνιση μιας σκέψης και στην εκούσια αποδοχή της. Χρειάζεται τελική αντιπαραβολή με Λόγους Γ΄.",
+      "sourceStatus": "Εκκρεμεί έλεγχος πρωτοτύπου",
+      "sourceChecked": false,
+      "featured": false,
+      "photoID": "paisios-02"
+    },
+    {
+      "id": "PAI-169",
+      "saintID": "paisios",
+      "categoryID": "thoughts",
+      "text": "Μια ψυχή που θα πάρει στα ζεστά τον αγώνα κατά των κακών λογισμών μπορεί να φθάση σε καλύτερη κατάσταση",
+      "source": "https://anavaseis.blogspot.com/2011/01/4-1-2.html?m=0",
+      "sourceNote": "Μέρος μεγαλύτερης πρότασης: τονίζεται ότι ο αγώνας έχει σημασία και όχι μόνο η αρχική ευκολία ή δυσκολία. Εκκρεμεί αντιπαραβολή με βιβλίο.",
+      "sourceStatus": "Εκκρεμεί έλεγχος πρωτοτύπου",
+      "sourceChecked": false,
+      "featured": false,
+      "photoID": "paisios-07"
+    },
+    {
+      "id": "PAI-172",
+      "saintID": "paisios",
+      "categoryID": "thoughts",
+      "text": "Θὰ ἀποκτήσης μιὰ συνήθεια πρὸς τὸ καλό, θὰ ἔρθη ἡ καλωσύνη στὴν καρδιά σου",
+      "source": "https://theomitoros.gr/%E1%BC%85%CE%B3%CE%B9%CE%BF%CF%82-%CF%80%CE%B1%CE%90%CF%83%CE%B9%CE%BF%CF%82-%E1%BD%81-%E1%BC%81%CE%B3%CE%B9%CE%BF%CF%81%CE%B5%CE%AF%CF%84%CE%B7%CF%82-%E1%BC%A1-%CE%BA%CE%B1%CE%BB%CE%BB%CE%B9/",
+      "sourceNote": "Η σταθερή καλλιέργεια καλών λογισμών μεταβάλλει τη διάθεση. Μερική επικάλυψη με προηγούμενες εγγραφές· κρατείται ως εναλλακτική διατύπωση και όχι αυτομάτως νέα τελική flashcard.",
+      "sourceStatus": "Εκκρεμεί έλεγχος πρωτοτύπου",
+      "sourceChecked": false,
+      "featured": false,
+      "photoID": "paisios-02"
+    }
+  ]
+}

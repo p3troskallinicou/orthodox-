@@ -1,0 +1,19 @@
+[
+  {"id":"transfiguration","date_new_calendar":"08-06","title_el":"Μεταμόρφωσις τοῦ Σωτῆρος","default_liturgy":"chrysostom","gospel":{"book":"Matthew","ref":"17:1-9","display_el":"Ματθ. 17:1–9"}},
+  {"id":"dormition_theotokos","date_new_calendar":"08-15","title_el":"Κοίμησις τῆς Θεοτόκου","default_liturgy":"chrysostom","gospel":{"book":"Luke","ref":"10:38-42;11:27-28","display_el":"Λουκ. 10:38–42, 11:27–28"}},
+  {"id":"exaltation_cross","date_new_calendar":"09-14","title_el":"Ὕψωσις τοῦ Τιμίου Σταυροῦ","default_liturgy":"chrysostom","gospel":{"book":"John","ref":"19:6-11,13-20,25-28,30-35","display_el":"Ἰω. 19:6–11, 13–20, 25–28, 30–35"}},
+  {"id":"holy_ancestors","rule":"two_sundays_before_nativity","title_el":"Κυριακὴ τῶν Προπατόρων","default_liturgy":"chrysostom","gospel":{"book":"Luke","ref":"14:16-24","display_el":"Λουκ. 14:16–24"}},
+  {"id":"sunday_before_nativity","rule":"sunday_before_nativity","title_el":"Κυριακὴ πρὸ τῆς Χριστοῦ Γεννήσεως","default_liturgy":"chrysostom","gospel":{"book":"Matthew","ref":"1:1-25","display_el":"Ματθ. 1:1–25"}},
+  {"id":"nativity_christ","date_new_calendar":"12-25","title_el":"Χριστούγεννα / Ἡ Γέννησις τοῦ Χριστοῦ","default_liturgy":"chrysostom","gospel":{"book":"Matthew","ref":"2:1-12","display_el":"Ματθ. 2:1–12"}},
+  {"id":"sunday_after_nativity","rule":"sunday_after_nativity","title_el":"Κυριακὴ μετὰ τὴν Χριστοῦ Γέννησιν","default_liturgy":"chrysostom","gospel":{"book":"Matthew","ref":"2:13-23","display_el":"Ματθ. 2:13–23"}},
+  {"id":"st_basil_jan_1","date_new_calendar":"01-01","title_el":"Περιτομὴ τοῦ Κυρίου / Μνήμη Μεγάλου Βασιλείου","default_liturgy":"basil","gospel":{"book":"Luke","ref":"2:20-21,40-52","display_el":"Λουκ. 2:20–21, 40–52"}},
+  {"id":"sunday_before_theophany","rule":"sunday_before_theophany","title_el":"Κυριακὴ πρὸ τῶν Φώτων","default_liturgy":"chrysostom","gospel":{"book":"Mark","ref":"1:1-8","display_el":"Μάρκ. 1:1–8"}},
+  {"id":"theophany","date_new_calendar":"01-06","title_el":"Τὰ Ἅγια Θεοφάνεια","default_liturgy":"chrysostom","gospel":{"book":"Matthew","ref":"3:13-17","display_el":"Ματθ. 3:13–17"}},
+  {"id":"sunday_after_theophany","rule":"sunday_after_theophany","title_el":"Κυριακὴ μετὰ τὰ Φῶτα","default_liturgy":"chrysostom","gospel":{"book":"Matthew","ref":"4:12-17","display_el":"Ματθ. 4:12–17"}},
+  {"id":"meeting_lord","date_new_calendar":"02-02","title_el":"Ὑπαπαντὴ τοῦ Κυρίου","default_liturgy":"chrysostom","gospel":{"book":"Luke","ref":"2:22-40","display_el":"Λουκ. 2:22–40"}},
+  {"id":"annunciation","date_new_calendar":"03-25","title_el":"Εὐαγγελισμὸς τῆς Θεοτόκου","default_liturgy":"chrysostom","gospel":{"book":"Luke","ref":"1:24-38","display_el":"Λουκ. 1:24–38"}},
+  {"id":"nativity_forerunner","date_new_calendar":"06-24","title_el":"Γενέθλιον τοῦ Τιμίου Προδρόμου","default_liturgy":"chrysostom","gospel":{"book":"Luke","ref":"1:1-25,57-68,76,80","display_el":"Λουκ. 1:1–25, 57–68, 76, 80"}},
+  {"id":"peter_paul","date_new_calendar":"06-29","title_el":"Ἅγιοι Πρωτοκορυφαῖοι Ἀπόστολοι Πέτρος καὶ Παῦλος","default_liturgy":"chrysostom","gospel":{"book":"Matthew","ref":"16:13-19","display_el":"Ματθ. 16:13–19"}},
+  {"id":"nativity_theotokos","date_new_calendar":"09-08","title_el":"Γενέσιον τῆς Θεοτόκου","default_liturgy":"chrysostom","gospel":{"book":"Luke","ref":"10:38-42;11:27-28","display_el":"Λουκ. 10:38–42, 11:27–28"}},
+  {"id":"entry_theotokos","date_new_calendar":"11-21","title_el":"Εἴσοδος τῆς Θεοτόκου","default_liturgy":"chrysostom","gospel":{"book":"Luke","ref":"10:38-42;11:27-28","display_el":"Λουκ. 10:38–42, 11:27–28"}}
+]

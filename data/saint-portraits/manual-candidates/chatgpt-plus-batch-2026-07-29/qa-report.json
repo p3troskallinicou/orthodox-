@@ -1,0 +1,1466 @@
+{
+  "generatedAt": "2026-07-29T12:21:19.556Z",
+  "batch": "chatgpt-plus-2026-07-29",
+  "results": [
+    {
+      "saintId": "vasileios",
+      "path": "data/saint-portraits/manual-candidates/vasileios-chatgpt-plus-2026-07-29/candidate.png",
+      "schemaVersion": 1,
+      "status": "passed",
+      "checks": [
+        {
+          "id": "dimensions",
+          "passed": true,
+          "detail": "1024x1536, expected 1024x1536"
+        },
+        {
+          "id": "aspect-ratio",
+          "passed": true,
+          "detail": "0.666667, expected 0.666667"
+        },
+        {
+          "id": "format",
+          "passed": true,
+          "detail": "png, expected png"
+        },
+        {
+          "id": "file-size",
+          "passed": true,
+          "detail": "3022865 bytes"
+        },
+        {
+          "id": "edge-background",
+          "passed": true,
+          "detail": "edge 220,160,39"
+        },
+        {
+          "id": "edge-variance",
+          "passed": true,
+          "detail": "standard deviation 25.64"
+        },
+        {
+          "id": "transparency",
+          "passed": true,
+          "detail": "sampled transparent fraction 0"
+        },
+        {
+          "id": "subject-edge-clearance",
+          "passed": true,
+          "detail": "{\"x\":0.0322265625,\"y\":0.05078125,\"width\":0.9375,\"height\":0.94921875}"
+        },
+        {
+          "id": "duplicate-output",
+          "passed": true,
+          "detail": "a0039f5be78cc86aceb2b06366dc9e039daafc515288f0f4f4bc16a72d3cb5e3"
+        },
+        {
+          "id": "source-duplicate",
+          "passed": true,
+          "detail": "a0039f5be78cc86aceb2b06366dc9e039daafc515288f0f4f4bc16a72d3cb5e3"
+        }
+      ],
+      "analysis": {
+        "format": "png",
+        "width": 1024,
+        "height": 1536,
+        "aspectRatio": 0.6666666666666666,
+        "bytes": 3022865,
+        "checksum": "a0039f5be78cc86aceb2b06366dc9e039daafc515288f0f4f4bc16a72d3cb5e3",
+        "hasAlphaChannel": false,
+        "edgeBackgroundRgb": [
+          220,
+          160,
+          39
+        ],
+        "edgeBackgroundStandardDeviation": 25.64,
+        "dominantColors": [
+          {
+            "rgb": [
+              224,
+              160,
+              32
+            ],
+            "sampleCount": 59838
+          },
+          {
+            "rgb": [
+              32,
+              0,
+              0
+            ],
+            "sampleCount": 10033
+          },
+          {
+            "rgb": [
+              32,
+              32,
+              0
+            ],
+            "sampleCount": 8883
+          },
+          {
+            "rgb": [
+              224,
+              192,
+              32
+            ],
+            "sampleCount": 8591
+          },
+          {
+            "rgb": [
+              192,
+              128,
+              32
+            ],
+            "sampleCount": 7737
+          },
+          {
+            "rgb": [
+              128,
+              64,
+              0
+            ],
+            "sampleCount": 6586
+          },
+          {
+            "rgb": [
+              64,
+              32,
+              0
+            ],
+            "sampleCount": 6438
+          },
+          {
+            "rgb": [
+              224,
+              192,
+              128
+            ],
+            "sampleCount": 5979
+          }
+        ],
+        "subjectBounds": {
+          "x": 0.0322265625,
+          "y": 0.05078125,
+          "width": 0.9375,
+          "height": 0.94921875
+        },
+        "sampledTransparentFraction": 0
+      }
+    },
+    {
+      "saintId": "grigorios-theologos",
+      "path": "data/saint-portraits/manual-candidates/grigorios-theologos-chatgpt-plus-2026-07-29/candidate.png",
+      "schemaVersion": 1,
+      "status": "review",
+      "checks": [
+        {
+          "id": "dimensions",
+          "passed": true,
+          "detail": "1024x1536, expected 1024x1536"
+        },
+        {
+          "id": "aspect-ratio",
+          "passed": true,
+          "detail": "0.666667, expected 0.666667"
+        },
+        {
+          "id": "format",
+          "passed": true,
+          "detail": "png, expected png"
+        },
+        {
+          "id": "file-size",
+          "passed": true,
+          "detail": "3231429 bytes"
+        },
+        {
+          "id": "edge-background",
+          "passed": true,
+          "detail": "edge 213,166,44"
+        },
+        {
+          "id": "edge-variance",
+          "passed": true,
+          "detail": "standard deviation 42.84"
+        },
+        {
+          "id": "transparency",
+          "passed": true,
+          "detail": "sampled transparent fraction 0"
+        },
+        {
+          "id": "subject-edge-clearance",
+          "passed": false,
+          "detail": "{\"x\":0,\"y\":0,\"width\":0.9931640625,\"height\":1}"
+        },
+        {
+          "id": "duplicate-output",
+          "passed": true,
+          "detail": "4e4be409980f3306e2d6d84b5635d6f2c5d8f82dfaccea1205d4242f7ccdc227"
+        },
+        {
+          "id": "source-duplicate",
+          "passed": true,
+          "detail": "4e4be409980f3306e2d6d84b5635d6f2c5d8f82dfaccea1205d4242f7ccdc227"
+        }
+      ],
+      "analysis": {
+        "format": "png",
+        "width": 1024,
+        "height": 1536,
+        "aspectRatio": 0.6666666666666666,
+        "bytes": 3231429,
+        "checksum": "4e4be409980f3306e2d6d84b5635d6f2c5d8f82dfaccea1205d4242f7ccdc227",
+        "hasAlphaChannel": false,
+        "edgeBackgroundRgb": [
+          213,
+          166,
+          44
+        ],
+        "edgeBackgroundStandardDeviation": 42.84,
+        "dominantColors": [
+          {
+            "rgb": [
+              224,
+              160,
+              32
+            ],
+            "sampleCount": 47135
+          },
+          {
+            "rgb": [
+              224,
+              192,
+              32
+            ],
+            "sampleCount": 18060
+          },
+          {
+            "rgb": [
+              0,
+              32,
+              32
+            ],
+            "sampleCount": 9652
+          },
+          {
+            "rgb": [
+              0,
+              32,
+              64
+            ],
+            "sampleCount": 7918
+          },
+          {
+            "rgb": [
+              192,
+              160,
+              96
+            ],
+            "sampleCount": 6747
+          },
+          {
+            "rgb": [
+              192,
+              128,
+              0
+            ],
+            "sampleCount": 5038
+          },
+          {
+            "rgb": [
+              32,
+              64,
+              96
+            ],
+            "sampleCount": 4916
+          },
+          {
+            "rgb": [
+              224,
+              192,
+              128
+            ],
+            "sampleCount": 4881
+          }
+        ],
+        "subjectBounds": {
+          "x": 0,
+          "y": 0,
+          "width": 0.9931640625,
+          "height": 1
+        },
+        "sampledTransparentFraction": 0
+      }
+    },
+    {
+      "saintId": "ioannis-chrysostomos",
+      "path": "data/saint-portraits/manual-candidates/ioannis-chrysostomos-chatgpt-plus-2026-07-29/candidate.png",
+      "schemaVersion": 1,
+      "status": "review",
+      "checks": [
+        {
+          "id": "dimensions",
+          "passed": true,
+          "detail": "1024x1536, expected 1024x1536"
+        },
+        {
+          "id": "aspect-ratio",
+          "passed": true,
+          "detail": "0.666667, expected 0.666667"
+        },
+        {
+          "id": "format",
+          "passed": true,
+          "detail": "png, expected png"
+        },
+        {
+          "id": "file-size",
+          "passed": true,
+          "detail": "3206535 bytes"
+        },
+        {
+          "id": "edge-background",
+          "passed": true,
+          "detail": "edge 231,179,49"
+        },
+        {
+          "id": "edge-variance",
+          "passed": true,
+          "detail": "standard deviation 28.07"
+        },
+        {
+          "id": "transparency",
+          "passed": true,
+          "detail": "sampled transparent fraction 0"
+        },
+        {
+          "id": "subject-edge-clearance",
+          "passed": false,
+          "detail": "{\"x\":0.0234375,\"y\":0.01953125,\"width\":0.978515625,\"height\":0.98046875}"
+        },
+        {
+          "id": "duplicate-output",
+          "passed": true,
+          "detail": "f14aac2b2d4a9ad4989dc846f43fb503bad4c39f764959af0d94a5fee37b6e28"
+        },
+        {
+          "id": "source-duplicate",
+          "passed": true,
+          "detail": "f14aac2b2d4a9ad4989dc846f43fb503bad4c39f764959af0d94a5fee37b6e28"
+        }
+      ],
+      "analysis": {
+        "format": "png",
+        "width": 1024,
+        "height": 1536,
+        "aspectRatio": 0.6666666666666666,
+        "bytes": 3206535,
+        "checksum": "f14aac2b2d4a9ad4989dc846f43fb503bad4c39f764959af0d94a5fee37b6e28",
+        "hasAlphaChannel": false,
+        "edgeBackgroundRgb": [
+          231,
+          179,
+          49
+        ],
+        "edgeBackgroundStandardDeviation": 28.07,
+        "dominantColors": [
+          {
+            "rgb": [
+              224,
+              160,
+              32
+            ],
+            "sampleCount": 44319
+          },
+          {
+            "rgb": [
+              224,
+              192,
+              32
+            ],
+            "sampleCount": 25133
+          },
+          {
+            "rgb": [
+              64,
+              32,
+              0
+            ],
+            "sampleCount": 12820
+          },
+          {
+            "rgb": [
+              224,
+              192,
+              128
+            ],
+            "sampleCount": 11394
+          },
+          {
+            "rgb": [
+              192,
+              160,
+              64
+            ],
+            "sampleCount": 5976
+          },
+          {
+            "rgb": [
+              96,
+              32,
+              0
+            ],
+            "sampleCount": 5787
+          },
+          {
+            "rgb": [
+              224,
+              192,
+              160
+            ],
+            "sampleCount": 5651
+          },
+          {
+            "rgb": [
+              128,
+              64,
+              0
+            ],
+            "sampleCount": 5552
+          }
+        ],
+        "subjectBounds": {
+          "x": 0.0234375,
+          "y": 0.01953125,
+          "width": 0.978515625,
+          "height": 0.98046875
+        },
+        "sampledTransparentFraction": 0
+      }
+    },
+    {
+      "saintId": "athanasios-megas",
+      "path": "data/saint-portraits/manual-candidates/athanasios-megas-chatgpt-plus-2026-07-29/candidate.png",
+      "schemaVersion": 1,
+      "status": "review",
+      "checks": [
+        {
+          "id": "dimensions",
+          "passed": true,
+          "detail": "1024x1536, expected 1024x1536"
+        },
+        {
+          "id": "aspect-ratio",
+          "passed": true,
+          "detail": "0.666667, expected 0.666667"
+        },
+        {
+          "id": "format",
+          "passed": true,
+          "detail": "png, expected png"
+        },
+        {
+          "id": "file-size",
+          "passed": true,
+          "detail": "3184608 bytes"
+        },
+        {
+          "id": "edge-background",
+          "passed": true,
+          "detail": "edge 213,153,36"
+        },
+        {
+          "id": "edge-variance",
+          "passed": true,
+          "detail": "standard deviation 28.7"
+        },
+        {
+          "id": "transparency",
+          "passed": true,
+          "detail": "sampled transparent fraction 0"
+        },
+        {
+          "id": "subject-edge-clearance",
+          "passed": false,
+          "detail": "{\"x\":0.005859375,\"y\":0.015625,\"width\":0.990234375,\"height\":0.984375}"
+        },
+        {
+          "id": "duplicate-output",
+          "passed": true,
+          "detail": "cfc3085fb78cdb71bb4472bdeda000a94f47a33ead006b2ea474a1dde97d0d7e"
+        },
+        {
+          "id": "source-duplicate",
+          "passed": true,
+          "detail": "cfc3085fb78cdb71bb4472bdeda000a94f47a33ead006b2ea474a1dde97d0d7e"
+        }
+      ],
+      "analysis": {
+        "format": "png",
+        "width": 1024,
+        "height": 1536,
+        "aspectRatio": 0.6666666666666666,
+        "bytes": 3184608,
+        "checksum": "cfc3085fb78cdb71bb4472bdeda000a94f47a33ead006b2ea474a1dde97d0d7e",
+        "hasAlphaChannel": false,
+        "edgeBackgroundRgb": [
+          213,
+          153,
+          36
+        ],
+        "edgeBackgroundStandardDeviation": 28.7,
+        "dominantColors": [
+          {
+            "rgb": [
+              224,
+              160,
+              32
+            ],
+            "sampleCount": 61261
+          },
+          {
+            "rgb": [
+              128,
+              64,
+              0
+            ],
+            "sampleCount": 8598
+          },
+          {
+            "rgb": [
+              96,
+              32,
+              0
+            ],
+            "sampleCount": 8236
+          },
+          {
+            "rgb": [
+              192,
+              160,
+              128
+            ],
+            "sampleCount": 8088
+          },
+          {
+            "rgb": [
+              160,
+              96,
+              0
+            ],
+            "sampleCount": 7961
+          },
+          {
+            "rgb": [
+              64,
+              32,
+              0
+            ],
+            "sampleCount": 6549
+          },
+          {
+            "rgb": [
+              192,
+              128,
+              32
+            ],
+            "sampleCount": 5745
+          },
+          {
+            "rgb": [
+              192,
+              160,
+              96
+            ],
+            "sampleCount": 4761
+          }
+        ],
+        "subjectBounds": {
+          "x": 0.005859375,
+          "y": 0.015625,
+          "width": 0.990234375,
+          "height": 0.984375
+        },
+        "sampledTransparentFraction": 0
+      }
+    },
+    {
+      "saintId": "polykarposepiskopos",
+      "path": "data/saint-portraits/manual-candidates/polykarposepiskopos-chatgpt-plus-2026-07-29/candidate.png",
+      "schemaVersion": 1,
+      "status": "review",
+      "checks": [
+        {
+          "id": "dimensions",
+          "passed": true,
+          "detail": "1024x1536, expected 1024x1536"
+        },
+        {
+          "id": "aspect-ratio",
+          "passed": true,
+          "detail": "0.666667, expected 0.666667"
+        },
+        {
+          "id": "format",
+          "passed": true,
+          "detail": "png, expected png"
+        },
+        {
+          "id": "file-size",
+          "passed": true,
+          "detail": "3060006 bytes"
+        },
+        {
+          "id": "edge-background",
+          "passed": true,
+          "detail": "edge 207,148,38"
+        },
+        {
+          "id": "edge-variance",
+          "passed": true,
+          "detail": "standard deviation 36.69"
+        },
+        {
+          "id": "transparency",
+          "passed": true,
+          "detail": "sampled transparent fraction 0"
+        },
+        {
+          "id": "subject-edge-clearance",
+          "passed": false,
+          "detail": "{\"x\":0.0029296875,\"y\":0.015625,\"width\":0.99609375,\"height\":0.984375}"
+        },
+        {
+          "id": "duplicate-output",
+          "passed": true,
+          "detail": "41341dadf2abe4849bbe17c849e5480ec23d2963517f57c8e83883dfad835223"
+        },
+        {
+          "id": "source-duplicate",
+          "passed": true,
+          "detail": "41341dadf2abe4849bbe17c849e5480ec23d2963517f57c8e83883dfad835223"
+        }
+      ],
+      "analysis": {
+        "format": "png",
+        "width": 1024,
+        "height": 1536,
+        "aspectRatio": 0.6666666666666666,
+        "bytes": 3060006,
+        "checksum": "41341dadf2abe4849bbe17c849e5480ec23d2963517f57c8e83883dfad835223",
+        "hasAlphaChannel": false,
+        "edgeBackgroundRgb": [
+          207,
+          148,
+          38
+        ],
+        "edgeBackgroundStandardDeviation": 36.69,
+        "dominantColors": [
+          {
+            "rgb": [
+              224,
+              160,
+              32
+            ],
+            "sampleCount": 52567
+          },
+          {
+            "rgb": [
+              32,
+              0,
+              0
+            ],
+            "sampleCount": 13767
+          },
+          {
+            "rgb": [
+              64,
+              32,
+              32
+            ],
+            "sampleCount": 10475
+          },
+          {
+            "rgb": [
+              64,
+              32,
+              0
+            ],
+            "sampleCount": 10376
+          },
+          {
+            "rgb": [
+              224,
+              192,
+              64
+            ],
+            "sampleCount": 8214
+          },
+          {
+            "rgb": [
+              192,
+              128,
+              32
+            ],
+            "sampleCount": 7350
+          },
+          {
+            "rgb": [
+              192,
+              160,
+              96
+            ],
+            "sampleCount": 5241
+          },
+          {
+            "rgb": [
+              96,
+              32,
+              32
+            ],
+            "sampleCount": 4702
+          }
+        ],
+        "subjectBounds": {
+          "x": 0.0029296875,
+          "y": 0.015625,
+          "width": 0.99609375,
+          "height": 0.984375
+        },
+        "sampledTransparentFraction": 0
+      }
+    },
+    {
+      "saintId": "efthymios-megas",
+      "path": "data/saint-portraits/manual-candidates/efthymios-megas-chatgpt-plus-2026-07-29/candidate.png",
+      "schemaVersion": 1,
+      "status": "review",
+      "checks": [
+        {
+          "id": "dimensions",
+          "passed": true,
+          "detail": "1024x1536, expected 1024x1536"
+        },
+        {
+          "id": "aspect-ratio",
+          "passed": true,
+          "detail": "0.666667, expected 0.666667"
+        },
+        {
+          "id": "format",
+          "passed": true,
+          "detail": "png, expected png"
+        },
+        {
+          "id": "file-size",
+          "passed": true,
+          "detail": "3020127 bytes"
+        },
+        {
+          "id": "edge-background",
+          "passed": true,
+          "detail": "edge 194,136,24"
+        },
+        {
+          "id": "edge-variance",
+          "passed": true,
+          "detail": "standard deviation 40.97"
+        },
+        {
+          "id": "transparency",
+          "passed": true,
+          "detail": "sampled transparent fraction 0"
+        },
+        {
+          "id": "subject-edge-clearance",
+          "passed": false,
+          "detail": "{\"x\":0,\"y\":0,\"width\":1.001953125,\"height\":1}"
+        },
+        {
+          "id": "duplicate-output",
+          "passed": true,
+          "detail": "2a5d06520135d428ac6925a00f89ecee155b31e0d2e50f0f4b73ab098773075b"
+        },
+        {
+          "id": "source-duplicate",
+          "passed": true,
+          "detail": "2a5d06520135d428ac6925a00f89ecee155b31e0d2e50f0f4b73ab098773075b"
+        }
+      ],
+      "analysis": {
+        "format": "png",
+        "width": 1024,
+        "height": 1536,
+        "aspectRatio": 0.6666666666666666,
+        "bytes": 3020127,
+        "checksum": "2a5d06520135d428ac6925a00f89ecee155b31e0d2e50f0f4b73ab098773075b",
+        "hasAlphaChannel": false,
+        "edgeBackgroundRgb": [
+          194,
+          136,
+          24
+        ],
+        "edgeBackgroundStandardDeviation": 40.97,
+        "dominantColors": [
+          {
+            "rgb": [
+              224,
+              160,
+              32
+            ],
+            "sampleCount": 45379
+          },
+          {
+            "rgb": [
+              32,
+              0,
+              0
+            ],
+            "sampleCount": 24891
+          },
+          {
+            "rgb": [
+              64,
+              32,
+              0
+            ],
+            "sampleCount": 18784
+          },
+          {
+            "rgb": [
+              192,
+              128,
+              0
+            ],
+            "sampleCount": 15471
+          },
+          {
+            "rgb": [
+              0,
+              0,
+              0
+            ],
+            "sampleCount": 12149
+          },
+          {
+            "rgb": [
+              96,
+              64,
+              32
+            ],
+            "sampleCount": 6932
+          },
+          {
+            "rgb": [
+              96,
+              32,
+              0
+            ],
+            "sampleCount": 6643
+          },
+          {
+            "rgb": [
+              128,
+              64,
+              0
+            ],
+            "sampleCount": 5495
+          }
+        ],
+        "subjectBounds": {
+          "x": 0,
+          "y": 0,
+          "width": 1.001953125,
+          "height": 1
+        },
+        "sampledTransparentFraction": 0
+      }
+    },
+    {
+      "saintId": "ioannis-klimakos",
+      "path": "data/saint-portraits/manual-candidates/ioannis-klimakos-chatgpt-plus-2026-07-29/candidate.png",
+      "schemaVersion": 1,
+      "status": "review",
+      "checks": [
+        {
+          "id": "dimensions",
+          "passed": true,
+          "detail": "1024x1536, expected 1024x1536"
+        },
+        {
+          "id": "aspect-ratio",
+          "passed": true,
+          "detail": "0.666667, expected 0.666667"
+        },
+        {
+          "id": "format",
+          "passed": true,
+          "detail": "png, expected png"
+        },
+        {
+          "id": "file-size",
+          "passed": true,
+          "detail": "2999563 bytes"
+        },
+        {
+          "id": "edge-background",
+          "passed": true,
+          "detail": "edge 213,157,40"
+        },
+        {
+          "id": "edge-variance",
+          "passed": true,
+          "detail": "standard deviation 45.06"
+        },
+        {
+          "id": "transparency",
+          "passed": true,
+          "detail": "sampled transparent fraction 0"
+        },
+        {
+          "id": "subject-edge-clearance",
+          "passed": false,
+          "detail": "{\"x\":0.0029296875,\"y\":0,\"width\":0.990234375,\"height\":1}"
+        },
+        {
+          "id": "duplicate-output",
+          "passed": true,
+          "detail": "16008dc50c859cd9a48e00761fe524035491889c64eb41e8f19c752c4fa02a5b"
+        },
+        {
+          "id": "source-duplicate",
+          "passed": true,
+          "detail": "16008dc50c859cd9a48e00761fe524035491889c64eb41e8f19c752c4fa02a5b"
+        }
+      ],
+      "analysis": {
+        "format": "png",
+        "width": 1024,
+        "height": 1536,
+        "aspectRatio": 0.6666666666666666,
+        "bytes": 2999563,
+        "checksum": "16008dc50c859cd9a48e00761fe524035491889c64eb41e8f19c752c4fa02a5b",
+        "hasAlphaChannel": false,
+        "edgeBackgroundRgb": [
+          213,
+          157,
+          40
+        ],
+        "edgeBackgroundStandardDeviation": 45.06,
+        "dominantColors": [
+          {
+            "rgb": [
+              224,
+              160,
+              32
+            ],
+            "sampleCount": 60056
+          },
+          {
+            "rgb": [
+              32,
+              0,
+              0
+            ],
+            "sampleCount": 33899
+          },
+          {
+            "rgb": [
+              64,
+              32,
+              0
+            ],
+            "sampleCount": 19612
+          },
+          {
+            "rgb": [
+              224,
+              192,
+              32
+            ],
+            "sampleCount": 10377
+          },
+          {
+            "rgb": [
+              32,
+              32,
+              0
+            ],
+            "sampleCount": 8882
+          },
+          {
+            "rgb": [
+              64,
+              0,
+              0
+            ],
+            "sampleCount": 7855
+          },
+          {
+            "rgb": [
+              0,
+              0,
+              0
+            ],
+            "sampleCount": 4440
+          },
+          {
+            "rgb": [
+              96,
+              32,
+              0
+            ],
+            "sampleCount": 3649
+          }
+        ],
+        "subjectBounds": {
+          "x": 0.0029296875,
+          "y": 0,
+          "width": 0.990234375,
+          "height": 1
+        },
+        "sampledTransparentFraction": 0
+      }
+    },
+    {
+      "saintId": "efraim-syros",
+      "path": "data/saint-portraits/manual-candidates/efraim-syros-chatgpt-plus-2026-07-29/candidate.png",
+      "schemaVersion": 1,
+      "status": "review",
+      "checks": [
+        {
+          "id": "dimensions",
+          "passed": true,
+          "detail": "1024x1536, expected 1024x1536"
+        },
+        {
+          "id": "aspect-ratio",
+          "passed": true,
+          "detail": "0.666667, expected 0.666667"
+        },
+        {
+          "id": "format",
+          "passed": true,
+          "detail": "png, expected png"
+        },
+        {
+          "id": "file-size",
+          "passed": true,
+          "detail": "3037668 bytes"
+        },
+        {
+          "id": "edge-background",
+          "passed": true,
+          "detail": "edge 193,136,22"
+        },
+        {
+          "id": "edge-variance",
+          "passed": true,
+          "detail": "standard deviation 41.12"
+        },
+        {
+          "id": "transparency",
+          "passed": true,
+          "detail": "sampled transparent fraction 0"
+        },
+        {
+          "id": "subject-edge-clearance",
+          "passed": false,
+          "detail": "{\"x\":0.0029296875,\"y\":0,\"width\":0.990234375,\"height\":1}"
+        },
+        {
+          "id": "duplicate-output",
+          "passed": true,
+          "detail": "725f651fb8eadbf8f180f8aa01185fda87c4d8f830614780415dc8d301d78dc2"
+        },
+        {
+          "id": "source-duplicate",
+          "passed": true,
+          "detail": "725f651fb8eadbf8f180f8aa01185fda87c4d8f830614780415dc8d301d78dc2"
+        }
+      ],
+      "analysis": {
+        "format": "png",
+        "width": 1024,
+        "height": 1536,
+        "aspectRatio": 0.6666666666666666,
+        "bytes": 3037668,
+        "checksum": "725f651fb8eadbf8f180f8aa01185fda87c4d8f830614780415dc8d301d78dc2",
+        "hasAlphaChannel": false,
+        "edgeBackgroundRgb": [
+          193,
+          136,
+          22
+        ],
+        "edgeBackgroundStandardDeviation": 41.12,
+        "dominantColors": [
+          {
+            "rgb": [
+              224,
+              160,
+              32
+            ],
+            "sampleCount": 33319
+          },
+          {
+            "rgb": [
+              32,
+              32,
+              32
+            ],
+            "sampleCount": 20629
+          },
+          {
+            "rgb": [
+              192,
+              128,
+              0
+            ],
+            "sampleCount": 20007
+          },
+          {
+            "rgb": [
+              224,
+              160,
+              0
+            ],
+            "sampleCount": 18672
+          },
+          {
+            "rgb": [
+              0,
+              32,
+              32
+            ],
+            "sampleCount": 8617
+          },
+          {
+            "rgb": [
+              32,
+              64,
+              64
+            ],
+            "sampleCount": 7111
+          },
+          {
+            "rgb": [
+              0,
+              0,
+              0
+            ],
+            "sampleCount": 6960
+          },
+          {
+            "rgb": [
+              64,
+              64,
+              64
+            ],
+            "sampleCount": 6494
+          }
+        ],
+        "subjectBounds": {
+          "x": 0.0029296875,
+          "y": 0,
+          "width": 0.990234375,
+          "height": 1
+        },
+        "sampledTransparentFraction": 0
+      }
+    },
+    {
+      "saintId": "maria-aigyptia",
+      "path": "data/saint-portraits/manual-candidates/maria-aigyptia-chatgpt-plus-2026-07-29/candidate.png",
+      "schemaVersion": 1,
+      "status": "review",
+      "checks": [
+        {
+          "id": "dimensions",
+          "passed": true,
+          "detail": "1024x1536, expected 1024x1536"
+        },
+        {
+          "id": "aspect-ratio",
+          "passed": true,
+          "detail": "0.666667, expected 0.666667"
+        },
+        {
+          "id": "format",
+          "passed": true,
+          "detail": "png, expected png"
+        },
+        {
+          "id": "file-size",
+          "passed": true,
+          "detail": "3196716 bytes"
+        },
+        {
+          "id": "edge-background",
+          "passed": true,
+          "detail": "edge 206,151,35"
+        },
+        {
+          "id": "edge-variance",
+          "passed": true,
+          "detail": "standard deviation 48.77"
+        },
+        {
+          "id": "transparency",
+          "passed": true,
+          "detail": "sampled transparent fraction 0"
+        },
+        {
+          "id": "subject-edge-clearance",
+          "passed": false,
+          "detail": "{\"x\":0,\"y\":0,\"width\":0.9990234375,\"height\":1}"
+        },
+        {
+          "id": "duplicate-output",
+          "passed": true,
+          "detail": "acdddf12cf733306cb57cdae274ba944c30302b698544bfd708ccdaa86a488e9"
+        },
+        {
+          "id": "source-duplicate",
+          "passed": true,
+          "detail": "acdddf12cf733306cb57cdae274ba944c30302b698544bfd708ccdaa86a488e9"
+        }
+      ],
+      "analysis": {
+        "format": "png",
+        "width": 1024,
+        "height": 1536,
+        "aspectRatio": 0.6666666666666666,
+        "bytes": 3196716,
+        "checksum": "acdddf12cf733306cb57cdae274ba944c30302b698544bfd708ccdaa86a488e9",
+        "hasAlphaChannel": false,
+        "edgeBackgroundRgb": [
+          206,
+          151,
+          35
+        ],
+        "edgeBackgroundStandardDeviation": 48.77,
+        "dominantColors": [
+          {
+            "rgb": [
+              224,
+              160,
+              32
+            ],
+            "sampleCount": 55168
+          },
+          {
+            "rgb": [
+              32,
+              32,
+              0
+            ],
+            "sampleCount": 28968
+          },
+          {
+            "rgb": [
+              0,
+              0,
+              0
+            ],
+            "sampleCount": 22695
+          },
+          {
+            "rgb": [
+              32,
+              0,
+              0
+            ],
+            "sampleCount": 18174
+          },
+          {
+            "rgb": [
+              192,
+              128,
+              0
+            ],
+            "sampleCount": 8442
+          },
+          {
+            "rgb": [
+              64,
+              32,
+              0
+            ],
+            "sampleCount": 4949
+          },
+          {
+            "rgb": [
+              64,
+              32,
+              32
+            ],
+            "sampleCount": 4046
+          },
+          {
+            "rgb": [
+              224,
+              160,
+              0
+            ],
+            "sampleCount": 3189
+          }
+        ],
+        "subjectBounds": {
+          "x": 0,
+          "y": 0,
+          "width": 0.9990234375,
+          "height": 1
+        },
+        "sampledTransparentFraction": 0
+      }
+    },
+    {
+      "saintId": "serafeimsarof",
+      "path": "data/saint-portraits/manual-candidates/serafeimsarof-chatgpt-plus-2026-07-29/candidate.png",
+      "schemaVersion": 1,
+      "status": "review",
+      "checks": [
+        {
+          "id": "dimensions",
+          "passed": true,
+          "detail": "1024x1536, expected 1024x1536"
+        },
+        {
+          "id": "aspect-ratio",
+          "passed": true,
+          "detail": "0.666667, expected 0.666667"
+        },
+        {
+          "id": "format",
+          "passed": true,
+          "detail": "png, expected png"
+        },
+        {
+          "id": "file-size",
+          "passed": true,
+          "detail": "2985045 bytes"
+        },
+        {
+          "id": "edge-background",
+          "passed": true,
+          "detail": "edge 194,135,22"
+        },
+        {
+          "id": "edge-variance",
+          "passed": true,
+          "detail": "standard deviation 49.13"
+        },
+        {
+          "id": "transparency",
+          "passed": true,
+          "detail": "sampled transparent fraction 0"
+        },
+        {
+          "id": "subject-edge-clearance",
+          "passed": false,
+          "detail": "{\"x\":0.0029296875,\"y\":0,\"width\":0.9990234375,\"height\":1}"
+        },
+        {
+          "id": "duplicate-output",
+          "passed": true,
+          "detail": "a2f2f44e842f0f51cb36ca1276ba4eb3ef4f567b4935e988234ec86e36f62273"
+        },
+        {
+          "id": "source-duplicate",
+          "passed": true,
+          "detail": "a2f2f44e842f0f51cb36ca1276ba4eb3ef4f567b4935e988234ec86e36f62273"
+        }
+      ],
+      "analysis": {
+        "format": "png",
+        "width": 1024,
+        "height": 1536,
+        "aspectRatio": 0.6666666666666666,
+        "bytes": 2985045,
+        "checksum": "a2f2f44e842f0f51cb36ca1276ba4eb3ef4f567b4935e988234ec86e36f62273",
+        "hasAlphaChannel": false,
+        "edgeBackgroundRgb": [
+          194,
+          135,
+          22
+        ],
+        "edgeBackgroundStandardDeviation": 49.13,
+        "dominantColors": [
+          {
+            "rgb": [
+              32,
+              0,
+              0
+            ],
+            "sampleCount": 29224
+          },
+          {
+            "rgb": [
+              224,
+              160,
+              32
+            ],
+            "sampleCount": 28172
+          },
+          {
+            "rgb": [
+              224,
+              160,
+              0
+            ],
+            "sampleCount": 23857
+          },
+          {
+            "rgb": [
+              64,
+              32,
+              0
+            ],
+            "sampleCount": 12639
+          },
+          {
+            "rgb": [
+              32,
+              32,
+              0
+            ],
+            "sampleCount": 9499
+          },
+          {
+            "rgb": [
+              192,
+              128,
+              0
+            ],
+            "sampleCount": 8879
+          },
+          {
+            "rgb": [
+              224,
+              128,
+              0
+            ],
+            "sampleCount": 8162
+          },
+          {
+            "rgb": [
+              0,
+              0,
+              0
+            ],
+            "sampleCount": 7093
+          }
+        ],
+        "subjectBounds": {
+          "x": 0.0029296875,
+          "y": 0,
+          "width": 0.9990234375,
+          "height": 1
+        },
+        "sampledTransparentFraction": 0
+      }
+    }
+  ]
+}

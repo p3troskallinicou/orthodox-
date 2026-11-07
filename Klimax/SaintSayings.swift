@@ -1,0 +1,90 @@
+import Foundation
+
+struct SaintSaying: Codable, Identifiable, Hashable {
+    let id: String
+    let saintID: String
+    let categoryID: String
+    let text: String
+    let source: String
+    let sourceNote: String
+    let sourceStatus: String
+    let sourceChecked: Bool
+    let featured: Bool
+    let photoID: String
+}
+
+struct SayingSaint: Codable, Identifiable {
+    let id: String
+    let name: String
+    let shortName: String
+    let subtitle: String
+    let photoID: String
+}
+
+struct SayingCategory: Codable, Identifiable {
+    let id: String
+    let title: String
+    let shortTitle: String
+    let symbol: String
+}
+
+struct SayingPhoto: Codable, Identifiable {
+    let id: String
+    let asset: String
+    /// Reviewed subject boundary. The full-bleed crop is top-aligned, so its
+    /// vertical location remains predictable across tile and reader sizes.
+    let subjectTop: Double
+    let width: Double
+    let height: Double
+
+    func textBoundary(in size: CGSize) -> CGFloat {
+        let scale = max(size.width / width, size.height / height)
+        return min(size.height, height * scale * subjectTop)
+    }
+}
+
+struct SaintSayingsCatalog: Codable {
+    let version: Int
+    let saints: [SayingSaint]
+    let categories: [SayingCategory]
+    let photos: [SayingPhoto]
+    let sayings: [SaintSaying]
+
+    static let bundled: SaintSayingsCatalog? = {
+        guard let url = Bundle.main.url(forResource: "saint-sayings", withExtension: "json"),
+              let data = try? Data(contentsOf: url),
+              let catalog = try? JSONDecoder().decode(Self.self, from: data),
+              catalog.isValid else { return nil }
+        return catalog
+    }()
+
+    var isValid: Bool {
+        !saints.isEmpty && !categories.isEmpty && !photos.isEmpty &&
+        Set(sayings.map(\.id)).count == sayings.count &&
+        photos.allSatisfy { (0...0.8).contains($0.subjectTop) && $0.width > 0 && $0.height > 0 } &&
+        sayings.allSatisfy { saying in
+            !saying.text.isEmpty && saints.contains { $0.id == saying.saintID } &&
+            categories.contains { $0.id == saying.categoryID } && photos.contains { $0.id == saying.photoID }
+        }
+    }
+
+    func filtered(saintID: String, categoryID: String?, query: String) -> [SaintSaying] {
+        let words = Self.searchKey(query).split(separator: " ")
+        return sayings.filter { saying in
+            saying.saintID == saintID && (categoryID == nil || saying.categoryID == categoryID) &&
+            words.allSatisfy { Self.searchKey(saying.text).contains($0) }
+        }.sorted { a, b in
+            if a.featured != b.featured { return a.featured }
+            return a.id < b.id
+        }
+    }
+
+    private static func searchKey(_ text: String) -> String {
+        text.folding(options: [.diacriticInsensitive, .caseInsensitive], locale: Locale(identifier: "el"))
+            .replacingOccurrences(of: "ς", with: "σ")
+    }
+
+    func photo(for saying: SaintSaying) -> SayingPhoto { photos.first { $0.id == saying.photoID } ?? photos[0] }
+    func saint(for saying: SaintSaying) -> SayingSaint { saints.first { $0.id == saying.saintID } ?? saints[0] }
+    func category(for saying: SaintSaying) -> SayingCategory { categories.first { $0.id == saying.categoryID } ?? categories[0] }
+}

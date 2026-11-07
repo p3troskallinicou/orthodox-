@@ -1,0 +1,539 @@
+{
+  "schemaVersion": 1,
+  "description": "Curated modern Orthodox saints missing from the Klimax catalog, verified against official Orthodox Church sources.",
+  "records": [
+    {
+      "rankId": "osioi",
+      "saint": {
+        "id": "silouanos-athoni",
+        "name": "Ὅσιος Σιλουανὸς ὁ Ἀθωνίτης",
+        "nameEnglish": "Silouan the Athonite",
+        "feast": "24 Σεπτεμβρίου",
+        "icon": "",
+        "rankTitle": "Ὅσιος",
+        "bio": [
+          "Αγιορείτης μοναχός και πνευματικός πατέρας της Μονής του Αγίου Παντελεήμονος. Η διδασκαλία του για την ταπείνωση, την προσευχή και την αγάπη προς όλο τον κόσμο διασώθηκε από τον μαθητή του, Όσιο Σωφρόνιο."
+        ],
+        "source": "Οικουμενικό Πατριαρχείο",
+        "sourceUrl": "https://ec-patr.org/entities/iera-patriarxiki-stayropigiaki-moni-timioy-prodromoy/"
+      }
+    },
+    {
+      "rankId": "osioi",
+      "saint": {
+        "id": "sofronios-essex",
+        "name": "Ὅσιος Σωφρόνιος τοῦ Ἔσσεξ",
+        "nameEnglish": "Sophrony of Essex",
+        "feast": "11 Ἰουλίου",
+        "icon": "",
+        "rankTitle": "Ὅσιος",
+        "bio": [
+          "Μαθητής του Οσίου Σιλουανού και ιδρυτής της Πατριαρχικής και Σταυροπηγιακής Μονής Τιμίου Προδρόμου στο Έσσεξ. Μετέφερε στη σύγχρονη εποχή την ησυχαστική εμπειρία και τη θεολογία της υποστατικής προσευχής."
+        ],
+        "source": "Οικουμενικό Πατριαρχείο",
+        "sourceUrl": "https://ec-patr.org/entities/iera-patriarxiki-stayropigiaki-moni-timioy-prodromoy/"
+      }
+    },
+    {
+      "rankId": "ierarchai",
+      "saint": {
+        "id": "ioannis-maximovitch",
+        "name": "Ἅγιος Ἰωάννης Μαξίμοβιτς",
+        "nameEnglish": "John Maximovitch",
+        "feast": "2 Ἰουλίου",
+        "icon": "",
+        "rankTitle": "Ἱεράρχης",
+        "bio": [
+          "Ιεράρχης της Ρωσικής Διασποράς που διακόνησε στην Κίνα, στη Δυτική Ευρώπη και στο Σαν Φρανσίσκο. Έμεινε γνωστός για την ασκητική ζωή, την αδιάλειπτη προσευχή και τη φροντίδα των προσφύγων και των ορφανών."
+        ],
+        "source": "Orthodox Church in America",
+        "sourceUrl": "https://www.oca.org/saints/all-lives/0579/07/02"
+      }
+    },
+    {
+      "rankId": "ierarchai",
+      "saint": {
+        "id": "loukas-krimaias",
+        "name": "Ἅγιος Λουκᾶς Κριμαίας",
+        "nameEnglish": "Luke of Crimea",
+        "feast": "11 Ἰουνίου",
+        "icon": "",
+        "rankTitle": "Ἱεράρχης",
+        "bio": [
+          "Αρχιεπίσκοπος Συμφερουπόλεως και Κριμαίας, χειρουργός και ομολογητής. Υπηρέτησε τους ασθενείς και ομολόγησε την πίστη μέσα σε φυλακίσεις, εξορίες και διωγμούς."
+        ],
+        "source": "Orthodox Church in America",
+        "sourceUrl": "https://www.oca.org/saints/all-lives/1950/06/11"
+      }
+    },
+    {
+      "rankId": "ierarchai",
+      "saint": {
+        "id": "nikolaos-zitsis",
+        "name": "Ἅγιος Νικόλαος Ζίτσης",
+        "nameEnglish": "Nikolai of Zhicha",
+        "feast": "18 Μαρτίου",
+        "icon": "",
+        "rankTitle": "Ἱεράρχης",
+        "bio": [
+          "Σέρβος επίσκοπος, θεολόγος και ιεροκήρυκας. Φυλακίστηκε στο Νταχάου κατά τον Δεύτερο Παγκόσμιο Πόλεμο και συνέχισε τη διακονία του στη διασπορά."
+        ],
+        "source": "Orthodox Church in America",
+        "sourceUrl": "https://www.oca.org/saints/all-lives/4462/03/18"
+      }
+    },
+    {
+      "rankId": "neomartyres",
+      "saint": {
+        "id": "maria-skobtsova",
+        "name": "Ἁγία Μαρία Σκομπτσόβα",
+        "nameEnglish": "Maria Skobtsova",
+        "feast": "20 Ἰουλίου",
+        "icon": "",
+        "rankTitle": "Νεομάρτυς",
+        "bio": [
+          "Μοναχή που διακόνησε τους φτωχούς και τους διωκόμενους στο Παρίσι. Συνελήφθη για τη βοήθεια που πρόσφερε σε Εβραίους κατά τη ναζιστική κατοχή και μαρτύρησε στο Ράβενσμπρικ."
+        ],
+        "source": "Orthodox Church in America",
+        "sourceUrl": "https://www.oca.org/saints/all-lives/2026/07/20"
+      }
+    },
+    {
+      "rankId": "ierarchai",
+      "saint": {
+        "id": "tikhon-moschas",
+        "name": "Ἅγιος Τύχων Μόσχας",
+        "nameEnglish": "Tikhon of Moscow",
+        "feast": "7 Ἀπριλίου",
+        "icon": "",
+        "rankTitle": "Πατριάρχης",
+        "bio": [
+          "Πατριάρχης Μόσχας στα πρώτα χρόνια των σοβιετικών διωγμών. Υπερασπίστηκε την Εκκλησία με πραότητα και σταθερότητα και υπέμεινε περιορισμούς και διώξεις."
+        ],
+        "source": "Orthodox Church in America",
+        "sourceUrl": "https://www.oca.org/saints/all-lives/1000/04/07"
+      }
+    },
+    {
+      "rankId": "neomartyres",
+      "saint": {
+        "id": "elisavet-feodorovna",
+        "name": "Ἁγία Ἐλισάβετ Φεοντόροβνα",
+        "nameEnglish": "Elizabeth Feodorovna",
+        "feast": "18 Ἰουλίου",
+        "icon": "",
+        "rankTitle": "Νεομάρτυς",
+        "bio": [
+          "Μεγάλη Δούκισσα που αφιερώθηκε στη μοναχική ζωή και ίδρυσε τη Μονή Μάρθας και Μαρίας στη Μόσχα για τη διακονία των φτωχών και των ασθενών. Μαρτύρησε το 1918."
+        ],
+        "source": "Orthodox Church in America",
+        "sourceUrl": "https://www.oca.org/saints/lives/1000/07/18/101915-grand-duchess-elizabeth"
+      }
+    },
+    {
+      "rankId": "dikaioi",
+      "saint": {
+        "id": "olga-kwethluk",
+        "name": "Ἁγία Ὄλγα τοῦ Κουέθλουκ",
+        "nameEnglish": "Olga of Kwethluk",
+        "feast": "27 Ὀκτωβρίου",
+        "icon": "",
+        "rankTitle": "Δικαία",
+        "bio": [
+          "Πρεσβυτέρα και μητέρα από την Αλάσκα που διακόνησε αθόρυβα γυναίκες, παιδιά και οικογένειες της κοινότητάς της. Η αγιότητά της ανακηρύχθηκε επίσημα το 2025."
+        ],
+        "source": "Orthodox Church in America",
+        "sourceUrl": "https://www.oca.org/fs/st-olga-alaska"
+      }
+    },
+    {
+      "rankId": "neomartyres",
+      "saint": {
+        "id": "ioannis-kochurov",
+        "name": "Ἅγιος Ἰωάννης Κοτσούροβ",
+        "nameEnglish": "John Kochurov",
+        "feast": "31 Ὀκτωβρίου",
+        "icon": "",
+        "rankTitle": "Ἱερομάρτυς",
+        "bio": [
+          "Ιερέας και ιεραπόστολος που διακόνησε στη Βόρεια Αμερική και επέστρεψε στη Ρωσία. Υπήρξε ένας από τους πρώτους κληρικούς που μαρτύρησαν κατά τη Ρωσική Επανάσταση."
+        ],
+        "source": "Orthodox Church in America",
+        "sourceUrl": "https://www.oca.org/saints/all-lives/2047/10/31"
+      }
+    },
+    {
+      "rankId": "ierarchai",
+      "saint": {
+        "id": "rafael-brooklyn",
+        "name": "Ἅγιος Ραφαὴλ τοῦ Μπρούκλιν",
+        "nameEnglish": "Raphael of Brooklyn",
+        "feast": "27 Φεβρουαρίου",
+        "icon": "",
+        "rankTitle": "Ἱεράρχης",
+        "bio": [
+          "Πρώτος Ορθόδοξος επίσκοπος που χειροτονήθηκε στη Βόρεια Αμερική. Οργάνωσε ενορίες και υπηρέτησε ιδιαίτερα τους αραβόφωνους Ορθοδόξους της διασποράς."
+        ],
+        "source": "Orthodox Church in America",
+        "sourceUrl": "https://www.oca.org/saints/all-lives/1949/02/27"
+      }
+    },
+    {
+      "rankId": "omologitai",
+      "saint": {
+        "id": "alexios-toth",
+        "name": "Ἅγιος Ἀλέξιος Τοθ",
+        "nameEnglish": "Alexis Toth",
+        "feast": "7 Μαΐου",
+        "icon": "",
+        "rankTitle": "Ὁμολογητής",
+        "bio": [
+          "Ιερέας που εργάστηκε για την επιστροφή πολλών κοινοτήτων στη Βόρεια Αμερική στην Ορθόδοξη Εκκλησία. Υπέμεινε δυσκολίες και αντιδράσεις με σταθερότητα και ποιμαντική φροντίδα."
+        ],
+        "source": "Orthodox Church in America",
+        "sourceUrl": "https://www.oca.org/saints/all-lives/1947/05/07"
+      }
+    },
+    {
+      "rankId": "osioi",
+      "saint": {
+        "id": "nikiforos-lepros",
+        "name": "Ὅσιος Νικηφόρος ὁ Λεπρός",
+        "nameEnglish": "Nikephoros the Leper",
+        "feast": "4 Ἰανουαρίου",
+        "icon": "",
+        "rankTitle": "Ὅσιος",
+        "bio": [
+          "Γεννήθηκε στο Συρικάρι Κισάμου και προσβλήθηκε σε νεαρή ηλικία από λέπρα. Έζησε με υπομονή, ταπείνωση και αδιάλειπτη προσευχή και έγινε πνευματικό τέκνο του Αγίου Ανθίμου του Χίου στο λεπροκομείο της Χίου.",
+          "Τα τελευταία χρόνια της ζωής του έζησε στον αντιλεπρικό σταθμό της Αγίας Βαρβάρας στην Αθήνα, όπου πολλοί προσέτρεχαν στην προσευχή και τη συμβουλή του."
+        ],
+        "source": "Εκκλησία της Κύπρου",
+        "sourceUrl": "https://churchofcyprus.org.cy/29350"
+      }
+    },
+    {
+      "rankId": "osioi",
+      "saint": {
+        "id": "sofia-kleisouras",
+        "name": "Ὁσία Σοφία ἡ ἐν Κλεισούρᾳ",
+        "nameEnglish": "Sophia of Kleisoura",
+        "feast": "6 Μαΐου",
+        "icon": "",
+        "rankTitle": "Ὁσία",
+        "bio": [
+          "Πόντια ασκήτρια που, μετά τις μεγάλες δοκιμασίες της ζωής της, εγκαταστάθηκε στην Ιερά Μονή Γενεθλίου της Θεοτόκου στην Κλεισούρα Καστοριάς.",
+          "Έζησε με αυστηρή άσκηση, απλότητα, προσευχή και μεγάλη αγάπη προς όσους την πλησίαζαν."
+        ],
+        "source": "Οικουμενικό Πατριαρχείο",
+        "sourceUrl": "https://ec-patr.org/entities/iera-mitropoli-kastorias/"
+      }
+    },
+    {
+      "rankId": "osioi",
+      "saint": {
+        "id": "gervasios-paraskevopoulos",
+        "name": "Ὅσιος Γερβάσιος ὁ ἐν Πάτραις",
+        "nameEnglish": "Gervasios Paraskevopoulos",
+        "feast": "30 Ἰουνίου",
+        "icon": "",
+        "rankTitle": "Ὅσιος",
+        "bio": [
+          "Αρχιμανδρίτης, θεολόγος και πνευματικός πατέρας των Πατρών. Ίδρυσε κατηχητικά σχολεία και παιδικές κατασκηνώσεις και διακρίθηκε για την ταπείνωση, τη θυσιαστική διακονία και το φιλανθρωπικό του έργο.",
+          "Η Αγία και Ιερά Σύνοδος του Οικουμενικού Πατριαρχείου τον κατέταξε στο Αγιολόγιο της Ορθοδόξου Εκκλησίας το 2023."
+        ],
+        "source": "Οικουμενικό Πατριαρχείο",
+        "sourceUrl": "https://ec-patr.org/anakoinothen-gia-tis-ergasies-tis-agia-16/"
+      }
+    },
+    {
+      "rankId": "osioi",
+      "saint": {
+        "id": "athanasios-hamakiotis",
+        "name": "Ὅσιος Ἀθανάσιος Χαμακιώτης",
+        "nameEnglish": "Athanasios Hamakiotis",
+        "feast": "17 Αὐγούστου",
+        "icon": "",
+        "rankTitle": "Ὅσιος",
+        "bio": [
+          "Ιερομόναχος και πνευματικός που διακόνησε επί πολλά χρόνια στην Παναγία Νεραντζιώτισσα Αμαρουσίου και ίδρυσε το Ιερό Ησυχαστήριο Παναγίας Φανερωμένης στη Ροδόπολη.",
+          "Διακρίθηκε για την ασκητική ζωή, τη φιλανθρωπία, τη διάκριση και τη θυσιαστική ποιμαντική του διακονία."
+        ],
+        "source": "Οικουμενικό Πατριαρχείο",
+        "sourceUrl": "https://ec-patr.org/anakoinothen-gia-tis-ergasies-tis-agia-16/"
+      }
+    },
+    {
+      "rankId": "osioi",
+      "saint": {
+        "id": "vissarion-agathonitis",
+        "name": "Ὅσιος Βησσαρίων ὁ Ἀγαθωνίτης",
+        "nameEnglish": "Vissarion of Agathonos",
+        "feast": "22 Ἰανουαρίου",
+        "icon": "",
+        "rankTitle": "Ὅσιος",
+        "bio": [
+          "Ιερομόναχος της Ιεράς Μονής Αγάθωνος που αφιέρωσε τη ζωή του στην προσευχή, την εξομολόγηση, την ελεημοσύνη και τη φροντίδα των φτωχών και των κατατρεγμένων.",
+          "Το άφθαρτο σκήνωμά του φυλάσσεται στην Ιερά Μονή Αγάθωνος και αποτελεί σημείο αναφοράς για τους πιστούς της Φθιώτιδας και ολόκληρης της Ελλάδας."
+        ],
+        "source": "Οικουμενικό Πατριαρχείο",
+        "sourceUrl": "https://ec-patr.org/26/06/17/22/antifonisis-tis-a-th-panagiotitos-t-9/"
+      }
+    },
+    {
+      "rankId": "osioi",
+      "saint": {
+        "id": "sofianos-antim",
+        "name": "Ὅσιος Σοφιανὸς τοῦ Ἀντίμ",
+        "nameEnglish": "Sofian of Antim",
+        "feast": "16 Σεπτεμβρίου",
+        "icon": "",
+        "rankTitle": "Ὅσιος",
+        "bio": [
+          "Ρουμάνος αρχιμανδρίτης, αγιογράφος και πνευματικός πατέρας. Υπέμεινε τις διώξεις του κομμουνιστικού καθεστώτος και διακόνησε επί δεκαετίες στη Μονή Αντίμ."
+        ],
+        "source": "Ρουμανική Ορθόδοξη Εκκλησία",
+        "sourceUrl": "https://basilica.ro/en/synodal-decree-of-the-romanian-orthodox-church-for-canonization-of-20th-century-saints/"
+      }
+    },
+    {
+      "rankId": "omologitai",
+      "saint": {
+        "id": "dimitrios-staniloae",
+        "name": "Ἅγιος Δημήτριος Στανιλοάε",
+        "nameEnglish": "Dumitru Staniloae",
+        "feast": "4 Ὀκτωβρίου",
+        "icon": "",
+        "rankTitle": "Ὁμολογητής",
+        "bio": [
+          "Ρουμάνος ιερέας και θεολόγος, μεταφραστής της Φιλοκαλίας στα ρουμανικά. Φυλακίστηκε από το κομμουνιστικό καθεστώς και συνέχισε τη θεολογική και ποιμαντική διακονία του."
+        ],
+        "source": "Ρουμανική Ορθόδοξη Εκκλησία",
+        "sourceUrl": "https://basilica.ro/en/synodal-decree-of-the-romanian-orthodox-church-for-canonization-of-20th-century-saints/"
+      }
+    },
+    {
+      "rankId": "neomartyres",
+      "saint": {
+        "id": "konstantinos-sarbu",
+        "name": "Ἅγιος Κωνσταντῖνος Σάρμπου",
+        "nameEnglish": "Constantine Sarbu",
+        "feast": "23 Ὀκτωβρίου",
+        "icon": "",
+        "rankTitle": "Ἱερομάρτυς",
+        "bio": [
+          "Ρουμάνος ιερέας και πνευματικός πατέρας που φυλακίστηκε και βασανίστηκε για την πίστη του κατά την κομμουνιστική περίοδο."
+        ],
+        "source": "Ρουμανική Ορθόδοξη Εκκλησία",
+        "sourceUrl": "https://basilica.ro/en/synodal-decree-of-the-romanian-orthodox-church-for-canonization-of-20th-century-saints/"
+      }
+    },
+    {
+      "rankId": "osioi",
+      "saint": {
+        "id": "arsenios-prislop",
+        "name": "Ὅσιος Ἀρσένιος τοῦ Πρίσλοπ",
+        "nameEnglish": "Arsenius of Prislop",
+        "feast": "28 Νοεμβρίου",
+        "icon": "",
+        "rankTitle": "Ὅσιος",
+        "bio": [
+          "Ρουμάνος μοναχός, ιερέας και πνευματικός πατέρας. Διώχθηκε επανειλημμένα από το κομμουνιστικό καθεστώς και έγινε σημείο αναφοράς για πολλούς πιστούς."
+        ],
+        "source": "Ρουμανική Ορθόδοξη Εκκλησία",
+        "sourceUrl": "https://basilica.ro/en/synodal-decree-of-the-romanian-orthodox-church-for-canonization-of-20th-century-saints/"
+      }
+    },
+    {
+      "rankId": "omologitai",
+      "saint": {
+        "id": "ilias-lacatusu",
+        "name": "Ἅγιος Ἠλίας Λακατούσου",
+        "nameEnglish": "Elijah Lacatusu",
+        "feast": "22 Ἰουλίου",
+        "icon": "",
+        "rankTitle": "Ὁμολογητής",
+        "bio": [
+          "Ρουμάνος ιερέας που υπέμεινε φυλακίσεις και καταναγκαστική εργασία κατά τον κομμουνιστικό διωγμό."
+        ],
+        "source": "Ρουμανική Ορθόδοξη Εκκλησία",
+        "sourceUrl": "https://basilica.ro/en/synodal-decree-of-the-romanian-orthodox-church-for-canonization-of-20th-century-saints/"
+      }
+    },
+    {
+      "rankId": "osioi",
+      "saint": {
+        "id": "paisios-sihastria",
+        "name": "Ὅσιος Παΐσιος τῆς Σιχάστρια",
+        "nameEnglish": "Paisius of Sihastria",
+        "feast": "2 Δεκεμβρίου",
+        "icon": "",
+        "rankTitle": "Ὅσιος",
+        "bio": [
+          "Ρουμάνος μοναχός και πνευματικός της Μονής Σιχάστρια, γνωστός για την πραότητα, την προσευχή και τη διάκριση."
+        ],
+        "source": "Ρουμανική Ορθόδοξη Εκκλησία",
+        "sourceUrl": "https://basilica.ro/en/synodal-decree-of-the-romanian-orthodox-church-for-canonization-of-20th-century-saints/"
+      }
+    },
+    {
+      "rankId": "osioi",
+      "saint": {
+        "id": "kleopas-sihastria",
+        "name": "Ὅσιος Κλεόπας τῆς Σιχάστρια",
+        "nameEnglish": "Cleopas of Sihastria",
+        "feast": "2 Δεκεμβρίου",
+        "icon": "",
+        "rankTitle": "Ὅσιος",
+        "bio": [
+          "Ρουμάνος αρχιμανδρίτης, ηγούμενος και πνευματικός πατέρας της Μονής Σιχάστρια. Δίδαξε με απλότητα και έζησε περιόδους απομόνωσης για να αποφύγει τις διώξεις."
+        ],
+        "source": "Ρουμανική Ορθόδοξη Εκκλησία",
+        "sourceUrl": "https://basilica.ro/en/synodal-decree-of-the-romanian-orthodox-church-for-canonization-of-20th-century-saints/"
+      }
+    },
+    {
+      "rankId": "osioi",
+      "saint": {
+        "id": "dometios-ramet",
+        "name": "Ὅσιος Δομέτιος ὁ Ἐλεήμων τοῦ Ράμετ",
+        "nameEnglish": "Dometius the Merciful of Ramet",
+        "feast": "6 Ἰουλίου",
+        "icon": "",
+        "rankTitle": "Ὅσιος",
+        "bio": [
+          "Ρουμάνος μοναχός και πνευματικός που διακόνησε στη Μονή Ράμετ και έμεινε γνωστός για την ελεημοσύνη και την πατρική φροντίδα."
+        ],
+        "source": "Ρουμανική Ορθόδοξη Εκκλησία",
+        "sourceUrl": "https://basilica.ro/en/synodal-decree-of-the-romanian-orthodox-church-for-canonization-of-20th-century-saints/"
+      }
+    },
+    {
+      "rankId": "osioi",
+      "saint": {
+        "id": "serafeim-sambata",
+        "name": "Ὅσιος Σεραφεὶμ ὁ Ὑπομονετικὸς τοῦ Σαμπάτα ντε Σους",
+        "nameEnglish": "Seraphim the Enduring of Sambata de Sus",
+        "feast": "20 Δεκεμβρίου",
+        "icon": "",
+        "rankTitle": "Ὅσιος",
+        "bio": [
+          "Ρουμάνος μοναχός και ηγούμενος που υπηρέτησε τη μοναστική ζωή με υπομονή κατά τη δύσκολη περίοδο των κομμουνιστικών διωγμών."
+        ],
+        "source": "Ρουμανική Ορθόδοξη Εκκλησία",
+        "sourceUrl": "https://basilica.ro/en/synodal-decree-of-the-romanian-orthodox-church-for-canonization-of-20th-century-saints/"
+      }
+    },
+    {
+      "rankId": "neomartyres",
+      "saint": {
+        "id": "livios-galaktion-klouz",
+        "name": "Ἅγιος Λίβιος Γαλακτίων τοῦ Κλουζ",
+        "nameEnglish": "Liviu Galaction of Cluj",
+        "feast": "8 Μαρτίου",
+        "icon": "",
+        "rankTitle": "Ἱερομάρτυς",
+        "bio": [
+          "Ρουμάνος ιερέας και καθηγητής θεολογίας που μαρτύρησε ύστερα από φυλακίσεις και διώξεις του κομμουνιστικού καθεστώτος."
+        ],
+        "source": "Ρουμανική Ορθόδοξη Εκκλησία",
+        "sourceUrl": "https://basilica.ro/en/synodal-decree-of-the-romanian-orthodox-church-for-canonization-of-20th-century-saints/"
+      }
+    },
+    {
+      "rankId": "neomartyres",
+      "saint": {
+        "id": "gerasimos-tismana",
+        "name": "Ἅγιος Γεράσιμος τῆς Τισμάνα",
+        "nameEnglish": "Gerasimus of Tismana",
+        "feast": "26 Δεκεμβρίου",
+        "icon": "",
+        "rankTitle": "Ἱερομάρτυς",
+        "bio": [
+          "Ρουμάνος αρχιμανδρίτης και ηγούμενος που υπέμεινε φυλακίσεις και μαρτύρησε κατά τον κομμουνιστικό διωγμό."
+        ],
+        "source": "Ρουμανική Ορθόδοξη Εκκλησία",
+        "sourceUrl": "https://basilica.ro/en/synodal-decree-of-the-romanian-orthodox-church-for-canonization-of-20th-century-saints/"
+      }
+    },
+    {
+      "rankId": "neomartyres",
+      "saint": {
+        "id": "vissarion-lainici",
+        "name": "Ἅγιος Βησσαρίων τοῦ Λαϊνίτσι",
+        "nameEnglish": "Bessarion of Lainici",
+        "feast": "10 Νοεμβρίου",
+        "icon": "",
+        "rankTitle": "Ἱερομάρτυς",
+        "bio": [
+          "Ρουμάνος μοναχός και ηγούμενος που φυλακίστηκε για την πίστη του και μαρτύρησε κατά την κομμουνιστική περίοδο."
+        ],
+        "source": "Ρουμανική Ορθόδοξη Εκκλησία",
+        "sourceUrl": "https://basilica.ro/en/synodal-decree-of-the-romanian-orthodox-church-for-canonization-of-20th-century-saints/"
+      }
+    },
+    {
+      "rankId": "neomartyres",
+      "saint": {
+        "id": "kallistratos-timiseni",
+        "name": "Ἅγιος Καλλίστρατος τοῦ Τιμισένι καὶ Βασιόβα",
+        "nameEnglish": "Callistratus of Timiseni and Vasiova",
+        "feast": "10 Μαΐου",
+        "icon": "",
+        "rankTitle": "Ἱερομάρτυς",
+        "bio": [
+          "Ρουμάνος ιερέας και πνευματικός πατέρας που διώχθηκε και φυλακίστηκε από το κομμουνιστικό καθεστώς."
+        ],
+        "source": "Ρουμανική Ορθόδοξη Εκκλησία",
+        "sourceUrl": "https://basilica.ro/en/synodal-decree-of-the-romanian-orthodox-church-for-canonization-of-20th-century-saints/"
+      }
+    },
+    {
+      "rankId": "neomartyres",
+      "saint": {
+        "id": "ilarion-felea",
+        "name": "Ἅγιος Ἱλαρίων Φελέα",
+        "nameEnglish": "Hilarion Felea",
+        "feast": "18 Σεπτεμβρίου",
+        "icon": "",
+        "rankTitle": "Ἱερομάρτυς",
+        "bio": [
+          "Ρουμάνος ιερέας και καθηγητής θεολογίας που πέθανε στη φυλακή Αϊούντ ύστερα από διωγμούς για την πίστη του."
+        ],
+        "source": "Ρουμανική Ορθόδοξη Εκκλησία",
+        "sourceUrl": "https://basilica.ro/en/synodal-decree-of-the-romanian-orthodox-church-for-canonization-of-20th-century-saints/"
+      }
+    },
+    {
+      "rankId": "neomartyres",
+      "saint": {
+        "id": "irakleios-vissarabia",
+        "name": "Ἅγιος Ἡράκλειος τῆς Βεσσαραβίας",
+        "nameEnglish": "Heraclius of Bessarabia",
+        "feast": "3 Αὐγούστου",
+        "icon": "",
+        "rankTitle": "Ἱερομάρτυς",
+        "bio": [
+          "Ρουμάνος κληρικός της Βεσσαραβίας που υπέστη διωγμό και μαρτύρησε για την πίστη του κατά τον εικοστό αιώνα."
+        ],
+        "source": "Ρουμανική Ορθόδοξη Εκκλησία",
+        "sourceUrl": "https://basilica.ro/en/synodal-decree-of-the-romanian-orthodox-church-for-canonization-of-20th-century-saints/"
+      }
+    },
+    {
+      "rankId": "neomartyres",
+      "saint": {
+        "id": "alexandros-vissarabia",
+        "name": "Ἅγιος Ἀλέξανδρος τῆς Βεσσαραβίας",
+        "nameEnglish": "Alexander of Bessarabia",
+        "feast": "8 Αὐγούστου",
+        "icon": "",
+        "rankTitle": "Ἱερομάρτυς",
+        "bio": [
+          "Ρουμάνος κληρικός της Βεσσαραβίας που υπέστη διωγμό και μαρτύρησε για την πίστη του κατά τον εικοστό αιώνα."
+        ],
+        "source": "Ρουμανική Ορθόδοξη Εκκλησία",
+        "sourceUrl": "https://basilica.ro/en/synodal-decree-of-the-romanian-orthodox-church-for-canonization-of-20th-century-saints/"
+      }
+    }
+  ]
+}

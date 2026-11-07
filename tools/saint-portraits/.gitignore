@@ -1,0 +1,7 @@
+attempts/
+generated/
+batch/*.jsonl
+batch/*.result.json
+locks/
+review-cache/
+*.tmp

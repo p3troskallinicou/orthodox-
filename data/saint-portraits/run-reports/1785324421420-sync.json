@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "runAt": "2026-07-29T11:27:01.420Z",
+  "mode": "synchronous",
+  "plannedCost": {
+    "pricingVersion": "openai-gpt-image-2-2026-04-21",
+    "pricingLastVerifiedAt": "2026-07-29",
+    "requestedCount": 1,
+    "plannedCount": 1,
+    "stoppedByCeiling": false,
+    "estimatedTotalUsd": 0.231673,
+    "hardCeilingUsd": 1,
+    "dimensions": "1024x1536",
+    "quality": "high",
+    "outputsPerRequest": 1,
+    "items": [
+      {
+        "saintId": "antonios-megas",
+        "pricingVersion": "openai-gpt-image-2-2026-04-21",
+        "lastVerifiedAt": "2026-07-29",
+        "mode": "synchronous",
+        "referenceImageCount": 4,
+        "estimatedTextInputTokens": 1091,
+        "estimatedImageInputTokens": 5000,
+        "estimatedImageOutputTokens": 5200,
+        "safetyMultiplier": 1.15,
+        "discountMultiplier": 1,
+        "estimatedUsd": 0.231673
+      }
+    ]
+  },
+  "results": [
+    {
+      "saintId": "antonios-megas",
+      "attemptId": "antonios-megas-1785324421400-a41ca2f0",
+      "status": "failed",
+      "error": {
+        "message": "The optional `openai` package is not installed. Run `npm install` before an authorised production request.",
+        "status": null,
+        "code": null,
+        "retryable": false
+      }
+    }
+  ]
+}

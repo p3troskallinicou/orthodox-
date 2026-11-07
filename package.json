@@ -1,0 +1,18 @@
+{
+  "name": "klimax-repository-tools",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "saints:inventory": "node tools/saint-portraits/cli.mjs inventory",
+    "saints:manifest": "node tools/saint-portraits/cli.mjs manifest",
+    "saints:generate": "node tools/saint-portraits/cli.mjs generate",
+    "saints:batch": "node tools/saint-portraits/cli.mjs batch",
+    "saints:review": "node tools/saint-portraits/cli.mjs review",
+    "saints:publish": "node tools/saint-portraits/cli.mjs publish",
+    "saints:rollback": "node tools/saint-portraits/cli.mjs rollback",
+    "test:saint-portraits": "SAINT_PIPELINE_TEST_MODE=1 node --test tools/saint-portraits/test/*.test.mjs"
+  },
+  "optionalDependencies": {
+    "openai": "^6.0.0"
+  }
+}

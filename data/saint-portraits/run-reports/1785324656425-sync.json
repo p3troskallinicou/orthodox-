@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "runAt": "2026-07-29T11:30:56.425Z",
+  "mode": "synchronous",
+  "plannedCost": {
+    "pricingVersion": "openai-gpt-image-2-2026-04-21",
+    "pricingLastVerifiedAt": "2026-07-29",
+    "requestedCount": 1,
+    "plannedCount": 1,
+    "stoppedByCeiling": false,
+    "estimatedTotalUsd": 0.231673,
+    "hardCeilingUsd": 1,
+    "dimensions": "1024x1536",
+    "quality": "high",
+    "outputsPerRequest": 1,
+    "items": [
+      {
+        "saintId": "antonios-megas",
+        "pricingVersion": "openai-gpt-image-2-2026-04-21",
+        "lastVerifiedAt": "2026-07-29",
+        "mode": "synchronous",
+        "referenceImageCount": 4,
+        "estimatedTextInputTokens": 1091,
+        "estimatedImageInputTokens": 5000,
+        "estimatedImageOutputTokens": 5200,
+        "safetyMultiplier": 1.15,
+        "discountMultiplier": 1,
+        "estimatedUsd": 0.231673
+      }
+    ]
+  },
+  "results": [
+    {
+      "saintId": "antonios-megas",
+      "attemptId": "antonios-megas-1785324653917-e9cf2703",
+      "status": "failed",
+      "error": {
+        "message": "400 Invalid file 'image[0]': unsupported mimetype ('application/octet-stream'). Supported file formats are 'image/jpeg', 'image/png', and 'image/webp'.",
+        "status": 400,
+        "code": "unsupported_file_mimetype",
+        "retryable": false
+      }
+    }
+  ]
+}
