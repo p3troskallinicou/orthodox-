@@ -2,7 +2,7 @@
   {
     "id": "porfyrios-01",
     "originalFilename": "Agios_Porphyrios.jpg",
-    "cardUse": false
+    "cardUse": true
   },
   {
     "id": "porfyrios-02",
@@ -12,12 +12,12 @@
   {
     "id": "porfyrios-03",
     "originalFilename": "Porphyrios ieromonahos Kafsokalyvitis11.jpg",
-    "cardUse": false
+    "cardUse": true
   },
   {
     "id": "porfyrios-04",
     "originalFilename": "Porphyrios ieromonahos Kafsokalyvitis1.jpg",
-    "cardUse": false
+    "cardUse": true
   },
   {
     "id": "porfyrios-05",
@@ -27,11 +27,11 @@
   {
     "id": "porfyrios-06",
     "originalFilename": "porfyrios.jpg",
-    "cardUse": false
+    "cardUse": true
   },
   {
     "id": "porfyrios-07",
     "originalFilename": "Porphyrios ieromonahos Kafsokalyvitis10.jpg",
-    "cardUse": false
+    "cardUse": true
   }
 ]

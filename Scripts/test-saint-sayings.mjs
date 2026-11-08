@@ -39,13 +39,22 @@ for (const saying of catalog.sayings) {
   assert(catalog.photos.some(p => p.id === saying.photoID));
 }
 const portraitIDs = new Set(porfyrios.map(s => s.photoID));
+assert.equal(portraitIDs.size, 7, 'Use all seven supplied images');
+for (const category of supplied.categories) {
+  const rows = porfyrios.filter(s => s.categoryID === category.id);
+  assert.equal(new Set(rows.map(s => s.photoID)).size, rows.length, 'No repeated photos inside a topic');
+}
 for (const id of portraitIDs) {
   const photo = catalog.photos.find(p => p.id === id);
   assert(photo && photo.textStart > 0 && photo.textStart < 1);
-  for (const [width, height] of [[150,168],[175,262],[362,319],[386,685],[600,800]]) {
-    const start = Math.min(height, photo.height * Math.max(width/photo.width,height/photo.height) * photo.textStart);
-    assert(height - start >= 25, 'Every assigned card needs visible text below the face');
-    if (height >= 685) assert(height - start - 94 >= 100, 'Reader text must clear the face and bottom controls');
+  for (const width of [150,175,362,386,600]) {
+    const height = width * photo.height / photo.width;
+    const start = height * photo.textStart;
+    assert(height - start >= 25, 'Natural-aspect photos must leave room for a quote excerpt');
+  }
+  for (const height of [600,685,800]) {
+    const imageHeight = Math.min(height * 0.48, 386 * photo.height / photo.width);
+    assert(height - 70 - 82 - imageHeight >= 100, 'Reader retains a usable scroll area below the photo');
   }
 }
 let imageBytes = 0;
@@ -67,7 +76,8 @@ assert(catalog.isValid)
 assert(catalog.filtered(saintID: "porfyrios", categoryID: nil, query: "").count == 33)
 for saying in catalog.filtered(saintID: "porfyrios", categoryID: nil, query: "") {
     let photo = catalog.photo(for: saying)
-    for size in [CGSize(width: 175, height: 262), CGSize(width: 386, height: 685)] {
+    for width in [175.0, 386.0] {
+        let size = CGSize(width: width, height: width * photo.height / photo.width)
         let region = photo.textRegion(in: size)
         assert(region.minY > 0 && region.maxY <= size.height)
         assert(region.height >= 25)
@@ -112,6 +122,9 @@ assert.equal(result.status, 0);
 }
 const ui = readFileSync('Klimax/SaintSayingsView.swift', 'utf8');
 assert(ui.includes('PrayerInvitationCardLayout(viewport:'));
+assert(ui.includes('Picker("Κατηγορία", selection: $categoryID)'));
+assert(!ui.includes('if showCategory'));
+assert(ui.includes('sayings.category.menu'));
 assert(ui.includes('.presentationBackground(.clear)'));
 assert(ui.includes('ForEach(sayings) { saying in'), 'Native left swipe must move forward in collection order');
 assert(!ui.includes('sayings.reversed()'), 'Do not invert the page animation relative to the swipe');

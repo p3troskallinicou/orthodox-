@@ -102,29 +102,30 @@ private struct SaintSayingsGallery: View {
     }
 
     private var categories: some View {
-        ScrollView(.horizontal, showsIndicators: false) {
-            HStack(spacing: 8) {
-                categoryButton("Όλα", id: nil, symbol: "square.grid.2x2")
+        Menu {
+            Picker("Κατηγορία", selection: $categoryID) {
+                Text("Όλες οι κατηγορίες").tag(nil as String?)
                 ForEach(saintCategories) { category in
-                    categoryButton(category.shortTitle, id: category.id, symbol: category.symbol)
+                    Text(category.title).tag(Optional(category.id))
                 }
             }
-        }
-        .contentMargins(.trailing, 2)
-    }
-
-    private func categoryButton(_ title: String, id: String?, symbol: String) -> some View {
-        Button {
-            withAnimation(reduceMotion ? nil : .easeInOut(duration: 0.2)) { categoryID = id }
         } label: {
-            Label(title, systemImage: symbol).font(.system(size: 12, weight: .semibold))
-                .padding(.horizontal, 13).padding(.vertical, 10)
-                .foregroundStyle(categoryID == id ? Color.white : Paper.ink)
-                .background(categoryID == id ? Paper.gold : Paper.card, in: Capsule())
+            HStack(spacing: 10) {
+                Image(systemName: "line.3.horizontal.decrease").foregroundStyle(Paper.gold)
+                Text(saintCategories.first { $0.id == categoryID }?.title ?? "Όλες οι κατηγορίες")
+                    .multilineTextAlignment(.leading)
+                Spacer(minLength: 8)
+                Image(systemName: "chevron.down").foregroundStyle(Paper.gold)
+            }
+            .font(.subheadline)
+            .foregroundStyle(Paper.ink)
+            .padding(14)
+            .background(Paper.card, in: RoundedRectangle(cornerRadius: 16))
+            .overlay(RoundedRectangle(cornerRadius: 16).stroke(Paper.hairline, lineWidth: 0.5))
         }
-        .buttonStyle(.plain)
-        .accessibilityAddTraits(categoryID == id ? .isSelected : [])
-        .accessibilityIdentifier("sayings.category.\(id ?? "all")")
+        .accessibilityLabel("Κατηγορία")
+        .accessibilityValue(saintCategories.first { $0.id == categoryID }?.title ?? "Όλες οι κατηγορίες")
+        .accessibilityIdentifier("sayings.category.menu")
     }
 
     @ViewBuilder private func mosaic(width: CGFloat) -> some View {
@@ -158,36 +159,40 @@ private struct SaintSayingsGallery: View {
     private func tile(_ saying: SaintSaying, width: CGFloat, height: CGFloat, prominent: Bool, sayings: [SaintSaying]) -> some View {
         Button { selection = SayingSelection(id: saying.id, sayings: sayings) } label: {
             let photo = catalog.photo(for: saying)
-            let region = photo.textRegion(in: CGSize(width: width, height: height))
-            let textHeight = max(0, region.height - 10)
+            // Preserve the supplied portrait composition, including signatures.
+            // Native aspect ratio gives every photo a predictable safe text area.
+            let artworkHeight = photo.textStart == nil ? height : width * photo.height / photo.width
+            let region = photo.textRegion(in: CGSize(width: width, height: artworkHeight))
+            let textHeight = max(0, region.height - 8)
             let fontSize: CGFloat = prominent ? 24 : 17
-            let inset: CGFloat = photo.textStart == nil ? (prominent ? 22 : 14)
-                : min(prominent ? 22 : 14, max(6, textHeight - fontSize * 1.3))
-            let showCategory = textHeight > 110
-            let lines = max(1, Int((textHeight - inset - (showCategory ? 26 : 0)) / (fontSize * 1.3)))
-            ZStack(alignment: .topLeading) {
-                SayingArtwork(photo: photo)
-                VStack(alignment: .leading, spacing: prominent ? 12 : 8) {
-                    if showCategory {
-                        Text(catalog.category(for: saying).shortTitle.uppercased())
-                            .font(.system(size: 9, weight: .semibold)).tracking(1.4)
-                            .foregroundStyle(.white.opacity(0.8))
-                    }
+            let inset: CGFloat = min(prominent ? 22 : 14, max(4, textHeight - fontSize * 1.3))
+            let lines = max(1, Int((textHeight - inset) / (fontSize * 1.3)))
+            VStack(spacing: 0) {
+                ZStack(alignment: .topLeading) {
+                    SayingArtwork(photo: photo)
                     Text(saying.text)
                         .font(.system(size: fontSize, weight: .medium, design: .serif))
                         .lineSpacing(prominent ? 2 : 1)
                         .lineLimit(lines)
                         .foregroundStyle(.white)
+                        .shadow(color: .black.opacity(0.25), radius: 2, y: 1)
+                        .padding(.horizontal, inset).padding(.top, inset)
+                        .frame(width: width, height: textHeight, alignment: .topLeading)
+                        .clipped()
+                        .offset(y: region.minY)
                 }
-                .shadow(color: .black.opacity(0.25), radius: 2, y: 1)
-                .padding(.horizontal, inset).padding(.top, inset)
-                .frame(height: textHeight, alignment: .topLeading)
-                .clipped()
-                .offset(y: region.minY)
+                .frame(width: width, height: artworkHeight)
+                Label(catalog.category(for: saying).title, systemImage: catalog.category(for: saying).symbol)
+                    .font(.system(size: prominent ? 13 : 11))
+                    .foregroundStyle(Paper.ink)
+                    .fixedSize(horizontal: false, vertical: true)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.horizontal, 12).padding(.vertical, 11)
+                    .background(Paper.card)
             }
-            .frame(width: width, height: height)
+            .frame(width: width)
             .clipShape(RoundedRectangle(cornerRadius: prominent ? 27 : 23, style: .continuous))
-            .overlay(RoundedRectangle(cornerRadius: prominent ? 27 : 23).stroke(.white.opacity(0.14), lineWidth: 0.5))
+            .overlay(RoundedRectangle(cornerRadius: prominent ? 27 : 23).stroke(Paper.hairline, lineWidth: 0.5))
         }
         .buttonStyle(CalmCardStyle())
         .accessibilityElement(children: .ignore)
@@ -325,7 +330,45 @@ private struct SaintSayingReader: View {
         .accessibilityAction(.escape) { dismiss() }
     }
 
-    private func readerPage(_ saying: SaintSaying, size: CGSize) -> some View {
+    @ViewBuilder private func readerPage(_ saying: SaintSaying, size: CGSize) -> some View {
+        if catalog.photo(for: saying).textStart != nil {
+            portraitReaderPage(saying, size: size)
+        } else {
+            originalReaderPage(saying, size: size)
+        }
+    }
+
+    private func portraitReaderPage(_ saying: SaintSaying, size: CGSize) -> some View {
+        let photo = catalog.photo(for: saying)
+        let imageHeight = min(size.height * 0.48, size.width * photo.height / photo.width)
+        return VStack(spacing: 0) {
+            Image(photo.asset).resizable().scaledToFit()
+                .frame(width: size.width, height: imageHeight)
+                .background(Paper.bg)
+                .accessibilityHidden(true)
+            ScrollView {
+                VStack(alignment: .leading, spacing: 12) {
+                    Label(catalog.category(for: saying).title, systemImage: catalog.category(for: saying).symbol)
+                        .font(.subheadline).foregroundStyle(Paper.gold)
+                    Text(saying.text)
+                        .font(.system(.title2, design: .serif, weight: .medium))
+                        .lineSpacing(5).foregroundStyle(Paper.ink)
+                        .fixedSize(horizontal: false, vertical: true)
+                        .accessibilityIdentifier("sayings.reader.text")
+                }
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding(24)
+            }
+            .onScrollGeometryChange(for: Bool.self) { $0.contentOffset.y <= 0 } action: { _, atTop in
+                if saying.id == currentID { textAtTop = atTop }
+            }
+        }
+        .padding(.top, 70).padding(.bottom, 82)
+        .frame(width: size.width, height: size.height)
+        .background(Paper.card)
+    }
+
+    private func originalReaderPage(_ saying: SaintSaying, size: CGSize) -> some View {
         let photo = catalog.photo(for: saying)
         let region = photo.textRegion(in: size)
         let textHeight = region.height - 14
