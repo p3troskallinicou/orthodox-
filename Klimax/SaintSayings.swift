@@ -36,6 +36,18 @@ struct SayingPhoto: Codable, Identifiable {
     let subjectTop: Double
     let width: Double
     let height: Double
+    /// Optional lower text region for portraits with no headroom. Measured in
+    /// source-image coordinates below the faces, before the top-aligned crop.
+    let textStart: Double?
+
+    func textRegion(in size: CGSize) -> CGRect {
+        guard let textStart else {
+            return CGRect(x: 0, y: 0, width: size.width, height: textBoundary(in: size))
+        }
+        let scale = max(size.width / width, size.height / height)
+        let start = min(size.height, height * scale * textStart)
+        return CGRect(x: 0, y: start, width: size.width, height: max(0, size.height - start))
+    }
 
     func textBoundary(in size: CGSize) -> CGFloat {
         let scale = max(size.width / width, size.height / height)
@@ -61,19 +73,39 @@ struct SaintSayingsCatalog: Codable {
     var isValid: Bool {
         !saints.isEmpty && !categories.isEmpty && !photos.isEmpty &&
         Set(sayings.map(\.id)).count == sayings.count &&
-        photos.allSatisfy { (0...0.8).contains($0.subjectTop) && $0.width > 0 && $0.height > 0 } &&
+        photos.allSatisfy {
+            (0...0.8).contains($0.subjectTop) && $0.width > 0 && $0.height > 0 &&
+            ($0.textStart.map { (0..<1).contains($0) } ?? true)
+        } &&
         sayings.allSatisfy { saying in
             !saying.text.isEmpty && saints.contains { $0.id == saying.saintID } &&
             categories.contains { $0.id == saying.categoryID } && photos.contains { $0.id == saying.photoID }
         }
     }
 
+    func categories(for saintID: String) -> [SayingCategory] {
+        let ids = Set(sayings.filter { $0.saintID == saintID }.map(\.categoryID))
+        return categories.filter { ids.contains($0.id) }
+    }
+
     func filtered(saintID: String, categoryID: String?, query: String) -> [SaintSaying] {
+        collection(saintID: saintID, categoryID: categoryID, query: query)
+    }
+
+    /// Filtering preserves the supplied shuffle order instead of grouping saints.
+    func collection(saintID: String? = nil, categoryID: String? = nil, query: String = "", favoriteIDs: Set<String>? = nil, order: [String]? = nil) -> [SaintSaying] {
         let words = Self.searchKey(query).split(separator: " ")
+        let positions = Dictionary((order ?? []).enumerated().map { ($0.element, $0.offset) }, uniquingKeysWith: { min($0, $1) })
         return sayings.filter { saying in
-            saying.saintID == saintID && (categoryID == nil || saying.categoryID == categoryID) &&
+            (saintID == nil || saying.saintID == saintID) &&
+            (favoriteIDs.map { $0.contains(saying.id) } ?? true) &&
+            (categoryID == nil || saying.categoryID == categoryID) &&
             words.allSatisfy { Self.searchKey(saying.text).contains($0) }
         }.sorted { a, b in
+            if order != nil {
+                let left = positions[a.id] ?? Int.max, right = positions[b.id] ?? Int.max
+                return left == right ? a.id < b.id : left < right
+            }
             if a.featured != b.featured { return a.featured }
             return a.id < b.id
         }
@@ -87,4 +119,17 @@ struct SaintSayingsCatalog: Codable {
     func photo(for saying: SaintSaying) -> SayingPhoto { photos.first { $0.id == saying.photoID } ?? photos[0] }
     func saint(for saying: SaintSaying) -> SayingSaint { saints.first { $0.id == saying.saintID } ?? saints[0] }
     func category(for saying: SaintSaying) -> SayingCategory { categories.first { $0.id == saying.categoryID } ?? categories[0] }
+}
+
+/// Local, versioned favourites. Unknown IDs are harmless and never alter content.
+enum SaintSayingFavorites {
+    static let storageKey = "klimax.saintSayings.favoriteIDs.v1"
+
+    static func decode(_ data: Data) -> Set<String> {
+        Set((try? JSONDecoder().decode([String].self, from: data)) ?? [])
+    }
+
+    static func encode(_ ids: Set<String>) -> Data {
+        (try? JSONEncoder().encode(ids.sorted())) ?? Data()
+    }
 }

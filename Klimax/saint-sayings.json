@@ -8,6 +8,13 @@
       "shortName": "Άγιος Παΐσιος",
       "subtitle": "Ο Αγιορείτης",
       "photoID": "paisios-07"
+    },
+    {
+      "id": "porfyrios",
+      "name": "Όσιος Πορφύριος ο Καυσοκαλυβίτης",
+      "shortName": "Όσιος Πορφύριος",
+      "subtitle": "Ο Καυσοκαλυβίτης",
+      "photoID": "porfyrios-05"
     }
   ],
   "categories": [
@@ -34,6 +41,54 @@
       "title": "Λογισμοί και εσωτερική ειρήνη",
       "shortTitle": "Λογισμοί",
       "symbol": "sun.horizon"
+    },
+    {
+      "id": "porfyrios-soul-peace",
+      "title": "Ψυχή και εσωτερική γαλήνη",
+      "shortTitle": "Γαλήνη",
+      "symbol": "sun.horizon"
+    },
+    {
+      "id": "porfyrios-facing-evil",
+      "title": "Αντιμετώπιση του κακού",
+      "shortTitle": "Το κακό",
+      "symbol": "lightbulb"
+    },
+    {
+      "id": "porfyrios-love-christ-neighbour",
+      "title": "Αγάπη προς τον Χριστό και τον συνάνθρωπο",
+      "shortTitle": "Αγάπη",
+      "symbol": "heart"
+    },
+    {
+      "id": "porfyrios-prayer-trust",
+      "title": "Προσευχή και εμπιστοσύνη",
+      "shortTitle": "Προσευχή",
+      "symbol": "hands.sparkles"
+    },
+    {
+      "id": "porfyrios-children-family",
+      "title": "Παιδιά και οικογένεια",
+      "shortTitle": "Οικογένεια",
+      "symbol": "figure.2.and.child.holdinghands"
+    },
+    {
+      "id": "porfyrios-humility-grace",
+      "title": "Ταπείνωση και χάρη του Θεού",
+      "shortTitle": "Ταπείνωση",
+      "symbol": "leaf"
+    },
+    {
+      "id": "porfyrios-christian-life",
+      "title": "Χριστιανική ζωή και πνευματικός αγώνας",
+      "shortTitle": "Πνευματική ζωή",
+      "symbol": "cross"
+    },
+    {
+      "id": "porfyrios-illness-trials",
+      "title": "Ασθένεια και δοκιμασίες",
+      "shortTitle": "Δοκιμασίες",
+      "symbol": "cross.case"
     }
   ],
   "photos": [
@@ -92,6 +147,62 @@
       "subjectTop": 0.04,
       "width": 1029,
       "height": 1440
+    },
+    {
+      "id": "porfyrios-01",
+      "asset": "SaintSayingPorfyrios01",
+      "subjectTop": 0,
+      "textStart": 0.67,
+      "width": 833,
+      "height": 1387
+    },
+    {
+      "id": "porfyrios-02",
+      "asset": "SaintSayingPorfyrios02",
+      "subjectTop": 0,
+      "textStart": 0.5,
+      "width": 708,
+      "height": 1028
+    },
+    {
+      "id": "porfyrios-03",
+      "asset": "SaintSayingPorfyrios03",
+      "subjectTop": 0,
+      "textStart": 0.81,
+      "width": 744,
+      "height": 1041
+    },
+    {
+      "id": "porfyrios-04",
+      "asset": "SaintSayingPorfyrios04",
+      "subjectTop": 0,
+      "textStart": 0.68,
+      "width": 744,
+      "height": 910
+    },
+    {
+      "id": "porfyrios-05",
+      "asset": "SaintSayingPorfyrios05",
+      "subjectTop": 0,
+      "textStart": 0.54,
+      "width": 794,
+      "height": 959
+    },
+    {
+      "id": "porfyrios-06",
+      "asset": "SaintSayingPorfyrios06",
+      "subjectTop": 0,
+      "textStart": 0.72,
+      "width": 950,
+      "height": 624
+    },
+    {
+      "id": "porfyrios-07",
+      "asset": "SaintSayingPorfyrios07",
+      "subjectTop": 0,
+      "textStart": 0.64,
+      "width": 708,
+      "height": 1028
     }
   ],
   "sayings": [
@@ -586,6 +697,402 @@
       "sourceChecked": false,
       "featured": false,
       "photoID": "paisios-02"
+    },
+    {
+      "id": "porfyrios-0001",
+      "saintID": "porfyrios",
+      "categoryID": "porfyrios-soul-peace",
+      "text": "Όταν η ψυχή είναι ταραγμένη, θολώνει το λογικό και δε βλέπει καθαρά. Μόνο, όταν η ψυχή είναι ήρεμη, φωτίζει το λογικό, για να βλέπει καθαρά την αιτία κάθε πράγματος.",
+      "source": "Ορθόδοξοι Ορίζοντες · Αποφθέγματα Β΄",
+      "sourceNote": "Καταχώριση από το porfyrios_apofthgmata_elegxos.pdf · αναφορά πρωτότυπου PDF: σελ. 3. Η διατύπωση δεν έχει αντιπαραβληθεί με το αρχικό PDF.",
+      "sourceStatus": "Εκκρεμεί έλεγχος πρωτοτύπου",
+      "sourceChecked": false,
+      "featured": false,
+      "photoID": "porfyrios-01"
+    },
+    {
+      "id": "porfyrios-0002",
+      "saintID": "porfyrios",
+      "categoryID": "porfyrios-soul-peace",
+      "text": "Η ψυχή είναι πολύ βαθιά και μόνο ο Θεός τη γνωρίζει.",
+      "source": "Ορθόδοξοι Ορίζοντες · Αποφθέγματα Β΄",
+      "sourceNote": "Καταχώριση από το porfyrios_apofthgmata_elegxos.pdf · αναφορά πρωτότυπου PDF: σελ. 3. Η διατύπωση δεν έχει αντιπαραβληθεί με το αρχικό PDF.",
+      "sourceStatus": "Εκκρεμεί έλεγχος πρωτοτύπου",
+      "sourceChecked": false,
+      "featured": false,
+      "photoID": "porfyrios-02"
+    },
+    {
+      "id": "porfyrios-0003",
+      "saintID": "porfyrios",
+      "categoryID": "porfyrios-facing-evil",
+      "text": "Γιατί να κυνηγάμε τα σκοτάδια; Να, θα ανάψουμε το φως και τα σκοτάδια θα φύγουν μόνα τους. Θα αφήσουμε να κατοικήσει σ' όλη την ψυχή μας ο Χριστός και τα δαιμόνια θα φύγουν μόνα τους.",
+      "source": "Ορθόδοξοι Ορίζοντες · Αποφθέγματα Β΄",
+      "sourceNote": "Καταχώριση από το porfyrios_apofthgmata_elegxos.pdf · αναφορά πρωτότυπου PDF: σελ. 3. Η διατύπωση δεν έχει αντιπαραβληθεί με το αρχικό PDF.",
+      "sourceStatus": "Εκκρεμεί έλεγχος πρωτοτύπου",
+      "sourceChecked": false,
+      "featured": false,
+      "photoID": "porfyrios-03"
+    },
+    {
+      "id": "porfyrios-0004",
+      "saintID": "porfyrios",
+      "categoryID": "porfyrios-love-christ-neighbour",
+      "text": "Όταν έρθει μέσα μας ο Χριστός, τότε ζούμε μόνο το καλό, την αγάπη για όλο τον κόσμο. Το κακό, η αμαρτία, το μίσος εξαφανίζονται μόνα τους, δεν μπορούν, δεν έχουν θέση, να μείνουν.",
+      "source": "Ορθόδοξοι Ορίζοντες · Αποφθέγματα Β΄",
+      "sourceNote": "Καταχώριση από το porfyrios_apofthgmata_elegxos.pdf · αναφορά πρωτότυπου PDF: σελ. 3. Η διατύπωση δεν έχει αντιπαραβληθεί με το αρχικό PDF.",
+      "sourceStatus": "Εκκρεμεί έλεγχος πρωτοτύπου",
+      "sourceChecked": false,
+      "featured": false,
+      "photoID": "porfyrios-04"
+    },
+    {
+      "id": "porfyrios-0005",
+      "saintID": "porfyrios",
+      "categoryID": "porfyrios-love-christ-neighbour",
+      "text": "Να μην ενδιαφέρεσαι αν σε αγαπούν, αλλά αν εσύ αγαπάς το Χριστό και τους ανθρώπους. Μόνο έτσι γεμίζει η ψυχή.",
+      "source": "Ορθόδοξοι Ορίζοντες · Αποφθέγματα Β΄",
+      "sourceNote": "Καταχώριση από το porfyrios_apofthgmata_elegxos.pdf · αναφορά πρωτότυπου PDF: σελ. 3. Η διατύπωση δεν έχει αντιπαραβληθεί με το αρχικό PDF.",
+      "sourceStatus": "Εκκρεμεί έλεγχος πρωτοτύπου",
+      "sourceChecked": false,
+      "featured": false,
+      "photoID": "porfyrios-05"
+    },
+    {
+      "id": "porfyrios-0006",
+      "saintID": "porfyrios",
+      "categoryID": "porfyrios-soul-peace",
+      "text": "Στην ψυχή, που όλος ο χώρος της είναι κατειλημμένος από το Χριστό, δεν μπορεί να μπει και να κατοικήσει ο διάβολος, όσο κι αν προσπαθήσει, διότι δεν χωράει, δεν υπάρχει κενή θέση γι' αυτόν.",
+      "source": "Ορθόδοξοι Ορίζοντες · Αποφθέγματα Β΄",
+      "sourceNote": "Καταχώριση από το porfyrios_apofthgmata_elegxos.pdf · αναφορά πρωτότυπου PDF: σελ. 3. Η διατύπωση δεν έχει αντιπαραβληθεί με το αρχικό PDF.",
+      "sourceStatus": "Εκκρεμεί έλεγχος πρωτοτύπου",
+      "sourceChecked": false,
+      "featured": false,
+      "photoID": "porfyrios-06"
+    },
+    {
+      "id": "porfyrios-0007",
+      "saintID": "porfyrios",
+      "categoryID": "porfyrios-facing-evil",
+      "text": "Ο σκοπός μας δεν είναι να καταδικάζουμε το κακό, αλλά να το διορθώνουμε. Με την καταδίκη ο άνθρωπος μπορεί να χαθεί, με την κατανόηση και βοήθεια θα σωθεί.",
+      "source": "Ορθόδοξοι Ορίζοντες · Αποφθέγματα Β΄",
+      "sourceNote": "Καταχώριση από το porfyrios_apofthgmata_elegxos.pdf · αναφορά πρωτότυπου PDF: σελ. 3. Η διατύπωση δεν έχει αντιπαραβληθεί με το αρχικό PDF.",
+      "sourceStatus": "Εκκρεμεί έλεγχος πρωτοτύπου",
+      "sourceChecked": false,
+      "featured": false,
+      "photoID": "porfyrios-07"
+    },
+    {
+      "id": "porfyrios-0008",
+      "saintID": "porfyrios",
+      "categoryID": "porfyrios-facing-evil",
+      "text": "Το κακό αρχίζει από τις κακές σκέψεις. Όταν πικραίνεσαι και αγανακτείς, έστω μόνο με τη σκέψη, χαλάς την πνευματική ατμόσφαιρα. Εμποδίζεις το Άγιο Πνεύμα να ενεργήσει και επιτρέπεις στο διάβολο να μεγαλώσει το κακό. Εσύ πάντοτε να προσεύχεσαι, να αγαπάς και να συγχωρείς, διώχνοντας από μέσα σου κάθε κακό λογισμό.",
+      "source": "Ορθόδοξοι Ορίζοντες · Αποφθέγματα Β΄",
+      "sourceNote": "Καταχώριση από το porfyrios_apofthgmata_elegxos.pdf · αναφορά πρωτότυπου PDF: σελ. 3. Η διατύπωση δεν έχει αντιπαραβληθεί με το αρχικό PDF.",
+      "sourceStatus": "Εκκρεμεί έλεγχος πρωτοτύπου",
+      "sourceChecked": false,
+      "featured": false,
+      "photoID": "porfyrios-01"
+    },
+    {
+      "id": "porfyrios-0009",
+      "saintID": "porfyrios",
+      "categoryID": "porfyrios-love-christ-neighbour",
+      "text": "Ο άνθρωπος του Χριστού πρέπει ν' αγαπήσει το Χριστό, κι όταν αγαπήσει το Χριστό, απαλλάσσεται απ' το διάβολο, από την κόλαση και από το θάνατο.",
+      "source": "Ορθόδοξοι Ορίζοντες · Αποφθέγματα Β΄",
+      "sourceNote": "Καταχώριση από το porfyrios_apofthgmata_elegxos.pdf · αναφορά πρωτότυπου PDF: σελ. 3. Η διατύπωση δεν έχει αντιπαραβληθεί με το αρχικό PDF.",
+      "sourceStatus": "Εκκρεμεί έλεγχος πρωτοτύπου",
+      "sourceChecked": false,
+      "featured": false,
+      "photoID": "porfyrios-02"
+    },
+    {
+      "id": "porfyrios-0010",
+      "saintID": "porfyrios",
+      "categoryID": "porfyrios-prayer-trust",
+      "text": "Να προσεύχεσαι χωρίς αγωνία, ήρεμα, με εμπιστοσύνη στην αγάπη και την πρόνοια του Θεού.",
+      "source": "Ορθόδοξοι Ορίζοντες · Αποφθέγματα Β΄",
+      "sourceNote": "Καταχώριση από το porfyrios_apofthgmata_elegxos.pdf · αναφορά πρωτότυπου PDF: σελ. 3. Η διατύπωση δεν έχει αντιπαραβληθεί με το αρχικό PDF.",
+      "sourceStatus": "Εκκρεμεί έλεγχος πρωτοτύπου",
+      "sourceChecked": false,
+      "featured": false,
+      "photoID": "porfyrios-03"
+    },
+    {
+      "id": "porfyrios-0011",
+      "saintID": "porfyrios",
+      "categoryID": "porfyrios-children-family",
+      "text": "Δεν πρέπει να πολεμάτε τα παιδιά σας, αλλά τον σατανά που πολεμά τα παιδιά σας. Να τους λέτε λίγα λόγια και να κάνετε πολλή προσευχή.",
+      "source": "Ορθόδοξοι Ορίζοντες · Αποφθέγματα Β΄",
+      "sourceNote": "Καταχώριση από το porfyrios_apofthgmata_elegxos.pdf · αναφορά πρωτότυπου PDF: σελ. 3. Η διατύπωση δεν έχει αντιπαραβληθεί με το αρχικό PDF.",
+      "sourceStatus": "Εκκρεμεί έλεγχος πρωτοτύπου",
+      "sourceChecked": false,
+      "featured": false,
+      "photoID": "porfyrios-04"
+    },
+    {
+      "id": "porfyrios-0012",
+      "saintID": "porfyrios",
+      "categoryID": "porfyrios-children-family",
+      "text": "Η προσευχή κάνει θαύματα. Δεν πρέπει η μητέρα να αρκείται στο αίσθημα χάδι στο παιδί της, αλλά να ασκείται στο πνευματικό χάδι της προσευχής.",
+      "source": "Ορθόδοξοι Ορίζοντες · Αποφθέγματα Β΄",
+      "sourceNote": "Καταχώριση από το porfyrios_apofthgmata_elegxos.pdf · αναφορά πρωτότυπου PDF: σελ. 3. Η διατύπωση δεν έχει αντιπαραβληθεί με το αρχικό PDF.",
+      "sourceStatus": "Εκκρεμεί έλεγχος πρωτοτύπου",
+      "sourceChecked": false,
+      "featured": false,
+      "photoID": "porfyrios-05"
+    },
+    {
+      "id": "porfyrios-0013",
+      "saintID": "porfyrios",
+      "categoryID": "porfyrios-children-family",
+      "text": "Η σωτηρία του παιδιού σας περνάει μέσα από τον εξαγιασμό το δικό σας.",
+      "source": "Ορθόδοξοι Ορίζοντες · Αποφθέγματα Β΄",
+      "sourceNote": "Καταχώριση από το porfyrios_apofthgmata_elegxos.pdf · αναφορά πρωτότυπου PDF: σελ. 3. Η διατύπωση δεν έχει αντιπαραβληθεί με το αρχικό PDF.",
+      "sourceStatus": "Εκκρεμεί έλεγχος πρωτοτύπου",
+      "sourceChecked": false,
+      "featured": false,
+      "photoID": "porfyrios-06"
+    },
+    {
+      "id": "porfyrios-0014",
+      "saintID": "porfyrios",
+      "categoryID": "porfyrios-humility-grace",
+      "text": "Ο αγιασμός δεν είναι ακατόρθωτο πράγμα, είναι μάλιστα εύκολος, φθάνει εσείς να αποκτήσετε ταπείνωση και αγάπη.",
+      "source": "Ορθόδοξοι Ορίζοντες · Αποφθέγματα Β΄",
+      "sourceNote": "Καταχώριση από το porfyrios_apofthgmata_elegxos.pdf · αναφορά πρωτότυπου PDF: σελ. 3. Η διατύπωση δεν έχει αντιπαραβληθεί με το αρχικό PDF.",
+      "sourceStatus": "Εκκρεμεί έλεγχος πρωτοτύπου",
+      "sourceChecked": false,
+      "featured": false,
+      "photoID": "porfyrios-07"
+    },
+    {
+      "id": "porfyrios-0015",
+      "saintID": "porfyrios",
+      "categoryID": "porfyrios-christian-life",
+      "text": "Αν θέλεις μπορείς ν' αγιάσεις και μέσα στην Ομόνοια.",
+      "source": "Ορθόδοξοι Ορίζοντες · Αποφθέγματα Β΄",
+      "sourceNote": "Καταχώριση από το porfyrios_apofthgmata_elegxos.pdf · αναφορά πρωτότυπου PDF: σελ. 3. Η διατύπωση δεν έχει αντιπαραβληθεί με το αρχικό PDF.",
+      "sourceStatus": "Εκκρεμεί έλεγχος πρωτοτύπου",
+      "sourceChecked": false,
+      "featured": false,
+      "photoID": "porfyrios-01"
+    },
+    {
+      "id": "porfyrios-0016",
+      "saintID": "porfyrios",
+      "categoryID": "porfyrios-prayer-trust",
+      "text": "Να παρακαλάς το Θεό να συγχωρήσει τις αμαρτίες σου. Κι ο Θεός, επειδή θα τον παρακαλάς πονεμένος και ταπεινωμένος, θα σου συγχωρήσει τις αμαρτίες σου και θα σε κάνει καλά και στο σώμα.",
+      "source": "Ορθόδοξοι Ορίζοντες · Αποφθέγματα Β΄",
+      "sourceNote": "Καταχώριση από το porfyrios_apofthgmata_elegxos.pdf · αναφορά πρωτότυπου PDF: σελ. 3. Η διατύπωση δεν έχει αντιπαραβληθεί με το αρχικό PDF.",
+      "sourceStatus": "Εκκρεμεί έλεγχος πρωτοτύπου",
+      "sourceChecked": false,
+      "featured": false,
+      "photoID": "porfyrios-02"
+    },
+    {
+      "id": "porfyrios-0017",
+      "saintID": "porfyrios",
+      "categoryID": "porfyrios-illness-trials",
+      "text": "Όταν προσεύχεσαι, να ξεχνάς την σωματική σου αρρώστια, να την αποδέχεσαι σαν κανόνα, σαν επιτίμιο, για την άφεση των αμαρτιών σου. Για τα παραπέρα μην ανησυχείς, άφησέ τα στο Θεό κι ο Θεός ξέρει τη δουλειά Του.",
+      "source": "Ορθόδοξοι Ορίζοντες · Αποφθέγματα Β΄",
+      "sourceNote": "Καταχώριση από το porfyrios_apofthgmata_elegxos.pdf · αναφορά πρωτότυπου PDF: σελ. 3. Η διατύπωση δεν έχει αντιπαραβληθεί με το αρχικό PDF.",
+      "sourceStatus": "Εκκρεμεί έλεγχος πρωτοτύπου",
+      "sourceChecked": false,
+      "featured": false,
+      "photoID": "porfyrios-03"
+    },
+    {
+      "id": "porfyrios-0018",
+      "saintID": "porfyrios",
+      "categoryID": "porfyrios-illness-trials",
+      "text": "Οι ασθένειές μας βγάζουν σε καλό, όταν τις υπομένουμε αγόγγυστα, παρακαλώντας το Θεό να μας συγχωρήσει τις αμαρτίες και δοξάζοντας το όνομά Του.",
+      "source": "Ορθόδοξοι Ορίζοντες · Αποφθέγματα Β΄",
+      "sourceNote": "Καταχώριση από το porfyrios_apofthgmata_elegxos.pdf · αναφορά πρωτότυπου PDF: σελ. 3. Η διατύπωση δεν έχει αντιπαραβληθεί με το αρχικό PDF.",
+      "sourceStatus": "Εκκρεμεί έλεγχος πρωτοτύπου",
+      "sourceChecked": false,
+      "featured": false,
+      "photoID": "porfyrios-04"
+    },
+    {
+      "id": "porfyrios-0019",
+      "saintID": "porfyrios",
+      "categoryID": "porfyrios-soul-peace",
+      "text": "Η μεγάλη λύπη και η στενοχώρια δεν είναι από το Θεό, είναι παγίδα του διαβόλου.",
+      "source": "Ορθόδοξοι Ορίζοντες · Αποφθέγματα Β΄",
+      "sourceNote": "Καταχώριση από το porfyrios_apofthgmata_elegxos.pdf · αναφορά πρωτότυπου PDF: σελ. 3. Η διατύπωση δεν έχει αντιπαραβληθεί με το αρχικό PDF.",
+      "sourceStatus": "Εκκρεμεί έλεγχος πρωτοτύπου",
+      "sourceChecked": false,
+      "featured": false,
+      "photoID": "porfyrios-05"
+    },
+    {
+      "id": "porfyrios-0020",
+      "saintID": "porfyrios",
+      "categoryID": "porfyrios-soul-peace",
+      "text": "Να γεμίσεις την ψυχή σου με Χριστό, με θείο έρωτα, με χαρά. Η χαρά του Χριστού θα σε γιατρέψει.",
+      "source": "Ορθόδοξοι Ορίζοντες · Αποφθέγματα Β΄",
+      "sourceNote": "Καταχώριση από το porfyrios_apofthgmata_elegxos.pdf · αναφορά πρωτότυπου PDF: σελ. 3. Η διατύπωση δεν έχει αντιπαραβληθεί με το αρχικό PDF.",
+      "sourceStatus": "Εκκρεμεί έλεγχος πρωτοτύπου",
+      "sourceChecked": false,
+      "featured": false,
+      "photoID": "porfyrios-07"
+    },
+    {
+      "id": "porfyrios-0021",
+      "saintID": "porfyrios",
+      "categoryID": "porfyrios-prayer-trust",
+      "text": "Ο Θεός φροντίζει ακόμη και για τις πιο μικρές λεπτομέρειες της ζωής μας. Δεν αδιαφορεί για μας, δεν είμαστε μόνοι στον κόσμο.",
+      "source": "Ορθόδοξοι Ορίζοντες · Αποφθέγματα Β΄",
+      "sourceNote": "Καταχώριση από το porfyrios_apofthgmata_elegxos.pdf · αναφορά πρωτότυπου PDF: σελ. 3. Η διατύπωση δεν έχει αντιπαραβληθεί με το αρχικό PDF.",
+      "sourceStatus": "Εκκρεμεί έλεγχος πρωτοτύπου",
+      "sourceChecked": false,
+      "featured": false,
+      "photoID": "porfyrios-07"
+    },
+    {
+      "id": "porfyrios-0022",
+      "saintID": "porfyrios",
+      "categoryID": "porfyrios-prayer-trust",
+      "text": "Ο Θεός μάς αγαπάει πολύ, μάς έχει στο νου Του κάθε στιγμή και μάς προστατεύει. Πρέπει να το καταλάβουμε αυτό και να μη φοβούμαστε τίποτε.",
+      "source": "Ορθόδοξοι Ορίζοντες · Αποφθέγματα Β΄",
+      "sourceNote": "Καταχώριση από το porfyrios_apofthgmata_elegxos.pdf · αναφορά πρωτότυπου PDF: σελ. 3. Η διατύπωση δεν έχει αντιπαραβληθεί με το αρχικό PDF.",
+      "sourceStatus": "Εκκρεμεί έλεγχος πρωτοτύπου",
+      "sourceChecked": false,
+      "featured": false,
+      "photoID": "porfyrios-01"
+    },
+    {
+      "id": "porfyrios-0023",
+      "saintID": "porfyrios",
+      "categoryID": "porfyrios-love-christ-neighbour",
+      "text": "Μόνο η χάρη του Θεού, μόνο η αληθινή αγάπη μας, που θυσιάζεται μυστικά για τους άλλους, μπορεί να σώσει και τους άλλους και μάς.",
+      "source": "Ορθόδοξοι Ορίζοντες · Αποφθέγματα Β΄",
+      "sourceNote": "Καταχώριση από το porfyrios_apofthgmata_elegxos.pdf · αναφορά πρωτότυπου PDF: σελ. 3. Η διατύπωση δεν έχει αντιπαραβληθεί με το αρχικό PDF.",
+      "sourceStatus": "Εκκρεμεί έλεγχος πρωτοτύπου",
+      "sourceChecked": false,
+      "featured": false,
+      "photoID": "porfyrios-06"
+    },
+    {
+      "id": "porfyrios-0024",
+      "saintID": "porfyrios",
+      "categoryID": "porfyrios-love-christ-neighbour",
+      "text": "Η αγάπη χρειάζεται θυσίες. Να θυσιάζουμε ταπεινά κάτι δικό μας, που στην πραγματικότητα είναι του Θεού.",
+      "source": "Ορθόδοξοι Ορίζοντες · Αποφθέγματα Β΄",
+      "sourceNote": "Καταχώριση από το porfyrios_apofthgmata_elegxos.pdf · αναφορά πρωτότυπου PDF: σελ. 3. Η διατύπωση δεν έχει αντιπαραβληθεί με το αρχικό PDF.",
+      "sourceStatus": "Εκκρεμεί έλεγχος πρωτοτύπου",
+      "sourceChecked": false,
+      "featured": false,
+      "photoID": "porfyrios-03"
+    },
+    {
+      "id": "porfyrios-0025",
+      "saintID": "porfyrios",
+      "categoryID": "porfyrios-christian-life",
+      "text": "Είναι προτιμότερο ν' αποτύχεις σαν λαϊκός, παρά σαν μοναχός.",
+      "source": "Ορθόδοξοι Ορίζοντες · Αποφθέγματα Β΄",
+      "sourceNote": "Καταχώριση από το porfyrios_apofthgmata_elegxos.pdf · αναφορά πρωτότυπου PDF: σελ. 3. Η διατύπωση δεν έχει αντιπαραβληθεί με το αρχικό PDF.",
+      "sourceStatus": "Εκκρεμεί έλεγχος πρωτοτύπου",
+      "sourceChecked": false,
+      "featured": false,
+      "photoID": "porfyrios-04"
+    },
+    {
+      "id": "porfyrios-0026",
+      "saintID": "porfyrios",
+      "categoryID": "porfyrios-christian-life",
+      "text": "Ο ορθόδοξος ασκητισμός δεν είναι μόνο για τα μοναστήρια, αλλά και για τον κόσμο.",
+      "source": "Ορθόδοξοι Ορίζοντες · Αποφθέγματα Β΄",
+      "sourceNote": "Καταχώριση από το porfyrios_apofthgmata_elegxos.pdf · αναφορά πρωτότυπου PDF: σελ. 4. Η διατύπωση δεν έχει αντιπαραβληθεί με το αρχικό PDF.",
+      "sourceStatus": "Εκκρεμεί έλεγχος πρωτοτύπου",
+      "sourceChecked": false,
+      "featured": false,
+      "photoID": "porfyrios-05"
+    },
+    {
+      "id": "porfyrios-0027",
+      "saintID": "porfyrios",
+      "categoryID": "porfyrios-humility-grace",
+      "text": "Πολλοί λένε ότι η χριστιανική ζωή είναι δυσάρεστη και δύσκολη, εγώ λέω ότι είναι ευχάριστη και εύκολη, αλλά απαιτεί δύο προϋποθέσεις: ταπείνωση και αγάπη.",
+      "source": "Ορθόδοξοι Ορίζοντες · Αποφθέγματα Β΄",
+      "sourceNote": "Καταχώριση από το porfyrios_apofthgmata_elegxos.pdf · αναφορά πρωτότυπου PDF: σελ. 4. Η διατύπωση δεν έχει αντιπαραβληθεί με το αρχικό PDF.",
+      "sourceStatus": "Εκκρεμεί έλεγχος πρωτοτύπου",
+      "sourceChecked": false,
+      "featured": false,
+      "photoID": "porfyrios-06"
+    },
+    {
+      "id": "porfyrios-0028",
+      "saintID": "porfyrios",
+      "categoryID": "porfyrios-humility-grace",
+      "text": "Αν έρθει η χάρη του Θεού, όλοι και όλα αλλάζουν, έλα όμως που για να έρθει, χρειάζεται πρώτα να ταπεινωθούμε!",
+      "source": "Ορθόδοξοι Ορίζοντες · Αποφθέγματα Β΄",
+      "sourceNote": "Καταχώριση από το porfyrios_apofthgmata_elegxos.pdf · αναφορά πρωτότυπου PDF: σελ. 4. Η διατύπωση δεν έχει αντιπαραβληθεί με το αρχικό PDF.",
+      "sourceStatus": "Εκκρεμεί έλεγχος πρωτοτύπου",
+      "sourceChecked": false,
+      "featured": false,
+      "photoID": "porfyrios-02"
+    },
+    {
+      "id": "porfyrios-0029",
+      "saintID": "porfyrios",
+      "categoryID": "porfyrios-humility-grace",
+      "text": "Μπορεί κάποιος να μιλάει για τις αμαρτίες του και να είναι υπερήφανος κι άλλος να μιλάει για τις αρετές του και να είναι ταπεινός.",
+      "source": "Ορθόδοξοι Ορίζοντες · Αποφθέγματα Β΄",
+      "sourceNote": "Καταχώριση από το porfyrios_apofthgmata_elegxos.pdf · αναφορά πρωτότυπου PDF: σελ. 4. Η διατύπωση δεν έχει αντιπαραβληθεί με το αρχικό PDF.",
+      "sourceStatus": "Εκκρεμεί έλεγχος πρωτοτύπου",
+      "sourceChecked": false,
+      "featured": false,
+      "photoID": "porfyrios-01"
+    },
+    {
+      "id": "porfyrios-0030",
+      "saintID": "porfyrios",
+      "categoryID": "porfyrios-humility-grace",
+      "text": "Να είμαστε ταπεινοί, αλλά να μην ταπεινολογούμε. Η ταπεινολογία είναι παγίδα του διαβόλου, που φέρνει την απελπισία και την αδράνεια, ενώ η αληθινή ταπείνωση φέρνει την ελπίδα και την εργασία των εντολών του Χριστού.",
+      "source": "Ορθόδοξοι Ορίζοντες · Αποφθέγματα Β΄",
+      "sourceNote": "Καταχώριση από το porfyrios_apofthgmata_elegxos.pdf · αναφορά πρωτότυπου PDF: σελ. 4. Η διατύπωση δεν έχει αντιπαραβληθεί με το αρχικό PDF.",
+      "sourceStatus": "Εκκρεμεί έλεγχος πρωτοτύπου",
+      "sourceChecked": false,
+      "featured": false,
+      "photoID": "porfyrios-04"
+    },
+    {
+      "id": "porfyrios-0031",
+      "saintID": "porfyrios",
+      "categoryID": "porfyrios-christian-life",
+      "text": "Δε γίνεται κανείς χριστιανός με την τεμπελιά, χρειάζεται δουλειά, πολλή δουλειά.",
+      "source": "Ορθόδοξοι Ορίζοντες · Αποφθέγματα Β΄",
+      "sourceNote": "Καταχώριση από το porfyrios_apofthgmata_elegxos.pdf · αναφορά πρωτότυπου PDF: σελ. 4. Η διατύπωση δεν έχει αντιπαραβληθεί με το αρχικό PDF.",
+      "sourceStatus": "Εκκρεμεί έλεγχος πρωτοτύπου",
+      "sourceChecked": false,
+      "featured": false,
+      "photoID": "porfyrios-03"
+    },
+    {
+      "id": "porfyrios-0032",
+      "saintID": "porfyrios",
+      "categoryID": "porfyrios-love-christ-neighbour",
+      "text": "Το παν είναι ν' αγαπήσει ο άνθρωπος το Χριστό και όλα τα προβλήματα τακτοποιούνται.",
+      "source": "Ορθόδοξοι Ορίζοντες · Αποφθέγματα Β΄",
+      "sourceNote": "Καταχώριση από το porfyrios_apofthgmata_elegxos.pdf · αναφορά πρωτότυπου PDF: σελ. 4. Η διατύπωση δεν έχει αντιπαραβληθεί με το αρχικό PDF.",
+      "sourceStatus": "Εκκρεμεί έλεγχος πρωτοτύπου",
+      "sourceChecked": false,
+      "featured": false,
+      "photoID": "porfyrios-01"
+    },
+    {
+      "id": "porfyrios-0033",
+      "saintID": "porfyrios",
+      "categoryID": "porfyrios-facing-evil",
+      "text": "Και τώρα το Άγιο Πνεύμα θέλει να μπει στις ψυχές μας, όπως και τότε, αλλά σέβεται την ελευθερία μας, δε θέλει να την παραβιάσει. Περιμένει να του ανοίξουμε μόνοι μας την πόρτα και τότε θα μπει στην ψυχή μας και θα την μεταμορφώσει. Όταν έρθει και κατοικήσει σ' όλο το χώρο της ψυχής μας ο Χριστός, τότε φεύγουν όλα τα προβλήματα, όλες οι πλάνες, όλες οι στενοχώριες. Τότε φεύγει και η αμαρτία.",
+      "source": "Ορθόδοξοι Ορίζοντες · Αποφθέγματα Β΄",
+      "sourceNote": "Καταχώριση από το porfyrios_apofthgmata_elegxos.pdf · αναφορά πρωτότυπου PDF: σελ. 4. Η διατύπωση δεν έχει αντιπαραβληθεί με το αρχικό PDF.",
+      "sourceStatus": "Εκκρεμεί έλεγχος πρωτοτύπου",
+      "sourceChecked": false,
+      "featured": false,
+      "photoID": "porfyrios-05"
     }
   ]
 }
