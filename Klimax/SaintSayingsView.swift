@@ -602,14 +602,18 @@ private struct SaintSayingsFeed: View {
 
     private var controls: some View {
         VStack(alignment: .leading, spacing: 12) {
-            HStack(spacing: 8) {
+            ZStack(alignment: .leading) {
                 Button { leave(.saint) } label: {
                     Image(systemName: "chevron.left").frame(width: 36, height: 36)
                 }.accessibilityLabel("Έξοδος από την προβολή πλήρους οθόνης")
-                Spacer(minLength: 0)
-                Button("Ανά άγιο") { leave(.saint) }
-                Text("Όλοι οι άγιοι").padding(9).background(.white.opacity(0.2), in: Capsule())
-                Button("Αγαπημένα") { leave(.favorites) }
+                HStack(spacing: 8) {
+                    Button("Ανά άγιο") { leave(.saint) }
+                    Text("Όλοι οι άγιοι").padding(9).background(.white.opacity(0.2), in: Capsule())
+                    Button("Αγαπημένα") { leave(.favorites) }
+                }
+                .lineLimit(1)
+                .frame(maxWidth: .infinity)
+                .padding(.horizontal, 40)
             }
             .font(.system(size: 11, weight: .medium)).foregroundStyle(.white)
             .padding(6).background(.black.opacity(0.4), in: Capsule())
