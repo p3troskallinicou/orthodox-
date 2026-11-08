@@ -72,6 +72,14 @@ for (const categoryID of new Set(iakovos.map(s => s.categoryID))) {
   const group = iakovos.filter(s => s.categoryID === categoryID);
   assert.equal(new Set(group.map(s => s.photoID)).size, group.length, 'Vary images within a topic');
 }
+for (const [id, faceX, faceY] of [['iakovos-01',430,150],['iakovos-04',350,90]]) {
+  const photo = catalog.photos.find(p => p.id === id);
+  for (const [width,height] of [[393,852],[430,932]]) {
+    const scale = Math.max(width/photo.width,height/photo.height);
+    const x = faceX*scale+(width-photo.width*scale)*(photo.reelFocusX ?? (photo.width>photo.height ? .75 : .5));
+    assert(x>40 && x<width-40 && faceY*scale<height*.53, 'Keep the reviewed face centre inside the feed crop');
+  }
+}
 let imageBytes = 0;
 for (const photo of catalog.photos) {
   const path = `Klimax/Assets.xcassets/${photo.asset}.imageset/`;
