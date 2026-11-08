@@ -229,9 +229,11 @@ private struct SaintSayingsGallery: View {
     private func tile(_ saying: SaintSaying, width: CGFloat, imageHeight: CGFloat, footerHeight: CGFloat,
                       prominent: Bool, sayings: [SaintSaying]) -> some View {
         let photo = catalog.photo(for: saying)
-        let nativeHeight = width * photo.height / photo.width
-        let start = photo.textStart.map { nativeHeight * $0 } ?? 0
-        let available = photo.textStart == nil ? nativeHeight * photo.subjectTop : imageHeight - start
+        let size = CGSize(width: width, height: imageHeight)
+        let imageRect = photo.cardImageRect(in: size)
+        let textRegion = photo.cardTextRegion(in: size)
+        let start = textRegion.minY
+        let available = textRegion.height
         let fontSize: CGFloat = prominent ? 24 : 17
         let inset: CGFloat = min(prominent ? 22 : 14, max(4, available - 8 - fontSize * 1.3))
         return ZStack(alignment: .topTrailing) {
@@ -240,8 +242,18 @@ private struct SaintSayingsGallery: View {
                     ZStack(alignment: .topLeading) {
                         Color.black
                         Image(photo.asset).resizable().scaledToFit()
-                            .frame(width: width, height: imageHeight, alignment: .top)
-                        LinearGradient(colors: [.clear, .black.opacity(0.75)], startPoint: .center, endPoint: .bottom)
+                            .frame(width: imageRect.width, height: imageRect.height)
+                            .offset(x: imageRect.minX)
+                            .frame(width: width, height: imageHeight, alignment: .topLeading)
+                        if photo.fillsCard == true {
+                            LinearGradient(stops: [
+                                .init(color: .clear, location: max(0, start / imageHeight - 0.08)),
+                                .init(color: .black.opacity(0.67), location: start / imageHeight),
+                                .init(color: .black.opacity(0.8), location: 1)
+                            ], startPoint: .top, endPoint: .bottom)
+                        } else {
+                            LinearGradient(colors: [.clear, .black.opacity(0.75)], startPoint: .center, endPoint: .bottom)
+                        }
                         Text(saying.text).font(.system(size: fontSize, weight: .medium, design: .serif))
                             .foregroundStyle(.white).lineSpacing(2)
                             .lineLimit(max(1, Int((available - inset - 8) / (fontSize * 1.3))))
