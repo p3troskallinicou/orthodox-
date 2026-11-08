@@ -40,6 +40,33 @@ struct SayingPhoto: Codable, Identifiable {
     /// source-image coordinates below the faces, before the top-aligned crop.
     let textStart: Double?
 
+    /// Gallery-only crop for a landscape photo sharing a taller portrait row.
+    /// Existing photographs keep their natural aspect and text placement.
+    let fillsCard: Bool?
+    let cardFocusX: Double?
+    /// Horizontal focus for the full-screen feed; older photos retain their crop.
+    let reelFocusX: Double?
+
+    var reelHorizontalFocus: Double {
+        reelFocusX ?? (width > height ? 0.75 : 0.5)
+    }
+
+    func cardImageRect(in size: CGSize) -> CGRect {
+        let scale = fillsCard == true
+            ? max(size.width / width, size.height / height)
+            : size.width / width
+        let imageSize = CGSize(width: width * scale, height: height * scale)
+        return CGRect(x: (size.width - imageSize.width) * (cardFocusX ?? 0.5),
+                      y: 0, width: imageSize.width, height: imageSize.height)
+    }
+
+    func cardTextRegion(in size: CGSize) -> CGRect {
+        let imageHeight = fillsCard == true ? size.height : size.width * height / width
+        let start = min(size.height, imageHeight * (textStart ?? 0))
+        let available = textStart == nil ? imageHeight * subjectTop : size.height - start
+        return CGRect(x: 0, y: start, width: size.width, height: max(0, min(available, size.height - start)))
+    }
+
     func textRegion(in size: CGSize) -> CGRect {
         guard let textStart else {
             return CGRect(x: 0, y: 0, width: size.width, height: textBoundary(in: size))
@@ -75,7 +102,9 @@ struct SaintSayingsCatalog: Codable {
         Set(sayings.map(\.id)).count == sayings.count &&
         photos.allSatisfy {
             (0...0.8).contains($0.subjectTop) && $0.width > 0 && $0.height > 0 &&
-            ($0.textStart.map { (0..<1).contains($0) } ?? true)
+            ($0.textStart.map { (0..<1).contains($0) } ?? true) &&
+            ($0.cardFocusX.map { (0...1).contains($0) } ?? true) &&
+            ($0.reelFocusX.map { (0...1).contains($0) } ?? true)
         } &&
         sayings.allSatisfy { saying in
             !saying.text.isEmpty && saints.contains { $0.id == saying.saintID } &&

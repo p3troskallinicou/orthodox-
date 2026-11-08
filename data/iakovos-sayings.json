@@ -1,0 +1,129 @@
+{
+  "saint": {
+    "id": "iakovos-tsalikis",
+    "name": "Άγιος Ιάκωβος Τσαλίκης",
+    "shortName": "Άγιος Ιάκωβος",
+    "subtitle": "Ο εν Ευβοία",
+    "photoID": "iakovos-05"
+  },
+  "photos": [
+    {
+      "id": "iakovos-01",
+      "asset": "SaintSayingIakovos01",
+      "subjectTop": 0.05,
+      "width": 827,
+      "height": 566,
+      "textStart": 0.65,
+      "reelFocusX": 0.5
+    },
+    {
+      "id": "iakovos-02",
+      "asset": "SaintSayingIakovos02",
+      "subjectTop": 0.05,
+      "width": 411,
+      "height": 640,
+      "textStart": 0.6
+    },
+    {
+      "id": "iakovos-03",
+      "asset": "SaintSayingIakovos03",
+      "subjectTop": 0.05,
+      "width": 462,
+      "height": 650,
+      "textStart": 0.65
+    },
+    {
+      "id": "iakovos-04",
+      "asset": "SaintSayingIakovos04",
+      "subjectTop": 0.05,
+      "width": 600,
+      "height": 326,
+      "textStart": 0.53,
+      "fillsCard": true,
+      "cardFocusX": 0.6,
+      "reelFocusX": 0.6
+    },
+    {
+      "id": "iakovos-05",
+      "asset": "SaintSayingIakovos05",
+      "subjectTop": 0.05,
+      "width": 477,
+      "height": 851,
+      "textStart": 0.7
+    }
+  ],
+  "sayings": [
+    {
+      "id": "iakovos-tsalikis-0001",
+      "saintID": "iakovos-tsalikis",
+      "categoryID": "porfyrios-children-family",
+      "text": "προσευχή θα κάνετε με πίστη θα τα νουθετήσετε και όσο μπορείτε με την αγάπη και με τον καλό τον τρόπο. Όχι με αυστηρότητα",
+      "source": "https://www.imkifissias.gr/index.php/orthodoksia/keimena/keimena-orthodoksias/3775-symvoules-agiou-iakovou-tsaliki",
+      "sourceStatus": "Ελεγμένο ως προς το παρεχόμενο PDF",
+      "sourceChecked": true,
+      "featured": true,
+      "photoID": "iakovos-01",
+      "sourceNote": ""
+    },
+    {
+      "id": "iakovos-tsalikis-0002",
+      "saintID": "iakovos-tsalikis",
+      "categoryID": "porfyrios-christian-life",
+      "text": "Η νηστεία είναι η πρώτη εντολή του Θεού και ο Χριστός μας ακόμη νήστεψε. Εμένα δεν με έβλαψε η νηστεία μέχρι σήμερα που είμαι 70 χρονών. Και τα δαιμόνια και οι αρρώστιες και όλα τα πάθη με τη νηστεία και με την προσευχή αποβάλλονται",
+      "source": "https://www.imkifissias.gr/index.php/orthodoksia/keimena/keimena-orthodoksias/3775-symvoules-agiou-iakovou-tsaliki",
+      "sourceStatus": "Ελεγμένο ως προς το παρεχόμενο PDF",
+      "sourceChecked": true,
+      "featured": true,
+      "photoID": "iakovos-02",
+      "sourceNote": ""
+    },
+    {
+      "id": "iakovos-tsalikis-0003",
+      "saintID": "iakovos-tsalikis",
+      "categoryID": "porfyrios-prayer-trust",
+      "text": "Δεν πρέπει παιδιά μου να έχει κανείς αμφιβολίες ούτε δυσπιστίες. Να έχετε πίστη Θεού ως κόκκον σινάπεως και ότι ζητήσετε ο Θεός θα σας το δώσει. Πάντα η προσευχή στηρίζει. Να μη φοβόμαστε. Ει ο Θεός μεθ’ ημών, ουδείς καθ’ ημών",
+      "source": "https://www.imkifissias.gr/index.php/orthodoksia/keimena/keimena-orthodoksias/3775-symvoules-agiou-iakovou-tsaliki",
+      "sourceStatus": "Ελεγμένο ως προς το παρεχόμενο PDF",
+      "sourceChecked": true,
+      "featured": true,
+      "photoID": "iakovos-03",
+      "sourceNote": ""
+    },
+    {
+      "id": "iakovos-tsalikis-0004",
+      "saintID": "iakovos-tsalikis",
+      "categoryID": "porfyrios-christian-life",
+      "text": "Χωρίς την ψυχήν μας καθαρήν, δεν έχουμε κανένα όφελος από τη Θεία Κοινωνία. Για αυτό να μη διστάζετε, να μην ντρέπεστε και να εξομολογείσθε. Ότι και αν έχετε κάνει, την πιο μεγάλη αμαρτία, ο πνευματικός έχει την εξουσία από το Χριστό και από τους Αποστόλους με το πετραχήλι του να τη συγχωρήσει",
+      "source": "https://www.imkifissias.gr/index.php/orthodoksia/keimena/keimena-orthodoksias/3775-symvoules-agiou-iakovou-tsaliki",
+      "sourceStatus": "Ελεγμένο ως προς το παρεχόμενο PDF",
+      "sourceChecked": true,
+      "featured": true,
+      "photoID": "iakovos-05",
+      "sourceNote": ""
+    },
+    {
+      "id": "iakovos-tsalikis-0005",
+      "saintID": "iakovos-tsalikis",
+      "categoryID": "porfyrios-soul-peace",
+      "text": "Η στενοχώρια είναι η πιο μεγάλη αρρώστια, να τη διώχνετε",
+      "source": "https://www.imkifissias.gr/index.php/orthodoksia/keimena/keimena-orthodoksias/3775-symvoules-agiou-iakovou-tsaliki",
+      "sourceStatus": "Ελεγμένο ως προς το παρεχόμενο PDF",
+      "sourceChecked": true,
+      "featured": true,
+      "photoID": "iakovos-04",
+      "sourceNote": ""
+    },
+    {
+      "id": "iakovos-tsalikis-0006",
+      "saintID": "iakovos-tsalikis",
+      "categoryID": "porfyrios-christian-life",
+      "text": "Στην Εκκλησία βρίσκουμε την υγεία, την παρηγοριά, την ελπίδα και τη σωτηρία της ψυχής μας",
+      "source": "https://www.imkifissias.gr/index.php/orthodoksia/keimena/keimena-orthodoksias/3775-symvoules-agiou-iakovou-tsaliki",
+      "sourceStatus": "Ελεγμένο ως προς το παρεχόμενο PDF",
+      "sourceChecked": true,
+      "featured": true,
+      "photoID": "iakovos-01",
+      "sourceNote": ""
+    }
+  ]
+}

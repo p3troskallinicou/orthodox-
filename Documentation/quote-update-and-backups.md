@@ -34,3 +34,13 @@ as a new pull request. Do not reset or force-push main.
 The browser preview is a separate prototype, not a shared runtime or a dependency
 of the iOS app. General browser/device chrome refinements are not app features.
 No browser-preview files, credentials or private transfer data belong in this repo.
+
+## Approved Iakovos addition
+
+- Six sayings of Άγιος Ιάκωβος Τσαλίκης, transcribed from the supplied PDF of the Kifissia Metropolis article, with its source URL retained. The source-check label records comparison with that PDF, not historical authentication.
+- Five supplied photographs; JPEG originals copied unchanged, one WebP converted to PNG without changing decoded pixels for Xcode asset compatibility.
+- Four existing topic IDs reused: family, Christian life/spiritual struggle, prayer/trust, and inner peace. No new categories or renaming of existing IDs.
+- The landscape photo in the paired gallery fills its portrait-height frame with a reviewed horizontal crop. Its excerpt starts in the lower part of that frame; existing photo layouts retain their previous behaviour.
+- Per-photo feed focus positions keep the new landscape portraits in view, while the existing photos keep their previous crops.
+- Existing mixed feed, filtering, complete-text readers and persistent favourites include the new stable IDs automatically. Total: 80 sayings, three saints, 12 categories and 20 photographs.
+- The original backup above remains unchanged. No additional backup branch is created.
