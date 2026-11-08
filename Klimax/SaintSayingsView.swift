@@ -130,8 +130,8 @@ private struct SaintSayingsGallery: View {
 
     @ViewBuilder private func mosaic(width: CGFloat) -> some View {
         let sayings = displayed
-        // Stable groups provide full-width feature cards and interlocking
-        // square/tall tiles without a continuously recalculated masonry layout.
+        // Each pair shares a row, so a shorter card cannot pull the next
+        // card in its column above its neighbour.
         ForEach(Array(stride(from: 0, to: sayings.count, by: 5)), id: \.self) { start in
             let group = Array(sayings.dropFirst(start).prefix(5))
             VStack(spacing: 12) {
@@ -141,14 +141,16 @@ private struct SaintSayingsGallery: View {
                         tile(saying, width: width, height: width * 0.9, prominent: true, sayings: sayings)
                     }
                 } else {
-                    HStack(alignment: .top, spacing: 12) {
-                        ForEach(0..<2) { column in
-                            VStack(spacing: 12) {
-                                ForEach(Array(group.enumerated()).filter { $0.offset > 0 && ($0.offset - 1) % 2 == column }, id: \.element.id) { item in
-                                    let side = (width - 12) / 2
-                                    tile(item.element, width: side, height: side * (item.offset == 1 || item.offset == 4 ? 1.5 : 1.12), prominent: false, sayings: sayings)
-                                }
-                            }.frame(width: (width - 12) / 2)
+                    ForEach(Array(stride(from: 1, to: group.count, by: 2)), id: \.self) { rowStart in
+                        HStack(alignment: .top, spacing: 12) {
+                            let side = (width - 12) / 2
+                            ForEach(Array(group.dropFirst(rowStart).prefix(2))) { saying in
+                                tile(saying, width: side, height: side * 1.5, prominent: false, sayings: sayings)
+                            }
+                            if rowStart + 1 == group.count {
+                                Color.clear.frame(width: side, height: 0)
+                                    .accessibilityHidden(true)
+                            }
                         }
                     }
                 }
