@@ -8,10 +8,11 @@ The main branch immediately before this approved update is separately preserved 
 `backup/main-before-quote-update-2026-11-08` at commit
 `9bec16b239577be92074cbc119deb4ce34e45fcb`.
 
-Do not overwrite, force-push, merge changes into, or delete these backup branches.
-For subsequent updates to main, first create and verify a new backup branch named
-`backup/main-before-<change>-<date>-<short-sha>`, pointing to the current main SHA.
-Keep the original-before-additions backup permanently.
+Keep the original-before-additions backup permanently; never overwrite, force-push,
+merge into, or delete it. The user clarified that no new backup is needed for each
+change. Do not create further backup branches or tags without an explicit request;
+normal Git history and pull requests track subsequent changes. Other snapshots
+listed above are historical backups created before that clarification.
 
 To inspect or restore an old version without altering main, create a new branch
 from the relevant backup through GitHub's branch selector. Review any restoration
