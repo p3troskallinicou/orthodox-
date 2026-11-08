@@ -108,11 +108,22 @@ for width in [150.0, 175.0, 210.0, 386.0] {
     assert(abs(text.minY / size.height - 0.53) < 0.001)
     assert(text.maxY <= size.height + 0.001 && text.height >= 100)
 }
+// Reviewed face centres stay inside the feed crop on both supported viewports.
+for (id, faceX, faceY) in [("iakovos-01", 430.0, 150.0), ("iakovos-04", 350.0, 90.0)] {
+    let photo = catalog.photos.first { $0.id == id }!
+    for size in [CGSize(width: 393, height: 852), CGSize(width: 430, height: 932)] {
+        let scale = max(size.width / photo.width, size.height / photo.height)
+        let x = faceX * scale + (size.width - photo.width * scale) * photo.reelHorizontalFocus
+        let y = faceY * scale
+        assert(x > 40 && x < size.width - 40 && y > 0 && y < size.height * 0.53)
+    }
+}
 // Existing photo crops and gallery text positions are unchanged.
 for photo in catalog.photos.filter({ !$0.id.hasPrefix("iakovos-") }) {
     let size = CGSize(width: 175, height: 340)
     let image = photo.cardImageRect(in: size)
     assert(abs(image.width - size.width) < 0.001 && abs(image.minX) < 0.001)
+    assert(photo.reelHorizontalFocus == (photo.width > photo.height ? 0.75 : 0.5))
     let naturalHeight = size.width * photo.height / photo.width
     assert(abs(image.height - naturalHeight) < 0.001)
     let expectedStart = min(size.height, naturalHeight * (photo.textStart ?? 0))

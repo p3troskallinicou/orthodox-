@@ -13,7 +13,8 @@
       "subjectTop": 0.05,
       "width": 827,
       "height": 566,
-      "textStart": 0.65
+      "textStart": 0.65,
+      "reelFocusX": 0.5
     },
     {
       "id": "iakovos-02",
@@ -39,7 +40,8 @@
       "height": 326,
       "textStart": 0.53,
       "fillsCard": true,
-      "cardFocusX": 0.6
+      "cardFocusX": 0.6,
+      "reelFocusX": 0.6
     },
     {
       "id": "iakovos-05",

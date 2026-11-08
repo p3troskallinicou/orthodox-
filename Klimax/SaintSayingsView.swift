@@ -702,7 +702,7 @@ private struct SaintSayingReel: View {
                 let scale = max(size.width / photo.width, size.height / photo.height)
                 Image(photo.asset).resizable().scaledToFill()
                     .frame(width: photo.width * scale, height: photo.height * scale)
-                    .offset(x: (size.width - photo.width * scale) * (photo.width > photo.height ? 0.75 : 0.5))
+                    .offset(x: (size.width - photo.width * scale) * photo.reelHorizontalFocus)
                     .frame(width: size.width, height: size.height, alignment: .topLeading)
                     .clipped()
                     .overlay(LinearGradient(stops: [
