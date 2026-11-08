@@ -415,10 +415,6 @@ private struct SaintSayingReader: View {
                     if let url = URL(string: saying.source), ["https", "http"].contains(url.scheme) {
                         Link(destination: url) { Label("Άνοιγμα πηγής", systemImage: "arrow.up.right.square") }
                     } else { Text(saying.source).font(.body) }
-                    if !saying.sourceNote.isEmpty { Text(saying.sourceNote).foregroundStyle(.secondary) }
-                    Text("Η κατάσταση ελέγχου προέρχεται από τη συλλογή κειμένων. Δεν αποτελεί ανεξάρτητη επαλήθευση της εφαρμογής.")
-                        .font(.footnote).foregroundStyle(.secondary)
-                    Text(saying.id).font(.caption.monospaced()).foregroundStyle(.secondary)
                 }.frame(maxWidth: .infinity, alignment: .leading).padding(24)
             }
             .navigationTitle("Πηγή").navigationBarTitleDisplayMode(.inline)
