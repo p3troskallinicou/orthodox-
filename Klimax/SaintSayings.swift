@@ -89,11 +89,23 @@ struct SaintSayingsCatalog: Codable {
     }
 
     func filtered(saintID: String, categoryID: String?, query: String) -> [SaintSaying] {
+        collection(saintID: saintID, categoryID: categoryID, query: query)
+    }
+
+    /// Filtering preserves the supplied shuffle order instead of grouping saints.
+    func collection(saintID: String? = nil, categoryID: String? = nil, query: String = "", favoriteIDs: Set<String>? = nil, order: [String]? = nil) -> [SaintSaying] {
         let words = Self.searchKey(query).split(separator: " ")
+        let positions = Dictionary((order ?? []).enumerated().map { ($0.element, $0.offset) }, uniquingKeysWith: { min($0, $1) })
         return sayings.filter { saying in
-            saying.saintID == saintID && (categoryID == nil || saying.categoryID == categoryID) &&
+            (saintID == nil || saying.saintID == saintID) &&
+            (favoriteIDs.map { $0.contains(saying.id) } ?? true) &&
+            (categoryID == nil || saying.categoryID == categoryID) &&
             words.allSatisfy { Self.searchKey(saying.text).contains($0) }
         }.sorted { a, b in
+            if order != nil {
+                let left = positions[a.id] ?? Int.max, right = positions[b.id] ?? Int.max
+                return left == right ? a.id < b.id : left < right
+            }
             if a.featured != b.featured { return a.featured }
             return a.id < b.id
         }
@@ -107,4 +119,17 @@ struct SaintSayingsCatalog: Codable {
     func photo(for saying: SaintSaying) -> SayingPhoto { photos.first { $0.id == saying.photoID } ?? photos[0] }
     func saint(for saying: SaintSaying) -> SayingSaint { saints.first { $0.id == saying.saintID } ?? saints[0] }
     func category(for saying: SaintSaying) -> SayingCategory { categories.first { $0.id == saying.categoryID } ?? categories[0] }
+}
+
+/// Local, versioned favourites. Unknown IDs are harmless and never alter content.
+enum SaintSayingFavorites {
+    static let storageKey = "klimax.saintSayings.favoriteIDs.v1"
+
+    static func decode(_ data: Data) -> Set<String> {
+        Set((try? JSONDecoder().decode([String].self, from: data)) ?? [])
+    }
+
+    static func encode(_ ids: Set<String>) -> Data {
+        (try? JSONEncoder().encode(ids.sorted())) ?? Data()
+    }
 }

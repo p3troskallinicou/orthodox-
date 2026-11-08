@@ -73,6 +73,27 @@ const tests = `
 let data = try Data(contentsOf: URL(fileURLWithPath: "Klimax/saint-sayings.json"))
 let catalog = try JSONDecoder().decode(SaintSayingsCatalog.self, from: data)
 assert(catalog.isValid)
+assert(catalog.collection().count == 74)
+let savedIDs: Set<String> = ["PAI-001", "porfyrios-0001"]
+let decoded = SaintSayingFavorites.decode(SaintSayingFavorites.encode(savedIDs))
+assert(decoded == savedIDs)
+assert(SaintSayingFavorites.decode(Data()).isEmpty)
+assert(SaintSayingFavorites.decode(Data("invalid".utf8)).isEmpty)
+assert(Set(catalog.collection(favoriteIDs: decoded).map(\\.id)) == savedIDs)
+assert(catalog.collection(favoriteIDs: []).isEmpty)
+assert(catalog.collection(favoriteIDs: ["missing"]).isEmpty)
+let stored = UserDefaults(suiteName: "KlimaxSayingsTest-" + UUID().uuidString)!
+stored.set(SaintSayingFavorites.encode(savedIDs), forKey: SaintSayingFavorites.storageKey)
+assert(SaintSayingFavorites.decode(stored.data(forKey: SaintSayingFavorites.storageKey)!) == savedIDs)
+stored.removeObject(forKey: SaintSayingFavorites.storageKey)
+let shuffledIDs = Array(catalog.sayings.map(\\.id).reversed())
+assert(catalog.collection(order: shuffledIDs).map(\\.id) == shuffledIDs)
+let subset = catalog.collection(categoryID: "porfyrios-prayer-trust", order: shuffledIDs)
+assert(subset.count == 4)
+assert(subset.map(\\.id) == shuffledIDs.filter { id in subset.contains { $0.id == id } })
+assert(!catalog.collection(query: "ΨΥΧΗ", order: shuffledIDs).isEmpty)
+assert(catalog.collection(favoriteIDs: savedIDs, order: shuffledIDs).count == 2)
+
 assert(catalog.filtered(saintID: "porfyrios", categoryID: nil, query: "").count == 33)
 for saying in catalog.filtered(saintID: "porfyrios", categoryID: nil, query: "") {
     let photo = catalog.photo(for: saying)
