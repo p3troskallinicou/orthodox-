@@ -44,3 +44,15 @@ No browser-preview files, credentials or private transfer data belong in this re
 - Per-photo feed focus positions keep the new landscape portraits in view, while the existing photos keep their previous crops.
 - Existing mixed feed, filtering, complete-text readers and persistent favourites include the new stable IDs automatically. Total: 80 sayings, three saints, 12 categories and 20 photographs.
 - The original backup above remains unchanged. No additional backup branch is created.
+
+## Approved November 9 collection and glass controls
+
+- Native catalog now matches the approved collection: 116 replacement Paisios entries, 33 Evmenios sayings, 33 unchanged Porphyrios sayings and six unchanged Iakovos sayings. All 12 existing topic IDs and names are retained.
+- The Paisios replacement covers every one of the 129 supplied source blocks. Continuous quotations and question-answer exchanges remain together. Original source wording, spelling and excerpt markers are retained; comparison status concerns the supplied PDF/page, not historical authentication.
+- New Paisios IDs use the `paisios-haidari-` prefix. Retired `PAI-` favourites remain in the versioned stored set, but never resolve to unrelated replacement text or inflate visible favourites counts.
+- Nine original Evmenios images are included. Two WebP images are converted to PNG with identical decoded pixels for Xcode asset compatibility. Existing Paisios image files are unchanged; their approved crop/text metadata is updated. Porphyrios and Iakovos data and image metadata are retained.
+- Very long feed text begins collapsed, expands over the photo in place, scrolls when necessary and collapses using the same control. Complete shorter text stays visible. There is no separate dark reading panel.
+- Filter and shuffle controls are aligned glass circles. The filter icon expands to a labelled pill and glass search/category panel. The category list uses the same glass material and selection checkmarks. Outside taps dismiss the panel.
+- Category selection and shuffle preserve active filtering. Category selection closes the list/panel and contracts the pill before updating results. SwiftUI animation completion determines when the update occurs, with a brief results fade; pending tasks are cancelled on leaving the feed. Reduced motion bypasses animation.
+- Native iOS 26 Liquid Glass uses the existing `athosGlass` helper; the existing material fallback supports older deployment targets. No dependency, workflow, Xcode project or unrelated application architecture changes are required.
+- The preserved original backup remains unchanged; no new backup branch or tag is created. Browser-preview artifacts and private transfer files are excluded from this repository.
