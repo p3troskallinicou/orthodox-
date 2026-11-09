@@ -535,6 +535,13 @@ private struct SaintSayingReader: View {
 
 /// The mixed collection is presented over the app chrome, without changing the
 /// surrounding tab/navigation architecture. Its shuffle is stable until requested.
+/// Native glass controls keep their identity while opening and closing.
+private enum SayingFilterAction {
+    case dismiss
+    case category(String?)
+    case shuffle
+}
+
 private struct SaintSayingsFeed: View {
     let catalog: SaintSayingsCatalog
     @Binding var favoriteIDs: Set<String>
@@ -544,7 +551,13 @@ private struct SaintSayingsFeed: View {
     @State private var query = ""
     @State private var currentID: String?
     @State private var showsFilters = false
+    @State private var showsCategories = false
+    @State private var isClosingFilters = false
+    @State private var filterTask: Task<Void, Never>?
+    @State private var feedOpacity = 1.0
     @State private var source: SaintSaying?
+    @FocusState private var searchFocused: Bool
+    @AccessibilityFocusState private var filterAccessibilityFocus: Bool
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
 
     init(catalog: SaintSayingsCatalog, favoriteIDs: Binding<Set<String>>, leave: @escaping (SayingSection) -> Void) {
@@ -559,112 +572,251 @@ private struct SaintSayingsFeed: View {
     private var displayed: [SaintSaying] {
         catalog.collection(categoryID: categoryID, query: query, order: orderedIDs)
     }
+    private var filterMotion: Animation { .timingCurve(0.22, 0.75, 0.22, 1, duration: 0.3) }
+    private var activeFavorites: Int { catalog.collection(favoriteIDs: favoriteIDs).count }
 
     var body: some View {
         GeometryReader { geometry in
+            let top = max(geometry.safeAreaInsets.top, 54)
+            let bottom = max(geometry.safeAreaInsets.bottom, 24)
             ZStack(alignment: .top) {
                 Color.black
-                if displayed.isEmpty {
-                    ContentUnavailableView.search(text: query).foregroundStyle(.white)
-                } else {
-                    ScrollView(.vertical) {
-                        LazyVStack(spacing: 0) {
-                            ForEach(displayed) { saying in
-                                SaintSayingReel(catalog: catalog, saying: saying, favoriteIDs: $favoriteIDs,
-                                    position: (displayed.firstIndex(where: { $0.id == saying.id }) ?? 0) + 1,
-                                    count: displayed.count, safeTop: max(geometry.safeAreaInsets.top, 54),
-                                    safeBottom: max(geometry.safeAreaInsets.bottom, 24),
-                                    showSource: { source = saying })
-                                    .frame(width: geometry.size.width, height: geometry.size.height)
-                                    .id(saying.id)
-                            }
-                        }.scrollTargetLayout()
+                pages(size: geometry.size, safeTop: top, safeBottom: bottom)
+                    .opacity(feedOpacity)
+                if showsFilters {
+                    Button { dismissFilters() } label: {
+                        Color.clear.contentShape(Rectangle())
                     }
-                    .scrollTargetBehavior(.paging)
-                    .scrollPosition(id: $currentID)
-                    .scrollIndicators(.hidden)
-                    .scrollDismissesKeyboard(.interactively)
-                    .accessibilityIdentifier("sayings.feed")
+                    .buttonStyle(.plain)
+                    .accessibilityLabel("Κλείσιμο φίλτρων")
+                    .accessibilityIdentifier("sayings.feed.dismissFilters")
+                    .transition(.opacity)
                 }
-                controls.padding(.horizontal, 14).padding(.top, max(geometry.safeAreaInsets.top, 54) + 8)
+                controls(menuHeight: max(120, min(480, geometry.size.height - top - bottom - 270)))
+                    .padding(.horizontal, 14).padding(.top, top + 8)
             }
         }
         .ignoresSafeArea()
         .preferredColorScheme(.dark)
-        .sheet(item: $source) { saying in
-            NavigationStack {
-                ScrollView {
-                    VStack(alignment: .leading, spacing: 18) {
-                        Text("Πηγή του αποσπάσματος").font(.title2.bold())
-                        Text(saying.sourceStatus).font(.subheadline.weight(.semibold))
-                        if let url = URL(string: saying.source), ["https", "http"].contains(url.scheme) {
-                            Link("Άνοιγμα πηγής", destination: url)
-                        } else { Text(saying.source) }
-                    }.frame(maxWidth: .infinity, alignment: .leading).padding(24)
-                }
-                .navigationTitle("Πηγή").navigationBarTitleDisplayMode(.inline)
-                .toolbar { ToolbarItem(placement: .confirmationAction) { Button("Κλείσιμο") { source = nil } } }
-            }.presentationDetents([.medium, .large])
-        }
+        .sheet(item: $source) { saying in sourceDetails(saying) }
         .onChange(of: query) { _, _ in currentID = displayed.first?.id }
         .onChange(of: categoryID) { _, _ in currentID = displayed.first?.id }
+        .onDisappear { filterTask?.cancel(); searchFocused = false }
         .accessibilityAction(named: "Επόμενος λόγος") { advance(1) }
         .accessibilityAction(named: "Προηγούμενος λόγος") { advance(-1) }
     }
 
-    private var controls: some View {
-        VStack(alignment: .leading, spacing: 12) {
-            ZStack(alignment: .leading) {
-                Button { leave(.saint) } label: {
-                    Image(systemName: "chevron.left").frame(width: 36, height: 36)
-                }.accessibilityLabel("Έξοδος από την προβολή πλήρους οθόνης")
-                HStack(spacing: 8) {
-                    Button("Ανά άγιο") { leave(.saint) }
-                    Text("Όλοι οι άγιοι").padding(9).background(.white.opacity(0.2), in: Capsule())
-                    Button("Αγαπημένα") { leave(.favorites) }
-                }
-                .lineLimit(1)
-                .frame(maxWidth: .infinity)
-                .padding(.horizontal, 40)
+    @ViewBuilder private func pages(size: CGSize, safeTop: CGFloat, safeBottom: CGFloat) -> some View {
+        if displayed.isEmpty {
+            ContentUnavailableView.search(text: query).foregroundStyle(.white)
+        } else {
+            ScrollView(.vertical) {
+                LazyVStack(spacing: 0) {
+                    ForEach(displayed) { saying in
+                        SaintSayingReel(catalog: catalog, saying: saying, favoriteIDs: $favoriteIDs,
+                            position: (displayed.firstIndex(where: { $0.id == saying.id }) ?? 0) + 1,
+                            count: displayed.count, safeTop: safeTop, safeBottom: safeBottom,
+                            showSource: { source = saying })
+                            .frame(width: size.width, height: size.height).id(saying.id)
+                    }
+                }.scrollTargetLayout()
             }
-            .font(.system(size: 11, weight: .medium)).foregroundStyle(.white)
-            .padding(6).background(.black.opacity(0.4), in: Capsule())
+            .scrollTargetBehavior(.paging)
+            .scrollPosition(id: $currentID)
+            .scrollIndicators(.hidden)
+            .scrollDismissesKeyboard(.interactively)
+            .accessibilityIdentifier("sayings.feed")
+        }
+    }
 
-            Button {
-                withAnimation(reduceMotion ? nil : .easeInOut(duration: 0.2)) { showsFilters.toggle() }
-            } label: {
-                Label("Φίλτρα και αναζήτηση", systemImage: "line.3.horizontal.decrease")
-                    .font(.system(size: 11, weight: .medium)).padding(11)
-                    .foregroundStyle(.white).background(.black.opacity(0.45), in: Capsule())
+    private var sectionControls: some View {
+        ZStack(alignment: .leading) {
+            Button { leave(.saint) } label: {
+                Image(systemName: "chevron.left").frame(width: 36, height: 36)
             }
-            .accessibilityIdentifier("sayings.feed.filters")
-            if showsFilters {
-                VStack(spacing: 12) {
-                    TextField("Βρες έναν λόγο…", text: $query).autocorrectionDisabled()
-                        .textFieldStyle(.roundedBorder).accessibilityIdentifier("sayings.feed.search")
-                    HStack {
-                        Menu {
-                            Picker("Κατηγορία", selection: $categoryID) {
-                                Text("Όλες οι κατηγορίες").tag(nil as String?)
-                                ForEach(catalog.categories) { category in
-                                    Text(category.title).tag(Optional(category.id))
-                                }
-                            }
-                        } label: {
-                            Label(catalog.categories.first { $0.id == categoryID }?.title ?? "Όλες οι κατηγορίες", systemImage: "chevron.down")
-                                .font(.subheadline).multilineTextAlignment(.leading)
-                        }.accessibilityIdentifier("sayings.feed.category")
-                        Spacer(minLength: 8)
-                        Button {
-                            orderedIDs.shuffle(); currentID = displayed.first?.id
-                            showsFilters = false
-                        } label: { Image(systemName: "shuffle").frame(width: 44, height: 44) }
-                        .accessibilityLabel("Ανακάτεμα")
+            .athosGlass(in: Circle())
+            .accessibilityLabel("Έξοδος από την προβολή πλήρους οθόνης")
+            HStack(spacing: 3) {
+                Button("Ανά άγιο") { leave(.saint) }.frame(maxWidth: .infinity)
+                Text("Όλοι οι άγιοι").padding(.horizontal, 8).padding(.vertical, 7)
+                    .frame(maxWidth: .infinity).background(.white.opacity(0.18), in: Capsule())
+                Button { leave(.favorites) } label: {
+                    Text(activeFavorites == 0 ? "Αγαπημένα" : "Αγαπημένα \(activeFavorites)")
+                }.frame(maxWidth: .infinity)
+            }
+            .padding(3).athosGlass(in: Capsule())
+            .padding(.horizontal, 40)
+        }
+        .font(.system(size: 11, weight: .medium)).foregroundStyle(.white).lineLimit(1)
+    }
+
+    private func controls(menuHeight: CGFloat) -> some View {
+        VStack(alignment: .leading, spacing: 14) {
+            sectionControls
+            HStack(spacing: 12) {
+                Button {
+                    if showsFilters { dismissFilters() }
+                    else { withAnimation(reduceMotion ? nil : filterMotion) { showsFilters = true } }
+                } label: {
+                    HStack(spacing: 0) {
+                        Image(systemName: "line.3.horizontal.decrease").font(.system(size: 18))
+                            .frame(width: 44, height: 44)
+                        Text("Φίλτρα και αναζήτηση")
+                            .font(.system(size: 11, weight: .medium)).fixedSize()
+                            .frame(width: showsFilters ? filterLabelWidth : 0, alignment: .leading)
+                            .clipped().opacity(showsFilters ? 1 : 0)
                     }
                 }
-                .padding(16).background(.regularMaterial, in: RoundedRectangle(cornerRadius: 20))
+                .buttonStyle(.plain).athosGlass(in: Capsule())
+                .accessibilityLabel("Φίλτρα και αναζήτηση")
+                .accessibilityValue(showsFilters ? "Αναπτυγμένο" : "Συμπτυγμένο")
+                .accessibilityFocused($filterAccessibilityFocus)
+                .accessibilityIdentifier("sayings.feed.filters")
+                .disabled(isClosingFilters)
+                Spacer(minLength: 8)
+                Button {
+                    if showsFilters { dismissFilters(.shuffle) } else { applyFilterAction(.shuffle) }
+                } label: {
+                    Image(systemName: "shuffle").font(.system(size: 19, weight: .medium))
+                        .frame(width: 44, height: 44)
+                }
+                .buttonStyle(.plain).athosGlass(in: Circle())
+                .accessibilityLabel("Ανακάτεμα αποφθεγμάτων")
+                .accessibilityIdentifier("sayings.feed.shuffle").disabled(isClosingFilters)
             }
-        }.tint(.white)
+            if showsFilters {
+                VStack(spacing: 8) {
+                    filterPanel
+                    if showsCategories {
+                        categoryList(height: menuHeight)
+                            .transition(.opacity.combined(with: .scale(scale: 0.985, anchor: .topLeading)))
+                    }
+                }
+                .allowsHitTesting(!isClosingFilters)
+                .transition(.opacity.combined(with: .offset(y: -6)))
+                .animation(reduceMotion ? nil : .easeOut(duration: 0.19), value: showsFilters)
+            }
+        }.foregroundStyle(.white).tint(.white)
+    }
+
+    private var filterLabelWidth: CGFloat {
+        ("Φίλτρα και αναζήτηση" as NSString).size(withAttributes: [.font: UIFont.systemFont(ofSize: 11, weight: .medium)]).width + 14
+    }
+
+    private var filterPanel: some View {
+        VStack(spacing: 12) {
+            HStack(spacing: 10) {
+                Image(systemName: "magnifyingglass").foregroundStyle(.white.opacity(0.85))
+                TextField("", text: $query, prompt: Text("Βρες έναν λόγο…").foregroundStyle(.white.opacity(0.9)))
+                    .autocorrectionDisabled().textInputAutocapitalization(.never).focused($searchFocused)
+                    .accessibilityLabel("Αναζήτηση αποφθεγμάτων")
+                    .accessibilityIdentifier("sayings.feed.search")
+            }
+            .padding(.horizontal, 12).frame(minHeight: 44)
+            .background(.black.opacity(0.3), in: RoundedRectangle(cornerRadius: 13))
+            Button {
+                searchFocused = false
+                withAnimation(reduceMotion ? nil : .easeOut(duration: 0.18)) { showsCategories.toggle() }
+            } label: {
+                HStack {
+                    Text(catalog.categories.first { $0.id == categoryID }?.title ?? "Όλες οι κατηγορίες")
+                        .multilineTextAlignment(.leading)
+                    Spacer(minLength: 8)
+                    Image(systemName: "chevron.down").font(.system(size: 11, weight: .semibold))
+                }.padding(.horizontal, 12).frame(minHeight: 44)
+            }
+            .buttonStyle(.plain).background(.black.opacity(0.3), in: RoundedRectangle(cornerRadius: 13))
+            .accessibilityLabel("Κατηγορία")
+            .accessibilityIdentifier("sayings.feed.category")
+        }
+        .font(.subheadline).padding(12)
+        .athosGlass(in: RoundedRectangle(cornerRadius: 20), interactive: false)
+    }
+
+    private func categoryList(height: CGFloat) -> some View {
+        ScrollView {
+            VStack(spacing: 0) {
+                categoryRow(nil, title: "Όλες οι κατηγορίες")
+                ForEach(catalog.categories) { category in categoryRow(category.id, title: category.title) }
+            }
+        }
+        .scrollBounceBehavior(.basedOnSize).frame(height: height)
+        .athosGlass(in: RoundedRectangle(cornerRadius: 18), interactive: false)
+        .accessibilityIdentifier("sayings.feed.categoryList")
+    }
+
+    private func categoryRow(_ id: String?, title: String) -> some View {
+        Button { dismissFilters(.category(id)) } label: {
+            HStack(alignment: .center, spacing: 8) {
+                Image(systemName: "checkmark").font(.system(size: 14, weight: .semibold))
+                    .opacity(categoryID == id ? 1 : 0).frame(width: 20)
+                Text(title).font(.subheadline).multilineTextAlignment(.leading)
+                Spacer(minLength: 0)
+            }
+            .padding(.horizontal, 12).padding(.vertical, 12).frame(minHeight: 44)
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .background(.white.opacity(categoryID == id ? 0.07 : 0))
+            .overlay(alignment: .bottom) { Rectangle().fill(.white.opacity(0.09)).frame(height: 0.5) }
+        }
+        .buttonStyle(.plain).disabled(isClosingFilters)
+        .accessibilityAddTraits(categoryID == id ? .isSelected : [])
+        .accessibilityIdentifier("sayings.feed.category.\(id ?? "all")")
+    }
+
+    private func dismissFilters(_ action: SayingFilterAction = .dismiss) {
+        guard !isClosingFilters else { return }
+        searchFocused = false
+        if reduceMotion || !showsFilters {
+            showsCategories = false; showsFilters = false
+            applyFilterAction(action); filterAccessibilityFocus = true
+            return
+        }
+        isClosingFilters = true
+        filterTask?.cancel()
+        filterTask = Task { @MainActor in
+            // Wait for SwiftUI's actual animation completion before changing the feed.
+            await withCheckedContinuation { (continuation: CheckedContinuation<Void, Never>) in
+                withAnimation(filterMotion, completionCriteria: .logicallyComplete) {
+                    showsCategories = false; showsFilters = false
+                } completion: { continuation.resume() }
+            }
+            guard !Task.isCancelled else { return }
+            let changesResults: Bool
+            switch action { case .dismiss: changesResults = false; default: changesResults = true }
+            if changesResults { feedOpacity = 0.65 }
+            applyFilterAction(action)
+            if changesResults {
+                // Give the new content one frame before its short opacity animation.
+                do { try await Task.sleep(for: .milliseconds(16)) } catch { return }
+                guard !Task.isCancelled else { return }
+                withAnimation(.easeOut(duration: 0.16)) { feedOpacity = 1 }
+            }
+            isClosingFilters = false; filterAccessibilityFocus = true
+        }
+    }
+
+    private func applyFilterAction(_ action: SayingFilterAction) {
+        switch action {
+        case .dismiss: break
+        case .category(let id): categoryID = id; currentID = displayed.first?.id
+        case .shuffle: orderedIDs.shuffle(); currentID = displayed.first?.id
+        }
+    }
+
+    private func sourceDetails(_ saying: SaintSaying) -> some View {
+        NavigationStack {
+            ScrollView {
+                VStack(alignment: .leading, spacing: 18) {
+                    Text("Πηγή του αποσπάσματος").font(.title2.bold())
+                    Text(saying.sourceStatus).font(.subheadline.weight(.semibold))
+                    if let url = URL(string: saying.source), ["https", "http"].contains(url.scheme) {
+                        Link("Άνοιγμα πηγής", destination: url)
+                    } else { Text(saying.source) }
+                }.frame(maxWidth: .infinity, alignment: .leading).padding(24)
+            }
+            .navigationTitle("Πηγή").navigationBarTitleDisplayMode(.inline)
+            .toolbar { ToolbarItem(placement: .confirmationAction) { Button("Κλείσιμο") { source = nil } } }
+        }.presentationDetents([.medium, .large])
     }
 
     private func advance(_ direction: Int) {
@@ -683,6 +835,7 @@ private struct SaintSayingReel: View {
     let safeTop: CGFloat
     let safeBottom: CGFloat
     let showSource: () -> Void
+    @State private var textExpanded = false
     @State private var showsHeart = false
     @State private var heartTask: Task<Void, Never>?
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
@@ -695,8 +848,9 @@ private struct SaintSayingReel: View {
             let photo = catalog.photo(for: saying)
             let textWidth = max(120, size.width - 94)
             let topClearance = safeTop + 140
-            let available = max(100, size.height - topClearance - safeBottom - 135)
-            let height = min(measuredTextHeight(width: textWidth), available)
+            let available = max(100, size.height - topClearance - safeBottom - 175)
+            let textLayout = SaintSayingTextLayout(naturalHeight: measuredTextHeight(width: textWidth),
+                availableHeight: available, lineHeight: textSize * 1.35)
             ZStack {
                 Color.black
                 let scale = max(size.width / photo.width, size.height / photo.height)
@@ -711,6 +865,8 @@ private struct SaintSayingReel: View {
                         .init(color: .black.opacity(0.35), location: 0.52),
                         .init(color: .black.opacity(0.9), location: 1)
                     ], startPoint: .top, endPoint: .bottom))
+                    .overlay(Color.black.opacity(textExpanded && textLayout.needsExpansion ? 0.22 : 0))
+                    .animation(reduceMotion ? nil : .easeInOut(duration: 0.35), value: textExpanded)
                     .contentShape(Rectangle())
                     .onTapGesture(count: 2) { like() }
                     .accessibilityHidden(true)
@@ -719,8 +875,7 @@ private struct SaintSayingReel: View {
                     Spacer(minLength: topClearance)
                     Text(catalog.saint(for: saying).shortName)
                         .font(.system(size: 12)).foregroundStyle(.white.opacity(0.75))
-                    completeText(height: height, width: textWidth, available: available)
-                        .simultaneousGesture(TapGesture(count: 2).onEnded { like() })
+                    completeText(layout: textLayout)
                     Label(catalog.category(for: saying).title, systemImage: catalog.category(for: saying).symbol)
                         .font(.system(size: 12)).foregroundStyle(.white.opacity(0.8))
                         .fixedSize(horizontal: false, vertical: true)
@@ -758,16 +913,56 @@ private struct SaintSayingReel: View {
         .onDisappear { heartTask?.cancel(); showsHeart = false }
     }
 
-    @ViewBuilder private func completeText(height: CGFloat, width: CGFloat, available: CGFloat) -> some View {
-        if measuredTextHeight(width: width) > available {
-            ScrollView(.vertical) {
-                quoteText
+    private func completeText(layout: SaintSayingTextLayout) -> some View {
+        ScrollViewReader { proxy in
+            VStack(alignment: .leading, spacing: 4) {
+                ScrollView(.vertical) {
+                    quoteText.id("quote-start-" + saying.id)
+                        .simultaneousGesture(TapGesture(count: 2).onEnded { like() })
+                }
+                .scrollDisabled(!layout.needsExpansion || !textExpanded)
+                .scrollBounceBehavior(.basedOnSize)
+                .scrollIndicators(.hidden)
+                .frame(height: layout.height(expanded: textExpanded))
+                .clipped()
+                .mask {
+                    if layout.needsExpansion && !textExpanded {
+                        LinearGradient(stops: [.init(color: .black, location: 0),
+                            .init(color: .black, location: 0.90), .init(color: .clear, location: 1)],
+                            startPoint: .top, endPoint: .bottom)
+                    } else { Rectangle() }
+                }
+                .overlay {
+                    if layout.needsExpansion && !textExpanded {
+                        Button { expandText() } label: { Color.clear.contentShape(Rectangle()) }
+                            .buttonStyle(.plain)
+                            .accessibilityLabel("Εμφάνιση ολόκληρου του λόγου")
+                    }
+                }
+                if layout.needsExpansion {
+                    Button {
+                        if textExpanded {
+                            var transaction = Transaction(); transaction.disablesAnimations = true
+                            withTransaction(transaction) { proxy.scrollTo("quote-start-" + saying.id, anchor: .top) }
+                        }
+                        withAnimation(reduceMotion ? nil : .timingCurve(0.22, 0.75, 0.22, 1, duration: 0.42)) {
+                            textExpanded.toggle()
+                        }
+                    } label: {
+                        Text(textExpanded ? "Λιγότερα" : "Περισσότερα")
+                            .font(.system(size: 13, weight: .semibold))
+                            .frame(minHeight: 36, alignment: .leading)
+                    }
+                    .buttonStyle(.plain).foregroundStyle(.white)
+                    .accessibilityValue(textExpanded ? "Αναπτυγμένο" : "Συμπτυγμένο")
+                    .accessibilityIdentifier("sayings.reel.expand.\(saying.id)")
+                }
             }
-            .scrollBounceBehavior(.basedOnSize)
-            .frame(height: height)
-        } else {
-            quoteText
         }
+    }
+
+    private func expandText() {
+        withAnimation(reduceMotion ? nil : .timingCurve(0.22, 0.75, 0.22, 1, duration: 0.42)) { textExpanded = true }
     }
 
     private var quoteText: some View {

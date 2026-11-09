@@ -150,6 +150,19 @@ struct SaintSayingsCatalog: Codable {
     func category(for saying: SaintSaying) -> SayingCategory { categories.first { $0.id == saying.categoryID } ?? categories[0] }
 }
 
+/// Fits complete shorter quotes and reserves a bounded excerpt for long ones.
+struct SaintSayingTextLayout {
+    let naturalHeight: CGFloat
+    let availableHeight: CGFloat
+    let lineHeight: CGFloat
+
+    var needsExpansion: Bool { naturalHeight > max(0, availableHeight) }
+    func height(expanded: Bool) -> CGFloat {
+        let full = max(0, min(naturalHeight, availableHeight))
+        return needsExpansion && !expanded ? min(full, max(0, lineHeight) * 6) : full
+    }
+}
+
 /// Local, versioned favourites. Unknown IDs are harmless and never alter content.
 enum SaintSayingFavorites {
     static let storageKey = "klimax.saintSayings.favoriteIDs.v1"
