@@ -381,7 +381,7 @@ struct PrayerLibraryView: View {
 
             sectionContent
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
-                .ignoresSafeArea(.container, edges: .bottom)
+                .ignoresSafeArea(.container, edges: selectedSection == .komposchoini ? [] : .bottom)
 
             VStack {
                 sectionMenu

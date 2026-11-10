@@ -37,7 +37,15 @@ struct PrayerRopeView: View {
                 .frame(maxWidth: .infinity)
                 .padding(.horizontal, 20)
                 .padding(.top, focused ? 8 : 82)
-                .padding(.bottom, focused ? 20 : 100)
+                .padding(.bottom, model.session != nil && !editing ? 8 : 100)
+            }
+            .safeAreaInset(edge: .bottom, spacing: 0) {
+                if let session = model.session, !editing {
+                    sessionFooter(session)
+                        .padding(.horizontal, 20).padding(.top, 10).padding(.bottom, 12)
+                        .frame(maxWidth: .infinity)
+                        .background(Paper.bg)
+                }
             }
             .scrollDismissesKeyboard(.interactively)
             .background(Paper.bg)
@@ -215,19 +223,23 @@ struct PrayerRopeView: View {
                         .accessibilityValue("\(session.count) από \(session.draft.length)")
                 }
                 .padding(.horizontal, -20)
+
+        }.foregroundStyle(Paper.ink)
+    }
+
+    private func sessionFooter(_ session: PrayerRopeSession) -> some View {
+        VStack(spacing: 8) {
             Text("Πάτησε τον κάτω κόμπο ή σύρε προς τα κάτω").font(.system(size: 10)).foregroundStyle(Paper.inkMute)
             Text("\(session.count) / \(session.draft.length)").font(.system(size: 13).monospacedDigit()).foregroundStyle(Paper.inkSoft)
                 .accessibilityLabel("\(session.count) από \(session.draft.length) κόμπους")
             if session.isComplete && !busy {
                 Text("Ο κύκλος ολοκληρώθηκε.").font(.custom("GFSDidot-Regular", size: 20)).padding(.top, 10)
-                HStack {
-                    Button("Νέος κύκλος") {
-                        if needsReview { edit() } else {
-                            model.restart(using: names.entries); resetMovement(); withAnimation(curve) { focused = false }
-                        }
-                    }
-                    Button("Ολοκλήρωση") { model.finish(); resetMovement(); focused = false }
-                }.buttonStyle(.bordered)
+                ViewThatFits(in: .horizontal) {
+                    HStack(spacing: 12) { completionButtons }
+                        .fixedSize(horizontal: true, vertical: false)
+                    VStack(spacing: 8) { completionButtons }
+                }
+                .buttonStyle(.bordered).controlSize(.large)
             } else if needsReview {
                 Text("Τα επιλεγμένα ονόματα άλλαξαν στα Δίπτυχα. Η αποθηκευμένη ευχή διατηρείται. Έλεγξε τα ονόματα πριν συνεχίσεις.")
                     .font(.footnote).multilineTextAlignment(.center).foregroundStyle(Paper.inkSoft)
@@ -235,7 +247,18 @@ struct PrayerRopeView: View {
             }
             Button("Αποθήκευση και επιστροφή") { completeMovement(feedback: false); edit() }
                 .font(.footnote).frame(minHeight: 44).foregroundStyle(Paper.inkSoft)
-        }.foregroundStyle(Paper.ink)
+        }
+        .foregroundStyle(Paper.ink)
+        .fixedSize(horizontal: false, vertical: true)
+    }
+
+    @ViewBuilder private var completionButtons: some View {
+        Button("Νέος κύκλος") {
+            if needsReview { edit() } else {
+                model.restart(using: names.entries); resetMovement(); withAnimation(curve) { focused = false }
+            }
+        }
+        Button("Ολοκλήρωση") { model.finish(); resetMovement(); focused = false }
     }
 
     private func prayerHeight(_ text: String, width: CGFloat) -> CGFloat {
