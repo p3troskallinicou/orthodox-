@@ -15,6 +15,7 @@ struct DiptychaEntry: Identifiable, Codable, Hashable {
     var name: String
     var category: DiptychaCategory
     var note: String?
+    var prayerGrammar: PrayerNameGrammar?
     let createdAt: Date
 
     init(
@@ -22,12 +23,14 @@ struct DiptychaEntry: Identifiable, Codable, Hashable {
         name: String,
         category: DiptychaCategory,
         note: String? = nil,
+        prayerGrammar: PrayerNameGrammar? = nil,
         createdAt: Date = Date()
     ) {
         self.id = id
         self.name = name
         self.category = category
         self.note = note
+        self.prayerGrammar = prayerGrammar
         self.createdAt = createdAt
     }
 }
@@ -50,20 +53,21 @@ final class DiptychaStore {
         entries.filter { $0.category == category }
     }
 
-    func add(name: String, category: DiptychaCategory, note: String?) {
+    func add(name: String, category: DiptychaCategory, note: String?, prayerGrammar: PrayerNameGrammar? = nil) {
         let cleanName = Self.cleanName(name)
         guard !cleanName.isEmpty else { return }
-        entries.append(.init(name: cleanName, category: category, note: Self.cleanNote(note)))
+        entries.append(.init(name: cleanName, category: category, note: Self.cleanNote(note), prayerGrammar: prayerGrammar))
         save()
     }
 
-    func update(_ entry: DiptychaEntry, name: String, category: DiptychaCategory, note: String?) {
+    func update(_ entry: DiptychaEntry, name: String, category: DiptychaCategory, note: String?, prayerGrammar: PrayerNameGrammar? = nil) {
         guard let index = entries.firstIndex(where: { $0.id == entry.id }) else { return }
         let cleanName = Self.cleanName(name)
         guard !cleanName.isEmpty else { return }
         entries[index].name = cleanName
         entries[index].category = category
         entries[index].note = Self.cleanNote(note)
+        entries[index].prayerGrammar = prayerGrammar
         save()
     }
 

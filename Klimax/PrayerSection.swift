@@ -373,6 +373,7 @@ struct PrayerLibraryView: View {
     @State private var store = PrayerStore()
     @State private var selectedSection: PrayerRootSection = .prayers
     @State private var headerCondensed = false
+    @State private var ropeFocused = false
 
     var body: some View {
         ZStack {
@@ -387,10 +388,14 @@ struct PrayerLibraryView: View {
                 Spacer()
             }
             .zIndex(1)
+            .opacity(ropeFocused ? 0 : 1)
+            .allowsHitTesting(!ropeFocused)
+            .accessibilityHidden(ropeFocused)
         }
         .simultaneousGesture(
             DragGesture(minimumDistance: 8)
                 .onChanged { value in
+                    guard selectedSection != .komposchoini else { return }
                     let shouldCondense = value.translation.height < -6
                     let shouldExpand = value.translation.height > 18
                     guard shouldCondense || shouldExpand else { return }
@@ -403,6 +408,10 @@ struct PrayerLibraryView: View {
         )
         .background(Color.clear)
         .toolbar(.hidden, for: .navigationBar)
+        .toolbar(ropeFocused ? .hidden : .automatic, for: .tabBar)
+        .onChange(of: selectedSection) { _, section in
+            if section != .komposchoini { ropeFocused = false }
+        }
         .navigationDestination(for: PrayerCategory.self) { PrayerCategoryView(category: $0) }
         // Pass the loaded categories so the reader can resolve in-text @link: jumps.
         .navigationDestination(for: PrayerRoute.self) {
@@ -435,6 +444,8 @@ struct PrayerLibraryView: View {
                 subtitle: "Λατρευτικές ακολουθίες της Εκκλησίας",
                 includesDivineLiturgy: true
             )
+        case .komposchoini:
+            PrayerRopeView(focused: $ropeFocused)
         case .psalter:
             categoryLibrary(
                 categories: categories(withIDs: ["psaltirion"]),
@@ -624,12 +635,13 @@ struct PrayerLibraryView: View {
 }
 
 private enum PrayerRootSection: String, CaseIterable, Identifiable {
-    case prayers, services, psalter
+    case prayers, services, psalter, komposchoini
     var id: String { rawValue }
     var title: String {
         switch self {
         case .prayers: return "Προσευχές"
         case .services: return "Ακολουθίες"
+        case .komposchoini: return "Κομποσχοίνι"
         case .psalter: return "Ψαλτήριον"
         }
     }
@@ -637,6 +649,7 @@ private enum PrayerRootSection: String, CaseIterable, Identifiable {
         switch self {
         case .prayers: return "flame.fill"
         case .services: return "books.vertical.fill"
+        case .komposchoini: return "circle.dotted"
         case .psalter: return "book.closed.fill"
         }
     }
