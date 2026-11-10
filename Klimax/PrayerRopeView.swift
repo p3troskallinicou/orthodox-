@@ -104,18 +104,8 @@ struct PrayerRopeView: View {
                     Text("Επίλεξε ένα ή περισσότερα ονόματα για να εμφανιστεί η ευχή.")
                         .font(.footnote).foregroundStyle(Paper.inkSoft)
                 } else {
-                    Text("Επιβεβαίωσε μία φορά το γένος και την κλίση των επιλεγμένων ονομάτων. Μετά θα εμφανιστεί η ευχή και θα μπορείς να ξεκινήσεις.")
+                    Text("Διάλεξε άνδρα ή γυναίκα κάτω από το όνομα που χρειάζεται γένος. Δεν χρειάζεται έλεγχος κλίσης.")
                         .font(.footnote).foregroundStyle(Paper.inkSoft)
-                    if let document = DeisisCatalog.document {
-                        ForEach(model.draft.selected(from: names.entries).filter { $0.prayerGrammar?.isValid != true }) { entry in
-                            NavigationLink {
-                                DiptychaView(document: document, initialEditingID: entry.id, opensPrayerGrammar: true)
-                            } label: {
-                                Label("Επιβεβαίωση για \(entry.name)", systemImage: "pencil")
-                                    .font(.footnote).frame(minHeight: 44)
-                            }.buttonStyle(.bordered)
-                        }
-                    }
                 }
             }
             Button(model.session == nil ? "Έναρξη προσευχής" : "Έναρξη νέας προσευχής") {
@@ -139,22 +129,35 @@ struct PrayerRopeView: View {
             if entries.isEmpty { Text("Δεν υπάρχουν ονόματα σε αυτή την κατηγορία.").font(.footnote).foregroundStyle(Paper.inkMute) }
             ForEach(entries) { entry in
                 let selected = model.draft.selectedIDs.contains(entry.id)
-                Button {
-                    if selected { model.draft.selectedIDs.removeAll { $0 == entry.id } }
-                    else { model.draft.selectedIDs.append(entry.id) }
-                } label: {
-                    HStack(spacing: 12) {
-                        Image(systemName: selected ? "checkmark.circle.fill" : "circle").foregroundStyle(Paper.gold)
-                        VStack(alignment: .leading, spacing: 4) {
+                VStack(alignment: .leading, spacing: 8) {
+                    Button {
+                        if selected { model.draft.selectedIDs.removeAll { $0 == entry.id } }
+                        else { model.draft.selectedIDs.append(entry.id) }
+                    } label: {
+                        HStack(spacing: 12) {
+                            Image(systemName: selected ? "checkmark.circle.fill" : "circle").foregroundStyle(Paper.gold)
                             Text(entry.name)
-                            if entry.prayerGrammar?.isValid != true {
-                                Text("Χρειάζεται επιβεβαίωση κλίσης").font(.caption).foregroundStyle(Paper.inkMute)
+                            Spacer()
+                        }.frame(minHeight: 44)
+                    }.buttonStyle(.plain).accessibilityValue(selected ? "Επιλεγμένο" : "")
+                    if selected && entry.resolvedPrayerGrammar == nil {
+                        Picker("Γένος για \(entry.name)", selection: Binding<PrayerNameGrammar.Gender?>(
+                            get: { entry.prayerGender },
+                            set: { gender in
+                                guard let gender else { return }
+                                let manual = entry.prayerGrammar?.gender == gender ? entry.prayerGrammar : nil
+                                names.update(entry, name: entry.name, category: entry.category, note: entry.note,
+                                             prayerGrammar: manual, prayerGender: gender)
                             }
-                        }
-                        Spacer()
-                    }.frame(minHeight: 44)
-                }.buttonStyle(.plain).accessibilityValue(selected ? "Επιλεγμένο" : "")
+                        )) {
+                            Text("Επίλεξε").tag(nil as PrayerNameGrammar.Gender?)
+                            Text("Άνδρας").tag(PrayerNameGrammar.Gender?.some(.masculine))
+                            Text("Γυναίκα").tag(PrayerNameGrammar.Gender?.some(.feminine))
+                        }.pickerStyle(.segmented)
+                    }
+                }
             }
+
             if let document = DeisisCatalog.document {
                 NavigationLink { DiptychaView(document: document) } label: {
                     Label("Άνοιγμα Διπτύχων", systemImage: "chevron.right").font(.footnote).frame(minHeight: 44)

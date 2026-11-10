@@ -16,6 +16,11 @@ struct DiptychaEntry: Identifiable, Codable, Hashable {
     var category: DiptychaCategory
     var note: String?
     var prayerGrammar: PrayerNameGrammar?
+    var prayerGender: PrayerNameGrammar.Gender?
+
+    var resolvedPrayerGrammar: PrayerNameGrammar? {
+        GreekPrayerNames.resolve(name, gender: prayerGender, manual: prayerGrammar)
+    }
     let createdAt: Date
 
     init(
@@ -24,6 +29,7 @@ struct DiptychaEntry: Identifiable, Codable, Hashable {
         category: DiptychaCategory,
         note: String? = nil,
         prayerGrammar: PrayerNameGrammar? = nil,
+        prayerGender: PrayerNameGrammar.Gender? = nil,
         createdAt: Date = Date()
     ) {
         self.id = id
@@ -31,6 +37,7 @@ struct DiptychaEntry: Identifiable, Codable, Hashable {
         self.category = category
         self.note = note
         self.prayerGrammar = prayerGrammar
+        self.prayerGender = prayerGender
         self.createdAt = createdAt
     }
 }
@@ -53,14 +60,14 @@ final class DiptychaStore {
         entries.filter { $0.category == category }
     }
 
-    func add(name: String, category: DiptychaCategory, note: String?, prayerGrammar: PrayerNameGrammar? = nil) {
+    func add(name: String, category: DiptychaCategory, note: String?, prayerGrammar: PrayerNameGrammar? = nil, prayerGender: PrayerNameGrammar.Gender? = nil) {
         let cleanName = Self.cleanName(name)
         guard !cleanName.isEmpty else { return }
-        entries.append(.init(name: cleanName, category: category, note: Self.cleanNote(note), prayerGrammar: prayerGrammar))
+        entries.append(.init(name: cleanName, category: category, note: Self.cleanNote(note), prayerGrammar: prayerGrammar, prayerGender: prayerGender))
         save()
     }
 
-    func update(_ entry: DiptychaEntry, name: String, category: DiptychaCategory, note: String?, prayerGrammar: PrayerNameGrammar? = nil) {
+    func update(_ entry: DiptychaEntry, name: String, category: DiptychaCategory, note: String?, prayerGrammar: PrayerNameGrammar? = nil, prayerGender: PrayerNameGrammar.Gender? = nil) {
         guard let index = entries.firstIndex(where: { $0.id == entry.id }) else { return }
         let cleanName = Self.cleanName(name)
         guard !cleanName.isEmpty else { return }
@@ -68,6 +75,7 @@ final class DiptychaStore {
         entries[index].category = category
         entries[index].note = Self.cleanNote(note)
         entries[index].prayerGrammar = prayerGrammar
+        entries[index].prayerGender = prayerGender
         save()
     }
 
