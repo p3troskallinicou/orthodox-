@@ -3,10 +3,21 @@ import UniformTypeIdentifiers
 
 struct DiptychaView: View {
     let document: DeisisDocument
+    let initialEditingID: UUID?
+    let opensPrayerGrammar: Bool
+
+    init(document: DeisisDocument, initialEditingID: UUID? = nil, opensPrayerGrammar: Bool = false) {
+        self.document = document
+        self.initialEditingID = initialEditingID
+        self.opensPrayerGrammar = opensPrayerGrammar
+    }
 
     @Environment(DiptychaStore.self) private var store
+    @Environment(\.dismiss) private var dismiss
     @State private var editor: DiptychaEditorContext?
     @State private var draggedEntryID: UUID?
+    @State private var openedRequestedEditor = false
+    @State private var returnsFromRequestedEditor = false
 
     var body: some View {
         ScrollView {
@@ -25,6 +36,7 @@ struct DiptychaView: View {
         .background(Paper.bg.ignoresSafeArea())
         .navigationTitle("Δίπτυχα")
         .navigationBarTitleDisplayMode(.inline)
+        .toolbar(opensPrayerGrammar ? .visible : .automatic, for: .navigationBar)
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
                 Button {
@@ -41,8 +53,10 @@ struct DiptychaView: View {
                 .accessibilityLabel("Προσθήκη ονόματος")
             }
         }
-        .sheet(item: $editor) { context in
-            DiptychaEditorView(document: document, context: context) { name, category, note, grammar in
+        .sheet(item: $editor, onDismiss: {
+            if returnsFromRequestedEditor { returnsFromRequestedEditor = false; dismiss() }
+        }) { context in
+            DiptychaEditorView(document: document, context: context, expandPrayerGrammar: opensPrayerGrammar && context.entry?.id == initialEditingID) { name, category, note, grammar in
                 switch context {
                 case .new:
                     store.add(name: name, category: category, note: note, prayerGrammar: grammar)
@@ -50,6 +64,14 @@ struct DiptychaView: View {
                     store.update(entry, name: name, category: category, note: note, prayerGrammar: grammar)
                 }
                 editor = nil
+            }
+        }
+        .onAppear {
+            guard !openedRequestedEditor else { return }
+            openedRequestedEditor = true
+            if let id = initialEditingID, let entry = store.entries.first(where: { $0.id == id }) {
+                returnsFromRequestedEditor = opensPrayerGrammar
+                editor = .edit(entry)
             }
         }
     }
@@ -160,6 +182,7 @@ private struct DiptychaEditorView: View {
     let document: DeisisDocument
     let context: DiptychaEditorContext
     let onSave: (String, DiptychaCategory, String?, PrayerNameGrammar?) -> Void
+    private let requiresPrayerGrammar: Bool
 
     @Environment(\.dismiss) private var dismiss
     @State private var name: String
@@ -169,19 +192,23 @@ private struct DiptychaEditorView: View {
     @State private var accusative: String
     @State private var genitive: String
     @State private var grammarConfirmed: Bool
+    @State private var grammarExpanded: Bool
     @FocusState private var nameFocused: Bool
 
     init(
         document: DeisisDocument,
         context: DiptychaEditorContext,
+        expandPrayerGrammar: Bool = false,
         onSave: @escaping (String, DiptychaCategory, String?, PrayerNameGrammar?) -> Void
     ) {
         self.document = document
         self.context = context
         self.onSave = onSave
+        self.requiresPrayerGrammar = expandPrayerGrammar
         _name = State(initialValue: context.entry?.name ?? "")
         _category = State(initialValue: context.initialCategory)
         _note = State(initialValue: context.entry?.note ?? "")
+        _grammarExpanded = State(initialValue: expandPrayerGrammar)
         _grammarGender = State(initialValue: context.entry?.prayerGrammar?.gender)
         _accusative = State(initialValue: context.entry?.prayerGrammar?.accusative ?? "")
         _genitive = State(initialValue: context.entry?.prayerGrammar?.genitive ?? "")
@@ -259,12 +286,12 @@ private struct DiptychaEditorView: View {
                         .font(.system(size: 15, weight: .heavy))
                 }
                 ToolbarItem(placement: .confirmationAction) {
-                    Button("Αποθήκευση") {
+                    Button(requiresPrayerGrammar ? "Επιβεβαίωση" : "Αποθήκευση") {
                         onSave(name, category, note, confirmedGrammar)
                         dismiss()
                     }
                     .font(.system(size: 15, weight: .heavy))
-                    .disabled(name.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)
+                    .disabled(name.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty || (requiresPrayerGrammar && confirmedGrammar == nil))
                 }
             }
             .onAppear { nameFocused = context.entry == nil }
@@ -285,9 +312,9 @@ private struct DiptychaEditorView: View {
     }
 
     private var prayerGrammarEditor: some View {
-        DisclosureGroup("Κλίση ονόματος για το κομποσχοίνι") {
+        DisclosureGroup("Κλίση ονόματος για το κομποσχοίνι", isExpanded: $grammarExpanded) {
             VStack(alignment: .leading, spacing: 14) {
-                Text("Προαιρετικό για τα Δίπτυχα. Απαιτείται για την προσωπική ευχή στο κομποσχοίνι. Δεν μαντεύουμε τις καταλήξεις.")
+                Text("Συμπλήρωσε μία φορά το γένος και τις μορφές του ονόματος. Θα χρησιμοποιούνται στις ευχές για αυτό το πρόσωπο. Τα υπάρχοντα στοιχεία του ονόματος διατηρούνται.")
                     .font(.footnote).foregroundStyle(Paper.inkMute)
                 Picker("Γραμματικό γένος", selection: $grammarGender) {
                     Text("Επίλεξε").tag(nil as PrayerNameGrammar.Gender?)
@@ -296,11 +323,11 @@ private struct DiptychaEditorView: View {
                 }
                 VStack(alignment: .leading) {
                     Text("Αιτιατική · π.χ. Γεώργιο / Μαρία").font(.caption)
-                    TextField("Αιτιατική", text: $accusative).textFieldStyle(.roundedBorder)
+                    TextField("Αιτιατική", text: $accusative).textFieldStyle(.roundedBorder).autocorrectionDisabled()
                 }
                 VStack(alignment: .leading) {
                     Text("Γενική · π.χ. Γεωργίου / Μαρίας").font(.caption)
-                    TextField("Γενική", text: $genitive).textFieldStyle(.roundedBorder)
+                    TextField("Γενική", text: $genitive).textFieldStyle(.roundedBorder).autocorrectionDisabled()
                 }
                 Toggle("Επιβεβαιώνω το γένος και τις σωστές κλίσεις του ονόματος.", isOn: $grammarConfirmed)
                     .font(.footnote)

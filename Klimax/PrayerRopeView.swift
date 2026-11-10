@@ -98,13 +98,30 @@ struct PrayerRopeView: View {
             }
             VStack(alignment: .leading, spacing: 8) {
                 Text("Η ΕΥΧΗ").font(.caption2).foregroundStyle(Paper.inkMute)
-                Text(model.draft.prayer(using: names.entries) ?? "Επίλεξε ονόματα με επιβεβαιωμένο γένος και σωστή κλίση στα Δίπτυχα.")
-                    .font(.custom("GFSDidot-Regular", size: 23)).fixedSize(horizontal: false, vertical: true)
+                if let prayer = model.draft.prayer(using: names.entries) {
+                    Text(prayer).font(.custom("GFSDidot-Regular", size: 23)).fixedSize(horizontal: false, vertical: true)
+                } else if model.draft.selectedIDs.isEmpty {
+                    Text("Επίλεξε ένα ή περισσότερα ονόματα για να εμφανιστεί η ευχή.")
+                        .font(.footnote).foregroundStyle(Paper.inkSoft)
+                } else {
+                    Text("Επιβεβαίωσε μία φορά το γένος και την κλίση των επιλεγμένων ονομάτων. Μετά θα εμφανιστεί η ευχή και θα μπορείς να ξεκινήσεις.")
+                        .font(.footnote).foregroundStyle(Paper.inkSoft)
+                    if let document = DeisisCatalog.document {
+                        ForEach(model.draft.selected(from: names.entries).filter { $0.prayerGrammar?.isValid != true }) { entry in
+                            NavigationLink {
+                                DiptychaView(document: document, initialEditingID: entry.id, opensPrayerGrammar: true)
+                            } label: {
+                                Label("Επιβεβαίωση για \(entry.name)", systemImage: "pencil")
+                                    .font(.footnote).frame(minHeight: 44)
+                            }.buttonStyle(.bordered)
+                        }
+                    }
+                }
             }
             Button(model.session == nil ? "Έναρξη προσευχής" : "Έναρξη νέας προσευχής") {
                 if model.session == nil { start() } else { replaceSession = true }
             }
-            .buttonStyle(.borderedProminent).tint(Paper.gold)
+            .buttonStyle(PrayerRopeStartButtonStyle())
             .disabled(model.draft.prayer(using: names.entries) == nil)
             Text("Τα ονόματα και η πρόοδος παραμένουν μόνο στη συσκευή σου.")
                 .font(.footnote).foregroundStyle(Paper.inkMute)
@@ -311,5 +328,19 @@ private struct PrayerRopeStage: View {
             }
             .accessibilityHidden(true)
         }.clipped()
+    }
+}
+
+/// Explicit colours prevent inherited paper ink from tinting a prominent label.
+private struct PrayerRopeStartButtonStyle: ButtonStyle {
+    @Environment(\.isEnabled) private var isEnabled
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .font(.system(size: 15, weight: .semibold))
+            .foregroundStyle(isEnabled ? Color.white : Paper.inkSoft)
+            .padding(.horizontal, 18).frame(minHeight: 44)
+            .background(isEnabled ? Paper.gold : Paper.ink.opacity(0.08), in: RoundedRectangle(cornerRadius: 12))
+            .overlay(RoundedRectangle(cornerRadius: 12).stroke(Paper.hairline, lineWidth: 0.5))
+            .opacity(configuration.isPressed && isEnabled ? 0.85 : 1)
     }
 }
