@@ -17,7 +17,7 @@ struct PrayerRopeView: View {
     @State private var fadesOpeningKnot = false
     @FocusState private var knotFocused: Bool
 
-    private var curve: Animation { reduceMotion ? .linear(duration: 0.07) : .timingCurve(0.22, 0.75, 0.22, 1, duration: 0.48) }
+    private var curve: Animation? { reduceMotion ? nil : .timingCurve(0.22, 0.75, 0.22, 1, duration: 0.48) }
     private var needsReview: Bool { model.session?.needsReview(using: names.entries) ?? false }
 
     var body: some View {
@@ -198,7 +198,7 @@ struct PrayerRopeView: View {
             Text("Πάτησε τον κάτω κόμπο ή σύρε προς τα κάτω").font(.system(size: 10)).foregroundStyle(Paper.inkMute)
             Text("\(session.count) / \(session.draft.length)").font(.system(size: 13).monospacedDigit()).foregroundStyle(Paper.inkSoft)
                 .accessibilityLabel("\(session.count) από \(session.draft.length) κόμπους")
-            if session.isComplete {
+            if session.isComplete && !busy {
                 Text("Ο κύκλος ολοκληρώθηκε.").font(.custom("GFSDidot-Regular", size: 20)).padding(.top, 10)
                 HStack {
                     Button("Νέος κύκλος") {
