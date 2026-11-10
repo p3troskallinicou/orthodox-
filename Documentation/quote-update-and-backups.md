@@ -70,3 +70,9 @@ New transparent PNG assets contain only the approved wool knot/cross artwork, ra
 `Scripts/test-prayer-rope.swift` covers legacy entry decoding, exact Greek examples, missing/deleted names, all five complete cycles through 500 knots, one-shot milestones, persistence/resume, restart and name-change protection. Its documented command uses an existing Xcode Swift toolchain without packages. The Windows/Linux workspace has no Swift compiler; local execution is unavailable. The existing manual simulator workflow compiles the native application on macOS; actual touch, VoiceOver, animation and haptic behaviour require simulator/device review.
 
 The sole required original backup remains `backup/original-before-additions-2026-11-08` at `5f8ccf302c6eb8520cb40bc3c09e0961eb1ac6f4`. No additional backup branch/tag is created. Integration uses normal feature-branch/PR history and a successful simulator build before merge.
+
+## Prayer setup repair
+
+The initial preview samples already contained confirmed forms, hiding the first-use path for real pre-existing Diptycha entries. Setup now distinguishes an empty selection from names requiring one-time confirmation. Each incomplete selected name has a direct confirmation link into its existing Diptycha editor, opened with grammatical fields expanded. In that requested context, confirmation requires both explicit forms and gender; saving or cancelling returns to prayer setup. Normal names editing remains optional and behaves as before. Confirming writes to the same canonical entry and immediately enables generated prayer text without another names store or guessed endings.
+
+The Start button uses explicit white-on-oxblood enabled colours and readable ink on a neutral disabled surface, avoiding the inherited ink foreground which made the original prominent label unreadable. No prayer wording, case rules, existing names, cycle state, artwork, workflows, project settings or dependencies change.
