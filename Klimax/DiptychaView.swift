@@ -42,12 +42,12 @@ struct DiptychaView: View {
             }
         }
         .sheet(item: $editor) { context in
-            DiptychaEditorView(document: document, context: context) { name, category, note in
+            DiptychaEditorView(document: document, context: context) { name, category, note, grammar in
                 switch context {
                 case .new:
-                    store.add(name: name, category: category, note: note)
+                    store.add(name: name, category: category, note: note, prayerGrammar: grammar)
                 case .edit(let entry):
-                    store.update(entry, name: name, category: category, note: note)
+                    store.update(entry, name: name, category: category, note: note, prayerGrammar: grammar)
                 }
                 editor = nil
             }
@@ -159,18 +159,22 @@ private enum DiptychaEditorContext: Identifiable {
 private struct DiptychaEditorView: View {
     let document: DeisisDocument
     let context: DiptychaEditorContext
-    let onSave: (String, DiptychaCategory, String?) -> Void
+    let onSave: (String, DiptychaCategory, String?, PrayerNameGrammar?) -> Void
 
     @Environment(\.dismiss) private var dismiss
     @State private var name: String
     @State private var category: DiptychaCategory
     @State private var note: String
+    @State private var grammarGender: PrayerNameGrammar.Gender?
+    @State private var accusative: String
+    @State private var genitive: String
+    @State private var grammarConfirmed: Bool
     @FocusState private var nameFocused: Bool
 
     init(
         document: DeisisDocument,
         context: DiptychaEditorContext,
-        onSave: @escaping (String, DiptychaCategory, String?) -> Void
+        onSave: @escaping (String, DiptychaCategory, String?, PrayerNameGrammar?) -> Void
     ) {
         self.document = document
         self.context = context
@@ -178,6 +182,10 @@ private struct DiptychaEditorView: View {
         _name = State(initialValue: context.entry?.name ?? "")
         _category = State(initialValue: context.initialCategory)
         _note = State(initialValue: context.entry?.note ?? "")
+        _grammarGender = State(initialValue: context.entry?.prayerGrammar?.gender)
+        _accusative = State(initialValue: context.entry?.prayerGrammar?.accusative ?? "")
+        _genitive = State(initialValue: context.entry?.prayerGrammar?.genitive ?? "")
+        _grammarConfirmed = State(initialValue: context.entry?.prayerGrammar?.isValid == true)
     }
 
     var body: some View {
@@ -225,6 +233,8 @@ private struct DiptychaEditorView: View {
                             .stroke(Paper.hairline, lineWidth: 1)
                     )
 
+                    prayerGrammarEditor
+
                     fieldTitle("Σημείωση")
                     TextEditor(text: $note)
                         .font(.custom("Gentium Book Plus", size: 17))
@@ -250,7 +260,7 @@ private struct DiptychaEditorView: View {
                 }
                 ToolbarItem(placement: .confirmationAction) {
                     Button("Αποθήκευση") {
-                        onSave(name, category, note)
+                        onSave(name, category, note, confirmedGrammar)
                         dismiss()
                     }
                     .font(.system(size: 15, weight: .heavy))
@@ -258,8 +268,45 @@ private struct DiptychaEditorView: View {
                 }
             }
             .onAppear { nameFocused = context.entry == nil }
+            .onChange(of: name) { _, _ in grammarConfirmed = false }
+            .onChange(of: grammarGender) { _, _ in grammarConfirmed = false }
+            .onChange(of: accusative) { _, _ in grammarConfirmed = false }
+            .onChange(of: genitive) { _, _ in grammarConfirmed = false }
         }
         .presentationBackground(.ultraThinMaterial)
+    }
+
+    private var confirmedGrammar: PrayerNameGrammar? {
+        guard grammarConfirmed, let gender = grammarGender else { return nil }
+        let value = PrayerNameGrammar(gender: gender,
+            accusative: accusative.trimmingCharacters(in: .whitespacesAndNewlines),
+            genitive: genitive.trimmingCharacters(in: .whitespacesAndNewlines))
+        return value.isValid ? value : nil
+    }
+
+    private var prayerGrammarEditor: some View {
+        DisclosureGroup("Κλίση ονόματος για το κομποσχοίνι") {
+            VStack(alignment: .leading, spacing: 14) {
+                Text("Προαιρετικό για τα Δίπτυχα. Απαιτείται για την προσωπική ευχή στο κομποσχοίνι. Δεν μαντεύουμε τις καταλήξεις.")
+                    .font(.footnote).foregroundStyle(Paper.inkMute)
+                Picker("Γραμματικό γένος", selection: $grammarGender) {
+                    Text("Επίλεξε").tag(nil as PrayerNameGrammar.Gender?)
+                    Text("Αρσενικό").tag(PrayerNameGrammar.Gender?.some(.masculine))
+                    Text("Θηλυκό").tag(PrayerNameGrammar.Gender?.some(.feminine))
+                }
+                VStack(alignment: .leading) {
+                    Text("Αιτιατική · π.χ. Γεώργιο / Μαρία").font(.caption)
+                    TextField("Αιτιατική", text: $accusative).textFieldStyle(.roundedBorder)
+                }
+                VStack(alignment: .leading) {
+                    Text("Γενική · π.χ. Γεωργίου / Μαρίας").font(.caption)
+                    TextField("Γενική", text: $genitive).textFieldStyle(.roundedBorder)
+                }
+                Toggle("Επιβεβαιώνω το γένος και τις σωστές κλίσεις του ονόματος.", isOn: $grammarConfirmed)
+                    .font(.footnote)
+                    .disabled(grammarGender == nil || accusative.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty || genitive.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)
+            }.padding(.top, 12)
+        }.tint(Paper.gold)
     }
 
     private func fieldTitle(_ value: String) -> some View {

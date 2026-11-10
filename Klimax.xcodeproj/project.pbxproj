@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C0DEFA130000000000000201 /* PrayerRope.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DEFA130000000000000101 /* PrayerRope.swift */; };
+		C0DEFA130000000000000202 /* PrayerRopeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DEFA130000000000000102 /* PrayerRopeView.swift */; };
 		C0DEFA110000000000000201 /* PrayerInvitationSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DEFA110000000000000101 /* PrayerInvitationSchedule.swift */; };
 		C0DEFA110000000000000202 /* PrayerInvitationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DEFA110000000000000102 /* PrayerInvitationView.swift */; };
 		C0DEFA120000000000000201 /* SaintSayings.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DEFA120000000000000101 /* SaintSayings.swift */; };
@@ -141,6 +143,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		C0DEFA130000000000000101 /* PrayerRope.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayerRope.swift; sourceTree = "<group>"; };
+		C0DEFA130000000000000102 /* PrayerRopeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayerRopeView.swift; sourceTree = "<group>"; };
 		C0DEFA110000000000000101 /* PrayerInvitationSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayerInvitationSchedule.swift; sourceTree = "<group>"; };
 		C0DEFA110000000000000102 /* PrayerInvitationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayerInvitationView.swift; sourceTree = "<group>"; };
 		C0DEFA120000000000000101 /* SaintSayings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaintSayings.swift; sourceTree = "<group>"; };
@@ -316,6 +320,8 @@
 		CC0000000000000000000002 /* Klimax */ = {
 			isa = PBXGroup;
 			children = (
+				C0DEFA130000000000000101 /* PrayerRope.swift */,
+				C0DEFA130000000000000102 /* PrayerRopeView.swift */,
 				C0DECA510000000000000101 /* ScriptureLearningActivityManager.swift */,
 				665A5EFC30054407002F07EC /* Klimax.entitlements */,
 				665A5ECF2FF7B543002F07EC /* Info.plist */,
@@ -582,6 +588,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0DEFA130000000000000201 /* PrayerRope.swift in Sources */,
+				C0DEFA130000000000000202 /* PrayerRopeView.swift in Sources */,
 				C0DECA510000000000000001 /* ScriptureLearningActivityManager.swift in Sources */,
 				C0DECA510000000000000002 /* ScriptureLearningActivity.swift in Sources */,
 				BB0000000000000000000010 /* BookChaptersView.swift in Sources */,
