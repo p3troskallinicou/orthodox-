@@ -288,7 +288,7 @@ private struct SaintSayingsGallery: View {
                     .padding(.horizontal, 12).padding(.vertical, 11)
                     .frame(width: width, height: footerHeight, alignment: .topLeading)
                 }
-                .background { SayingArtwork(photo: photo) }
+                .background { SayingArtwork(photo: photo).allowsHitTesting(false) }
             }
             .buttonStyle(CalmCardStyle())
             .accessibilityLabel("\(catalog.category(for: saying).title). \(saying.text)")
@@ -304,7 +304,7 @@ private struct SaintSayingsGallery: View {
             }.padding(10).zIndex(1)
         }
         .clipShape(RoundedRectangle(cornerRadius: prominent ? 27 : 23))
-        .overlay(RoundedRectangle(cornerRadius: prominent ? 27 : 23).stroke(Paper.hairline, lineWidth: 0.5))
+        .overlay(RoundedRectangle(cornerRadius: prominent ? 27 : 23).stroke(Paper.hairline, lineWidth: 0.5).allowsHitTesting(false))
     }
 }
 
