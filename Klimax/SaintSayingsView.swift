@@ -1,5 +1,6 @@
 import SwiftUI
 import UIKit
+import CoreImage
 
 struct SaintSayingsView: View {
     @AppStorage(SaintSayingFavorites.storageKey) private var favoriteData = Data()
@@ -38,6 +39,7 @@ private struct SayingSelection: Identifiable {
 private struct SaintSayingsGallery: View {
     let catalog: SaintSayingsCatalog
     @Binding var favoriteIDs: Set<String>
+    @State private var sharing: SaintSaying?
     @State private var saintID: String
     @State private var categoryID: String?
     @State private var query = ""
@@ -116,6 +118,9 @@ private struct SaintSayingsGallery: View {
                 SaintSayingsFeed(catalog: catalog, favoriteIDs: $favoriteIDs,
                     section: $section, saintID: $saintID, categoryID: $categoryID, query: $query) { showsFeed = false }
             }
+        }
+        .sheet(item: $sharing) { saying in
+            SaintSayingSharePreview(catalog: catalog, saying: saying)
         }
         .animation(reduceMotion ? nil : .easeInOut(duration: 0.2), value: section)
         .onChange(of: section) { _, _ in
@@ -212,7 +217,7 @@ private struct SaintSayingsGallery: View {
                     ForEach(Array(stride(from: 1, to: group.count, by: 2)), id: \.self) { rowStart in
                         let pair = Array(group.dropFirst(rowStart).prefix(2))
                         let side = (width - 12) / 2
-                        let sharedImageHeight = pair.map { imageHeight($0, width: side) }.max() ?? side
+                        let sharedImageHeight = max(side * 5 / 3, pair.map { imageHeight($0, width: side) }.max() ?? side)
                         let sharedFooterHeight = footerHeight(pair, width: side, prominent: false)
                         HStack(alignment: .top, spacing: 12) {
                             ForEach(pair) { saying in
@@ -246,7 +251,13 @@ private struct SaintSayingsGallery: View {
                       prominent: Bool, sayings: [SaintSaying]) -> some View {
         let photo = catalog.photo(for: saying)
         let size = CGSize(width: width, height: imageHeight)
-        let textRegion = photo.cardTextRegion(in: size)
+        let textRegion: CGRect
+        if prominent {
+            textRegion = photo.cardTextRegion(in: size)
+        } else {
+            let top = max(114, imageHeight * CGFloat(photo.textStart ?? 0.62))
+            textRegion = CGRect(x: 0, y: top, width: width, height: max(0, imageHeight - top))
+        }
         let start = textRegion.minY
         let available = textRegion.height
         let fontSize: CGFloat = prominent ? 24 : 17
@@ -284,6 +295,8 @@ private struct SaintSayingsGallery: View {
             .accessibilityIdentifier("sayings.card.\(saying.id)")
             SayingFavoriteButton(id: saying.id, favoriteIDs: $favoriteIDs)
                 .padding(10)
+            SayingShareButton(id: saying.id) { sharing = saying }
+                .padding(.top, 60).padding(.trailing, 10)
         }
         .frame(width: width)
         .clipShape(RoundedRectangle(cornerRadius: prominent ? 27 : 23))
@@ -345,6 +358,7 @@ private struct SaintSayingReader: View {
     let sayings: [SaintSaying]
     @State private var currentID: String
     @Binding var favoriteIDs: Set<String>
+    @State private var sharing: SaintSaying?
     @State private var dragDown: CGFloat = 0
     @State private var source: SaintSaying?
     @State private var textAtTop = true
@@ -377,6 +391,9 @@ private struct SaintSayingReader: View {
             .offset(y: -geometry.safeAreaInsets.top)
         }
         .sheet(item: $source) { saying in sourceDetails(saying) }
+        .sheet(item: $sharing) { saying in
+            SaintSayingSharePreview(catalog: catalog, saying: saying)
+        }
     }
 
     private func card(size: CGSize) -> some View {
@@ -394,6 +411,7 @@ private struct SaintSayingReader: View {
                 Text(catalog.saint(for: current).shortName)
                     .font(.system(size: 12, weight: .medium)).foregroundStyle(.white.opacity(0.7))
                 Spacer()
+                SayingShareButton(id: current.id) { sharing = current }
                 Button { dismiss() } label: {
                     Image(systemName: "xmark").font(.system(size: 16, weight: .semibold))
                         .frame(width: 44, height: 44).foregroundStyle(.primary)
@@ -498,6 +516,7 @@ private enum SayingFilterAction {
 private struct SaintSayingsFeed: View {
     let catalog: SaintSayingsCatalog
     @Binding var favoriteIDs: Set<String>
+    @State private var sharing: SaintSaying?
     @Binding var section: SayingSection
     @Binding var saintID: String
     @Binding var categoryID: String?
@@ -566,6 +585,9 @@ private struct SaintSayingsFeed: View {
         .ignoresSafeArea()
         .preferredColorScheme(.dark)
         .sheet(item: $source) { saying in sourceDetails(saying) }
+        .sheet(item: $sharing) { saying in
+            SaintSayingSharePreview(catalog: catalog, saying: saying)
+        }
         .onChange(of: query) { _, _ in currentID = displayed.first?.id }
         .onChange(of: categoryID) { _, _ in currentID = displayed.first?.id }
         .onChange(of: collectionKey) { _, _ in
@@ -593,7 +615,7 @@ private struct SaintSayingsFeed: View {
                         SaintSayingReel(catalog: catalog, saying: saying, favoriteIDs: $favoriteIDs,
                             position: (displayed.firstIndex(where: { $0.id == saying.id }) ?? 0) + 1,
                             count: displayed.count, safeTop: safeTop, safeBottom: safeBottom,
-                            showSource: { source = saying })
+                            showSource: { source = saying }, showShare: { sharing = saying })
                             .frame(width: size.width, height: size.height).id(saying.id)
                     }
                 }.scrollTargetLayout()
@@ -829,6 +851,7 @@ private struct SaintSayingReel: View {
     let safeTop: CGFloat
     let safeBottom: CGFloat
     let showSource: () -> Void
+    let showShare: () -> Void
     @State private var textExpanded = false
     @State private var showsHeart = false
     @State private var heartTask: Task<Void, Never>?
@@ -881,6 +904,14 @@ private struct SaintSayingReel: View {
                         SayingFavoriteButton(id: saying.id, favoriteIDs: $favoriteIDs, liked: burst)
                     }.padding(.bottom, safeBottom + 160)
                 }.foregroundStyle(.white).padding(.horizontal, 15)
+
+                VStack {
+                    Spacer()
+                    HStack {
+                        Spacer()
+                        SayingShareButton(id: saying.id, action: showShare)
+                    }.padding(.bottom, safeBottom + 110)
+                }.padding(.horizontal, 15)
 
                 Image(systemName: "heart.fill")
                     .font(.system(size: 96)).foregroundStyle(.white.opacity(0.65))
@@ -982,5 +1013,246 @@ private struct SaintSayingReel: View {
             guard !Task.isCancelled else { return }
             withAnimation(reduceMotion ? nil : .easeOut(duration: 0.18)) { showsHeart = false }
         }
+    }
+}
+
+// MARK: - Quote image sharing (isolated from catalog and favorite persistence)
+
+private struct SayingShareButton: View {
+    let id: String
+    let action: () -> Void
+    var body: some View {
+        Button(action: action) {
+            Image(systemName: "square.and.arrow.up")
+                .font(.system(size: 19, weight: .medium)).foregroundStyle(.white)
+                .frame(width: 42, height: 42)
+                .background(Color.black.opacity(0.45), in: Circle())
+                .overlay(Circle().stroke(.white.opacity(0.25), lineWidth: 0.5))
+        }
+        .buttonStyle(.plain)
+        .accessibilityLabel("Κοινοποίηση αποφθέγματος")
+        .accessibilityIdentifier("sayings.share.\(id)")
+    }
+}
+
+private enum SayingShareFormat: String, CaseIterable, Identifiable {
+    case story, image
+    var id: String { rawValue }
+    var title: String { self == .story ? "Story" : "Εικόνα" }
+    var size: CGSize { CGSize(width: 1080, height: self == .story ? 1920 : 1776) }
+}
+
+private struct SayingSharePayload: Identifiable {
+    let id = UUID()
+    let url: URL
+}
+
+private struct SaintSayingSharePreview: View {
+    let catalog: SaintSayingsCatalog
+    let saying: SaintSaying
+    @State private var format: SayingShareFormat = .story
+    @State private var image: UIImage?
+    @State private var failure = false
+    @State private var enlarged = false
+    @State private var payload: SayingSharePayload?
+    @State private var temporaryURL: URL?
+    @Environment(\.dismiss) private var dismiss
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
+
+    var body: some View {
+        NavigationStack {
+            ScrollView {
+                VStack(spacing: 18) {
+                    Picker("Μορφή εικόνας", selection: $format) {
+                        ForEach(SayingShareFormat.allCases) { item in Text(item.title).tag(item) }
+                    }.pickerStyle(.segmented).accessibilityIdentifier("sayings.share.format")
+                    if let image {
+                        Button {
+                            withAnimation(reduceMotion ? nil : .easeInOut(duration: 0.25)) { enlarged.toggle() }
+                        } label: {
+                            Image(uiImage: image).resizable().scaledToFit()
+                                .frame(maxWidth: enlarged ? .infinity : 280)
+                                .clipShape(RoundedRectangle(cornerRadius: 16))
+                        }.buttonStyle(.plain)
+                            .accessibilityLabel("\(catalog.saint(for: saying).shortName). \(saying.text)")
+                            .accessibilityHint("Πάτησε για αλλαγή μεγέθους προεπισκόπησης")
+                            .accessibilityIdentifier("sayings.share.image")
+                    } else if !failure {
+                        ProgressView("Προετοιμασία εικόνας…").frame(minHeight: 180)
+                    }
+                    if failure {
+                        Text("Δεν ήταν δυνατή η προετοιμασία της εικόνας. Προσπάθησε ξανά.")
+                            .font(.subheadline).foregroundStyle(Paper.inkSoft)
+                        Button("Δοκιμή ξανά") { prepareImage() }.buttonStyle(.bordered)
+                    }
+                }.frame(maxWidth: .infinity).padding(20)
+            }
+            .background(Paper.bg)
+            .safeAreaInset(edge: .bottom, spacing: 0) {
+                Button(action: shareImage) {
+                    Label("Κοινοποίηση εικόνας", systemImage: "square.and.arrow.up")
+                        .font(.system(size: 15, weight: .semibold))
+                        .frame(maxWidth: .infinity).frame(minHeight: 50)
+                        .foregroundStyle(.white)
+                        .background(Paper.gold.opacity(image == nil ? 0.4 : 1), in: RoundedRectangle(cornerRadius: 16))
+                }.buttonStyle(.plain).disabled(image == nil)
+                    .accessibilityIdentifier("sayings.share.openSystemSheet")
+                    .padding(.horizontal, 20).padding(.top, 12).padding(.bottom, 12).background(Paper.bg)
+            }
+            .navigationTitle("Κοινοποίηση").navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .confirmationAction) {
+                    Button("Κλείσιμο", systemImage: "xmark") { dismiss() }
+                        .accessibilityIdentifier("sayings.share.close")
+                }
+            }
+            .task(id: format) { prepareImage() }
+            .sheet(item: $payload, onDismiss: removeTemporaryImage) { item in
+                SayingImageActivitySheet(url: item.url) { payload = nil }
+            }
+            .onDisappear { if payload == nil { removeTemporaryImage() } }
+        }.presentationDetents([.large]).presentationDragIndicator(.visible)
+    }
+
+    @MainActor private func prepareImage() {
+        image = nil; failure = false
+        do { image = try SayingShareRenderer.render(saying, catalog: catalog, format: format) }
+        catch { failure = true }
+    }
+
+    private func shareImage() {
+        guard payload == nil, let data = image?.pngData() else { return }
+        removeTemporaryImage()
+        let url = FileManager.default.temporaryDirectory
+            .appendingPathComponent("OrthodoxPlus-quote-\(UUID().uuidString).png")
+        do {
+            try data.write(to: url, options: [.atomic])
+            temporaryURL = url; payload = SayingSharePayload(url: url)
+        } catch { failure = true }
+    }
+
+    private func removeTemporaryImage() {
+        if let url = temporaryURL { try? FileManager.default.removeItem(at: url) }
+        temporaryURL = nil
+    }
+}
+
+private struct SayingImageActivitySheet: UIViewControllerRepresentable {
+    let url: URL
+    let finished: () -> Void
+    func makeUIViewController(context: Context) -> UIActivityViewController {
+        let controller = UIActivityViewController(activityItems: [url], applicationActivities: nil)
+        // Save to Files and compatible installed extensions remain available.
+        // Do not invoke Photos without a separately approved privacy declaration.
+        if Bundle.main.object(forInfoDictionaryKey: "NSPhotoLibraryAddUsageDescription") == nil &&
+            Bundle.main.object(forInfoDictionaryKey: "NSPhotoLibraryUsageDescription") == nil {
+            controller.excludedActivityTypes = [.saveToCameraRoll]
+        }
+        if let popover = controller.popoverPresentationController {
+            popover.sourceView = controller.view
+            popover.sourceRect = CGRect(x: 0, y: 0, width: 1, height: 1)
+            popover.permittedArrowDirections = []
+        }
+        controller.completionWithItemsHandler = { _, _, _, _ in finished() }
+        return controller
+    }
+    func updateUIViewController(_ controller: UIActivityViewController, context: Context) {}
+}
+
+@MainActor private enum SayingShareRenderer {
+    enum RenderError: Error { case missingImage, missingBrand, textDoesNotFit }
+
+    static func render(_ saying: SaintSaying, catalog: SaintSayingsCatalog,
+                       format: SayingShareFormat) throws -> UIImage {
+        let photo = catalog.photo(for: saying)
+        guard let portrait = UIImage(named: photo.asset) else { throw RenderError.missingImage }
+        guard let brand = UIImage(named: "SaintSayingShareBrand")?.cgImage,
+              let croppedBrand = brand.cropping(to: CGRect(x: 420, y: 216, width: 697, height: 566))
+        else { throw RenderError.missingBrand }
+        let size = format.size
+        let card = format == .story ? CGRect(x: 98, y: 232, width: 884, height: 1456)
+            : CGRect(origin: .zero, size: size)
+        let scale = card.width / 884
+        let inset = 64 * scale, textWidth = card.width - 128 * scale
+        let brandWidth = 98 * scale
+        let brandHeight = brandWidth * 566 / 697
+        let brandBottom = card.maxY - 64 * scale
+        let brandTop = brandBottom - max(74 * scale, brandHeight)
+        let textBottom = brandTop - 155 * scale
+        let minimumTop = card.minY + 155 * scale
+        let layout = try textLayout(saying.text, width: textWidth, height: textBottom - minimumTop, scale: scale)
+        let textTop = min(card.minY + card.height * 0.615, textBottom - layout.height)
+        let rendererFormat = UIGraphicsImageRendererFormat(); rendererFormat.scale = 1; rendererFormat.opaque = true
+        return UIGraphicsImageRenderer(size: size, format: rendererFormat).image { output in
+            let ctx = output.cgContext
+            UIColor(white: 0.06, alpha: 1).setFill(); ctx.fill(CGRect(origin: .zero, size: size))
+            if format == .story {
+                let source = CIImage(image: portrait)
+                if let source {
+                    let processed = source.clampedToExtent()
+                        .applyingFilter("CIGaussianBlur", parameters: [kCIInputRadiusKey: 40])
+                        .applyingFilter("CIColorControls", parameters: [kCIInputSaturationKey: 0.4])
+                        .cropped(to: source.extent)
+                    if let cg = CIContext().createCGImage(processed, from: source.extent) {
+                        draw(UIImage(cgImage: cg), photo: photo, in: CGRect(origin: .zero, size: size))
+                    }
+                }
+                UIColor(white: 0.025, alpha: 0.83).setFill(); ctx.fill(CGRect(origin: .zero, size: size))
+                ctx.saveGState(); ctx.setShadow(offset: CGSize(width: 0, height: 25), blur: 55,
+                                               color: UIColor.black.withAlphaComponent(0.55).cgColor)
+                UIColor.black.setFill(); UIBezierPath(roundedRect: card, cornerRadius: 62).fill(); ctx.restoreGState()
+            }
+            ctx.saveGState()
+            UIBezierPath(roundedRect: card, cornerRadius: format == .story ? 62 : 0).addClip()
+            draw(portrait, photo: photo, in: card)
+            let opacity: [CGFloat] = [0.25, 0, 0.19, 0.73, 1]
+            let colors = opacity.map { UIColor.black.withAlphaComponent($0).cgColor }
+            if let gradient = CGGradient(colorsSpace: CGColorSpaceCreateDeviceRGB(), colors: colors as CFArray,
+                                         locations: [0, 0.35, 0.55, 0.75, 1]) {
+                ctx.drawLinearGradient(gradient, start: CGPoint(x: 0, y: card.minY),
+                                       end: CGPoint(x: 0, y: card.maxY), options: [])
+            }
+            if textTop < card.minY + card.height * 0.52 {
+                UIColor.black.withAlphaComponent(0.35).setFill()
+                ctx.fill(CGRect(x: card.minX, y: textTop - 30, width: card.width, height: card.maxY - textTop + 30))
+            }
+            let nameAttributes: [NSAttributedString.Key: Any] = [.font: serif(34 * scale), .foregroundColor: UIColor.white]
+            (catalog.saint(for: saying).shortName as NSString).draw(
+                in: CGRect(x: card.minX + 46 * scale, y: card.minY + 65 * scale,
+                           width: card.width - 92 * scale, height: 60 * scale), withAttributes: nameAttributes)
+            (saying.text as NSString).draw(with: CGRect(x: card.minX + inset, y: textTop, width: textWidth, height: layout.height + 2),
+                options: [.usesLineFragmentOrigin, .usesFontLeading], attributes: layout.attributes, context: nil)
+            ctx.saveGState(); ctx.setBlendMode(.screen)
+            UIImage(cgImage: croppedBrand).draw(in: CGRect(x: card.midX - brandWidth / 2,
+                y: brandBottom - brandHeight, width: brandWidth, height: brandHeight))
+            ctx.restoreGState(); ctx.restoreGState()
+        }
+    }
+
+    private static func serif(_ size: CGFloat) -> UIFont {
+        UIFont(name: "GFSDidot-Regular", size: size) ?? UIFont(descriptor:
+            UIFont.systemFont(ofSize: size, weight: .medium).fontDescriptor.withDesign(.serif)
+                ?? UIFont.systemFont(ofSize: size).fontDescriptor, size: size)
+    }
+
+    private static func textLayout(_ text: String, width: CGFloat, height: CGFloat, scale: CGFloat)
+        throws -> (height: CGFloat, attributes: [NSAttributedString.Key: Any]) {
+        for pointSize in stride(from: 48, through: 28, by: -1) {
+            let size = CGFloat(pointSize) * scale
+            let paragraph = NSMutableParagraphStyle(); paragraph.lineBreakMode = .byWordWrapping
+            paragraph.minimumLineHeight = size * 1.35; paragraph.maximumLineHeight = size * 1.35
+            let attributes: [NSAttributedString.Key: Any] = [.font: serif(size), .paragraphStyle: paragraph,
+                                                            .foregroundColor: UIColor.white]
+            let measured = ceil((text as NSString).boundingRect(
+                with: CGSize(width: width, height: .greatestFiniteMagnitude),
+                options: [.usesLineFragmentOrigin, .usesFontLeading], attributes: attributes, context: nil).height)
+            if measured <= height { return (measured, attributes) }
+        }
+        throw RenderError.textDoesNotFit
+    }
+
+    private static func draw(_ image: UIImage, photo: SayingPhoto, in frame: CGRect) {
+        let rect = photo.immersiveImageRect(in: frame.size).offsetBy(dx: frame.minX, dy: frame.minY)
+        image.draw(in: rect)
     }
 }
