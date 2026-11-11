@@ -97,7 +97,7 @@ struct PrayerRopeSession: Codable, Equatable {
     var midpointNotified = false
     var completionNotified = false
     var focused = false
-    var isComplete: Bool { count == draft.length }
+    var isAtCross: Bool { count == draft.length }
     func needsReview(using entries: [DiptychaEntry]) -> Bool {
         draft.intention != .myself && (namesRevision != draft.revision(using: entries) || draft.prayer(using: entries) == nil)
     }
@@ -150,15 +150,22 @@ final class PrayerRopeStore {
     }
 
     @discardableResult func advance(using entries: [DiptychaEntry]) -> Bool {
-        guard let current = session, !current.isComplete, !current.needsReview(using: entries) else { return false }
-        session?.count += 1; session?.focused = true; save(); return true
+        guard let current = session, !current.needsReview(using: entries) else { return false }
+        if current.isAtCross {
+            session?.count = 1
+            session?.midpointNotified = false
+            session?.completionNotified = false
+        } else {
+            session?.count += 1
+        }
+        session?.focused = true; save(); return true
     }
 
     /// Consumed once, after movement; callers suppress physical feedback while inactive.
     func consumeMilestone() -> Milestone? {
         guard let current = session else { return nil }
         let result: Milestone?
-        if current.isComplete && !current.completionNotified {
+        if current.isAtCross && !current.completionNotified {
             session?.midpointNotified = true; session?.completionNotified = true; result = .completion
         } else if current.count >= (current.draft.length + 1) / 2 && !current.midpointNotified {
             session?.midpointNotified = true; result = .midpoint

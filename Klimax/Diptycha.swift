@@ -60,11 +60,14 @@ final class DiptychaStore {
         entries.filter { $0.category == category }
     }
 
-    func add(name: String, category: DiptychaCategory, note: String?, prayerGrammar: PrayerNameGrammar? = nil, prayerGender: PrayerNameGrammar.Gender? = nil) {
+    @discardableResult
+    func add(name: String, category: DiptychaCategory, note: String?, prayerGrammar: PrayerNameGrammar? = nil, prayerGender: PrayerNameGrammar.Gender? = nil) -> UUID? {
         let cleanName = Self.cleanName(name)
-        guard !cleanName.isEmpty else { return }
-        entries.append(.init(name: cleanName, category: category, note: Self.cleanNote(note), prayerGrammar: prayerGrammar, prayerGender: prayerGender))
+        guard !cleanName.isEmpty else { return nil }
+        let entry = DiptychaEntry(name: cleanName, category: category, note: Self.cleanNote(note), prayerGrammar: prayerGrammar, prayerGender: prayerGender)
+        entries.append(entry)
         save()
+        return entry.id
     }
 
     func update(_ entry: DiptychaEntry, name: String, category: DiptychaCategory, note: String?, prayerGrammar: PrayerNameGrammar? = nil, prayerGender: PrayerNameGrammar.Gender? = nil) {

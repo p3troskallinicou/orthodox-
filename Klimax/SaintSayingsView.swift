@@ -42,10 +42,10 @@ private struct SaintSayingsGallery: View {
     @State private var categoryID: String?
     @State private var query = ""
     @State private var section: SayingSection = .saint
-    @State private var returnSection: SayingSection = .saint
     @State private var showsFeed = false
     @State private var selection: SayingSelection?
     @Environment(\.dynamicTypeSize) private var typeSize
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
 
     init(catalog: SaintSayingsCatalog, favoriteIDs: Binding<Set<String>>) {
         self.catalog = catalog
@@ -78,19 +78,31 @@ private struct SaintSayingsGallery: View {
                     }
                     .pickerStyle(.segmented)
                     .accessibilityIdentifier("sayings.section")
-                    introduction
-                    search
-                    categories
-                    if displayed.isEmpty {
-                        if section == .favorites && baseCollection.isEmpty {
-                            ContentUnavailableView("Αγαπημένα αποφθέγματα", systemImage: "heart",
-                                description: Text("Πάτησε την καρδιά σε έναν λόγο για να τον βρίσκεις εδώ."))
-                        } else {
-                            ContentUnavailableView.search(text: query)
+                    LazyVStack(alignment: .leading, spacing: 18) {
+                        introduction
+                        HStack(spacing: 12) {
+                            search
+                            Button { showsFeed = true } label: {
+                                Label("Ροή", systemImage: "rectangle.portrait.on.rectangle.portrait")
+                                    .font(.system(size: 13, weight: .medium)).padding(.horizontal, 14).frame(height: 48)
+                                    .foregroundStyle(Paper.gold).athosGlass(in: Capsule())
+                            }
+                            .accessibilityLabel("Κάθετη προβολή της συλλογής")
+                            .accessibilityIdentifier("sayings.openFeed")
                         }
-                    } else {
-                        mosaic(width: width)
+                        categories
+                        if displayed.isEmpty {
+                            if section == .favorites && baseCollection.isEmpty {
+                                ContentUnavailableView("Αγαπημένα αποφθέγματα", systemImage: "heart",
+                                    description: Text("Πάτησε την καρδιά σε έναν λόγο για να τον βρίσκεις εδώ."))
+                            } else {
+                                ContentUnavailableView.search(text: query)
+                            }
+                        } else {
+                            mosaic(width: width)
+                        }
                     }
+                    .id(section).transition(.opacity)
                 }
                 .padding(.horizontal, 20).padding(.top, 90).padding(.bottom, 115)
             }
@@ -100,16 +112,14 @@ private struct SaintSayingsGallery: View {
                                   favoriteIDs: $favoriteIDs)
                     .presentationBackground(.clear)
             }
-            .fullScreenCover(isPresented: $showsFeed, onDismiss: { section = returnSection }) {
-                SaintSayingsFeed(catalog: catalog, favoriteIDs: $favoriteIDs) { destination in
-                    returnSection = destination
-                    showsFeed = false
-                }
+            .fullScreenCover(isPresented: $showsFeed) {
+                SaintSayingsFeed(catalog: catalog, favoriteIDs: $favoriteIDs,
+                    section: $section, saintID: $saintID, categoryID: $categoryID, query: $query) { showsFeed = false }
             }
         }
-        .onChange(of: section) { _, next in
+        .animation(reduceMotion ? nil : .easeInOut(duration: 0.2), value: section)
+        .onChange(of: section) { _, _ in
             categoryID = nil; query = ""
-            if next == .mixed { showsFeed = true }
         }
         .onChange(of: favoriteIDs) { _, _ in
             if let id = categoryID, !saintCategories.contains(where: { $0.id == id }) { categoryID = nil }
@@ -122,6 +132,12 @@ private struct SaintSayingsGallery: View {
                 Text("ΟΙ ΛΟΓΟΙ ΠΟΥ ΚΡΑΤΑΣ").font(.system(size: 10, weight: .semibold)).tracking(2).foregroundStyle(Paper.gold)
                 Text("Αγαπημένα αποφθέγματα").font(.system(size: 27, design: .serif)).foregroundStyle(Paper.ink)
                 Text("\(baseCollection.count) αποθηκευμένοι λόγοι · όλοι οι άγιοι").font(.subheadline).foregroundStyle(Paper.inkMute)
+            }
+        } else if section == .mixed {
+            VStack(alignment: .leading, spacing: 7) {
+                Text("ΛΟΓΙΑ ΠΟΥ ΜΑΣ ΕΝΩΝΟΥΝ").font(.system(size: 10, weight: .semibold)).tracking(2).foregroundStyle(Paper.gold)
+                Text("Όλοι οι άγιοι").font(.system(size: 27, design: .serif)).foregroundStyle(Paper.ink)
+                Text("\(baseCollection.count) λόγοι · \(catalog.saints.count) άγιοι").font(.subheadline).foregroundStyle(Paper.inkMute)
             }
         } else {
             HStack(spacing: 16) {
@@ -230,7 +246,6 @@ private struct SaintSayingsGallery: View {
                       prominent: Bool, sayings: [SaintSaying]) -> some View {
         let photo = catalog.photo(for: saying)
         let size = CGSize(width: width, height: imageHeight)
-        let imageRect = photo.cardImageRect(in: size)
         let textRegion = photo.cardTextRegion(in: size)
         let start = textRegion.minY
         let available = textRegion.height
@@ -240,20 +255,7 @@ private struct SaintSayingsGallery: View {
             Button { selection = SayingSelection(id: saying.id, sayings: sayings) } label: {
                 VStack(spacing: 0) {
                     ZStack(alignment: .topLeading) {
-                        Color.black
-                        Image(photo.asset).resizable().scaledToFit()
-                            .frame(width: imageRect.width, height: imageRect.height)
-                            .offset(x: imageRect.minX)
-                            .frame(width: width, height: imageHeight, alignment: .topLeading)
-                        if photo.fillsCard == true {
-                            LinearGradient(stops: [
-                                .init(color: .clear, location: max(0, start / imageHeight - 0.08)),
-                                .init(color: .black.opacity(0.67), location: start / imageHeight),
-                                .init(color: .black.opacity(0.8), location: 1)
-                            ], startPoint: .top, endPoint: .bottom)
-                        } else {
-                            LinearGradient(colors: [.clear, .black.opacity(0.75)], startPoint: .center, endPoint: .bottom)
-                        }
+                        Color.clear
                         Text(saying.text).font(.system(size: fontSize, weight: .medium, design: .serif))
                             .foregroundStyle(.white).lineSpacing(2)
                             .lineLimit(max(1, Int((available - inset - 8) / (fontSize * 1.3))))
@@ -266,15 +268,16 @@ private struct SaintSayingsGallery: View {
                         VStack(alignment: .leading, spacing: 4) {
                             Text(catalog.category(for: saying).title)
                             if section == .favorites {
-                                Text(catalog.saint(for: saying).shortName).font(.caption2).foregroundStyle(Paper.inkMute)
+                                Text(catalog.saint(for: saying).shortName).font(.caption2).foregroundStyle(.white.opacity(0.7))
                             }
                         }
                         Spacer(minLength: 0)
                     }
-                    .font(prominent ? .caption : .caption2).foregroundStyle(Paper.ink)
+                    .font(prominent ? .caption : .caption2).foregroundStyle(.white.opacity(0.9))
                     .padding(.horizontal, 12).padding(.vertical, 11)
-                    .frame(width: width, height: footerHeight, alignment: .topLeading).background(Paper.card)
+                    .frame(width: width, height: footerHeight, alignment: .topLeading)
                 }
+                .background { SayingArtwork(photo: photo) }
             }
             .buttonStyle(CalmCardStyle())
             .accessibilityLabel("\(catalog.category(for: saying).title). \(saying.text)")
@@ -318,29 +321,21 @@ private struct SayingArtwork: View {
 
     var body: some View {
         GeometryReader { geometry in
-            let boundary = photo.textBoundary(in: geometry.size) / geometry.size.height
-            Image(photo.asset).resizable().scaledToFill()
-                .frame(width: geometry.size.width, height: geometry.size.height, alignment: .top)
-                .clipped()
-                .overlay {
-                    if photo.textStart != nil {
-                        let start = photo.textRegion(in: geometry.size).minY / geometry.size.height
-                        LinearGradient(stops: [
-                            .init(color: .clear, location: 0),
-                            .init(color: .clear, location: max(0, start - 0.08)),
-                            .init(color: .black.opacity(0.65), location: start),
-                            .init(color: .black.opacity(0.80), location: 1)
-                        ], startPoint: .top, endPoint: .bottom)
-                    } else {
-                        LinearGradient(stops: [
-                            .init(color: .black.opacity(0.60), location: 0),
-                            .init(color: .black.opacity(0.48), location: max(0, boundary - 0.03)),
-                            .init(color: .clear, location: min(1, boundary + 0.18)),
-                            .init(color: .clear, location: 0.85),
-                            .init(color: .black.opacity(0.25), location: 1)
-                        ], startPoint: .top, endPoint: .bottom)
-                    }
+            let size = geometry.size
+            let rect = photo.immersiveImageRect(in: size)
+            ZStack {
+                Image(photo.asset).resizable().scaledToFill()
+                    .frame(width: rect.width, height: rect.height)
+                    .position(x: rect.midX, y: rect.midY)
             }
+            .frame(width: size.width, height: size.height).clipped()
+            .overlay(LinearGradient(stops: [
+                .init(color: .black.opacity(0.35), location: 0),
+                .init(color: .clear, location: 0.25),
+                .init(color: .black.opacity(0.15), location: 0.48),
+                .init(color: .black.opacity(0.78), location: 0.8),
+                .init(color: .black.opacity(0.84), location: 1)
+            ], startPoint: .top, endPoint: .bottom))
         }.accessibilityHidden(true)
     }
 }
@@ -411,7 +406,7 @@ private struct SaintSayingReader: View {
                 Button { source = current } label: {
                     Label(current.sourceChecked ? "Πηγή" : "Πηγή · υπό έλεγχο", systemImage: "info.circle")
                         .font(.system(size: 11, weight: .medium)).padding(12)
-                        .foregroundStyle(.primary).glassCircleFallback(shape: Capsule())
+                        .foregroundStyle(.white).glassCircleFallback(shape: Capsule())
                 }.accessibilityIdentifier("sayings.reader.source")
                 SayingFavoriteButton(id: current.id, favoriteIDs: $favoriteIDs)
                 Spacer(minLength: 4)
@@ -419,10 +414,10 @@ private struct SaintSayingReader: View {
                     .padding(12).foregroundStyle(.primary).glassCircleFallback(shape: Capsule(), interactive: false)
                 Button { advance() } label: {
                     Image(systemName: "arrow.right").font(.system(size: 16, weight: .semibold))
-                        .frame(width: 44, height: 44).foregroundStyle(.primary).glassCircleFallback(shape: Circle())
+                        .frame(width: 44, height: 44).foregroundStyle(.white).glassCircleFallback(shape: Circle())
                 }.disabled(index == sayings.count - 1).opacity(index == sayings.count - 1 ? 0.4 : 1)
                     .accessibilityLabel("Επόμενος λόγος").accessibilityIdentifier("sayings.reader.next")
-            }.padding(18)
+            }.tint(.white).padding(18)
         }
         .clipShape(RoundedRectangle(cornerRadius: 34, style: .continuous))
         .overlay(RoundedRectangle(cornerRadius: 34).strokeBorder(.white.opacity(0.2), lineWidth: 0.5))
@@ -442,58 +437,16 @@ private struct SaintSayingReader: View {
         .accessibilityAction(.escape) { dismiss() }
     }
 
-    @ViewBuilder private func readerPage(_ saying: SaintSaying, size: CGSize) -> some View {
-        if catalog.photo(for: saying).textStart != nil {
-            portraitReaderPage(saying, size: size)
-        } else {
-            originalReaderPage(saying, size: size)
-        }
-    }
-
-    private func portraitReaderPage(_ saying: SaintSaying, size: CGSize) -> some View {
+    private func readerPage(_ saying: SaintSaying, size: CGSize) -> some View {
         let photo = catalog.photo(for: saying)
-        let imageHeight = min(size.height * 0.48, size.width * photo.height / photo.width)
-        return VStack(spacing: 0) {
-            Image(photo.asset).resizable().scaledToFit()
-                .frame(width: size.width, height: imageHeight)
-                .background(Paper.bg)
-                .accessibilityHidden(true)
-            ScrollView {
-                VStack(alignment: .leading, spacing: 12) {
-                    Label(catalog.category(for: saying).title, systemImage: catalog.category(for: saying).symbol)
-                        .font(.subheadline).foregroundStyle(Paper.gold)
-                    Text(saying.text)
-                        .font(.system(.title2, design: .serif, weight: .medium))
-                        .lineSpacing(5).foregroundStyle(Paper.ink)
-                        .fixedSize(horizontal: false, vertical: true)
-                        .accessibilityIdentifier("sayings.reader.text")
-                }
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .padding(24)
-            }
-            .onScrollGeometryChange(for: Bool.self) { $0.contentOffset.y <= 0 } action: { _, atTop in
-                if saying.id == currentID { textAtTop = atTop }
-            }
-        }
-        .padding(.top, 70).padding(.bottom, 82)
-        .frame(width: size.width, height: size.height)
-        .background(Paper.card)
-    }
-
-    private func originalReaderPage(_ saying: SaintSaying, size: CGSize) -> some View {
-        let photo = catalog.photo(for: saying)
-        let region = photo.textRegion(in: size)
-        let textHeight = region.height - 14
-        let top = photo.textStart == nil ? 74 : region.minY + 12
-        let readingHeight = photo.textStart == nil ? max(30, textHeight - 74) : max(0, size.height - top - 82)
+        let top = photo.readerTextTop(in: size)
+        let readingHeight = max(44, size.height - top - 84)
         return ZStack(alignment: .top) {
             SayingArtwork(photo: photo)
             ScrollView {
                 VStack(alignment: .leading, spacing: 12) {
-                    if textHeight > 210 {
-                        Text(catalog.category(for: saying).title.uppercased())
-                            .font(.system(size: 10, weight: .semibold)).tracking(1.5).foregroundStyle(.white.opacity(0.8))
-                    }
+                    Label(catalog.category(for: saying).title, systemImage: catalog.category(for: saying).symbol)
+                        .font(.system(size: 11, weight: .semibold)).foregroundStyle(.white.opacity(0.8))
                     Text(saying.text)
                         .font(.system(.title2, design: .serif, weight: .medium)).lineSpacing(5).foregroundStyle(.white)
                         .fixedSize(horizontal: false, vertical: true)
@@ -533,8 +486,8 @@ private struct SaintSayingReader: View {
     }
 }
 
-/// The mixed collection is presented over the app chrome, without changing the
-/// surrounding tab/navigation architecture. Its shuffle is stable until requested.
+/// Collection and presentation are independent. The same pager works for one
+/// saint, the entire catalog, or favourites without dismissing/reopening itself.
 /// Native glass controls keep their identity while opening and closing.
 private enum SayingFilterAction {
     case dismiss
@@ -545,10 +498,12 @@ private enum SayingFilterAction {
 private struct SaintSayingsFeed: View {
     let catalog: SaintSayingsCatalog
     @Binding var favoriteIDs: Set<String>
-    let leave: (SayingSection) -> Void
+    @Binding var section: SayingSection
+    @Binding var saintID: String
+    @Binding var categoryID: String?
+    @Binding var query: String
+    let leave: () -> Void
     @State private var orderedIDs: [String]
-    @State private var categoryID: String?
-    @State private var query = ""
     @State private var currentID: String?
     @State private var showsFilters = false
     @State private var showsCategories = false
@@ -560,20 +515,30 @@ private struct SaintSayingsFeed: View {
     @AccessibilityFocusState private var filterAccessibilityFocus: Bool
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
 
-    init(catalog: SaintSayingsCatalog, favoriteIDs: Binding<Set<String>>, leave: @escaping (SayingSection) -> Void) {
+    init(catalog: SaintSayingsCatalog, favoriteIDs: Binding<Set<String>>, section: Binding<SayingSection>,
+         saintID: Binding<String>, categoryID: Binding<String?>, query: Binding<String>, leave: @escaping () -> Void) {
         self.catalog = catalog
         _favoriteIDs = favoriteIDs
+        _section = section; _saintID = saintID; _categoryID = categoryID; _query = query
         self.leave = leave
         let ids = catalog.sayings.map(\.id).shuffled()
         _orderedIDs = State(initialValue: ids)
-        _currentID = State(initialValue: ids.first)
+        _currentID = State(initialValue: catalog.collection(saintID: section.wrappedValue == .saint ? saintID.wrappedValue : nil,
+            categoryID: categoryID.wrappedValue, query: query.wrappedValue,
+            favoriteIDs: section.wrappedValue == .favorites ? favoriteIDs.wrappedValue : nil, order: ids).first?.id)
     }
 
     private var displayed: [SaintSaying] {
-        catalog.collection(categoryID: categoryID, query: query, order: orderedIDs)
+        catalog.collection(saintID: section == .saint ? saintID : nil, categoryID: categoryID, query: query,
+            favoriteIDs: section == .favorites ? favoriteIDs : nil, order: orderedIDs)
     }
+    private var availableCategories: [SayingCategory] {
+        let ids = Set(catalog.collection(saintID: section == .saint ? saintID : nil,
+            favoriteIDs: section == .favorites ? favoriteIDs : nil).map(\.categoryID))
+        return catalog.categories.filter { ids.contains($0.id) }
+    }
+    private var collectionKey: String { section.rawValue + (section == .saint ? saintID : "") }
     private var filterMotion: Animation { .timingCurve(0.22, 0.75, 0.22, 1, duration: 0.3) }
-    private var activeFavorites: Int { catalog.collection(favoriteIDs: favoriteIDs).count }
 
     var body: some View {
         GeometryReader { geometry in
@@ -582,6 +547,8 @@ private struct SaintSayingsFeed: View {
             ZStack(alignment: .top) {
                 Color.black
                 pages(size: geometry.size, safeTop: top, safeBottom: bottom)
+                    .id(collectionKey).transition(.opacity)
+                    .animation(reduceMotion ? nil : .easeInOut(duration: 0.22), value: collectionKey)
                     .opacity(feedOpacity)
                 if showsFilters {
                     Button { dismissFilters() } label: {
@@ -601,6 +568,13 @@ private struct SaintSayingsFeed: View {
         .sheet(item: $source) { saying in sourceDetails(saying) }
         .onChange(of: query) { _, _ in currentID = displayed.first?.id }
         .onChange(of: categoryID) { _, _ in currentID = displayed.first?.id }
+        .onChange(of: collectionKey) { _, _ in
+            categoryID = nil; query = ""; currentID = displayed.first?.id
+            showsCategories = false; showsFilters = false
+        }
+        .onChange(of: favoriteIDs) { _, _ in
+            if section == .favorites, !displayed.contains(where: { $0.id == currentID }) { currentID = displayed.first?.id }
+        }
         .onDisappear { filterTask?.cancel(); searchFocused = false }
         .accessibilityAction(named: "Επόμενος λόγος") { advance(1) }
         .accessibilityAction(named: "Προηγούμενος λόγος") { advance(-1) }
@@ -608,7 +582,10 @@ private struct SaintSayingsFeed: View {
 
     @ViewBuilder private func pages(size: CGSize, safeTop: CGFloat, safeBottom: CGFloat) -> some View {
         if displayed.isEmpty {
-            ContentUnavailableView.search(text: query).foregroundStyle(.white)
+            if section == .favorites && query.isEmpty && categoryID == nil {
+                ContentUnavailableView("Αγαπημένα αποφθέγματα", systemImage: "heart",
+                    description: Text("Πάτησε την καρδιά σε έναν λόγο για να τον βρίσκεις εδώ."))
+            } else { ContentUnavailableView.search(text: query).foregroundStyle(.white) }
         } else {
             ScrollView(.vertical) {
                 LazyVStack(spacing: 0) {
@@ -631,23 +608,26 @@ private struct SaintSayingsFeed: View {
 
     private var sectionControls: some View {
         ZStack(alignment: .leading) {
-            Button { leave(.saint) } label: {
+            Button(action: leave) {
                 Image(systemName: "chevron.left").frame(width: 36, height: 36)
             }
             .athosGlass(in: Circle())
             .accessibilityLabel("Έξοδος από την προβολή πλήρους οθόνης")
             HStack(spacing: 3) {
-                Button("Ανά άγιο") { leave(.saint) }.frame(maxWidth: .infinity)
-                Text("Όλοι οι άγιοι").padding(.horizontal, 8).padding(.vertical, 7)
-                    .frame(maxWidth: .infinity).background(.white.opacity(0.18), in: Capsule())
-                Button { leave(.favorites) } label: {
-                    Text(activeFavorites == 0 ? "Αγαπημένα" : "Αγαπημένα \(activeFavorites)")
-                }.frame(maxWidth: .infinity)
+                ForEach(SayingSection.allCases) { item in
+                    Button { section = item } label: {
+                        Text(item.title).padding(.vertical, 10).frame(maxWidth: .infinity)
+                            .background(.white.opacity(section == item ? 0.18 : 0), in: Capsule())
+                    }
+                    .accessibilityAddTraits(section == item ? .isSelected : [])
+                    .accessibilityIdentifier("sayings.feed.section.\(item.rawValue)")
+                }
             }
             .padding(3).athosGlass(in: Capsule())
             .padding(.horizontal, 40)
         }
         .font(.system(size: 11, weight: .medium)).foregroundStyle(.white).lineLimit(1)
+        .animation(reduceMotion ? nil : .easeInOut(duration: 0.2), value: section)
     }
 
     private func controls(menuHeight: CGFloat) -> some View {
@@ -673,7 +653,21 @@ private struct SaintSayingsFeed: View {
                 .accessibilityFocused($filterAccessibilityFocus)
                 .accessibilityIdentifier("sayings.feed.filters")
                 .disabled(isClosingFilters)
-                Spacer(minLength: 8)
+                if section == .saint {
+                    Menu {
+                        Picker("Άγιος", selection: $saintID) {
+                            ForEach(catalog.saints) { Text($0.shortName).tag($0.id) }
+                        }
+                    } label: {
+                        HStack(spacing: 5) {
+                            Text(catalog.saints.first { $0.id == saintID }?.shortName ?? "Άγιος")
+                                .font(.system(size: 11, weight: .medium)).lineLimit(1)
+                            Image(systemName: "chevron.down").font(.system(size: 9))
+                        }.padding(.horizontal, 12).frame(height: 44)
+                    }.athosGlass(in: Capsule()).accessibilityIdentifier("sayings.feed.saint")
+                    .opacity(showsFilters ? 0 : 1).frame(maxWidth: showsFilters ? 0 : .infinity).clipped()
+                }
+                Spacer(minLength: 0)
                 Button {
                     if showsFilters { dismissFilters(.shuffle) } else { applyFilterAction(.shuffle) }
                 } label: {
@@ -737,7 +731,7 @@ private struct SaintSayingsFeed: View {
         ScrollView {
             VStack(spacing: 0) {
                 categoryRow(nil, title: "Όλες οι κατηγορίες")
-                ForEach(catalog.categories) { category in categoryRow(category.id, title: category.title) }
+                ForEach(availableCategories) { category in categoryRow(category.id, title: category.title) }
             }
         }
         .scrollBounceBehavior(.basedOnSize).frame(height: height)
@@ -853,18 +847,7 @@ private struct SaintSayingReel: View {
                 availableHeight: available, lineHeight: textSize * 1.35)
             ZStack {
                 Color.black
-                let scale = max(size.width / photo.width, size.height / photo.height)
-                Image(photo.asset).resizable().scaledToFill()
-                    .frame(width: photo.width * scale, height: photo.height * scale)
-                    .offset(x: (size.width - photo.width * scale) * photo.reelHorizontalFocus)
-                    .frame(width: size.width, height: size.height, alignment: .topLeading)
-                    .clipped()
-                    .overlay(LinearGradient(stops: [
-                        .init(color: .black.opacity(0.4), location: 0),
-                        .init(color: .clear, location: 0.32),
-                        .init(color: .black.opacity(0.35), location: 0.52),
-                        .init(color: .black.opacity(0.9), location: 1)
-                    ], startPoint: .top, endPoint: .bottom))
+                SayingArtwork(photo: photo)
                     .overlay(Color.black.opacity(textExpanded && textLayout.needsExpansion ? 0.22 : 0))
                     .animation(reduceMotion ? nil : .easeInOut(duration: 0.35), value: textExpanded)
                     .contentShape(Rectangle())

@@ -74,7 +74,13 @@ let filtered = catalog.collection(categoryID: "porfyrios-prayer-trust", order: o
 assert(filtered.count == 34)
 assert(filtered.map(\\.id) == order.filter { id in filtered.contains { $0.id == id } })
 assert(catalog.filtered(saintID: "paisios", categoryID: nil, query: "ΟΞΥΓΟΝΟ").count == 2)
-assert(catalog.filtered(saintID: "evmenios-saridakis", categoryID: nil, query: "ΣΤΕΝΟΧΩΡΙΑ").count == 1)
+assert(catalog.filtered(saintID: "evmenios-saridakis", categoryID: nil, query: "ΣΤΕΝΟΧΩΡΕΙ").count == 1)
+for saint in catalog.saints {
+ let feed = catalog.collection(saintID: saint.id, order: order)
+ assert(!feed.isEmpty && feed.allSatisfy { $0.saintID == saint.id })
+ assert(feed.map(\\.id) == order.filter { id in feed.contains { $0.id == id } })
+}
+assert(catalog.collection(favoriteIDs: saved, order: order).allSatisfy { saved.contains($0.id) })
 for natural in [20.0, 180.0, 500.0, 1500.0] {
  for available in [100.0, 350.0, 650.0] {
   let layout = SaintSayingTextLayout(naturalHeight: natural, availableHeight: available, lineHeight: 34)
@@ -86,12 +92,19 @@ for natural in [20.0, 180.0, 500.0, 1500.0] {
  }
 }
 for photo in catalog.photos {
- for size in [CGSize(width:175,height:330),CGSize(width:393,height:852),CGSize(width:430,height:932)] {
+ for size in [CGSize(width:175,height:330),CGSize(width:386,height:685),CGSize(width:393,height:852),CGSize(width:430,height:932)] {
   let image = photo.cardImageRect(in: size)
   assert(abs(image.width / image.height - photo.width / photo.height) < 0.001)
-  if photo.fillsCard == true { assert(image.minX <= 0 && image.maxX >= size.width - 0.001 && image.height >= size.height - 0.001) }
+  assert(image.minX <= 0 && image.maxX >= size.width - 0.001 && image.height >= size.height - 0.001)
   let text = photo.cardTextRegion(in: size)
   assert(text.minY >= 0 && text.maxY <= size.height + 0.001)
+  let immersive = photo.immersiveImageRect(in: size)
+  assert(abs(immersive.width / immersive.height - photo.width / photo.height) < 0.001)
+  assert(immersive.minX <= 0 && immersive.maxX >= size.width - 0.001 && immersive.height >= size.height - 0.001)
+  assert(immersive.minY == 0)
+  let subject = immersive.minX + immersive.width * photo.subjectX
+  assert(subject >= 0 && subject <= size.width)
+  assert(photo.readerTextTop(in: size) >= 86 && photo.readerTextTop(in: size) <= size.height * 0.60)
  }
 }
 print("PASS: native catalog, retired favourite IDs, filtering, shuffled order, bounded expandable text and photo geometry")
@@ -100,4 +113,9 @@ if (!process.argv.includes('--data-only')) {
  const result=spawnSync('swift',['-module-cache-path','/tmp/klimax-sayings-test-cache','-'],{input:model+swiftTests,encoding:'utf8'});
  process.stdout.write(result.stdout??'');process.stderr.write(result.stderr??'');assert.equal(result.status,0);
 } else console.log('SKIP: Swift runtime assertions (--data-only); native compilation is verified by the simulator workflow.');
+const ui=readFileSync('Klimax/SaintSayingsView.swift','utf8');
+assert(!ui.includes('if next == .mixed { showsFeed = true }'), 'Collection changes must not present another screen');
+assert(ui.includes('sayings.openFeed') && ui.includes('sayings.feed.saint'));
+assert(!ui.includes('portraitReaderPage'), 'All readers use the same photographic background');
+assert(ui.includes('SayingArtwork(photo: photo)'));
 console.log(`PASS: 188 source-preserved entries, 12 categories, four saints, 29 image assets (${Math.round(imageBytes/1024)} KB), all 129 Paisios source blocks covered.`);

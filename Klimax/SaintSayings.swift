@@ -1,4 +1,5 @@
 import Foundation
+import CoreGraphics
 
 struct SaintSaying: Codable, Identifiable, Hashable {
     let id: String
@@ -51,13 +52,45 @@ struct SayingPhoto: Codable, Identifiable {
         reelFocusX ?? (width > height ? 0.75 : 0.5)
     }
 
+    var isLandscape: Bool { width > height }
+
+    /// Subject locations reviewed against the originals. These are image
+    /// coordinates, not fractions of the cropped overflow.
+    var subjectX: CGFloat {
+        switch id {
+        case "paisios-01", "paisios-02", "paisios-06": return 0.44
+        case "paisios-03": return 0.56
+        case "paisios-05": return 0.42
+        case "paisios-07", "paisios-08": return 0.53
+        case "porfyrios-06": return 0.70
+        case "porfyrios-07": return 0.22
+        case "iakovos-02": return 0.34
+        case "iakovos-03": return 0.44
+        case "iakovos-04": return 0.57
+        case "evmenios-01": return 0.40
+        case "evmenios-04": return 0.47
+        case "evmenios-06": return 0.43
+        case "evmenios-09": return 0.48
+        default: return 0.5
+        }
+    }
+
+    /// Minimum aspect-fill crop, top aligned to preserve headroom. Clamp the
+    /// crop to the original so that every edge is always covered.
+    func immersiveImageRect(in size: CGSize) -> CGRect {
+        let scale = max(size.width / width, size.height / height)
+        let x = min(0, max(size.width - width * scale, size.width / 2 - width * scale * subjectX))
+        return CGRect(x: x,
+                      y: 0, width: width * scale, height: height * scale)
+    }
+
+    func readerTextTop(in size: CGSize) -> CGFloat {
+        let preferred = textRegion(in: size).minY
+        return max(86, min(size.height * 0.60, preferred))
+    }
+
     func cardImageRect(in size: CGSize) -> CGRect {
-        let scale = fillsCard == true
-            ? max(size.width / width, size.height / height)
-            : size.width / width
-        let imageSize = CGSize(width: width * scale, height: height * scale)
-        return CGRect(x: (size.width - imageSize.width) * (cardFocusX ?? 0.5),
-                      y: 0, width: imageSize.width, height: imageSize.height)
+        immersiveImageRect(in: size)
     }
 
     func cardTextRegion(in size: CGSize) -> CGRect {

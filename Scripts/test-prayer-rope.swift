@@ -16,6 +16,14 @@ import CryptoKit
         let directory = FileManager.default.temporaryDirectory.appendingPathComponent(UUID().uuidString)
         defer { try? FileManager.default.removeItem(at: directory) }
         let url = directory.appendingPathComponent("session.json")
+        let namesURL = directory.appendingPathComponent("names.json")
+        let namesStore = DiptychaStore(storageURL: namesURL)
+        precondition(namesStore.add(name: "   ", category: .zontes, note: nil) == nil)
+        let addedID = namesStore.add(name: "  Μαρία  ", category: .zontes, note: nil)!
+        precondition(namesStore.entries.first?.id == addedID && namesStore.entries.first?.name == "Μαρία")
+        precondition(DiptychaStore(storageURL: namesURL).entries.first?.id == addedID)
+        let inlineDraft = PrayerRopeDraft(intention: .living, selectedIDs: [addedID])
+        precondition(inlineDraft.prayer(using: namesStore.entries) == "Κύριε Ιησού Χριστέ, ελέησε τη δούλη Σου Μαρία.")
         let encoder = JSONEncoder(), decoder = JSONDecoder()
         encoder.dateEncodingStrategy = .iso8601; decoder.dateDecodingStrategy = .iso8601
         let id = UUID()
@@ -78,7 +86,26 @@ import CryptoKit
                     precondition(store.session?.count == count && store.session?.draft.showsPrayer == false && store.session?.focused == true)
                 }
             }
-            precondition(midpoint == 1 && completion == 1 && !store.advance(using: []))
+            precondition(midpoint == 1 && completion == 1 && store.session?.isAtCross == true)
+            let sessionID = store.session?.id
+            // A persisted boundary is a cross, not a terminal state. Each new
+            // cycle keeps the same prayer/session and repeats its own milestones.
+            for _ in 0..<2 {
+                store = PrayerRopeStore(storageURL: url)
+                precondition(store.session?.isAtCross == true)
+                precondition(store.consumeMilestone() == nil)
+                var cycleMidpoints = 0, cycleCompletions = 0
+                for count in 1...length {
+                    precondition(store.advance(using: []))
+                    precondition(store.session?.count == count && store.session?.id == sessionID)
+                    precondition(store.session?.focused == true)
+                    let milestone = store.consumeMilestone()
+                    if milestone == .midpoint { cycleMidpoints += 1 }
+                    if milestone == .completion { cycleCompletions += 1 }
+                    precondition(store.consumeMilestone() == nil)
+                }
+                precondition(cycleMidpoints == 1 && cycleCompletions == 1)
+            }
             store.restart(using: []); precondition(store.session?.count == 0 && store.session?.focused == false)
             store.finish(); precondition(PrayerRopeStore(storageURL: url).session == nil)
         }
@@ -90,6 +117,6 @@ import CryptoKit
         precondition(!store.advance(using: []), "Deleted names pause, preserving progress")
         let roundTrip = try decoder.decode(DiptychaEntry.self, from: encoder.encode(man))
         precondition(roundTrip.id == id && roundTrip.note == "existing note" && roundTrip.prayerGrammar == man.prayerGrammar)
-        print("Automatic Greek forms, explicit gender for ambiguous names, legacy revisions, five complete cycles through 500, milestones, persistence, restart and stale-name protection passed.")
+        print("Greek forms, legacy revisions, three uninterrupted cycles for every rope length through 500, persisted cross boundaries, milestones, manual finish and stale-name protection passed.")
     }
 }
