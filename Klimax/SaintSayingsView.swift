@@ -118,9 +118,9 @@ private struct SaintSayingsGallery: View {
                 SaintSayingsFeed(catalog: catalog, favoriteIDs: $favoriteIDs,
                     section: $section, saintID: $saintID, categoryID: $categoryID, query: $query) { showsFeed = false }
             }
-        }
-        .sheet(item: $sharing) { saying in
-            SaintSayingSharePreview(catalog: catalog, saying: saying)
+            .sheet(item: $sharing) { saying in
+                SaintSayingSharePreview(catalog: catalog, saying: saying)
+            }
         }
         .animation(reduceMotion ? nil : .easeInOut(duration: 0.2), value: section)
         .onChange(of: section) { _, _ in
@@ -293,12 +293,16 @@ private struct SaintSayingsGallery: View {
             .buttonStyle(CalmCardStyle())
             .accessibilityLabel("\(catalog.category(for: saying).title). \(saying.text)")
             .accessibilityIdentifier("sayings.card.\(saying.id)")
-            SayingFavoriteButton(id: saying.id, favoriteIDs: $favoriteIDs)
-                .padding(10)
-            SayingShareButton(id: saying.id) { sharing = saying }
-                .padding(.top, 60).padding(.trailing, 10)
         }
         .frame(width: width)
+        .overlay(alignment: .topTrailing) {
+            // Separate buttons above the card's open action; no transparent
+            // top padding spans another control's hit area.
+            VStack(spacing: 8) {
+                SayingFavoriteButton(id: saying.id, favoriteIDs: $favoriteIDs)
+                SayingShareButton(id: saying.id) { sharing = saying }
+            }.padding(10).zIndex(1)
+        }
         .clipShape(RoundedRectangle(cornerRadius: prominent ? 27 : 23))
         .overlay(RoundedRectangle(cornerRadius: prominent ? 27 : 23).stroke(Paper.hairline, lineWidth: 0.5))
     }
@@ -1026,6 +1030,7 @@ private struct SayingShareButton: View {
             Image(systemName: "square.and.arrow.up")
                 .font(.system(size: 19, weight: .medium)).foregroundStyle(.white)
                 .frame(width: 42, height: 42)
+                .contentShape(Rectangle())
                 .background(Color.black.opacity(0.45), in: Circle())
                 .overlay(Circle().stroke(.white.opacity(0.25), lineWidth: 0.5))
         }
@@ -1213,8 +1218,15 @@ private struct SayingImageActivitySheet: UIViewControllerRepresentable {
                                        end: CGPoint(x: 0, y: card.maxY), options: [])
             }
             if textTop < card.minY + card.height * 0.52 {
-                UIColor.black.withAlphaComponent(0.35).setFill()
-                ctx.fill(CGRect(x: card.minX, y: textTop - 30, width: card.width, height: card.maxY - textTop + 30))
+                let fadeStart = max(card.minY, textTop - 200 * scale)
+                let fadeEnd = min(card.maxY, textTop + 140 * scale)
+                let opacity: [CGFloat] = [0, 0.04, 0.12, 0.24, 0.35]
+                let colors = opacity.map { UIColor.black.withAlphaComponent($0).cgColor }
+                if let fade = CGGradient(colorsSpace: CGColorSpaceCreateDeviceRGB(), colors: colors as CFArray,
+                                         locations: [0, 0.25, 0.5, 0.75, 1]) {
+                    ctx.drawLinearGradient(fade, start: CGPoint(x: 0, y: fadeStart),
+                                           end: CGPoint(x: 0, y: fadeEnd), options: [.drawsAfterEndLocation])
+                }
             }
             let nameAttributes: [NSAttributedString.Key: Any] = [.font: serif(34 * scale), .foregroundColor: UIColor.white]
             (catalog.saint(for: saying).shortName as NSString).draw(
