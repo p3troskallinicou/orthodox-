@@ -289,6 +289,7 @@ private struct SaintSayingsGallery: View {
                     .frame(width: width, height: footerHeight, alignment: .topLeading)
                 }
                 .background { SayingArtwork(photo: photo).allowsHitTesting(false) }
+                .contentShape(Rectangle())
             }
             .buttonStyle(CalmCardStyle())
             .accessibilityLabel("\(catalog.category(for: saying).title). \(saying.text)")
