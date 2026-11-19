@@ -46,6 +46,9 @@ struct RootView: View {
         if ProcessInfo.processInfo.arguments.contains("--athos-navigation-check") {
             _selectedTab = State(initialValue: .athosTV)
         }
+        if ProcessInfo.processInfo.arguments.contains("--notebook-navigation-check") {
+            _selectedTab = State(initialValue: .profile)
+        }
     }
     #endif
 

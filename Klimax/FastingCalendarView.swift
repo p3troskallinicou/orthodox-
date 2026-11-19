@@ -1,33 +1,40 @@
 import SwiftUI
 
 struct FastingCalendarView: View {
+    @Environment(\.colorScheme) private var scheme
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
     @State private var monthAnchor: Date
     @State private var selected: Date
     private let levels: [FastingLevel] = [.xerophagy, .oilWine, .fish, .noMeat, .free]
 
     init(date: Date = Date()) {
-        _monthAnchor = State(initialValue: CalendarMonthLayout.start(of: date))
-        _selected = State(initialValue: Paschalion.cal.startOfDay(for: date))
+        let components = Calendar.current.dateComponents([.year, .month, .day], from: date)
+        let civilDate = Paschalion.cal.date(from: components) ?? date
+        _monthAnchor = State(initialValue: CalendarMonthLayout.start(of: civilDate))
+        _selected = State(initialValue: Paschalion.cal.startOfDay(for: civilDate))
     }
 
     var body: some View {
+        let selectedLevel = FastingCalendar.shared.level(for: selected)
         ScrollView {
             VStack(spacing: 24) {
                 LiturgicalMonthCalendar(month: $monthAnchor, selected: $selected) { date in
                     let level = FastingCalendar.shared.level(for: date)
-                    return [CalendarDayIndicator(color: level.cardTint, label: level.cardTitle)]
+                    return [CalendarDayIndicator(color: level.widgetTint, label: level.cardTitle)]
                 }
                 CalendarDayAgenda(date: selected) {
                     let level = FastingCalendar.shared.level(for: selected)
-                    CalendarAgendaRow(tint: level.cardTint) {
+                    CalendarAgendaRow(tint: level.widgetTint) {
                         VStack(alignment: .leading, spacing: 7) {
                             Label(level.cardTitle, systemImage: level.cardIcon)
                                 .font(.system(size: 17, weight: .semibold))
                                 .foregroundStyle(Paper.ink)
+                                .contentTransition(.opacity)
                             Text(level.cardGuidance)
                                 .font(.subheadline)
                                 .foregroundStyle(Paper.inkSoft)
                                 .fixedSize(horizontal: false, vertical: true)
+                                .contentTransition(.opacity)
                         }
                     }
                 }
@@ -35,7 +42,7 @@ struct FastingCalendarView: View {
                     VStack(spacing: 12) {
                         ForEach(levels, id: \.self) { level in
                             HStack(spacing: 10) {
-                                Circle().fill(level.cardTint).frame(width: 7, height: 7)
+                                Circle().fill(level.widgetTint).frame(width: 7, height: 7)
                                 Text(level.shortName).font(.subheadline).foregroundStyle(Paper.inkSoft)
                                 Spacer()
                             }
@@ -47,6 +54,16 @@ struct FastingCalendarView: View {
             .padding(.horizontal, 20).padding(.top, 12).padding(.bottom, 32)
             .frame(maxWidth: 680).frame(maxWidth: .infinity)
         }
+        .background {
+            LinearGradient(stops: [
+                .init(color: selectedLevel.widgetTint.opacity(scheme == .dark ? 0.34 : 0.30), location: 0),
+                .init(color: selectedLevel.widgetTint.opacity(0.13), location: 0.40),
+                .init(color: .clear, location: 0.85)
+            ], startPoint: .topLeading, endPoint: .bottomTrailing)
+            .ignoresSafeArea()
+            .allowsHitTesting(false)
+        }
+        .animation(reduceMotion ? nil : .easeInOut(duration: 0.32), value: selected)
         .modifier(CalendarScreenStyle(title: "Νηστειοδρόμιο"))
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {

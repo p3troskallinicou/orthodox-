@@ -11,6 +11,17 @@ import SwiftUI
 
 extension FastingLevel {
 
+    /// Quiet semantic colours for the widget's diagonal highlight.
+    var widgetTint: Color {
+        switch self {
+        case .free: Color(red: 0.20, green: 0.57, blue: 0.36)
+        case .noMeat: Color(red: 0.57, green: 0.61, blue: 0.30)
+        case .fish: Color(red: 0.22, green: 0.49, blue: 0.73)
+        case .oilWine: Color(red: 0.70, green: 0.49, blue: 0.23)
+        case .xerophagy: Color(red: 0.49, green: 0.32, blue: 0.25)
+        }
+    }
+
     /// Εἰκονίδιο SF Symbols.
     var cardIcon: String {
         switch self {

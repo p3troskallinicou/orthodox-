@@ -408,6 +408,7 @@ enum NotebookCategory: String, Codable, CaseIterable, Identifiable {
     case confession
     case scripture
     case gerontikon
+    case saintSayings
     case didaches
     case prayer
     case personal
@@ -419,6 +420,7 @@ enum NotebookCategory: String, Codable, CaseIterable, Identifiable {
         case .confession: "Εξομολόγηση"
         case .scripture: "Αγία Γραφή"
         case .gerontikon: "Γεροντικόν"
+        case .saintSayings: "Λόγοι Αγίων"
         case .didaches: "Διδαχές"
         case .prayer: "Προσευχή"
         case .personal: "Προσωπικά"
@@ -430,6 +432,7 @@ enum NotebookCategory: String, Codable, CaseIterable, Identifiable {
         case .confession: "heart.text.square.fill"
         case .scripture: "book.closed.fill"
         case .gerontikon: "quote.bubble.fill"
+        case .saintSayings: "quote.opening"
         case .didaches: "waveform"
         case .prayer: "flame.fill"
         case .personal: "pencil.and.scribble"
@@ -441,6 +444,7 @@ enum NotebookCategory: String, Codable, CaseIterable, Identifiable {
         case .confession: Color(red: 0.66, green: 0.35, blue: 0.78)
         case .scripture: Paper.gold
         case .gerontikon: Color(red: 0.74, green: 0.49, blue: 0.25)
+        case .saintSayings: Gild.accentForeground
         case .didaches: Color(red: 0.36, green: 0.62, blue: 0.93)
         case .prayer: Color(red: 0.95, green: 0.43, blue: 0.25)
         case .personal: Color(red: 0.34, green: 0.71, blue: 0.58)
@@ -451,6 +455,7 @@ enum NotebookCategory: String, Codable, CaseIterable, Identifiable {
 enum NotebookAnchorKind: String, Codable, CaseIterable, Identifiable {
     case scripture
     case gerontikon
+    case saintSayings
     case didaches
     case prayer
     case personal
@@ -461,6 +466,7 @@ enum NotebookAnchorKind: String, Codable, CaseIterable, Identifiable {
         switch self {
         case .scripture: "Αγία Γραφή"
         case .gerontikon: "Γεροντικόν"
+        case .saintSayings: "Λόγοι Αγίων"
         case .didaches: "Διδαχές"
         case .prayer: "Προσευχή"
         case .personal: "Προσωπικό"
@@ -471,6 +477,7 @@ enum NotebookAnchorKind: String, Codable, CaseIterable, Identifiable {
         switch self {
         case .scripture: "book.closed.fill"
         case .gerontikon: "quote.bubble.fill"
+        case .saintSayings: "quote.opening"
         case .didaches: "waveform"
         case .prayer: "flame.fill"
         case .personal: "paperclip"
@@ -481,6 +488,7 @@ enum NotebookAnchorKind: String, Codable, CaseIterable, Identifiable {
         switch self {
         case .scripture: Paper.gold
         case .gerontikon: Color(red: 0.74, green: 0.49, blue: 0.25)
+        case .saintSayings: Gild.accentForeground
         case .didaches: Color(red: 0.36, green: 0.62, blue: 0.93)
         case .prayer: Color(red: 0.95, green: 0.43, blue: 0.25)
         case .personal: Color(red: 0.34, green: 0.71, blue: 0.58)
@@ -635,33 +643,15 @@ struct NotebookSourceNoteSheet: View {
         NavigationStack {
             ScrollView {
                 VStack(alignment: .leading, spacing: 18) {
-                    VStack(alignment: .leading, spacing: 9) {
-                        Label(draft.category.title, systemImage: draft.category.icon)
-                            .font(.system(size: 12, weight: .black))
-                            .tracking(2.5)
-                            .foregroundStyle(draft.category.tint)
-
-                        Text(draft.anchor.cleanTitle)
-                            .font(.system(size: 23, weight: .heavy, design: .rounded))
-                            .foregroundStyle(Paper.ink)
-                            .fixedSize(horizontal: false, vertical: true)
-                    }
-
-                    VStack(alignment: .leading, spacing: 10) {
-                        Text("ΠΗΓΗ")
-                            .font(.system(size: 11, weight: .black))
-                            .tracking(3)
-                            .foregroundStyle(Paper.gold)
+                    NotebookSourcePreview(anchor: previewAnchor, showsOpenHint: false)
+                    DisclosureGroup("Απόσπασμα στη σημείωση") {
                         TextEditor(text: $excerpt)
-                            .font(.system(size: 17, weight: .regular, design: .serif))
+                            .font(.system(.body, design: .serif))
                             .foregroundStyle(Paper.ink)
-                            .lineSpacing(6)
                             .scrollContentBackground(.hidden)
-                            .frame(minHeight: 120)
-                            .padding(12)
-                            .background(Paper.card.opacity(0.72), in: RoundedRectangle(cornerRadius: 22, style: .continuous))
-                            .overlay(RoundedRectangle(cornerRadius: 22, style: .continuous).stroke(Paper.hairline, lineWidth: 1))
-                    }
+                            .frame(minHeight: 130).padding(10)
+                            .background(Paper.card, in: RoundedRectangle(cornerRadius: 16))
+                    }.font(.subheadline).tint(Paper.inkMute)
 
                     VStack(alignment: .leading, spacing: 10) {
                         Text("ΣΚΕΨΕΙΣ")
@@ -678,21 +668,11 @@ struct NotebookSourceNoteSheet: View {
                             .overlay(RoundedRectangle(cornerRadius: 22, style: .continuous).stroke(Paper.hairline, lineWidth: 1))
                     }
 
-                    Button {
-                        save(body: "")
-                    } label: {
-                        Label("Αποθήκευση για αργότερα", systemImage: "tray.and.arrow.down")
-                            .font(.system(size: 16, weight: .bold))
-                            .foregroundStyle(draft.category.tint)
-                            .frame(maxWidth: .infinity)
-                            .padding(.vertical, 14)
-                            .background(draft.category.tint.opacity(0.12), in: Capsule())
-                    }
-                    .buttonStyle(.plain)
+
                 }
                 .padding(20)
             }
-            .background(Paper.bg.ignoresSafeArea())
+            .background(AppAtmosphere().ignoresSafeArea())
             .navigationTitle("Νέα σημείωση")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
@@ -709,6 +689,12 @@ struct NotebookSourceNoteSheet: View {
                 }
             }
         }
+    }
+
+    private var previewAnchor: NotebookAnchor {
+        var anchor = draft.anchor
+        anchor.excerpt = excerpt
+        return anchor
     }
 
     private func save(body: String) {
@@ -1033,6 +1019,20 @@ private struct NotebookNoteDetailView: View {
 
 struct NotebookAnchorCard: View {
     let anchor: NotebookAnchor
+    @ObservedObject private var homilies = HomilyStore.shared
+
+    private var originalHomily: Homily? {
+        homilies.subjects.lazy.flatMap(\.episodes).first { $0.id == anchor.routeValue }
+    }
+
+    private var resolvedAnchor: NotebookAnchor {
+        var source = anchor
+        if source.kind == .didaches, let homily = originalHomily {
+            source.audioUrl = homily.audioUrl
+            source.contextTitle = source.contextTitle ?? homily.subject
+        }
+        return source
+    }
 
     var body: some View {
         switch anchor.kind {
@@ -1046,6 +1046,8 @@ struct NotebookAnchorCard: View {
             }
         case .gerontikon:
             GerontikonAnchorButton(anchor: anchor) { content }
+        case .saintSayings:
+            SaintSayingNotebookLink(anchor: anchor)
         case .didaches:
             didachesContent
         case .prayer:
@@ -1056,38 +1058,35 @@ struct NotebookAnchorCard: View {
     }
 
     private var didachesContent: some View {
-        VStack(alignment: .leading, spacing: 12) {
-            content
-
-            HStack(spacing: 10) {
-                NotebookClipPreviewButton(audioUrl: anchor.audioUrl, start: anchor.startTime ?? 0, end: anchor.endTime ?? ((anchor.startTime ?? 0) + 15))
-
-                Button {
-                    openFullHomily()
-                } label: {
-                    Label("Πλήρης ομιλία", systemImage: "arrow.up.forward")
-                        .font(.system(size: 14, weight: .bold))
-                        .foregroundStyle(.white)
-                        .frame(maxWidth: .infinity)
-                        .padding(.vertical, 12)
-                        .background(anchor.kind.tint, in: Capsule())
-                }
+        VStack(alignment: .leading, spacing: 0) {
+            Button { openFullHomily() } label: { content }
                 .buttonStyle(.plain)
-                .disabled(anchor.audioUrl.flatMap(URL.init(string:)) == nil)
-                .opacity(anchor.audioUrl.flatMap(URL.init(string:)) == nil ? 0.5 : 1)
-            }
-            .padding(.horizontal, 2)
+                .disabled(resolvedAnchor.audioUrl.flatMap(URL.init(string:)) == nil)
+            HStack(spacing: 10) {
+                NotebookClipPreviewButton(audioUrl: resolvedAnchor.audioUrl, start: anchor.startTime ?? 0,
+                                          end: anchor.endTime ?? ((anchor.startTime ?? 0) + 15))
+                Spacer(minLength: 0)
+                Button { openFullHomily() } label: {
+                    Label("Άνοιγμα ομιλίας", systemImage: "arrow.up.right")
+                        .font(.subheadline.weight(.semibold)).foregroundStyle(anchor.kind.tint)
+                        .frame(minHeight: 44)
+                }.buttonStyle(.plain)
+                    .disabled(resolvedAnchor.audioUrl.flatMap(URL.init(string:)) == nil)
+            }.padding(.horizontal, 18).padding(.bottom, 10)
         }
+        .background(Paper.card, in: RoundedRectangle(cornerRadius: 22))
+        .overlay(RoundedRectangle(cornerRadius: 22).strokeBorder(Paper.hairline, lineWidth: 0.5))
+        .task { await homilies.load() }
     }
 
     private func openFullHomily() {
-        guard let audioUrl = anchor.audioUrl else { return }
-        let homily = Homily(
+        guard let audioUrl = resolvedAnchor.audioUrl else { return }
+        let homily = originalHomily ?? Homily(
             id: anchor.routeValue ?? UUID().uuidString,
             title: anchor.cleanTitle,
             episodeNumber: nil,
             audioUrl: audioUrl,
-            durationSeconds: anchor.endTime.map { Int($0) },
+            durationSeconds: nil,
             hook: anchor.cleanExcerpt,
             isShort: nil,
             topic: anchor.contextTitle,
@@ -1102,53 +1101,7 @@ struct NotebookAnchorCard: View {
     }
 
     private var content: some View {
-        HStack(alignment: .top, spacing: 12) {
-            ZStack {
-                RoundedRectangle(cornerRadius: 14, style: .continuous)
-                    .fill(anchor.kind.tint.opacity(0.14))
-                Image(systemName: anchor.kind.icon)
-                    .font(.system(size: 17, weight: .bold))
-                    .foregroundStyle(anchor.kind.tint)
-            }
-            .frame(width: 44, height: 44)
-
-            VStack(alignment: .leading, spacing: 5) {
-                HStack(spacing: 8) {
-                    Text(anchor.kind.title)
-                        .font(.system(size: 10, weight: .black))
-                        .tracking(2.4)
-                        .foregroundStyle(anchor.kind.tint)
-                    if let startTime = anchor.startTime {
-                        Text(timeText(startTime))
-                            .font(.system(size: 10, weight: .black))
-                            .foregroundStyle(Paper.inkMute)
-                    }
-                }
-
-                Text(anchor.cleanTitle)
-                    .font(.system(size: 17, weight: .heavy, design: .rounded))
-                    .foregroundStyle(Paper.ink)
-                    .lineLimit(2)
-
-                if !anchor.cleanExcerpt.isEmpty {
-                    Text("«\(anchor.cleanExcerpt)»")
-                        .font(.system(size: 15, design: .serif))
-                        .foregroundStyle(Paper.inkMute)
-                        .lineLimit(4)
-                }
-            }
-
-            Spacer()
-
-            if anchor.kind != .personal && anchor.kind != .didaches {
-                Image(systemName: "arrow.up.forward")
-                    .font(.system(size: 13, weight: .bold))
-                    .foregroundStyle(anchor.kind.tint)
-            }
-        }
-        .padding(15)
-        .background(Paper.card.opacity(0.64), in: RoundedRectangle(cornerRadius: 20, style: .continuous))
-        .overlay(RoundedRectangle(cornerRadius: 20, style: .continuous).stroke(Paper.hairline, lineWidth: 1))
+        NotebookSourcePreview(anchor: resolvedAnchor)
     }
 
     private func timeText(_ seconds: TimeInterval) -> String {
@@ -1165,6 +1118,7 @@ private struct GerontikonAnchorButton<Label: View>: View {
     @State private var readerIndex = 0
     @State private var showingReader = false
     @State private var isOpening = false
+    @State private var unavailable = false
 
     var body: some View {
         Button {
@@ -1188,6 +1142,9 @@ private struct GerontikonAnchorButton<Label: View>: View {
                 showingReader = false
             }
         }
+        .alert("Η πηγή δεν είναι διαθέσιμη", isPresented: $unavailable) {
+            Button("Εντάξει", role: .cancel) {}
+        } message: { Text("Το αποθηκευμένο απόσπασμα παραμένει στη σημείωσή σου.") }
     }
 
     private func openStory() async {
@@ -1200,17 +1157,17 @@ private struct GerontikonAnchorButton<Label: View>: View {
         }
 
         guard !store.stories.isEmpty else {
-            NotebookNoticeCenter.shared.show("Δεν φορτώθηκε το Γεροντικόν")
+            unavailable = true
             return
         }
 
-        readerStories = store.stories
-        if let id = anchor.routeValue,
-           let index = store.stories.firstIndex(where: { $0.id == id }) {
-            readerIndex = index
-        } else {
-            readerIndex = 0
+        guard let id = anchor.routeValue,
+              let index = store.stories.firstIndex(where: { $0.id == id }) else {
+            unavailable = true
+            return
         }
+        readerStories = store.stories
+        readerIndex = index
         showingReader = true
     }
 }
@@ -1284,29 +1241,7 @@ private struct NotebookEditorSheet: View {
                             .font(.system(size: 11, weight: .black))
                             .tracking(3)
                             .foregroundStyle(Paper.gold)
-                        LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 10) {
-                            ForEach(NotebookCategory.allCases) { category in
-                                Button {
-                                    withAnimation(.easeInOut(duration: 0.18)) {
-                                        draft.category = draft.category == category ? nil : category
-                                    }
-                                } label: {
-                                    HStack(spacing: 9) {
-                                        Image(systemName: category.icon)
-                                        Text(category.title)
-                                            .lineLimit(1)
-                                            .minimumScaleFactor(0.78)
-                                    }
-                                    .font(.system(size: 13, weight: .bold))
-                                    .foregroundStyle(draft.category == category ? .white : category.tint)
-                                    .frame(maxWidth: .infinity)
-                                    .padding(.vertical, 12)
-                                    .background(draft.category == category ? category.tint : Paper.card.opacity(0.72), in: Capsule())
-                                    .overlay(Capsule().stroke(draft.category == category ? Color.clear : Paper.hairline, lineWidth: 1))
-                                }
-                                .buttonStyle(.plain)
-                            }
-                        }
+                        NotebookCategoryMenu(selection: $draft.category)
                     }
 
                     VStack(alignment: .leading, spacing: 10) {
@@ -1335,27 +1270,9 @@ private struct NotebookEditorSheet: View {
                         } else {
                             VStack(spacing: 9) {
                                 ForEach(draft.anchors) { anchor in
-                                    HStack(spacing: 10) {
-                                        Image(systemName: anchor.kind.icon)
-                                            .foregroundStyle(anchor.kind.tint)
-                                        VStack(alignment: .leading, spacing: 3) {
-                                            Text(anchor.cleanTitle)
-                                                .font(.system(size: 14, weight: .bold))
-                                                .foregroundStyle(Paper.ink)
-                                                .lineLimit(1)
-                                            Text(anchor.kind.title)
-                                                .font(.system(size: 11, weight: .bold))
-                                                .foregroundStyle(Paper.inkMute)
-                                        }
-                                        Spacer()
-                                        Button(role: .destructive) {
-                                            draft.anchors.removeAll { $0.id == anchor.id }
-                                        } label: {
-                                            Image(systemName: "xmark.circle.fill")
-                                        }
+                                    NotebookEditableSource(anchor: anchor) {
+                                        draft.anchors.removeAll { $0.id == anchor.id }
                                     }
-                                    .padding(13)
-                                    .background(Paper.card.opacity(0.58), in: RoundedRectangle(cornerRadius: 18, style: .continuous))
                                 }
                             }
                         }
@@ -1377,7 +1294,7 @@ private struct NotebookEditorSheet: View {
                 }
                 .padding(20)
             }
-            .background(Paper.bg.ignoresSafeArea())
+            .background(AppAtmosphere().ignoresSafeArea())
             .navigationTitle("Σελίδα")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
@@ -1446,6 +1363,11 @@ struct AnchorComposerSheet: View {
                     }
 
                     switch kind {
+                    case .saintSayings:
+                        SaintSayingSourcePicker { anchor in
+                            onAdd(anchor)
+                            dismiss()
+                        }
                     case .scripture:
                         ScriptureSourcePicker(choices: ProfileVerseChoice.allChoices(from: scripture)) { choice in
                             onAdd(
@@ -1513,7 +1435,7 @@ struct AnchorComposerSheet: View {
                 }
                 .padding(20)
             }
-            .background(Paper.bg.ignoresSafeArea())
+            .background(AppAtmosphere().ignoresSafeArea())
             .navigationTitle("Νέα πηγή")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {

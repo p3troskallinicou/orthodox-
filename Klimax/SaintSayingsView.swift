@@ -358,7 +358,7 @@ private struct SayingArtwork: View {
     }
 }
 
-private struct SaintSayingReader: View {
+struct SaintSayingReader: View {
     let catalog: SaintSayingsCatalog
     let sayings: [SaintSaying]
     @State private var currentID: String
@@ -416,6 +416,7 @@ private struct SaintSayingReader: View {
                 Text(catalog.saint(for: current).shortName)
                     .font(.system(size: 12, weight: .medium)).foregroundStyle(.white.opacity(0.7))
                 Spacer()
+                SaintSayingNoteButton(saying: current, catalog: catalog)
                 SayingShareButton(id: current.id) { sharing = current }
                 Button { dismiss() } label: {
                     Image(systemName: "xmark").font(.system(size: 16, weight: .semibold))
@@ -916,6 +917,14 @@ private struct SaintSayingReel: View {
                         Spacer()
                         SayingShareButton(id: saying.id, action: showShare)
                     }.padding(.bottom, safeBottom + 110)
+                }.padding(.horizontal, 15)
+
+                VStack {
+                    Spacer()
+                    HStack {
+                        Spacer()
+                        SaintSayingNoteButton(saying: saying, catalog: catalog)
+                    }.padding(.bottom, safeBottom + 60)
                 }.padding(.horizontal, 15)
 
                 Image(systemName: "heart.fill")

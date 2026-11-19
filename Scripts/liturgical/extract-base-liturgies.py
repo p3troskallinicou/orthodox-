@@ -244,7 +244,7 @@ def build_json(spec: LiturgySpec, pages: list[str], method: str) -> dict:
         "id": spec.id,
         "title_el": spec.title,
         "language": "el",
-        "source_status": "project_approved_public_domain_source",
+        "source_status": "transcription_requires_liturgical_review",
         "source": source_metadata(method),
         "sections": sections,
         "placeholders": PLACEHOLDERS,

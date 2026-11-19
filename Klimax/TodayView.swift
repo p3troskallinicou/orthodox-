@@ -16,6 +16,7 @@ private enum TodayWidgetID: String, CaseIterable, Codable, Identifiable {
     case sundayLiturgy
     case didaches
     case dailyStories
+    case saintSayings
     case continueReading
     case verse
     case fasting
@@ -31,6 +32,7 @@ private enum TodayWidgetID: String, CaseIterable, Codable, Identifiable {
         case .sundayLiturgy: return "Θεία Λειτουργία"
         case .didaches: return "Διδαχές"
         case .dailyStories: return "Γεροντικό"
+        case .saintSayings: return "Λόγοι Αγίων"
         case .continueReading: return "Συνέχεια Γραφής"
         case .verse: return "Χωρίο ημέρας"
         case .fasting: return "Νηστεία"
@@ -46,6 +48,7 @@ private enum TodayWidgetID: String, CaseIterable, Codable, Identifiable {
         case .sundayLiturgy: return "cross.fill"
         case .didaches: return "waveform"
         case .dailyStories: return "text.quote"
+        case .saintSayings: return "quote.opening"
         case .continueReading: return "book.fill"
         case .verse: return "book.closed.fill"
         case .fasting: return "leaf.fill"
@@ -621,6 +624,7 @@ private struct WidgetGalleryPreview: View {
 
 struct TodayView: View {
     @Environment(ScriptureStore.self) private var store
+    @Environment(\.accessibilityReduceMotion) private var reduceWidgetMotion
     @ObservedObject private var lessonProgress = LessonProgressStore.shared
     @StateObject private var streaks = StreakStore.shared
     @StateObject private var dailyClip = DailyClipStore()
@@ -1483,6 +1487,8 @@ struct TodayView: View {
             didachesTodayWidget(size: widget.size)
         case .dailyStories:
             dailyStoriesWidget(size: widget.size)
+        case .saintSayings:
+            SaintSayingsTodayWidget(size: widget.size)
         case .continueReading:
             if let route = store.continueReading(), let book = store.book(id: route.bookID) {
                 NavigationLink(value: route) {
@@ -1530,20 +1536,24 @@ struct TodayView: View {
                 VStack(alignment: .leading, spacing: 7) {
                     HStack(spacing: 6) {
                         Image(systemName: level.cardIcon)
+                            .contentTransition(.opacity)
                         Text(isToday ? (size == .small ? "ΝΗΣΤΕΙΑ" : "ΝΗΣΤΕΙΑ ΣΗΜΕΡΑ") : fastingDayLabel(selectedDate).uppercased())
                             .font(.system(size: 9, weight: .bold)).tracking(0.8)
+                            .contentTransition(.opacity)
                         Spacer(minLength: 0)
                         Image(systemName: "arrow.up.right").font(.system(size: 10, weight: .semibold))
                     }
-                    .foregroundStyle(Gild.accentForeground)
+                    .foregroundStyle(level.widgetTint)
                     Text(fastingWidgetTitle(level))
                         .font(.system(size: size == .large ? 24 : 18, weight: .semibold, design: .serif))
                         .foregroundStyle(Paper.ink).lineLimit(2)
                         .minimumScaleFactor(0.85)
+                        .contentTransition(.opacity)
                     Text(level.cardGuidance)
                         .font(.system(size: size == .large ? 13 : size == .small ? 11 : 12))
                         .foregroundStyle(Paper.inkSoft).lineLimit(size == .wide ? 1 : 4)
                         .fixedSize(horizontal: false, vertical: true)
+                        .contentTransition(.opacity)
                 }
                 .frame(maxWidth: .infinity, alignment: .leading).contentShape(Rectangle())
             }.buttonStyle(.plain)
@@ -1564,7 +1574,10 @@ struct TodayView: View {
         }
         .padding(size == .small ? 14 : 16)
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
-        .todayLiquidGlass(cornerRadius: 22, tint: level.cardTint)
+        .background { TodayWidgetAtmosphere(tint: level.widgetTint) }
+        .clipShape(RoundedRectangle(cornerRadius: 22, style: .continuous))
+        .overlay(RoundedRectangle(cornerRadius: 22).stroke(Paper.hairline, lineWidth: 0.75))
+        .animation(reduceWidgetMotion ? nil : .easeInOut(duration: 0.32), value: selectedDate)
     }
 
     private func fastingWidgetTitle(_ level: FastingLevel) -> String {
@@ -1620,11 +1633,11 @@ struct TodayView: View {
                             Button { fastingSelectedDate = date } label: {
                                 VStack(spacing: 2) {
                                     Text("\(cell - leading + 1)").font(.system(size: 11, weight: selected ? .bold : .medium))
-                                    Circle().fill(level.cardTint).frame(width: 4, height: 4)
+                                    Circle().fill(level.widgetTint).frame(width: 4, height: 4)
                                 }
                                 .foregroundStyle(selected ? Gild.accentForeground : Paper.ink)
                                 .frame(maxWidth: .infinity).frame(height: height)
-                                .background(level.cardTint.opacity(selected ? 0.24 : 0.09), in: RoundedRectangle(cornerRadius: 6))
+                                .background(level.widgetTint.opacity(selected ? 0.24 : 0.09), in: RoundedRectangle(cornerRadius: 6))
                                 .overlay(RoundedRectangle(cornerRadius: 6).stroke(selected ? Gild.accentForeground : Paper.hairline, lineWidth: selected ? 1.5 : 0.5))
                             }.buttonStyle(.plain)
                                 .accessibilityLabel("\(fastingDayLabel(date)), \(fastingWidgetTitle(level))")
@@ -1660,7 +1673,7 @@ struct TodayView: View {
                     .frame(width: 63, alignment: .leading)
                 Image(systemName: level.cardIcon)
                     .font(.system(size: 11, weight: .semibold))
-                    .foregroundStyle(level.cardTint).frame(width: 16)
+                    .foregroundStyle(level.widgetTint).frame(width: 16)
                 Text(fastingWidgetTitle(level))
                     .font(.system(size: 12, weight: selected ? .semibold : .regular))
                     .fixedSize(horizontal: false, vertical: true)
@@ -1672,7 +1685,7 @@ struct TodayView: View {
             .foregroundStyle(Paper.ink)
             .padding(.horizontal, 8).padding(.vertical, 4)
             .frame(maxWidth: .infinity, alignment: .leading)
-            .background(level.cardTint.opacity(selected ? 0.14 : 0.04), in: RoundedRectangle(cornerRadius: 8))
+            .background(level.widgetTint.opacity(selected ? 0.14 : 0.04), in: RoundedRectangle(cornerRadius: 8))
             .contentShape(Rectangle())
         }
         .buttonStyle(.plain)
@@ -1689,7 +1702,7 @@ struct TodayView: View {
             }
         } label: {
             Circle()
-                .fill(isSelected ? status.level.cardTint : status.level.cardTint.opacity(0.34))
+                .fill(isSelected ? status.level.widgetTint : status.level.widgetTint.opacity(0.34))
                 .frame(width: isSelected ? 12 : 8, height: isSelected ? 12 : 8)
                 .overlay(Circle().stroke(Paper.card.opacity(isSelected ? 0.75 : 0), lineWidth: 1.2))
         }
@@ -1720,12 +1733,12 @@ struct TodayView: View {
                     .font(.system(size: 12, weight: .bold))
                     .foregroundStyle(isSelected ? .white : Paper.ink)
                 Circle()
-                    .fill(status.level.cardTint)
+                    .fill(status.level.widgetTint)
                     .frame(width: 5, height: 5)
             }
             .frame(maxWidth: .infinity)
             .padding(.vertical, 7)
-            .background(isSelected ? status.level.cardTint.opacity(0.9) : Paper.ink.opacity(0.05),
+            .background(isSelected ? status.level.widgetTint.opacity(0.9) : Paper.ink.opacity(0.05),
                         in: RoundedRectangle(cornerRadius: 11, style: .continuous))
             .overlay(RoundedRectangle(cornerRadius: 11, style: .continuous)
                 .stroke(isSelected ? Paper.gold : Paper.hairline, lineWidth: isSelected ? 1.4 : 1))
@@ -2571,6 +2584,130 @@ struct TodayView: View {
     }
 }
 
+/// Tiny cached artwork prevents full-resolution covers being decoded during
+/// playback updates or widget scrolling. The opaque base keeps text readable.
+private struct TodayWidgetAtmosphere: View {
+    var tint: Color? = nil
+    var asset: String? = nil
+    @Environment(\.colorScheme) private var scheme
+    private static let thumbnails = NSCache<NSString, UIImage>()
+
+    private func thumbnail(_ name: String) -> UIImage? {
+        if let cached = Self.thumbnails.object(forKey: name as NSString) { return cached }
+        guard let source = UIImage(named: name) else { return nil }
+        let format = UIGraphicsImageRendererFormat()
+        format.scale = 1
+        let image = UIGraphicsImageRenderer(size: CGSize(width: 32, height: 32), format: format).image { _ in
+            source.draw(in: CGRect(x: 0, y: 0, width: 32, height: 32))
+        }
+        Self.thumbnails.countLimit = 40
+        Self.thumbnails.setObject(image, forKey: name as NSString)
+        return image
+    }
+
+    var body: some View {
+        GeometryReader { proxy in
+            ZStack {
+                Paper.card
+                if let asset, let image = thumbnail(asset) {
+                    Image(uiImage: image).resizable().interpolation(.high)
+                        .frame(width: proxy.size.width + 48, height: proxy.size.height + 48)
+                        .blur(radius: 22).saturation(0.75)
+                        .opacity(scheme == .dark ? 0.29 : 0.22)
+                        .position(x: proxy.size.width / 2, y: proxy.size.height / 2)
+                }
+                if let tint {
+                    LinearGradient(stops: [
+                        .init(color: tint.opacity(scheme == .dark ? 0.34 : 0.30), location: 0),
+                        .init(color: tint.opacity(0.13), location: 0.40),
+                        .init(color: .clear, location: 0.85)
+                    ], startPoint: .topLeading, endPoint: .bottomTrailing)
+                }
+            }.frame(width: proxy.size.width, height: proxy.size.height).clipped()
+        }.allowsHitTesting(false).accessibilityHidden(true)
+    }
+}
+
+private struct SaintSayingsTodayWidget: View {
+    let size: TodayWidgetSize
+    @State private var page = 0
+    @State private var showsReader = false
+    @AppStorage(SaintSayingFavorites.storageKey) private var favoriteData = Data()
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
+    private let catalog = SaintSayingsCatalog.bundled
+    private var sayings: [SaintSaying] {
+        guard let catalog, !catalog.sayings.isEmpty else { return [] }
+        let day = Calendar.current.dateComponents([.year, .month, .day], from: Date())
+        let seed = (day.year ?? 0) * 372 + (day.month ?? 0) * 31 + (day.day ?? 0)
+        return (0..<min(3, catalog.saints.count)).compactMap { offset in
+            let saint = catalog.saints[(seed + offset) % catalog.saints.count]
+            let quotes = catalog.collection(saintID: saint.id)
+            return quotes.isEmpty ? nil : quotes[(seed + offset) % quotes.count]
+        }
+    }
+    private var index: Int { min(page, max(0, sayings.count - 1)) }
+    private var current: SaintSaying? { sayings.isEmpty ? nil : sayings[index] }
+    private var favorites: Binding<Set<String>> {
+        Binding(get: { SaintSayingFavorites.decode(favoriteData) },
+                set: { favoriteData = SaintSayingFavorites.encode($0) })
+    }
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 8) {
+            Label("ΛΟΓΟΙ ΑΓΙΩΝ", systemImage: "quote.opening")
+                .font(.system(size: 9, weight: .bold)).tracking(0.8).foregroundStyle(Gild.accentForeground)
+            Button { showsReader = true } label: {
+                VStack(alignment: .leading, spacing: 8) {
+                    Text(current?.text ?? "Λόγια που μένουν")
+                        .font(.system(size: size == .large ? 20 : size == .small ? 14 : 17, weight: .medium, design: .serif))
+                        .foregroundStyle(Paper.ink)
+                        .lineLimit(size == .large ? 9 : 3)
+                    Spacer(minLength: 0)
+                    if let current, let catalog {
+                        Text(catalog.saint(for: current).shortName)
+                            .font(size == .small ? .caption2.weight(.semibold) : .caption.weight(.semibold))
+                            .foregroundStyle(Paper.inkSoft).lineLimit(size == .small ? 1 : 2)
+                        if size == .large {
+                            Text(catalog.category(for: current).title)
+                                .font(.caption).foregroundStyle(Paper.inkMute).lineLimit(2)
+                            Label("Διάβασε ολόκληρο τον λόγο", systemImage: "arrow.up.right")
+                                .font(.caption).foregroundStyle(Gild.accentForeground)
+                        }
+                    }
+                }.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+                    .contentShape(Rectangle())
+            }.buttonStyle(.plain).disabled(current == nil)
+            HStack {
+                Text("\(sayings.isEmpty ? 0 : index + 1) / \(sayings.count)").font(.caption2.monospacedDigit())
+                Spacer()
+                Button { next() } label: { Image(systemName: "arrow.right").frame(width: 30, height: 26) }
+                    .buttonStyle(.plain).accessibilityLabel("Επόμενος λόγος").disabled(sayings.count < 2)
+            }.foregroundStyle(Gild.accentForeground)
+        }
+        .padding(size == .small ? 14 : 16)
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+        .background { TodayWidgetAtmosphere(asset: current.flatMap { catalog?.photo(for: $0).asset }) }
+        .clipShape(RoundedRectangle(cornerRadius: 22, style: .continuous))
+        .overlay(RoundedRectangle(cornerRadius: 22).stroke(Paper.hairline, lineWidth: 0.75))
+        .simultaneousGesture(DragGesture(minimumDistance: 24).onEnded { value in
+            guard abs(value.translation.width) > abs(value.translation.height) * 1.5, !sayings.isEmpty else { return }
+            withAnimation(reduceMotion ? nil : .easeInOut(duration: 0.18)) {
+                page = (index + (value.translation.width < 0 ? 1 : sayings.count - 1)) % sayings.count
+            }
+        })
+        .fullScreenCover(isPresented: $showsReader) {
+            if let catalog, let current {
+                SaintSayingReader(catalog: catalog, sayings: sayings, initialID: current.id, favoriteIDs: favorites)
+                    .presentationBackground(.clear)
+            }
+        }
+    }
+    private func next() {
+        guard !sayings.isEmpty else { return }
+        withAnimation(reduceMotion ? nil : .easeInOut(duration: 0.18)) { page = (index + 1) % sayings.count }
+    }
+}
+
 private struct DidachesTodayWidget: View {
     @ObservedObject private var player = HomilyPlayer.shared
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
@@ -2619,7 +2756,12 @@ private struct DidachesTodayWidget: View {
         }
         .padding(16)
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
-        .todayLiquidGlass(cornerRadius: 22, highlighted: size != .small)
+        .background {
+            TodayWidgetAtmosphere(asset: (activePane == .daily ? clip : lastListened?.homily)
+                .map { AthosAudioCoverLibrary.assetName(for: $0.subject) })
+        }
+        .clipShape(RoundedRectangle(cornerRadius: 22, style: .continuous))
+        .overlay(RoundedRectangle(cornerRadius: 22).stroke(Paper.hairline, lineWidth: 0.75))
     }
 
     private var activePane: PlayerPane { page == 0 ? .daily : .resume }

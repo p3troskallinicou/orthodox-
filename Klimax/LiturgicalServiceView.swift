@@ -82,6 +82,8 @@ struct DivineLiturgyView: View {
     @Environment(ScriptureStore.self) private var scripture
     @State private var package: SundayServicePackage?
     @State private var schedules: [LiturgicalYearSchedule] = []
+    @State private var availableSundayDates: [Date] = []
+    @State private var baseLiturgies: [BaseLiturgy] = []
     @State private var loadError: String?
     @State private var isSearchExpanded = false
     @State private var query = ""
@@ -95,9 +97,9 @@ struct DivineLiturgyView: View {
     }
 
     private var liturgyDates: [Date] {
-        schedules.flatMap { $0.entries(for: .divineLiturgy) }
-            .compactMap { Self.keyFormatter.date(from: $0.date) }
-            .sorted()
+        // Μὴν παρουσιάζουμε τὶς 94 κυπριακὲς ἐνδείξεις ὡς ἐλεγμένες
+        // ἀναγνώσεις τῆς Ἐκκλησίας τῆς Ἑλλάδος.
+        availableSundayDates.sorted()
     }
 
     private var selectedScheduleEntry: LiturgicalYearEntry? {
@@ -111,8 +113,7 @@ struct DivineLiturgyView: View {
             if let package {
                 serviceContent(package)
             } else if let loadError {
-                ContentUnavailableView("Η ακολουθία δεν φορτώθηκε", systemImage: "exclamationmark.triangle",
-                                       description: Text(loadError))
+                pendingDateContent(loadError)
             } else {
                 ProgressView().tint(Paper.gold)
             }
@@ -142,7 +143,9 @@ struct DivineLiturgyView: View {
             }
         }
         .animation(.spring(response: 0.32, dampingFraction: 0.84), value: isSearchExpanded)
-        .sheet(isPresented: $showDatePicker) { datePickerSheet }
+        .sheet(isPresented: $showDatePicker) { [pickerDraft] in
+            datePickerSheet(displayedDate: pickerDraft)
+        }
         .task(id: scripture.bible?.version) { load() }
         .onChange(of: selectedDate) { _, _ in
             collapseSearch()
@@ -189,22 +192,22 @@ struct DivineLiturgyView: View {
         .buttonStyle(.plain)
     }
 
-    private var datePickerSheet: some View {
+    private func datePickerSheet(displayedDate: Date) -> some View {
         NavigationStack {
             VStack(spacing: 18) {
-                DatePicker("Ημερομηνία", selection: $pickerDraft, in: liturgyDateRange, displayedComponents: .date)
+                DatePicker("Ημερομηνία", selection: $pickerDraft, displayedComponents: .date)
                     .datePickerStyle(.graphical)
                     .tint(Paper.gold)
                     .padding(.horizontal, 8)
 
-                Text("Θα εμφανιστεί η πλησιέστερη Θεία Λειτουργία που προβλέπει το Τυπικό:\n\(Self.greekDate(closestLiturgyDate(to: pickerDraft) ?? pickerDraft))")
+                Text("Επιλεγμένη ημερομηνία: \(Self.greekDate(displayedDate)). Επίλεξε την ημέρα που θέλεις να διαβάσεις.")
                     .font(.system(size: 12, design: .serif))
                     .foregroundStyle(Paper.inkMute)
                     .multilineTextAlignment(.center)
                     .padding(.horizontal, 20)
 
                 Button { pickerDraft = closestLiturgyDate(to: Date()) ?? selectedDate } label: {
-                    Text("Πλησιέστερη τέλεση")
+                    Text("Πλησιέστερη διαθέσιμη Κυριακή")
                         .font(.system(size: 14, weight: .medium, design: .serif))
                         .foregroundStyle(Paper.gold)
                 }
@@ -220,7 +223,7 @@ struct DivineLiturgyView: View {
                 }
                 ToolbarItem(placement: .confirmationAction) {
                     Button("Τέλος") {
-                        selectedDate = closestLiturgyDate(to: pickerDraft) ?? selectedDate
+                        selectedDate = pickerDraft
                         showDatePicker = false
                     }.fontWeight(.semibold)
                 }
@@ -235,20 +238,99 @@ struct DivineLiturgyView: View {
     }
 
     private func step(by offset: Int) {
-        guard let index = liturgyDates.firstIndex(where: { Calendar.current.isDate($0, inSameDayAs: selectedDate) }) else { return }
-        let target = index + offset
-        guard liturgyDates.indices.contains(target) else { return }
-        selectedDate = liturgyDates[target]
+        guard let next = Calendar.current.date(byAdding: .day, value: offset * 7, to: selectedDate) else { return }
+        selectedDate = next
+    }
+
+    private func pendingDateContent(_ message: String) -> some View {
+        ScrollView {
+            VStack(alignment: .leading, spacing: 22) {
+                dateNavigationBar
+                Label("Αναγνώσματα ημέρας", systemImage: "info.circle")
+                    .font(.headline).foregroundStyle(Paper.ink)
+                Text(message)
+                    .font(.subheadline).foregroundStyle(Paper.inkSoft)
+                if let nearest = closestLiturgyDate(to: selectedDate) {
+                    Button {
+                        selectedDate = nearest
+                    } label: {
+                        Label("Αναγνώσματα: \(Self.greekDate(nearest))", systemImage: "book")
+                            .font(.subheadline.weight(.medium))
+                    }.tint(Paper.gold)
+                }
+                if !baseLiturgies.isEmpty {
+                    Divider()
+                    Text("Κείμενα Θείας Λειτουργίας")
+                        .font(.system(size: 23, design: .serif)).foregroundStyle(Paper.ink)
+                    Text("Μπορείς να διαβάσεις τον σταθερό κορμό. Οι μεταβλητές περικοπές και τα τροπάρια της επιλεγμένης ημέρας δεν συμπληρώνονται εδώ.")
+                        .font(.subheadline).foregroundStyle(Paper.inkSoft)
+                    ForEach(baseLiturgies, id: \.id) { base in
+                        NavigationLink {
+                            baseLiturgyContent(base)
+                        } label: {
+                            HStack(spacing: 12) {
+                                Image(systemName: "book.closed")
+                                Text(base.titleEl).frame(maxWidth: .infinity, alignment: .leading)
+                                Image(systemName: "chevron.right")
+                            }
+                            .font(.system(size: 17, design: .serif)).foregroundStyle(Paper.ink)
+                            .padding(16)
+                            .background(Paper.card, in: RoundedRectangle(cornerRadius: 18))
+                        }.buttonStyle(.plain)
+                    }
+                }
+            }
+            .padding(.horizontal, 24).padding(.top, 14).padding(.bottom, 110)
+        }
+    }
+
+    private func baseLiturgyContent(_ base: BaseLiturgy) -> some View {
+        ScrollView {
+            LazyVStack(alignment: .leading, spacing: 18) {
+                Text(base.titleEl).font(.system(size: 27, design: .serif)).foregroundStyle(Paper.ink)
+                Text("Σταθερό κείμενο της Λειτουργίας. Τα αναγνώσματα και τα τροπάρια διαφέρουν ανά ημέρα.")
+                    .font(.subheadline).foregroundStyle(Paper.inkMute)
+                ForEach(base.sections) { section in
+                    Text(section.titleEl).font(.headline).foregroundStyle(Paper.gold)
+                    ForEach(section.blocks) { block in
+                        liturgyBlock(AssembledServiceBlock(
+                            id: block.id, speaker: block.speaker, kind: block.kind,
+                            textEl: baseReadingText(block.textEl, placeholders: base.placeholders),
+                            voice: block.voice, rubricKind: block.rubricKind
+                        ), result: nil)
+                    }
+                    if section.blocks.isEmpty {
+                        Text(baseReadingText(section.textEl, placeholders: base.placeholders))
+                            .font(.system(size: 19, design: .serif)).foregroundStyle(Paper.ink)
+                    }
+                }
+            }
+            .padding(.horizontal, 24).padding(.top, 14).padding(.bottom, 110)
+        }
+        .background(Paper.bg.ignoresSafeArea())
+        .navigationTitle("Κείμενο Λειτουργίας").navigationBarTitleDisplayMode(.inline)
+    }
+
+    private func baseReadingText(_ text: String, placeholders: LiturgyPlaceholders) -> String {
+        let replacements = [
+            (placeholders.gospel, "[Ευαγγέλιο της ημέρας]"),
+            (placeholders.apostle, "[Απόστολος της ημέρας]"),
+            (placeholders.troparia, "[Τροπάρια της ημέρας]"),
+            (placeholders.kontakia, "[Κοντάκια της ημέρας]"),
+            (placeholders.prokeimenon, "[Προκείμενο της ημέρας]"),
+            (placeholders.koinonikon, "[Κοινωνικό της ημέρας]"),
+            (placeholders.hierarch, "(δεῖνος)"),
+            (placeholders.commemorations, "(δεῖνος)"),
+            (placeholders.deceased, "(ονόματα κεκοιμημένων)")
+        ]
+        return replacements.reduce(text) { $0.replacingOccurrences(of: $1.0, with: $1.1) }
     }
 
     private func closestLiturgyDate(to date: Date) -> Date? {
-        liturgyDates.min { abs($0.timeIntervalSince(date)) < abs($1.timeIntervalSince(date)) }
-    }
-
-    private var liturgyDateRange: ClosedRange<Date> {
-        let first = liturgyDates.first ?? Self.keyFormatter.date(from: "2026-01-01")!
-        let last = liturgyDates.last ?? Self.keyFormatter.date(from: "2026-12-31")!
-        return first...last
+        let calendar = Calendar(identifier: .gregorian)
+        let year = calendar.component(.year, from: date)
+        return liturgyDates.filter { calendar.component(.year, from: $0) == year }
+            .min { abs($0.timeIntervalSince(date)) < abs($1.timeIntervalSince(date)) }
     }
 
     private static let greekFormatter: DateFormatter = {
@@ -281,21 +363,10 @@ struct DivineLiturgyView: View {
                             .font(.system(size: 27, design: .serif)).foregroundStyle(Paper.ink)
                         Text(package.services.divineLiturgy.titleEl)
                             .font(.system(size: 14, design: .serif)).foregroundStyle(Paper.inkMute)
-                        if let selectedScheduleEntry {
-                            Text("Τυπική Διάταξη \(String(selectedScheduleEntry.date.prefix(4))) · \(selectedScheduleEntry.title)")
-                                .font(.system(size: 12, design: .serif)).foregroundStyle(Paper.inkMute)
-                        }
                         Text("Ευαγγέλιον: \(package.services.divineLiturgy.gospel.displayEl)")
                             .font(.system(size: 13, weight: .semibold)).foregroundStyle(Paper.gold)
                     }
                     Rectangle().fill(Paper.gold.opacity(0.45)).frame(width: 52, height: 1.5)
-
-                    ForEach(package.warnings, id: \.self) { warning in
-                        Label(warning, systemImage: "info.circle")
-                            .font(.system(size: 12)).foregroundStyle(Paper.inkMute)
-                            .padding(12).frame(maxWidth: .infinity, alignment: .leading)
-                            .background(Paper.gold.opacity(0.08), in: RoundedRectangle(cornerRadius: 12))
-                    }
 
                     ForEach(package.services.divineLiturgy.sections) { section in
                         VStack(alignment: .leading, spacing: 14) {
@@ -584,26 +655,27 @@ struct DivineLiturgyView: View {
 
     private func load() {
         loadError = nil
+        package = nil
         do {
-            let loadedSchedules = try LiturgicalYearSchedule.loadAvailable()
-            schedules = loadedSchedules
-            let key = Self.keyFormatter.string(from: selectedDate)
-            if !loadedSchedules.lazy.flatMap(\.entries).contains(where: { $0.date == key && $0.divineLiturgy }),
-               let closest = loadedSchedules.flatMap({ $0.entries(for: .divineLiturgy) })
-                .compactMap({ Self.keyFormatter.date(from: $0.date) })
-                .min(by: { abs($0.timeIntervalSince(selectedDate)) < abs($1.timeIntervalSince(selectedDate)) }) {
-                selectedDate = closest
-                return
-            }
+            // Ἡ ἐτήσια καταχώριση καὶ ἡ πρωτογενὴς πηγὴ προηγούνται
+            // τῆς επιλογῆς ἡμερομηνίας. Δὲν μεταφερόμαστε κρυφὰ στὸ 2026.
             let repository = try LiturgicalRepository.load()
+            baseLiturgies = try [BaseLiturgyKind.chrysostom, .basil, .presanctified].map {
+                try repository.baseLiturgy($0)
+            }
+            availableSundayDates = repository.yearlySundays
+                .filter(\.hasAvailableReadings)
+                .compactMap { Self.keyFormatter.date(from: $0.date) }
+                .sorted()
+            schedules = try LiturgicalYearSchedule.loadAvailable()
             package = try ServiceAssembler.assemble(
-                selectedDate, repository: repository, bible: scripture.bible,
+                selectedDate, repository: repository, bible: try LiturgicalRepository.bundledBible(),
                 scheduledEntry: selectedScheduleEntry
             )
             if package == nil {
-                loadError = "Η Θεία Λειτουργία προβλέπεται από το Τυπικό, αλλά τα μεταβαλλόμενα αναγνώσματα της ημέρας δεν έχουν ακόμη ενσωματωθεί."
+                loadError = "Το κείμενο της ημέρας δεν είναι διαθέσιμο. Μπορείς να επιλέξεις άλλη ημερομηνία."
             }
-        } catch { loadError = error.localizedDescription }
+        } catch { loadError = "Το κείμενο δεν φορτώθηκε. Δοκίμασε ξανά ανοίγοντας τη σελίδα." }
     }
 }
 

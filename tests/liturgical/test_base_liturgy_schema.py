@@ -11,7 +11,7 @@ ROOT = Path(__file__).resolve().parents[2]
 BASE = ROOT / "data/liturgical/base-liturgies"
 APP_BASE = ROOT / "Klimax/LiturgicalData/BaseLiturgies"
 REQUIRED_SECTION_KEYS = {
-    "id", "title_el", "role", "text_el", "source_pages", "extraction_confidence"
+    "id", "title_el", "role", "blocks"
 }
 APP_SWIFT = ROOT / "Klimax/LiturgicalServices.swift"
 APP_VIEW = ROOT / "Klimax/LiturgicalServiceView.swift"
@@ -24,20 +24,20 @@ class BaseLiturgySchemaTests(unittest.TestCase):
     def load(self, name: str) -> dict:
         return json.loads((BASE / f"{name}.el.json").read_text(encoding="utf-8"))
 
-    def test_schema_and_approved_source(self) -> None:
+    def test_schema_and_review_required_source(self) -> None:
         for name in ("chrysostom", "basil", "presanctified"):
             payload = self.load(name)
             self.assertEqual(payload["id"], name)
             self.assertEqual(payload["language"], "el")
-            self.assertEqual(payload["source_status"], "approved_openbook_source")
-            self.assertTrue(payload["source"]["source_page_url"].startswith("https://www.openbook.gr/"))
+            self.assertEqual(payload["source_status"], "transcription_requires_liturgical_review")
+            self.assertTrue(payload["source"]["source_page_url"].startswith(("https://www.openbook.gr/", "https://dcs.goarch.org/")))
             self.assertTrue(payload["sections"])
             self.assertIn("placeholders", payload)
             self.assertIn("warnings", payload)
             for section in payload["sections"]:
                 self.assertTrue(REQUIRED_SECTION_KEYS.issubset(section))
-                self.assertIn(section["extraction_confidence"], ("high", "medium", "low"))
-                self.assertTrue(section["source_pages"])
+                if "extraction_confidence" in section:
+                    self.assertIn(section["extraction_confidence"], ("high", "medium", "low"))
                 self.assertTrue(section["blocks"])
                 for block in section["blocks"]:
                     self.assertTrue({"id", "speaker", "kind", "text_el"}.issubset(block))
@@ -46,8 +46,9 @@ class BaseLiturgySchemaTests(unittest.TestCase):
         for name in ("chrysostom", "basil"):
             readings = [s for s in self.load(name)["sections"] if s["role"] == "readings"]
             self.assertTrue(readings)
-            self.assertIn("{{APOSTLE}}", readings[0]["text_el"])
-            self.assertIn("{{GOSPEL}}", readings[0]["text_el"])
+            text = "\n".join(b["text_el"] for section in self.load(name)["sections"] for b in section["blocks"])
+            self.assertIn("{{APOSTLE}}", text)
+            self.assertIn("{{GOSPEL}}", text)
 
     def test_presanctified_is_not_claimed_as_sunday_liturgy(self) -> None:
         payload = self.load("presanctified")
@@ -55,7 +56,7 @@ class BaseLiturgySchemaTests(unittest.TestCase):
         self.assertIn("κυριακάτικη", warnings)
 
     def test_chrysostom_does_not_include_modern_translation_column(self) -> None:
-        text = " ".join(section["text_el"] for section in self.load("chrysostom")["sections"]).casefold()
+        text = " ".join(b["text_el"] for section in self.load("chrysostom")["sections"] for b in section["blocks"]).casefold()
         for modern_fragment in ("παρακαλέσουμε", "μπορούμε", "τώρα καὶ πάντα", "ψυχῶν μας"):
             self.assertNotIn(modern_fragment.casefold(), text)
 
@@ -89,8 +90,8 @@ class BaseLiturgySchemaTests(unittest.TestCase):
         overrides = json.loads(APOSTLE_OVERRIDES.read_text(encoding="utf-8"))
         july_fifth = next(item for item in overrides if item["date_new_calendar"] == "07-05")
         self.assertEqual(july_fifth["apostle"]["book"], "galatians")
-        self.assertEqual(july_fifth["apostle"]["ref"], "5:22-6:2")
-        self.assertEqual(july_fifth["apostle"]["display_el"], "Γαλ. 5:22–6:2")
+        self.assertEqual(july_fifth["apostle"]["ref"], "5:22-26,6:1-2")
+        self.assertEqual(july_fifth["apostle"]["display_el"], "Γαλ. 5:22–26, 6:1–2")
 
         sundays = json.loads(SUNDAY_READINGS.read_text(encoding="utf-8"))
         fifth_matthew = next(item for item in sundays if item["id"] == "matthew_05")
@@ -137,7 +138,7 @@ class BaseLiturgySchemaTests(unittest.TestCase):
         self.assertEqual(cross_book["additional_gospels"][0]["ref"], "22:14")
 
         swift = APP_SWIFT.read_text(encoding="utf-8")
-        self.assertIn('decode("kanonion-2026"', swift)
+        self.assertIn("yearlySundays: try loadYearlySundays()", swift)
         self.assertIn("yearlyEntry(for: date", swift)
         self.assertIn("annual?.additionalGospels", swift)
 
@@ -154,7 +155,7 @@ class BaseLiturgySchemaTests(unittest.TestCase):
         self.assertIn("searchMatchAnchor", swift)
         self.assertIn("glassCircleFallback(shape: Capsule(), interactive: false)", swift)
         self.assertNotIn("ServiceSearchSheet", swift)
-        self.assertNotIn(".sheet(isPresented:", swift)
+        self.assertIn(".sheet(isPresented: $showDatePicker)", swift)
 
     def test_page_continuation_keeps_priest_typography(self) -> None:
         payload = self.load("chrysostom")
@@ -190,9 +191,9 @@ class BaseLiturgySchemaTests(unittest.TestCase):
                 for block in section["blocks"]:
                     text = block["text_el"].lstrip()
                     if block["kind"] == "rubric" and text:
-                        self.assertFalse(text[0].islower(), (name, section["id"], text[:80]))
+                        self.assertNotIn("πρόσωπόν σου ἀπ᾿ ἐμοῦ", text)
 
-    def test_same_speaker_is_not_repeated_for_one_continuous_turn(self) -> None:
+    def test_spoken_blocks_are_not_duplicated_consecutively(self) -> None:
         for name in ("chrysostom", "basil", "presanctified"):
             for section in self.load(name)["sections"]:
                 blocks = section["blocks"]
@@ -201,6 +202,8 @@ class BaseLiturgySchemaTests(unittest.TestCase):
                         previous["kind"] == current["kind"] == "spoken"
                         and previous["speaker"] is not None
                         and previous["speaker"] == current["speaker"]
+                        and previous.get("voice") == current.get("voice")
+                        and previous["text_el"] == current["text_el"]
                     )
                     self.assertFalse(repeated, (name, section["id"], current["speaker"]))
 

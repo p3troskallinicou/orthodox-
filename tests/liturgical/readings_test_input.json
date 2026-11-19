@@ -1,0 +1,1742 @@
+[
+  {
+    "kind": "apostle",
+    "book": "2timothy",
+    "ref": "4:5-8"
+  },
+  {
+    "kind": "gospel",
+    "book": "Mark",
+    "ref": "1:1-8"
+  },
+  {
+    "kind": "apostle",
+    "book": "2corinthians",
+    "ref": "4:6-15"
+  },
+  {
+    "kind": "gospel",
+    "book": "Matthew",
+    "ref": "4:12-17"
+  },
+  {
+    "kind": "apostle",
+    "book": "hebrews",
+    "ref": "13:7-16"
+  },
+  {
+    "kind": "gospel",
+    "book": "Luke",
+    "ref": "17:12-19"
+  },
+  {
+    "kind": "apostle",
+    "book": "hebrews",
+    "ref": "7:26-8:2"
+  },
+  {
+    "kind": "gospel",
+    "book": "Luke",
+    "ref": "19:1-10"
+  },
+  {
+    "kind": "apostle",
+    "book": "romans",
+    "ref": "8:28-39"
+  },
+  {
+    "kind": "gospel",
+    "book": "Luke",
+    "ref": "18:10-14"
+  },
+  {
+    "kind": "apostle",
+    "book": "1corinthians",
+    "ref": "6:12-20"
+  },
+  {
+    "kind": "gospel",
+    "book": "Luke",
+    "ref": "15:11-32"
+  },
+  {
+    "kind": "apostle",
+    "book": "1corinthians",
+    "ref": "8:8-9:2"
+  },
+  {
+    "kind": "gospel",
+    "book": "Matthew",
+    "ref": "25:31-46"
+  },
+  {
+    "kind": "apostle",
+    "book": "romans",
+    "ref": "13:11-14:4"
+  },
+  {
+    "kind": "gospel",
+    "book": "Matthew",
+    "ref": "6:14-21"
+  },
+  {
+    "kind": "apostle",
+    "book": "hebrews",
+    "ref": "11:24-26,32-40"
+  },
+  {
+    "kind": "gospel",
+    "book": "John",
+    "ref": "1:44-52"
+  },
+  {
+    "kind": "apostle",
+    "book": "hebrews",
+    "ref": "1:10-2:3"
+  },
+  {
+    "kind": "gospel",
+    "book": "Mark",
+    "ref": "2:1-12"
+  },
+  {
+    "kind": "apostle",
+    "book": "hebrews",
+    "ref": "4:14-5:6"
+  },
+  {
+    "kind": "gospel",
+    "book": "Mark",
+    "ref": "8:34-9:1"
+  },
+  {
+    "kind": "apostle",
+    "book": "hebrews",
+    "ref": "6:13-20"
+  },
+  {
+    "kind": "gospel",
+    "book": "Mark",
+    "ref": "9:17-31"
+  },
+  {
+    "kind": "apostle",
+    "book": "hebrews",
+    "ref": "9:11-14"
+  },
+  {
+    "kind": "gospel",
+    "book": "Mark",
+    "ref": "10:32-45"
+  },
+  {
+    "kind": "apostle",
+    "book": "philippians",
+    "ref": "4:4-9"
+  },
+  {
+    "kind": "gospel",
+    "book": "John",
+    "ref": "12:1-18"
+  },
+  {
+    "kind": "apostle",
+    "book": "acts",
+    "ref": "1:1-8"
+  },
+  {
+    "kind": "gospel",
+    "book": "John",
+    "ref": "1:1-17"
+  },
+  {
+    "kind": "apostle",
+    "book": "acts",
+    "ref": "5:12-20"
+  },
+  {
+    "kind": "gospel",
+    "book": "John",
+    "ref": "20:19-31"
+  },
+  {
+    "kind": "apostle",
+    "book": "acts",
+    "ref": "6:1-7"
+  },
+  {
+    "kind": "gospel",
+    "book": "Mark",
+    "ref": "15:43-16:8"
+  },
+  {
+    "kind": "apostle",
+    "book": "acts",
+    "ref": "9:32-42"
+  },
+  {
+    "kind": "gospel",
+    "book": "John",
+    "ref": "5:1-15"
+  },
+  {
+    "kind": "apostle",
+    "book": "acts",
+    "ref": "11:19-30"
+  },
+  {
+    "kind": "gospel",
+    "book": "John",
+    "ref": "4:5-42"
+  },
+  {
+    "kind": "apostle",
+    "book": "acts",
+    "ref": "16:16-34"
+  },
+  {
+    "kind": "gospel",
+    "book": "John",
+    "ref": "9:1-38"
+  },
+  {
+    "kind": "apostle",
+    "book": "acts",
+    "ref": "20:16-18,28-36"
+  },
+  {
+    "kind": "gospel",
+    "book": "John",
+    "ref": "17:1-13"
+  },
+  {
+    "kind": "apostle",
+    "book": "acts",
+    "ref": "2:1-11"
+  },
+  {
+    "kind": "gospel",
+    "book": "John",
+    "ref": "7:37-52;8:12"
+  },
+  {
+    "kind": "apostle",
+    "book": "hebrews",
+    "ref": "11:33-12:2"
+  },
+  {
+    "kind": "gospel",
+    "book": "Matthew",
+    "ref": "10:32-33,37-38;19:27-30"
+  },
+  {
+    "kind": "apostle",
+    "book": "romans",
+    "ref": "2:10-16"
+  },
+  {
+    "kind": "gospel",
+    "book": "Matthew",
+    "ref": "4:18-23"
+  },
+  {
+    "kind": "apostle",
+    "book": "romans",
+    "ref": "5:1-10"
+  },
+  {
+    "kind": "gospel",
+    "book": "Matthew",
+    "ref": "6:22-33"
+  },
+  {
+    "kind": "apostle",
+    "book": "romans",
+    "ref": "6:18-23"
+  },
+  {
+    "kind": "gospel",
+    "book": "Matthew",
+    "ref": "8:5-13"
+  },
+  {
+    "kind": "apostle",
+    "book": "galatians",
+    "ref": "5:22-6:2"
+  },
+  {
+    "kind": "gospel",
+    "book": "Matthew",
+    "ref": "8:28-9:1"
+  },
+  {
+    "kind": "apostle",
+    "book": "romans",
+    "ref": "12:6-14"
+  },
+  {
+    "kind": "gospel",
+    "book": "Matthew",
+    "ref": "9:1-8"
+  },
+  {
+    "kind": "apostle",
+    "book": "titus",
+    "ref": "3:8-15"
+  },
+  {
+    "kind": "gospel",
+    "book": "Matthew",
+    "ref": "5:14-19"
+  },
+  {
+    "kind": "apostle",
+    "book": "galatians",
+    "ref": "3:23-4:5"
+  },
+  {
+    "kind": "gospel",
+    "book": "Matthew",
+    "ref": "14:14-22"
+  },
+  {
+    "kind": "apostle",
+    "book": "1corinthians",
+    "ref": "3:9-17"
+  },
+  {
+    "kind": "gospel",
+    "book": "Matthew",
+    "ref": "14:22-34"
+  },
+  {
+    "kind": "apostle",
+    "book": "1corinthians",
+    "ref": "4:9-16"
+  },
+  {
+    "kind": "gospel",
+    "book": "Matthew",
+    "ref": "17:14-23"
+  },
+  {
+    "kind": "apostle",
+    "book": "1corinthians",
+    "ref": "9:2-12"
+  },
+  {
+    "kind": "gospel",
+    "book": "Matthew",
+    "ref": "18:23-35"
+  },
+  {
+    "kind": "apostle",
+    "book": "1corinthians",
+    "ref": "15:1-11"
+  },
+  {
+    "kind": "gospel",
+    "book": "Matthew",
+    "ref": "19:16-26"
+  },
+  {
+    "kind": "apostle",
+    "book": "1corinthians",
+    "ref": "16:13-24"
+  },
+  {
+    "kind": "gospel",
+    "book": "Matthew",
+    "ref": "21:33-42"
+  },
+  {
+    "kind": "apostle",
+    "book": "hebrews",
+    "ref": "2:2-10"
+  },
+  {
+    "kind": "gospel",
+    "book": "Matthew",
+    "ref": "22:2-14"
+  },
+  {
+    "kind": "apostle",
+    "book": "galatians",
+    "ref": "6:11-18"
+  },
+  {
+    "kind": "gospel",
+    "book": "John",
+    "ref": "3:13-17"
+  },
+  {
+    "kind": "apostle",
+    "book": "galatians",
+    "ref": "2:16-20"
+  },
+  {
+    "kind": "gospel",
+    "book": "Mark",
+    "ref": "8:34-9:1"
+  },
+  {
+    "kind": "apostle",
+    "book": "2corinthians",
+    "ref": "6:16-7:1"
+  },
+  {
+    "kind": "gospel",
+    "book": "Luke",
+    "ref": "5:1-11"
+  },
+  {
+    "kind": "apostle",
+    "book": "hebrews",
+    "ref": "11:33-12:2"
+  },
+  {
+    "kind": "gospel",
+    "book": "Luke",
+    "ref": "6:31-36"
+  },
+  {
+    "kind": "apostle",
+    "book": "titus",
+    "ref": "3:8-15"
+  },
+  {
+    "kind": "gospel",
+    "book": "Luke",
+    "ref": "8:5-15"
+  },
+  {
+    "kind": "apostle",
+    "book": "colossians",
+    "ref": "4:5-11,14-18"
+  },
+  {
+    "kind": "gospel",
+    "book": "Luke",
+    "ref": "10:16-21"
+  },
+  {
+    "kind": "apostle",
+    "book": "galatians",
+    "ref": "2:16-20"
+  },
+  {
+    "kind": "gospel",
+    "book": "Luke",
+    "ref": "8:26-39"
+  },
+  {
+    "kind": "apostle",
+    "book": "1corinthians",
+    "ref": "12:27-13:8"
+  },
+  {
+    "kind": "gospel",
+    "book": "Luke",
+    "ref": "16:19-31"
+  },
+  {
+    "kind": "apostle",
+    "book": "hebrews",
+    "ref": "2:2-10"
+  },
+  {
+    "kind": "gospel",
+    "book": "Luke",
+    "ref": "8:41-56"
+  },
+  {
+    "kind": "apostle",
+    "book": "ephesians",
+    "ref": "2:14-22"
+  },
+  {
+    "kind": "gospel",
+    "book": "Luke",
+    "ref": "10:25-37"
+  },
+  {
+    "kind": "apostle",
+    "book": "ephesians",
+    "ref": "4:1-7"
+  },
+  {
+    "kind": "gospel",
+    "book": "Luke",
+    "ref": "12:16-21"
+  },
+  {
+    "kind": "apostle",
+    "book": "2timothy",
+    "ref": "1:8-18"
+  },
+  {
+    "kind": "gospel",
+    "book": "Luke",
+    "ref": "18:18-27"
+  },
+  {
+    "kind": "apostle",
+    "book": "hebrews",
+    "ref": "13:17-21"
+  },
+  {
+    "kind": "gospel",
+    "book": "Luke",
+    "ref": "13:10-17"
+  },
+  {
+    "kind": "apostle",
+    "book": "colossians",
+    "ref": "3:4-11"
+  },
+  {
+    "kind": "gospel",
+    "book": "Luke",
+    "ref": "14:16-24"
+  },
+  {
+    "kind": "gospel",
+    "book": "Matthew",
+    "ref": "22:14"
+  },
+  {
+    "kind": "apostle",
+    "book": "hebrews",
+    "ref": "11:9-10,32-40"
+  },
+  {
+    "kind": "gospel",
+    "book": "Matthew",
+    "ref": "1:1-25"
+  },
+  {
+    "kind": "apostle",
+    "book": "acts",
+    "ref": "6:8-7:5,47-60"
+  },
+  {
+    "kind": "gospel",
+    "book": "Matthew",
+    "ref": "2:13-23"
+  },
+  {
+    "kind": "gospel",
+    "book": "Luke",
+    "ref": "18:10-14"
+  },
+  {
+    "kind": "apostle",
+    "book": "2timothy",
+    "ref": "3:10-15"
+  },
+  {
+    "kind": "gospel",
+    "book": "Luke",
+    "ref": "15:11-32"
+  },
+  {
+    "kind": "apostle",
+    "book": "1corinthians",
+    "ref": "6:12-20"
+  },
+  {
+    "kind": "gospel",
+    "book": "Matthew",
+    "ref": "25:31-46"
+  },
+  {
+    "kind": "apostle",
+    "book": "1corinthians",
+    "ref": "8:8-9:2"
+  },
+  {
+    "kind": "gospel",
+    "book": "Matthew",
+    "ref": "6:14-21"
+  },
+  {
+    "kind": "apostle",
+    "book": "romans",
+    "ref": "13:11-14:4"
+  },
+  {
+    "kind": "gospel",
+    "book": "John",
+    "ref": "1:43-51"
+  },
+  {
+    "kind": "apostle",
+    "book": "hebrews",
+    "ref": "11:24-26,32-40"
+  },
+  {
+    "kind": "gospel",
+    "book": "Mark",
+    "ref": "2:1-12"
+  },
+  {
+    "kind": "apostle",
+    "book": "hebrews",
+    "ref": "1:10-2:3"
+  },
+  {
+    "kind": "gospel",
+    "book": "Mark",
+    "ref": "8:34-9:1"
+  },
+  {
+    "kind": "apostle",
+    "book": "hebrews",
+    "ref": "4:14-5:6"
+  },
+  {
+    "kind": "gospel",
+    "book": "Mark",
+    "ref": "9:17-31"
+  },
+  {
+    "kind": "apostle",
+    "book": "hebrews",
+    "ref": "6:13-20"
+  },
+  {
+    "kind": "gospel",
+    "book": "Mark",
+    "ref": "10:32-45"
+  },
+  {
+    "kind": "apostle",
+    "book": "hebrews",
+    "ref": "9:11-14"
+  },
+  {
+    "kind": "gospel",
+    "book": "John",
+    "ref": "12:1-18"
+  },
+  {
+    "kind": "apostle",
+    "book": "philippians",
+    "ref": "4:4-9"
+  },
+  {
+    "kind": "gospel",
+    "book": "John",
+    "ref": "1:1-17"
+  },
+  {
+    "kind": "apostle",
+    "book": "acts",
+    "ref": "1:1-8"
+  },
+  {
+    "kind": "gospel",
+    "book": "John",
+    "ref": "20:19-31"
+  },
+  {
+    "kind": "apostle",
+    "book": "acts",
+    "ref": "5:12-20"
+  },
+  {
+    "kind": "gospel",
+    "book": "Mark",
+    "ref": "15:43-16:8"
+  },
+  {
+    "kind": "apostle",
+    "book": "acts",
+    "ref": "6:1-7"
+  },
+  {
+    "kind": "gospel",
+    "book": "John",
+    "ref": "5:1-15"
+  },
+  {
+    "kind": "apostle",
+    "book": "acts",
+    "ref": "9:32-42"
+  },
+  {
+    "kind": "gospel",
+    "book": "John",
+    "ref": "4:5-42"
+  },
+  {
+    "kind": "apostle",
+    "book": "acts",
+    "ref": "11:19-30"
+  },
+  {
+    "kind": "gospel",
+    "book": "John",
+    "ref": "9:1-38"
+  },
+  {
+    "kind": "apostle",
+    "book": "acts",
+    "ref": "16:16-34"
+  },
+  {
+    "kind": "gospel",
+    "book": "John",
+    "ref": "17:1-13"
+  },
+  {
+    "kind": "apostle",
+    "book": "acts",
+    "ref": "20:16-18,28-36"
+  },
+  {
+    "kind": "gospel",
+    "book": "John",
+    "ref": "7:37-52;8:12"
+  },
+  {
+    "kind": "apostle",
+    "book": "acts",
+    "ref": "2:1-11"
+  },
+  {
+    "kind": "gospel",
+    "book": "Matthew",
+    "ref": "10:32-33,37-38;19:27-30"
+  },
+  {
+    "kind": "apostle",
+    "book": "hebrews",
+    "ref": "11:33-12:2"
+  },
+  {
+    "kind": "gospel",
+    "book": "Matthew",
+    "ref": "4:18-23"
+  },
+  {
+    "kind": "apostle",
+    "book": "romans",
+    "ref": "2:10-16"
+  },
+  {
+    "kind": "gospel",
+    "book": "Matthew",
+    "ref": "6:22-33"
+  },
+  {
+    "kind": "apostle",
+    "book": "romans",
+    "ref": "5:1-10"
+  },
+  {
+    "kind": "gospel",
+    "book": "Matthew",
+    "ref": "8:5-13"
+  },
+  {
+    "kind": "apostle",
+    "book": "romans",
+    "ref": "6:18-23"
+  },
+  {
+    "kind": "gospel",
+    "book": "Matthew",
+    "ref": "8:28-9:1"
+  },
+  {
+    "kind": "apostle",
+    "book": "romans",
+    "ref": "10:1-10"
+  },
+  {
+    "kind": "gospel",
+    "book": "Matthew",
+    "ref": "9:1-8"
+  },
+  {
+    "kind": "apostle",
+    "book": "romans",
+    "ref": "12:6-14"
+  },
+  {
+    "kind": "gospel",
+    "book": "Matthew",
+    "ref": "9:27-35"
+  },
+  {
+    "kind": "apostle",
+    "book": "romans",
+    "ref": "15:1-7"
+  },
+  {
+    "kind": "gospel",
+    "book": "Matthew",
+    "ref": "14:14-22"
+  },
+  {
+    "kind": "apostle",
+    "book": "1corinthians",
+    "ref": "1:10-18"
+  },
+  {
+    "kind": "gospel",
+    "book": "Matthew",
+    "ref": "14:22-34"
+  },
+  {
+    "kind": "apostle",
+    "book": "1corinthians",
+    "ref": "3:9-17"
+  },
+  {
+    "kind": "gospel",
+    "book": "Matthew",
+    "ref": "17:14-23"
+  },
+  {
+    "kind": "apostle",
+    "book": "1corinthians",
+    "ref": "4:9-16"
+  },
+  {
+    "kind": "gospel",
+    "book": "Matthew",
+    "ref": "18:23-35"
+  },
+  {
+    "kind": "apostle",
+    "book": "1corinthians",
+    "ref": "9:2-12"
+  },
+  {
+    "kind": "gospel",
+    "book": "Matthew",
+    "ref": "19:16-26"
+  },
+  {
+    "kind": "apostle",
+    "book": "1corinthians",
+    "ref": "15:1-11"
+  },
+  {
+    "kind": "gospel",
+    "book": "Matthew",
+    "ref": "21:33-42"
+  },
+  {
+    "kind": "apostle",
+    "book": "1corinthians",
+    "ref": "16:13-24"
+  },
+  {
+    "kind": "gospel",
+    "book": "Matthew",
+    "ref": "22:1-14"
+  },
+  {
+    "kind": "apostle",
+    "book": "2corinthians",
+    "ref": "1:21-2:4"
+  },
+  {
+    "kind": "gospel",
+    "book": "Matthew",
+    "ref": "22:35-46"
+  },
+  {
+    "kind": "apostle",
+    "book": "2corinthians",
+    "ref": "4:6-15"
+  },
+  {
+    "kind": "gospel",
+    "book": "Matthew",
+    "ref": "25:14-30"
+  },
+  {
+    "kind": "apostle",
+    "book": "2corinthians",
+    "ref": "6:1-10"
+  },
+  {
+    "kind": "gospel",
+    "book": "Matthew",
+    "ref": "15:21-28"
+  },
+  {
+    "kind": "apostle",
+    "book": "2corinthians",
+    "ref": "6:16-7:1"
+  },
+  {
+    "kind": "gospel",
+    "book": "Luke",
+    "ref": "5:1-11"
+  },
+  {
+    "kind": "apostle",
+    "book": "2corinthians",
+    "ref": "9:6-11"
+  },
+  {
+    "kind": "gospel",
+    "book": "Luke",
+    "ref": "6:31-36"
+  },
+  {
+    "kind": "apostle",
+    "book": "2corinthians",
+    "ref": "11:31-12:9"
+  },
+  {
+    "kind": "gospel",
+    "book": "Luke",
+    "ref": "7:11-16"
+  },
+  {
+    "kind": "apostle",
+    "book": "galatians",
+    "ref": "1:11-19"
+  },
+  {
+    "kind": "gospel",
+    "book": "Luke",
+    "ref": "8:5-15"
+  },
+  {
+    "kind": "apostle",
+    "book": "galatians",
+    "ref": "2:16-20"
+  },
+  {
+    "kind": "gospel",
+    "book": "Luke",
+    "ref": "16:19-31"
+  },
+  {
+    "kind": "apostle",
+    "book": "galatians",
+    "ref": "6:11-18"
+  },
+  {
+    "kind": "gospel",
+    "book": "Luke",
+    "ref": "8:26-39"
+  },
+  {
+    "kind": "apostle",
+    "book": "ephesians",
+    "ref": "2:4-10"
+  },
+  {
+    "kind": "gospel",
+    "book": "Luke",
+    "ref": "8:41-56"
+  },
+  {
+    "kind": "apostle",
+    "book": "ephesians",
+    "ref": "2:14-22"
+  },
+  {
+    "kind": "gospel",
+    "book": "Luke",
+    "ref": "10:25-37"
+  },
+  {
+    "kind": "apostle",
+    "book": "ephesians",
+    "ref": "4:1-7"
+  },
+  {
+    "kind": "gospel",
+    "book": "Luke",
+    "ref": "12:16-21"
+  },
+  {
+    "kind": "apostle",
+    "book": "ephesians",
+    "ref": "5:9-19"
+  },
+  {
+    "kind": "gospel",
+    "book": "Luke",
+    "ref": "13:10-17"
+  },
+  {
+    "kind": "apostle",
+    "book": "ephesians",
+    "ref": "6:10-17"
+  },
+  {
+    "kind": "gospel",
+    "book": "Luke",
+    "ref": "18:35-43"
+  },
+  {
+    "kind": "apostle",
+    "book": "colossians",
+    "ref": "1:12-18"
+  },
+  {
+    "kind": "gospel",
+    "book": "Luke",
+    "ref": "17:12-19"
+  },
+  {
+    "kind": "apostle",
+    "book": "colossians",
+    "ref": "3:4-11"
+  },
+  {
+    "kind": "gospel",
+    "book": "Luke",
+    "ref": "18:18-27"
+  },
+  {
+    "kind": "apostle",
+    "book": "colossians",
+    "ref": "3:12-16"
+  },
+  {
+    "kind": "gospel",
+    "book": "Luke",
+    "ref": "18:35-43"
+  },
+  {
+    "kind": "apostle",
+    "book": "1timothy",
+    "ref": "1:15-17"
+  },
+  {
+    "kind": "gospel",
+    "book": "Luke",
+    "ref": "19:1-10"
+  },
+  {
+    "kind": "apostle",
+    "book": "1timothy",
+    "ref": "4:9-15"
+  },
+  {
+    "kind": "apostle",
+    "book": "colossians",
+    "ref": "2:8-12"
+  },
+  {
+    "kind": "apostle",
+    "book": "hebrews",
+    "ref": "5:4-10"
+  },
+  {
+    "kind": "apostle",
+    "book": "titus",
+    "ref": "2:11-14,3:4-7"
+  },
+  {
+    "kind": "apostle",
+    "book": "acts",
+    "ref": "19:1-8"
+  },
+  {
+    "kind": "apostle",
+    "book": "romans",
+    "ref": "6:3-11"
+  },
+  {
+    "kind": "apostle",
+    "book": "2timothy",
+    "ref": "2:1-10"
+  },
+  {
+    "kind": "apostle",
+    "book": "hebrews",
+    "ref": "13:7-16"
+  },
+  {
+    "kind": "apostle",
+    "book": "acts",
+    "ref": "2:38-43"
+  },
+  {
+    "kind": "apostle",
+    "book": "galatians",
+    "ref": "5:22-26,6:1-2"
+  },
+  {
+    "kind": "apostle",
+    "book": "acts",
+    "ref": "12:1-11"
+  },
+  {
+    "kind": "apostle",
+    "book": "hebrews",
+    "ref": "13:17-21"
+  },
+  {
+    "kind": "apostle",
+    "book": "hebrews",
+    "ref": "13:7-16"
+  },
+  {
+    "kind": "apostle",
+    "book": "galatians",
+    "ref": "5:22-26,6:1-2"
+  },
+  {
+    "kind": "apostle",
+    "book": "2corinthians",
+    "ref": "4:6-15"
+  },
+  {
+    "kind": "apostle",
+    "book": "philippians",
+    "ref": "1:12-20"
+  },
+  {
+    "kind": "apostle",
+    "book": "2timothy",
+    "ref": "1:3-8"
+  },
+  {
+    "kind": "apostle",
+    "book": "philippians",
+    "ref": "3:20-21,4:1-3"
+  },
+  {
+    "kind": "apostle",
+    "book": "galatians",
+    "ref": "5:22-26,6:1-2"
+  },
+  {
+    "kind": "apostle",
+    "book": "hebrews",
+    "ref": "7:26-28,8:1-2"
+  },
+  {
+    "kind": "apostle",
+    "book": "hebrews",
+    "ref": "7:26-28,8:1-2"
+  },
+  {
+    "kind": "apostle",
+    "book": "galatians",
+    "ref": "5:22-26,6:1-2"
+  },
+  {
+    "kind": "apostle",
+    "book": "hebrews",
+    "ref": "10:32-38"
+  },
+  {
+    "kind": "apostle",
+    "book": "hebrews",
+    "ref": "13:7-16"
+  },
+  {
+    "kind": "apostle",
+    "book": "1corinthians",
+    "ref": "12:27-31,13:1-8"
+  },
+  {
+    "kind": "apostle",
+    "book": "romans",
+    "ref": "8:28-39"
+  },
+  {
+    "kind": "apostle",
+    "book": "hebrews",
+    "ref": "7:7-17"
+  },
+  {
+    "kind": "apostle",
+    "book": "hebrews",
+    "ref": "7:26-28,8:1-2"
+  },
+  {
+    "kind": "apostle",
+    "book": "2timothy",
+    "ref": "2:1-10"
+  },
+  {
+    "kind": "apostle",
+    "book": "hebrews",
+    "ref": "4:14-16,5:1-6"
+  },
+  {
+    "kind": "apostle",
+    "book": "2corinthians",
+    "ref": "4:6-15"
+  },
+  {
+    "kind": "apostle",
+    "book": "hebrews",
+    "ref": "12:1-10"
+  },
+  {
+    "kind": "apostle",
+    "book": "hebrews",
+    "ref": "2:11-18"
+  },
+  {
+    "kind": "apostle",
+    "book": "acts",
+    "ref": "12:1-11"
+  },
+  {
+    "kind": "apostle",
+    "book": "hebrews",
+    "ref": "13:7-16"
+  },
+  {
+    "kind": "apostle",
+    "book": "acts",
+    "ref": "26:1,12-20"
+  },
+  {
+    "kind": "apostle",
+    "book": "1john",
+    "ref": "1:1-7"
+  },
+  {
+    "kind": "apostle",
+    "book": "acts",
+    "ref": "26:1,12-20"
+  },
+  {
+    "kind": "apostle",
+    "book": "2corinthians",
+    "ref": "4:6-15"
+  },
+  {
+    "kind": "apostle",
+    "book": "hebrews",
+    "ref": "7:26-28,8:1-2"
+  },
+  {
+    "kind": "apostle",
+    "book": "ephesians",
+    "ref": "2:4-10"
+  },
+  {
+    "kind": "apostle",
+    "book": "acts",
+    "ref": "11:19-30"
+  },
+  {
+    "kind": "apostle",
+    "book": "jude",
+    "ref": "1:1-25"
+  },
+  {
+    "kind": "apostle",
+    "book": "romans",
+    "ref": "13:11-14,14:1-4"
+  },
+  {
+    "kind": "apostle",
+    "book": "2corinthians",
+    "ref": "11:21-33,12:1-9"
+  },
+  {
+    "kind": "apostle",
+    "book": "1corinthians",
+    "ref": "4:9-16"
+  },
+  {
+    "kind": "apostle",
+    "book": "1corinthians",
+    "ref": "12:27-31,13:1-8"
+  },
+  {
+    "kind": "apostle",
+    "book": "hebrews",
+    "ref": "9:1-7"
+  },
+  {
+    "kind": "apostle",
+    "book": "galatians",
+    "ref": "5:22-26,6:1-2"
+  },
+  {
+    "kind": "apostle",
+    "book": "galatians",
+    "ref": "3:23-29,4:1-5"
+  },
+  {
+    "kind": "apostle",
+    "book": "1timothy",
+    "ref": "4:9-15"
+  },
+  {
+    "kind": "apostle",
+    "book": "2corinthians",
+    "ref": "6:1-10"
+  },
+  {
+    "kind": "apostle",
+    "book": "hebrews",
+    "ref": "2:2-10"
+  },
+  {
+    "kind": "apostle",
+    "book": "1corinthians",
+    "ref": "13:11-13,14:1-5"
+  },
+  {
+    "kind": "apostle",
+    "book": "galatians",
+    "ref": "3:23-29,4:1-5"
+  },
+  {
+    "kind": "apostle",
+    "book": "james",
+    "ref": "5:10-20"
+  },
+  {
+    "kind": "apostle",
+    "book": "1corinthians",
+    "ref": "9:2-12"
+  },
+  {
+    "kind": "apostle",
+    "book": "galatians",
+    "ref": "4:22-27"
+  },
+  {
+    "kind": "apostle",
+    "book": "galatians",
+    "ref": "3:23-29,4:1-5"
+  },
+  {
+    "kind": "apostle",
+    "book": "2timothy",
+    "ref": "2:1-10"
+  },
+  {
+    "kind": "apostle",
+    "book": "acts",
+    "ref": "15:35-41"
+  },
+  {
+    "kind": "apostle",
+    "book": "hebrews",
+    "ref": "11:33-40,12:1-2"
+  },
+  {
+    "kind": "apostle",
+    "book": "1peter",
+    "ref": "1:1-25,2:1-10"
+  },
+  {
+    "kind": "apostle",
+    "book": "2peter",
+    "ref": "1:10-19"
+  },
+  {
+    "kind": "apostle",
+    "book": "philippians",
+    "ref": "2:5-11"
+  },
+  {
+    "kind": "apostle",
+    "book": "acts",
+    "ref": "13:25-33"
+  },
+  {
+    "kind": "apostle",
+    "book": "hebrews",
+    "ref": "9:1-7"
+  },
+  {
+    "kind": "apostle",
+    "book": "1timothy",
+    "ref": "2:1-7"
+  },
+  {
+    "kind": "apostle",
+    "book": "hebrews",
+    "ref": "2:2-10"
+  },
+  {
+    "kind": "apostle",
+    "book": "philippians",
+    "ref": "2:5-11"
+  },
+  {
+    "kind": "apostle",
+    "book": "1corinthians",
+    "ref": "1:18-24"
+  },
+  {
+    "kind": "apostle",
+    "book": "colossians",
+    "ref": "1:24-29,2:1"
+  },
+  {
+    "kind": "apostle",
+    "book": "ephesians",
+    "ref": "6:10-17"
+  },
+  {
+    "kind": "apostle",
+    "book": "galatians",
+    "ref": "4:22-27"
+  },
+  {
+    "kind": "apostle",
+    "book": "2timothy",
+    "ref": "3:10-15"
+  },
+  {
+    "kind": "apostle",
+    "book": "1john",
+    "ref": "4:12-19"
+  },
+  {
+    "kind": "apostle",
+    "book": "galatians",
+    "ref": "5:22-26,6:1-2"
+  },
+  {
+    "kind": "apostle",
+    "book": "acts",
+    "ref": "9:10-19"
+  },
+  {
+    "kind": "apostle",
+    "book": "1timothy",
+    "ref": "1:12-17"
+  },
+  {
+    "kind": "apostle",
+    "book": "acts",
+    "ref": "17:16-34"
+  },
+  {
+    "kind": "apostle",
+    "book": "1corinthians",
+    "ref": "4:9-16"
+  },
+  {
+    "kind": "apostle",
+    "book": "1corinthians",
+    "ref": "4:9-16"
+  },
+  {
+    "kind": "apostle",
+    "book": "acts",
+    "ref": "8:26-39"
+  },
+  {
+    "kind": "apostle",
+    "book": "romans",
+    "ref": "9:18-33"
+  },
+  {
+    "kind": "apostle",
+    "book": "colossians",
+    "ref": "4:5-11,14-18"
+  },
+  {
+    "kind": "apostle",
+    "book": "2timothy",
+    "ref": "2:1-10"
+  },
+  {
+    "kind": "apostle",
+    "book": "galatians",
+    "ref": "1:11-19"
+  },
+  {
+    "kind": "apostle",
+    "book": "2timothy",
+    "ref": "2:1-10"
+  },
+  {
+    "kind": "apostle",
+    "book": "romans",
+    "ref": "16:1-16"
+  },
+  {
+    "kind": "apostle",
+    "book": "1corinthians",
+    "ref": "12:27-31,13:1-8"
+  },
+  {
+    "kind": "apostle",
+    "book": "hebrews",
+    "ref": "8:1-6"
+  },
+  {
+    "kind": "apostle",
+    "book": "hebrews",
+    "ref": "2:2-10"
+  },
+  {
+    "kind": "apostle",
+    "book": "1corinthians",
+    "ref": "4:9-16"
+  },
+  {
+    "kind": "apostle",
+    "book": "2corinthians",
+    "ref": "4:6-15"
+  },
+  {
+    "kind": "apostle",
+    "book": "2corinthians",
+    "ref": "9:6-11"
+  },
+  {
+    "kind": "apostle",
+    "book": "hebrews",
+    "ref": "7:26-28,8:1-2"
+  },
+  {
+    "kind": "apostle",
+    "book": "1corinthians",
+    "ref": "4:9-16"
+  },
+  {
+    "kind": "apostle",
+    "book": "romans",
+    "ref": "10:11-21,11:1-2"
+  },
+  {
+    "kind": "apostle",
+    "book": "1corinthians",
+    "ref": "12:7-11"
+  },
+  {
+    "kind": "apostle",
+    "book": "hebrews",
+    "ref": "9:1-7"
+  },
+  {
+    "kind": "apostle",
+    "book": "philemon",
+    "ref": "1:1-25"
+  },
+  {
+    "kind": "apostle",
+    "book": "philippians",
+    "ref": "3:20-21,4:1-3"
+  },
+  {
+    "kind": "apostle",
+    "book": "galatians",
+    "ref": "3:23-29,4:1-5"
+  },
+  {
+    "kind": "apostle",
+    "book": "1corinthians",
+    "ref": "4:9-16"
+  },
+  {
+    "kind": "apostle",
+    "book": "galatians",
+    "ref": "3:23-29,4:1-5"
+  },
+  {
+    "kind": "apostle",
+    "book": "galatians",
+    "ref": "5:22-26,6:1-2"
+  },
+  {
+    "kind": "apostle",
+    "book": "hebrews",
+    "ref": "13:17-21"
+  },
+  {
+    "kind": "apostle",
+    "book": "galatians",
+    "ref": "4:22-27"
+  },
+  {
+    "kind": "apostle",
+    "book": "ephesians",
+    "ref": "5:8-19"
+  },
+  {
+    "kind": "apostle",
+    "book": "2timothy",
+    "ref": "1:8-18"
+  },
+  {
+    "kind": "apostle",
+    "book": "hebrews",
+    "ref": "11:33-40,12:1-2"
+  },
+  {
+    "kind": "apostle",
+    "book": "hebrews",
+    "ref": "1:1-12"
+  },
+  {
+    "kind": "apostle",
+    "book": "galatians",
+    "ref": "4:4-7"
+  },
+  {
+    "kind": "apostle",
+    "book": "hebrews",
+    "ref": "2:11-18"
+  },
+  {
+    "kind": "apostle",
+    "book": "acts",
+    "ref": "6:8-15,7:1-5,47-60"
+  },
+  {
+    "kind": "gospel",
+    "book": "Matthew",
+    "ref": "17:1-9"
+  },
+  {
+    "kind": "gospel",
+    "book": "Luke",
+    "ref": "10:38-42;11:27-28"
+  },
+  {
+    "kind": "gospel",
+    "book": "John",
+    "ref": "19:6-11,13-20,25-28,30-35"
+  },
+  {
+    "kind": "gospel",
+    "book": "Luke",
+    "ref": "14:16-24"
+  },
+  {
+    "kind": "gospel",
+    "book": "Matthew",
+    "ref": "1:1-25"
+  },
+  {
+    "kind": "gospel",
+    "book": "Matthew",
+    "ref": "2:1-12"
+  },
+  {
+    "kind": "gospel",
+    "book": "Matthew",
+    "ref": "2:13-23"
+  },
+  {
+    "kind": "gospel",
+    "book": "Luke",
+    "ref": "2:20-21,40-52"
+  },
+  {
+    "kind": "gospel",
+    "book": "Mark",
+    "ref": "1:1-8"
+  },
+  {
+    "kind": "gospel",
+    "book": "Matthew",
+    "ref": "3:13-17"
+  },
+  {
+    "kind": "gospel",
+    "book": "Matthew",
+    "ref": "4:12-17"
+  },
+  {
+    "kind": "gospel",
+    "book": "Luke",
+    "ref": "2:22-40"
+  },
+  {
+    "kind": "gospel",
+    "book": "Luke",
+    "ref": "1:24-38"
+  },
+  {
+    "kind": "gospel",
+    "book": "Luke",
+    "ref": "1:1-25,57-68,76,80"
+  },
+  {
+    "kind": "gospel",
+    "book": "Matthew",
+    "ref": "16:13-19"
+  },
+  {
+    "kind": "gospel",
+    "book": "Luke",
+    "ref": "10:38-42;11:27-28"
+  },
+  {
+    "kind": "gospel",
+    "book": "Luke",
+    "ref": "10:38-42;11:27-28"
+  },
+  {
+    "kind": "gospel",
+    "book": "Matthew",
+    "ref": "28:16-20"
+  },
+  {
+    "kind": "gospel",
+    "book": "Mark",
+    "ref": "16:1-8"
+  },
+  {
+    "kind": "gospel",
+    "book": "Mark",
+    "ref": "16:9-20"
+  },
+  {
+    "kind": "gospel",
+    "book": "Luke",
+    "ref": "24:1-12"
+  },
+  {
+    "kind": "gospel",
+    "book": "Luke",
+    "ref": "24:13-35"
+  },
+  {
+    "kind": "gospel",
+    "book": "Luke",
+    "ref": "24:36-53"
+  },
+  {
+    "kind": "gospel",
+    "book": "John",
+    "ref": "20:1-10"
+  },
+  {
+    "kind": "gospel",
+    "book": "John",
+    "ref": "20:11-18"
+  },
+  {
+    "kind": "gospel",
+    "book": "John",
+    "ref": "20:19-31"
+  },
+  {
+    "kind": "gospel",
+    "book": "John",
+    "ref": "21:1-14"
+  },
+  {
+    "kind": "gospel",
+    "book": "John",
+    "ref": "21:15-25"
+  },
+  {
+    "kind": "gospel",
+    "book": "Luke",
+    "ref": "10:38-42,11:27-28"
+  }
+]

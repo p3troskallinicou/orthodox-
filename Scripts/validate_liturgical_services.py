@@ -69,7 +69,7 @@ assert (today_apostle["book"], today_apostle["ref"]) == ("galatians", "5:22-26,6
 
 for name in ("chrysostom", "basil", "presanctified"):
     base = json.loads((ROOT / "BaseLiturgies" / f"{name}.el.json").read_text())
-    assert base["source_status"] == "approved_openbook_source"
+    assert base["source_status"] == "transcription_requires_liturgical_review"
     assert base["source"]["source_page_url"].startswith((
         "https://www.openbook.gr/", "https://dcs.goarch.org/"
     ))

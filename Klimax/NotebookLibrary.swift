@@ -8,6 +8,236 @@ import PencilKit
 import SwiftUI
 import UIKit
 
+// MARK: - Embedded sources (independent of Today widgets)
+
+extension NotebookAnchor {
+    static func saintSaying(_ saying: SaintSaying, catalog: SaintSayingsCatalog) -> NotebookAnchor {
+        NotebookAnchor(kind: .saintSayings, title: catalog.saint(for: saying).shortName,
+                       excerpt: saying.text, routeValue: saying.id,
+                       contextTitle: catalog.category(for: saying).title)
+    }
+}
+
+/// A source keeps its own visual identity inside a notebook page.
+struct NotebookSourcePreview: View {
+    let anchor: NotebookAnchor
+    var showsOpenHint = true
+
+    private var saying: SaintSaying? {
+        SaintSayingsCatalog.bundled?.sayings.first { $0.id == anchor.routeValue }
+    }
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 14) {
+            HStack(spacing: 8) {
+                Label(anchor.kind.title, systemImage: anchor.kind.icon)
+                    .font(.caption.weight(.semibold))
+                Spacer(minLength: 4)
+                if showsOpenHint && anchor.kind != .personal {
+                    Image(systemName: "arrow.up.right").font(.caption.weight(.semibold))
+                }
+            }.foregroundStyle(anchor.kind.tint)
+
+            if anchor.kind == .saintSayings, let saying, let catalog = SaintSayingsCatalog.bundled {
+                HStack(alignment: .top, spacing: 14) {
+                    NotebookSayingPortrait(photo: catalog.photo(for: saying))
+                        .frame(width: 84, height: 116).clipShape(RoundedRectangle(cornerRadius: 12))
+                    VStack(alignment: .leading, spacing: 8) {
+                        Text(anchor.cleanExcerpt).font(.system(.body, design: .serif)).lineLimit(5)
+                        Text(anchor.cleanTitle).font(.caption.weight(.semibold)).foregroundStyle(Paper.inkMute)
+                    }
+                }
+                if let context = anchor.contextTitle {
+                    Text(context).font(.caption).foregroundStyle(Paper.inkMute)
+                }
+            } else if anchor.kind == .didaches {
+                HStack(alignment: .top, spacing: 14) {
+                    Image(AthosAudioCoverLibrary.assetName(for: anchor.contextTitle ?? ""))
+                        .resizable().scaledToFill().frame(width: 76, height: 76)
+                        .clipShape(RoundedRectangle(cornerRadius: 12))
+                    VStack(alignment: .leading, spacing: 6) {
+                        Text(anchor.cleanTitle).font(.headline).lineLimit(3)
+                        if let context = anchor.contextTitle {
+                            Text(context).font(.caption).foregroundStyle(Paper.inkMute).lineLimit(2)
+                        }
+                        if let start = anchor.startTime {
+                            Label(clipLabel(start), systemImage: "waveform")
+                                .font(.caption.weight(.medium)).monospacedDigit().foregroundStyle(anchor.kind.tint)
+                        }
+                    }
+                }
+                if !anchor.cleanExcerpt.isEmpty {
+                    Text(anchor.cleanExcerpt).font(.subheadline).foregroundStyle(Paper.inkSoft).lineLimit(3)
+                }
+            } else {
+                Text(anchor.cleanTitle)
+                    .font(.system(.title3, design: .serif).weight(.semibold))
+                    .fixedSize(horizontal: false, vertical: true)
+                if !anchor.cleanExcerpt.isEmpty {
+                    HStack(alignment: .top, spacing: 12) {
+                        RoundedRectangle(cornerRadius: 2).fill(anchor.kind.tint.opacity(0.5)).frame(width: 3)
+                        Text(anchor.cleanExcerpt).font(.system(.body, design: .serif))
+                            .lineSpacing(4).foregroundStyle(Paper.inkSoft).lineLimit(5)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                    }.fixedSize(horizontal: false, vertical: true)
+                }
+            }
+        }
+        .foregroundStyle(Paper.ink)
+        .frame(maxWidth: .infinity, alignment: .leading).padding(18)
+        .background {
+            RoundedRectangle(cornerRadius: 22).fill(Paper.card)
+                .overlay {
+                    LinearGradient(colors: [anchor.kind.tint.opacity(0.10), .clear],
+                                   startPoint: .topLeading, endPoint: .bottomTrailing)
+                }.clipShape(RoundedRectangle(cornerRadius: 22))
+        }
+        .overlay(RoundedRectangle(cornerRadius: 22).strokeBorder(Paper.hairline, lineWidth: 0.5))
+        .contentShape(RoundedRectangle(cornerRadius: 22))
+    }
+
+    private func clipLabel(_ start: TimeInterval) -> String {
+        func time(_ value: TimeInterval) -> String {
+            let seconds = max(0, Int(value))
+            return String(format: "%d:%02d", seconds / 60, seconds % 60)
+        }
+        return anchor.endTime.map { "\(time(start)) – \(time($0))" } ?? time(start)
+    }
+}
+
+private struct NotebookSayingPortrait: View {
+    let photo: SayingPhoto
+    var body: some View {
+        GeometryReader { geometry in
+            let rect = photo.immersiveImageRect(in: geometry.size)
+            Image(photo.asset).resizable()
+                .frame(width: rect.width, height: rect.height)
+                .position(x: rect.midX, y: rect.midY)
+        }.clipped().accessibilityHidden(true)
+    }
+}
+
+struct NotebookEditableSource: View {
+    let anchor: NotebookAnchor
+    let remove: () -> Void
+    var body: some View {
+        VStack(alignment: .trailing, spacing: 4) {
+            NotebookAnchorCard(anchor: anchor)
+            Button(role: .destructive, action: remove) {
+                Label("Αφαίρεση πηγής", systemImage: "link.badge.minus")
+                    .font(.caption).frame(minHeight: 36)
+            }.buttonStyle(.plain).foregroundStyle(Paper.inkMute)
+        }
+    }
+}
+
+struct NotebookCategoryMenu: View {
+    @Binding var selection: NotebookCategory?
+    var body: some View {
+        Menu {
+            Button("Χωρίς κατηγορία") { selection = nil }
+            ForEach(NotebookCategory.allCases) { category in
+                Button { selection = category } label: {
+                    Label(category.title, systemImage: selection == category ? "checkmark" : category.icon)
+                }
+            }
+        } label: {
+            HStack(spacing: 9) {
+                Image(systemName: selection?.icon ?? "tag")
+                Text(selection?.title ?? "Κατηγορία · προαιρετική")
+                Spacer()
+                Image(systemName: "chevron.up.chevron.down").font(.caption)
+            }.font(.subheadline.weight(.medium)).foregroundStyle(selection?.tint ?? Paper.inkMute)
+                .padding(15).modifier(YouCardSurface(cornerRadius: 16))
+        }
+    }
+}
+
+struct SaintSayingNotebookLink: View {
+    let anchor: NotebookAnchor
+    @State private var showingReader = false
+    @State private var unavailable = false
+    @AppStorage(SaintSayingFavorites.storageKey) private var favoritesData = Data()
+    private var catalog: SaintSayingsCatalog? { .bundled }
+    private var saying: SaintSaying? { catalog?.sayings.first { $0.id == anchor.routeValue } }
+    private var favorites: Binding<Set<String>> {
+        Binding(get: { SaintSayingFavorites.decode(favoritesData) },
+                set: { favoritesData = SaintSayingFavorites.encode($0) })
+    }
+    var body: some View {
+        Button {
+            if saying != nil { showingReader = true } else { unavailable = true }
+        } label: { NotebookSourcePreview(anchor: anchor) }
+        .buttonStyle(.plain)
+        .accessibilityHint("Ανοίγει τον συγκεκριμένο λόγο του Αγίου")
+        .fullScreenCover(isPresented: $showingReader) {
+            if let catalog, let saying {
+                SaintSayingReader(catalog: catalog, sayings: catalog.collection(saintID: saying.saintID),
+                                  initialID: saying.id, favoriteIDs: favorites)
+                    .presentationBackground(.clear)
+            }
+        }
+        .alert("Η πηγή δεν είναι διαθέσιμη", isPresented: $unavailable) {
+            Button("Εντάξει", role: .cancel) {}
+        } message: { Text("Το αποθηκευμένο απόσπασμα παραμένει στη σημείωσή σου.") }
+    }
+}
+
+struct SaintSayingSourcePicker: View {
+    let onAdd: (NotebookAnchor) -> Void
+    @State private var query = ""
+    @State private var saintID: String?
+    var body: some View {
+        if let catalog = SaintSayingsCatalog.bundled {
+            VStack(alignment: .leading, spacing: 14) {
+                NotebookSearchField(text: $query)
+                Menu {
+                    Button("Όλοι οι Άγιοι") { saintID = nil }
+                    ForEach(catalog.saints) { saint in
+                        Button(saint.shortName) { saintID = saint.id }
+                    }
+                } label: {
+                    Label(catalog.saints.first { $0.id == saintID }?.shortName ?? "Όλοι οι Άγιοι",
+                          systemImage: "line.3.horizontal.decrease")
+                        .font(.subheadline.weight(.medium)).padding(.vertical, 8)
+                }.tint(Gild.accentForeground)
+                let results = catalog.collection(saintID: saintID, query: query)
+                if results.isEmpty {
+                    ContentUnavailableView.search(text: query)
+                }
+                LazyVStack(spacing: 12) {
+                    ForEach(results) { saying in
+                        let anchor = NotebookAnchor.saintSaying(saying, catalog: catalog)
+                        Button { onAdd(anchor) } label: {
+                            NotebookSourcePreview(anchor: anchor, showsOpenHint: false)
+                        }.buttonStyle(.plain)
+                            .accessibilityHint("Προσθήκη στη σημείωση")
+                    }
+                }
+            }
+        } else {
+            ContentUnavailableView("Οι λόγοι δεν είναι διαθέσιμοι", systemImage: "quote.opening")
+        }
+    }
+}
+
+struct SaintSayingNoteButton: View {
+    let saying: SaintSaying
+    let catalog: SaintSayingsCatalog
+    @State private var draft: NotebookSourceNoteDraft?
+    var body: some View {
+        Button {
+            let anchor = NotebookAnchor.saintSaying(saying, catalog: catalog)
+            draft = NotebookSourceNoteDraft(title: anchor.cleanTitle, category: .saintSayings, anchor: anchor)
+        } label: {
+            Image(systemName: "square.and.pencil").font(.system(size: 16, weight: .semibold))
+                .frame(width: 44, height: 44).foregroundStyle(.white)
+                .glassCircleFallback(shape: Circle())
+        }.buttonStyle(.plain).accessibilityLabel("Σημείωση για αυτόν τον λόγο")
+            .sheet(item: $draft) { NotebookSourceNoteSheet(draft: $0) }
+    }
+}
+
 // MARK: - Library data
 
 struct NotebookFolder: Codable, Hashable, Identifiable {
@@ -357,6 +587,27 @@ final class NotebookLibraryStore: ObservableObject {
         return placements.count - 1
     }
 
+    func moveNotes(_ values: [NotebookNote], from offsets: IndexSet, to destination: Int) {
+        var ids = values.map(\.id)
+        ids.move(fromOffsets: offsets, toOffset: destination)
+        assignNoteOrder(ids)
+    }
+
+    func moveFolders(_ values: [NotebookFolder], from offsets: IndexSet, to destination: Int) {
+        var ids = values.map(\.id)
+        ids.move(fromOffsets: offsets, toOffset: destination)
+        assignFolderOrder(ids)
+    }
+
+    func moveBooks(_ values: [NotebookBook], from offsets: IndexSet, to destination: Int) {
+        var ids = values.map(\.id)
+        ids.move(fromOffsets: offsets, toOffset: destination)
+        for (position, id) in ids.enumerated() {
+            if let index = books.firstIndex(where: { $0.id == id }) { books[index].sortIndex = Double(position) }
+        }
+        save()
+    }
+
     private func assignFolderOrder(_ ids: [UUID]) {
         for (position, id) in ids.enumerated() {
             if let index = folders.firstIndex(where: { $0.id == id }) { folders[index].sortIndex = Double(position) }
@@ -420,105 +671,145 @@ struct NotebookHomeView: View {
     @ObservedObject private var library = NotebookLibraryStore.shared
     @State private var query = ""
     @State private var creation: NotebookCreation?
+    @State private var editMode: EditMode = .inactive
+    @State private var selectedCategory: NotebookCategory?
 
     private var rootFolders: [NotebookFolder] { library.folders(parentID: nil, bookID: nil) }
-    private var unfiled: [NotebookNote] {
+    private var visibleNotes: [NotebookNote] {
         guard !query.isEmpty else { return library.unfiledNotes() }
-        let key = query.folding(options: [.caseInsensitive, .diacriticInsensitive], locale: .current)
-        return notes.notes
-            .filter { "\($0.title) \($0.body)".folding(options: [.caseInsensitive, .diacriticInsensitive], locale: .current).contains(key) }
-            .sorted { $0.updatedAt > $1.updatedAt }
+        return notes.notes.filter { note in
+            ([note.title, note.body] + note.anchors.map { $0.cleanTitle + " " + $0.cleanExcerpt })
+                .joined(separator: " ").localizedStandardContains(query)
+        }.sorted { $0.updatedAt > $1.updatedAt }
     }
 
     var body: some View {
-        ScrollView {
-            LazyVStack(alignment: .leading, spacing: 18) {
-                VStack(alignment: .leading, spacing: 7) {
-                    Text("Σημειώσεις")
-                        .font(.system(size: 30, weight: .semibold, design: .serif))
-                        .foregroundStyle(Paper.ink)
-                    Text("Οι σκέψεις, οι αναγνώσεις και οι σελίδες σου σε τάξη.")
-                        .font(.system(size: 15, weight: .semibold))
-                        .foregroundStyle(Paper.inkMute)
-                }
-
+        List {
+            VStack(alignment: .leading, spacing: 14) {
+                Text("Σημειώσεις").font(.system(size: 30, weight: .semibold, design: .serif)).foregroundStyle(Paper.ink)
+                Text("Οι σκέψεις, οι αναγνώσεις και οι σελίδες σου σε τάξη.")
+                    .font(.subheadline).foregroundStyle(Paper.inkMute)
                 NotebookSearchField(text: $query)
-                if query.isEmpty {
-                    Button { creation = .note(folderID: nil, bookID: nil) } label: {
-                        HStack(spacing: 12) {
-                            Image(systemName: "square.and.pencil").font(.system(size: 20))
-                            Text("Νέα σημείωση").font(.system(size: 15, weight: .semibold))
-                            Spacer(minLength: 0)
-                            Image(systemName: "plus").font(.system(size: 12, weight: .semibold))
-                        }.foregroundStyle(Gild.accentForeground).padding(17)
-                            .frame(maxWidth: .infinity, minHeight: 54)
-                            .modifier(YouCardSurface(cornerRadius: 18))
-                    }.buttonStyle(.plain)
-                }
+                Button { creation = .note(folderID: nil, bookID: nil) } label: {
+                    HStack {
+                        Label("Νέα σημείωση", systemImage: "square.and.pencil")
+                        Spacer()
+                        Image(systemName: "plus")
+                    }.font(.subheadline.weight(.semibold)).foregroundStyle(Gild.accentForeground)
+                        .padding(16).modifier(YouCardSurface(cornerRadius: 18))
+                }.buttonStyle(.borderless)
+            }.modifier(NotebookBrowserRow(isHeader: true))
 
-                if query.isEmpty {
-                    NotebookSectionHeader(title: "Φάκελοι", actionTitle: "Νέος") {
-                        creation = .folder(parentID: nil, bookID: nil)
-                    }
-                    NotebookListCard {
-                        if rootFolders.isEmpty {
+            if query.isEmpty {
+                Section {
+                    LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 10) {
+                        ForEach(NotebookCategory.allCases) { category in
+                            Button { selectedCategory = category } label: {
+                                HStack(spacing: 9) {
+                                    Image(systemName: category.icon).frame(width: 20)
+                                    Text(category.title).font(.system(size: 13, weight: .semibold)).lineLimit(1).minimumScaleFactor(0.8)
+                                    Spacer(minLength: 0)
+                                    Text("\(notes.count(in: category))").font(.caption.weight(.semibold))
+                                }.foregroundStyle(category.tint).padding(12).frame(maxWidth: .infinity, minHeight: 56)
+                                    .background(category.tint.opacity(0.07), in: RoundedRectangle(cornerRadius: 15))
+                            }.buttonStyle(.plain)
+                        }
+                    }.modifier(NotebookBrowserRow(isHeader: true))
+                } header: { sectionTitle("Κατηγορίες") }
+
+                Section {
+                    ForEach(rootFolders) { folder in
+                        NotebookManagedFolderRow(folder: folder, count: library.allNotes(in: folder.id).count)
+                    }.onMove { library.moveFolders(rootFolders, from: $0, to: $1) }
+                    if rootFolders.isEmpty {
+                        Button { creation = .folder(parentID: nil, bookID: nil) } label: {
                             NotebookEmptyRow(icon: "folder.badge.plus", text: "Δημιούργησε τον πρώτο σου φάκελο")
-                        } else {
-                            ForEach(Array(rootFolders.enumerated()), id: \.element.id) { index, folder in
-                                NotebookManagedFolderRow(folder: folder, count: library.allNotes(in: folder.id).count)
-                                if index < rootFolders.count - 1 { Divider().overlay(Paper.hairline) }
-                            }
-                        }
+                        }.buttonStyle(.borderless).modifier(NotebookBrowserRow(isHeader: true))
                     }
-
-                    NotebookSectionHeader(title: "Βιβλιοθήκη ανάγνωσης", actionTitle: "Βιβλίο") {
-                        creation = .book
-                    }
-                    if library.books.isEmpty {
-                        NotebookListCard {
-                            NotebookEmptyRow(icon: "books.vertical.fill", text: "Πρόσθεσε ένα βιβλίο και κράτησε τις δικές σου σημειώσεις")
-                        }
-                    } else {
-                        ScrollView(.horizontal, showsIndicators: false) {
-                            HStack(spacing: 14) {
-                                ForEach(library.orderedBooks) { book in
-                                    NavigationLink { NotebookBookView(bookID: book.id) } label: {
-                                        NotebookBookTile(book: book, count: library.allNotes(inBook: book.id).count)
-                                    }
-                                    .buttonStyle(.plain)
-                                }
-                            }
-                        }
-                    }
+                } header: {
+                    HStack { sectionTitle("Φάκελοι"); Spacer(); Button("Νέος", systemImage: "plus") { creation = .folder(parentID: nil, bookID: nil) }.labelStyle(.iconOnly) }
                 }
 
-                NotebookSectionHeader(title: query.isEmpty ? "Χωρίς φάκελο" : "Αποτελέσματα", actionTitle: nil, action: nil)
-                if unfiled.isEmpty {
-                    NotebookListCard {
-                        NotebookEmptyRow(icon: query.isEmpty ? "note.text" : "magnifyingglass", text: query.isEmpty ? (notes.notes.isEmpty ? "Οι πρώτες σου σκέψεις ξεκινούν με μια νέα σημείωση." : "Όλες οι σημειώσεις σου έχουν οργανωθεί") : "Δεν βρέθηκαν σημειώσεις")
+                Section {
+                    if library.books.isEmpty {
+                        Button { creation = .book } label: {
+                            NotebookEmptyRow(icon: "books.vertical.fill", text: "Πρόσθεσε ένα βιβλίο και κράτησε τις δικές σου σημειώσεις")
+                        }.buttonStyle(.borderless).modifier(NotebookBrowserRow(isHeader: true))
+                    } else {
+                        ForEach(library.orderedBooks) { book in NotebookManagedBookRow(book: book) }
+                            .onMove { library.moveBooks(library.orderedBooks, from: $0, to: $1) }
                     }
-                } else {
-                    NotebookNotesCard(notes: unfiled)
+                } header: {
+                    HStack { sectionTitle("Βιβλιοθήκη ανάγνωσης"); Spacer(); Button("Βιβλίο", systemImage: "plus") { creation = .book }.labelStyle(.iconOnly) }
                 }
             }
-            .padding(.horizontal, KSpace.gutter)
-            .padding(.top, KSpace.lg)
-            .padding(.bottom, KSpace.xxl)
+
+            Section {
+                NotebookNotesCard(notes: visibleNotes, allowsReordering: query.isEmpty)
+                if visibleNotes.isEmpty {
+                    NotebookEmptyRow(icon: query.isEmpty ? "note.text" : "magnifyingglass",
+                                     text: query.isEmpty ? "Οι σημειώσεις χωρίς φάκελο εμφανίζονται εδώ." : "Δεν βρέθηκαν σημειώσεις")
+                        .modifier(NotebookBrowserRow(isHeader: true))
+                }
+            } header: { sectionTitle(query.isEmpty ? "Χωρίς φάκελο" : "Αποτελέσματα") }
         }
-        .background(AppAtmosphere().ignoresSafeArea())
+        .modifier(NotebookBrowserStyle())
+        .environment(\.editMode, $editMode)
+        .navigationDestination(item: $selectedCategory) { NotebookCategoryPages(category: $0) }
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
-            ToolbarItem(placement: .topBarTrailing) {
+            ToolbarItemGroup(placement: .topBarTrailing) {
+                Button {
+                    withAnimation { editMode = editMode.isEditing ? .inactive : .active }
+                } label: {
+                    Image(systemName: editMode.isEditing ? "checkmark" : "arrow.up.arrow.down")
+                }.accessibilityLabel(editMode.isEditing ? "Τέλος ταξινόμησης" : "Αλλαγή σειράς")
+
                 Menu {
                     Button { creation = .note(folderID: nil, bookID: nil) } label: { Label("Νέα σημείωση", systemImage: "square.and.pencil") }
                     Button { creation = .folder(parentID: nil, bookID: nil) } label: { Label("Νέος φάκελος", systemImage: "folder.badge.plus") }
                     Button { creation = .book } label: { Label("Νέο βιβλίο", systemImage: "book.closed") }
-                } label: {
-                    Image(systemName: "plus").font(.system(size: 18, weight: .semibold)).foregroundStyle(Paper.ink)
-                }
+                } label: { Image(systemName: "ellipsis").foregroundStyle(Paper.ink) }
+                Button { creation = .note(folderID: nil, bookID: nil) } label: {
+                    Label("Νέα σημείωση", systemImage: "square.and.pencil")
+                }.tint(Gild.accentForeground)
             }
         }
-        .sheet(item: $creation) { item in NotebookCreationSheet(creation: item) }
+        .sheet(item: $creation) { NotebookCreationSheet(creation: $0) }
+    }
+
+    private func sectionTitle(_ title: String) -> some View {
+        Text(title).font(.system(size: 19, weight: .semibold, design: .serif))
+            .foregroundStyle(Paper.ink).textCase(nil)
+    }
+}
+
+private struct NotebookCategoryPages: View {
+    let category: NotebookCategory
+    @ObservedObject private var notes = NotebookStore.shared
+    @State private var query = ""
+    @State private var creating = false
+    var body: some View {
+        List {
+            NotebookSearchField(text: $query).modifier(NotebookBrowserRow(isHeader: true))
+            let pages = notes.notes(in: category).filter {
+                query.isEmpty || ([$0.title, $0.body] + $0.anchors.map(\.cleanExcerpt)).joined(separator: " ").localizedStandardContains(query)
+            }
+            NotebookNotesCard(notes: pages, allowsReordering: false)
+            if pages.isEmpty {
+                NotebookEmptyRow(icon: category.icon, text: "Δεν υπάρχουν σημειώσεις σε αυτή την κατηγορία ακόμη.")
+                    .modifier(NotebookBrowserRow(isHeader: true))
+            }
+        }.modifier(NotebookBrowserStyle())
+            .navigationTitle(category.title).navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button { creating = true } label: { Label("Νέα σημείωση", systemImage: "square.and.pencil") }
+                }
+            }
+            .sheet(isPresented: $creating) {
+                NotebookRichEditor(note: .blank(category: category), folderID: nil, bookID: nil)
+            }
     }
 }
 
@@ -559,6 +850,7 @@ private struct NotebookFolderView: View {
     let folderID: UUID
     @State private var query = ""
     @State private var creation: NotebookCreation?
+    @State private var editMode: EditMode = .inactive
     @State private var confirmingDelete = false
 
     private var folder: NotebookFolder? { library.folder(id: folderID) }
@@ -575,36 +867,36 @@ private struct NotebookFolderView: View {
     var body: some View {
         Group {
             if let folder {
-                ScrollView {
-                    LazyVStack(alignment: .leading, spacing: 22) {
+                List {
+                    VStack(alignment: .leading, spacing: 12) {
                         Text(folder.name).font(.system(size: 30, weight: .semibold, design: .serif)).foregroundStyle(Paper.ink)
-                        if let category = folder.category {
-                            Label(category.title, systemImage: category.icon)
-                                .font(.system(size: 12, weight: .black)).foregroundStyle(category.tint)
-                        }
                         Text("\(library.allNotes(in: folderID).count) σημειώσεις")
-                            .font(.system(size: 14, weight: .bold)).foregroundStyle(Paper.inkMute)
+                            .font(.subheadline).foregroundStyle(Paper.inkMute)
                         NotebookSearchField(text: $query)
-
-                        if !childFolders.isEmpty && query.isEmpty {
-                            NotebookListCard {
-                                ForEach(Array(childFolders.enumerated()), id: \.element.id) { index, child in
-                                    NotebookManagedFolderRow(folder: child, count: library.allNotes(in: child.id).count)
-                                    if index < childFolders.count - 1 { Divider().overlay(Paper.hairline) }
-                                }
-                            }
-                        }
-                        if visibleNotes.isEmpty {
-                            NotebookListCard { NotebookEmptyRow(icon: "note.text.badge.plus", text: "Δεν υπάρχουν σημειώσεις εδώ ακόμη") }
-                        } else { NotebookNotesCard(notes: visibleNotes) }
+                    }.modifier(NotebookBrowserRow(isHeader: true))
+                    if query.isEmpty {
+                        ForEach(childFolders) { child in
+                            NotebookManagedFolderRow(folder: child, count: library.allNotes(in: child.id).count)
+                        }.onMove { library.moveFolders(childFolders, from: $0, to: $1) }
                     }
-                    .padding(.horizontal, KSpace.gutter).padding(.top, KSpace.lg).padding(.bottom, 100)
+                    NotebookNotesCard(notes: visibleNotes, allowsReordering: query.isEmpty)
+                    if visibleNotes.isEmpty && childFolders.isEmpty {
+                        NotebookEmptyRow(icon: "note.text.badge.plus", text: "Δεν υπάρχουν σημειώσεις εδώ ακόμη")
+                            .modifier(NotebookBrowserRow(isHeader: true))
+                    }
                 }
-                .background(AppAtmosphere().ignoresSafeArea())
+                .modifier(NotebookBrowserStyle())
+        .environment(\.editMode, $editMode)
                 .navigationTitle(folder.bookID == nil ? "Φάκελος" : "Ενότητα βιβλίου")
                 .navigationBarTitleDisplayMode(.inline)
                 .toolbar {
                     ToolbarItemGroup(placement: .topBarTrailing) {
+                Button {
+                    withAnimation { editMode = editMode.isEditing ? .inactive : .active }
+                } label: {
+                    Image(systemName: editMode.isEditing ? "checkmark" : "arrow.up.arrow.down")
+                }.accessibilityLabel(editMode.isEditing ? "Τέλος ταξινόμησης" : "Αλλαγή σειράς")
+
                         Menu {
                             Button { creation = .note(folderID: folderID, bookID: folder.bookID) } label: { Label("Νέα σημείωση", systemImage: "square.and.pencil") }
                             Button { creation = .folder(parentID: folderID, bookID: folder.bookID) } label: { Label("Νέος υποφάκελος", systemImage: "folder.badge.plus") }
@@ -629,6 +921,7 @@ private struct NotebookBookView: View {
     @ObservedObject private var library = NotebookLibraryStore.shared
     let bookID: UUID
     @State private var creation: NotebookCreation?
+    @State private var editMode: EditMode = .inactive
     @State private var editingBook = false
     @State private var confirmingDelete = false
 
@@ -638,52 +931,36 @@ private struct NotebookBookView: View {
     var body: some View {
         Group {
             if let book {
-                ScrollView {
-                    LazyVStack(alignment: .leading, spacing: 24) {
-                        HStack(alignment: .top, spacing: 18) {
-                            NotebookBookCover(book: book).frame(width: 116, height: 166)
-                            VStack(alignment: .leading, spacing: 8) {
-                                Text(book.title).font(.system(size: 26, weight: .semibold, design: .serif)).foregroundStyle(Paper.ink)
-                                if !book.author.isEmpty { Text(book.author).font(.system(size: 16, weight: .bold)).foregroundStyle(Paper.inkMute) }
-                                Spacer()
-                                Text("\(library.allNotes(inBook: bookID).count) σημειώσεις")
-                                    .font(.system(size: 13, weight: .black)).foregroundStyle(Paper.gold)
-                            }
-                        }.frame(minHeight: 166)
-
-                        NotebookSectionHeader(title: "Ενότητες & σελίδες", actionTitle: "Νέα") {
-                            creation = .folder(parentID: nil, bookID: bookID)
+                List {
+                    HStack(alignment: .top, spacing: 18) {
+                        NotebookBookCover(book: book).frame(width: 84, height: 120)
+                        VStack(alignment: .leading, spacing: 8) {
+                            Text(book.title).font(.system(size: 26, weight: .semibold, design: .serif)).foregroundStyle(Paper.ink)
+                            if !book.author.isEmpty { Text(book.author).font(.subheadline).foregroundStyle(Paper.inkMute) }
+                            Text("\(library.allNotes(inBook: bookID).count) σημειώσεις").font(.caption).foregroundStyle(Paper.inkMute)
                         }
-                        NotebookListCard {
-                            if sections.isEmpty {
-                                NotebookEmptyRow(icon: "folder.badge.plus", text: "Φτιάξε ενότητες για κεφάλαια, θέματα ή σελίδες")
-                            } else {
-                                ForEach(Array(sections.enumerated()), id: \.element.id) { index, section in
-                                    NotebookManagedFolderRow(folder: section, count: library.allNotes(in: section.id).count)
-                                    if index < sections.count - 1 { Divider().overlay(Paper.hairline) }
-                                }
-                            }
-                        }
-
-                        let rootNotes = library.notes(inBook: bookID)
-                        if !rootNotes.isEmpty {
-                            NotebookSectionHeader(title: "Σημειώσεις βιβλίου", actionTitle: nil, action: nil)
-                            NotebookNotesCard(notes: rootNotes)
-                        }
-
-                        Label("Οι φωτογραφίες και οι σημειώσεις παραμένουν ιδιωτικές στη συσκευή σου. Το orthodox+ δεν δημοσιεύει ούτε διανέμει το περιεχόμενο του βιβλίου.", systemImage: "lock.shield.fill")
-                            .font(.system(size: 12, weight: .semibold))
-                            .foregroundStyle(Paper.inkMute)
-                            .padding(16)
-                            .background(Paper.card.opacity(0.6), in: RoundedRectangle(cornerRadius: 18, style: .continuous))
+                    }.modifier(NotebookBrowserRow(isHeader: true))
+                    ForEach(sections) { section in
+                        NotebookManagedFolderRow(folder: section, count: library.allNotes(in: section.id).count)
+                    }.onMove { library.moveFolders(sections, from: $0, to: $1) }
+                    NotebookNotesCard(notes: library.notes(inBook: bookID))
+                    if sections.isEmpty && library.notes(inBook: bookID).isEmpty {
+                        NotebookEmptyRow(icon: "note.text", text: "Κράτησε την πρώτη σου σημείωση για αυτό το βιβλίο")
+                            .modifier(NotebookBrowserRow(isHeader: true))
                     }
-                    .padding(.horizontal, KSpace.gutter).padding(.top, KSpace.lg).padding(.bottom, 100)
                 }
-                .background(AppAtmosphere().ignoresSafeArea())
+                .modifier(NotebookBrowserStyle())
+        .environment(\.editMode, $editMode)
                 .navigationTitle("Βιβλίο")
                 .navigationBarTitleDisplayMode(.inline)
                 .toolbar {
                     ToolbarItemGroup(placement: .topBarTrailing) {
+                Button {
+                    withAnimation { editMode = editMode.isEditing ? .inactive : .active }
+                } label: {
+                    Image(systemName: editMode.isEditing ? "checkmark" : "arrow.up.arrow.down")
+                }.accessibilityLabel(editMode.isEditing ? "Τέλος ταξινόμησης" : "Αλλαγή σειράς")
+
                         Menu {
                             Button { creation = .note(folderID: nil, bookID: bookID) } label: { Label("Νέα σημείωση", systemImage: "square.and.pencil") }
                             Button { creation = .folder(parentID: nil, bookID: bookID) } label: { Label("Νέα ενότητα", systemImage: "folder.badge.plus") }
@@ -737,32 +1014,11 @@ private struct NotebookRichEditor: View {
                 VStack(alignment: .leading, spacing: 20) {
                     NotebookFieldLabel("ΤΙΤΛΟΣ")
                     TextField("Τίτλος σημείωσης", text: $draft.title, axis: .vertical)
-                        .font(.system(size: 24, weight: .heavy, design: .rounded))
+                        .font(.system(size: 28, weight: .semibold, design: .serif))
                         .padding(16).background(Paper.card.opacity(0.72), in: RoundedRectangle(cornerRadius: 18))
 
                     if bookID == nil {
-                        NotebookFieldLabel("ΚΑΤΗΓΟΡΙΑ · ΠΡΟΑΙΡΕΤΙΚΗ")
-                        LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 10) {
-                            ForEach(NotebookCategory.allCases) { category in
-                                Button {
-                                    withAnimation(.easeInOut(duration: 0.18)) {
-                                        draft.category = draft.category == category ? nil : category
-                                    }
-                                } label: {
-                                    HStack(spacing: 8) {
-                                        Image(systemName: category.icon)
-                                        Text(category.title).lineLimit(1).minimumScaleFactor(0.75)
-                                    }
-                                    .font(.system(size: 13, weight: .bold))
-                                    .foregroundStyle(draft.category == category ? .white : category.tint)
-                                    .frame(maxWidth: .infinity)
-                                    .padding(.vertical, 12)
-                                    .background(draft.category == category ? category.tint : Paper.card.opacity(0.72), in: Capsule())
-                                    .overlay(Capsule().stroke(draft.category == category ? Color.clear : Paper.hairline))
-                                }
-                                .buttonStyle(.plain)
-                            }
-                        }
+                        NotebookCategoryMenu(selection: $draft.category)
                     }
 
                     if bookID != nil {
@@ -791,19 +1047,9 @@ private struct NotebookRichEditor: View {
                     } else {
                         VStack(spacing: 9) {
                             ForEach(draft.anchors) { anchor in
-                                HStack(spacing: 10) {
-                                    Image(systemName: anchor.kind.icon).foregroundStyle(anchor.kind.tint)
-                                    VStack(alignment: .leading, spacing: 3) {
-                                        Text(anchor.cleanTitle).font(.system(size: 14, weight: .bold)).foregroundStyle(Paper.ink).lineLimit(1)
-                                        Text(anchor.kind.title).font(.system(size: 11, weight: .bold)).foregroundStyle(Paper.inkMute)
-                                    }
-                                    Spacer()
-                                    Button(role: .destructive) { draft.anchors.removeAll { $0.id == anchor.id } } label: {
-                                        Image(systemName: "xmark.circle.fill")
-                                    }
+                                NotebookEditableSource(anchor: anchor) {
+                                    draft.anchors.removeAll { $0.id == anchor.id }
                                 }
-                                .padding(13)
-                                .background(Paper.card.opacity(0.58), in: RoundedRectangle(cornerRadius: 18))
                             }
                         }
                     }
@@ -918,8 +1164,7 @@ private struct NotebookRichNoteDetail: View {
                         }
                         if !note.body.isEmpty {
                             Text(note.body).font(.system(size: 18, design: .serif)).lineSpacing(6).foregroundStyle(Paper.ink)
-                                .frame(maxWidth: .infinity, alignment: .leading).padding(18)
-                                .modifier(YouCardSurface(cornerRadius: 22))
+                                .frame(maxWidth: .infinity, alignment: .leading).padding(.vertical, 8)
                                 .textSelection(.enabled)
                         }
                         ForEach(library.photos(for: noteID)) { photo in
@@ -989,7 +1234,7 @@ private struct NotebookMoveNoteSheet: View {
                 }
             }
             .scrollContentBackground(.hidden)
-            .background(Paper.bg)
+            .background(AppAtmosphere().ignoresSafeArea())
             .navigationTitle("Μετακίνηση σημείωσης")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar { ToolbarItem(placement: .cancellationAction) { Button("Άκυρο") { dismiss() } } }
@@ -1056,28 +1301,12 @@ private struct NotebookFolderEditor: View {
                 }
                 if bookID == nil {
                     Section("Κατηγορία · Προαιρετική") {
-                        LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 10) {
-                            ForEach(NotebookCategory.allCases) { item in
-                                Button {
-                                    withAnimation(.easeInOut(duration: 0.18)) {
-                                        category = category == item ? nil : item
-                                    }
-                                } label: {
-                                    Label(item.title, systemImage: item.icon)
-                                        .font(.system(size: 12, weight: .bold))
-                                        .lineLimit(1).minimumScaleFactor(0.72)
-                                        .foregroundStyle(category == item ? .white : item.tint)
-                                        .frame(maxWidth: .infinity).padding(.vertical, 11)
-                                        .background(category == item ? item.tint : Paper.card.opacity(0.72), in: Capsule())
-                                }
-                                .buttonStyle(.plain)
-                            }
-                        }
+                        NotebookCategoryMenu(selection: $category)
                         .padding(.vertical, 4)
                     }
                 }
             }
-            .scrollContentBackground(.hidden).background(Paper.bg)
+            .scrollContentBackground(.hidden).background(AppAtmosphere().ignoresSafeArea())
             .navigationTitle(original == nil ? (bookID == nil ? "Φάκελος" : "Ενότητα") : "Επεξεργασία")
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) { Button("Άκυρο") { dismiss() } }
@@ -1303,100 +1532,21 @@ private struct NotebookSearchField: View {
     }
 }
 
-private struct NotebookSectionHeader: View {
-    let title: String
-    let actionTitle: String?
-    let action: (() -> Void)?
-    var body: some View {
-        HStack(alignment: .firstTextBaseline) {
-            Text(title).font(.system(size: 19, weight: .semibold, design: .serif)).foregroundStyle(Paper.ink)
-                .accessibilityAddTraits(.isHeader)
-            Spacer(minLength: 8)
-            if let actionTitle, let action {
-                Button(action: action) {
-                    Label(actionTitle, systemImage: "plus").font(.system(size: 12, weight: .semibold))
-                        .foregroundStyle(Gild.accentForeground).padding(.horizontal, 10).frame(minHeight: 44)
-                }.buttonStyle(.plain)
-            }
-        }.padding(.top, 4)
+private struct NotebookBrowserStyle: ViewModifier {
+    func body(content: Content) -> some View {
+        content.listStyle(.plain).scrollContentBackground(.hidden)
+            .background(AppAtmosphere().ignoresSafeArea())
     }
 }
 
-private struct NotebookListCard<Content: View>: View {
-    @ViewBuilder let content: Content
-    var body: some View { VStack(spacing: 0) { content }.padding(.horizontal, 16).modifier(YouCardSurface()) }
-}
-
-private struct NotebookSwipeRow<Content: View>: View {
-    let onDelete: () -> Void
-    let onFavorite: (() -> Void)?
-    let content: Content
-    @State private var settledOffset: CGFloat = 0
-    @GestureState private var dragOffset: CGFloat = 0
-
-    init(onDelete: @escaping () -> Void, onFavorite: (() -> Void)? = nil, @ViewBuilder content: () -> Content) {
-        self.onDelete = onDelete
-        self.onFavorite = onFavorite
-        self.content = content()
-    }
-
-    private var visibleOffset: CGFloat { min(82, max(-82, settledOffset + dragOffset)) }
-
-    var body: some View {
-        ZStack {
-            HStack(spacing: 0) {
-                if let onFavorite {
-                    Button {
-                        withAnimation(.snappy) { settledOffset = 0 }
-                        onFavorite()
-                    } label: {
-                        Label("Αγαπημένο", systemImage: "star.fill")
-                            .labelStyle(.iconOnly)
-                            .font(.system(size: 18, weight: .bold))
-                            .foregroundStyle(.white)
-                            .frame(width: 82)
-                            .frame(maxHeight: .infinity)
-                            .background(Paper.gold)
-                    }
-                    .buttonStyle(.plain)
-                }
-                Spacer(minLength: 0)
-                Button {
-                    withAnimation(.snappy) { settledOffset = 0 }
-                    onDelete()
-                } label: {
-                    Label("Διαγραφή", systemImage: "trash.fill")
-                        .labelStyle(.iconOnly)
-                        .font(.system(size: 18, weight: .bold))
-                        .foregroundStyle(.white)
-                        .frame(width: 82)
-                        .frame(maxHeight: .infinity)
-                        .background(Color.red)
-                }
-                .buttonStyle(.plain)
-            }
-
-            content
-                .background(Paper.card)
-                .offset(x: visibleOffset)
-        }
-        .clipped()
-        .simultaneousGesture(
-            DragGesture(minimumDistance: 16)
-                .updating($dragOffset) { value, state, _ in
-                    guard abs(value.translation.width) > abs(value.translation.height) else { return }
-                    state = value.translation.width
-                }
-                .onEnded { value in
-                    guard abs(value.translation.width) > abs(value.translation.height) else { return }
-                    let proposed = settledOffset + value.translation.width
-                    withAnimation(.snappy) {
-                        if proposed < -42 { settledOffset = -82 }
-                        else if proposed > 42, onFavorite != nil { settledOffset = 82 }
-                        else { settledOffset = 0 }
-                    }
-                }
-        )
+private struct NotebookBrowserRow: ViewModifier {
+    var isHeader = false
+    func body(content: Content) -> some View {
+        content.listRowBackground(Color.clear)
+            .listRowInsets(EdgeInsets(top: isHeader ? 8 : 13, leading: KSpace.gutter, bottom: isHeader ? 12 : 13, trailing: KSpace.gutter))
+            .listRowSeparator(isHeader ? .hidden : .visible)
+            .listRowSeparatorTint(Paper.hairline)
+            .alignmentGuide(.listRowSeparatorLeading) { _ in 56 }
     }
 }
 
@@ -1407,22 +1557,18 @@ private struct NotebookManagedFolderRow: View {
     @State private var editingFolder = false
 
     var body: some View {
-        NotebookSwipeRow(
-            onDelete: { library.delete(folderID: folder.id) },
-            onFavorite: { library.toggleFavorite(folderID: folder.id) }
-        ) {
-            NavigationLink { NotebookFolderView(folderID: folder.id) } label: {
-                NotebookFolderRow(folder: folder, count: count)
-            }
-            .buttonStyle(.plain)
+        NavigationLink { NotebookFolderView(folderID: folder.id) } label: {
+            NotebookFolderRow(folder: folder, count: count)
         }
-        .draggable("klimax-folder:\(folder.id.uuidString)")
-        .dropDestination(for: String.self) { items, _ in
-            guard let raw = items.first, raw.hasPrefix("klimax-folder:"),
-                  let id = UUID(uuidString: String(raw.dropFirst("klimax-folder:".count)))
-            else { return false }
-            library.reorderFolder(movingID: id, before: folder.id)
-            return true
+        .modifier(NotebookBrowserRow())
+        .swipeActions(edge: .trailing, allowsFullSwipe: false) {
+            Button(role: .destructive) { library.delete(folderID: folder.id) } label: { Label("Διαγραφή", systemImage: "trash") }
+            Button { editingFolder = true } label: { Label("Όνομα", systemImage: "pencil") }.tint(.gray)
+        }
+        .swipeActions(edge: .leading, allowsFullSwipe: false) {
+            Button { library.toggleFavorite(folderID: folder.id) } label: {
+                Label(folder.isFavorite == true ? "Αφαίρεση αγαπημένου" : "Αγαπημένο", systemImage: folder.isFavorite == true ? "star.slash" : "star")
+            }.tint(Gild.accentForeground)
         }
         .contextMenu {
             Button { editingFolder = true } label: { Label("Επεξεργασία", systemImage: "pencil") }
@@ -1459,8 +1605,7 @@ private struct NotebookFolderRow: View {
             Spacer()
             if folder.isFavorite == true { Image(systemName: "star.fill").font(.system(size: 12, weight: .bold)).foregroundStyle(Paper.gold) }
             Text("\(count)").font(.system(size: 15, weight: .bold)).foregroundStyle(Paper.inkMute)
-            Image(systemName: "chevron.right").font(.system(size: 13, weight: .bold)).foregroundStyle(Paper.inkMute.opacity(0.7))
-        }.frame(minHeight: 64).contentShape(Rectangle())
+        }.frame(minHeight: 48).contentShape(Rectangle())
     }
 }
 
@@ -1475,75 +1620,109 @@ private struct NotebookEmptyRow: View {
 
 private struct NotebookNotesCard: View {
     let notes: [NotebookNote]
+    var allowsReordering = true
     @ObservedObject private var library = NotebookLibraryStore.shared
     var body: some View {
-        NotebookListCard {
-            ForEach(Array(notes.enumerated()), id: \.element.id) { index, note in
-                NotebookSwipeRow(
-                    onDelete: {
-                        library.removeNoteData(noteID: note.id)
-                        NotebookStore.shared.delete(note)
-                    },
-                    onFavorite: { library.toggleFavorite(noteID: note.id) }
-                ) {
-                    NavigationLink { NotebookRichNoteDetail(noteID: note.id) } label: {
-                        HStack(spacing: 13) {
-                            VStack(alignment: .leading, spacing: 5) {
-                                HStack(spacing: 7) {
-                                    Text(note.title).font(.system(size: 17, weight: .semibold, design: .serif)).foregroundStyle(Paper.ink).lineLimit(2)
-                                    if library.placement(for: note.id)?.isFavorite == true {
-                                        Image(systemName: "star.fill").font(.system(size: 11, weight: .bold)).foregroundStyle(Paper.gold)
-                                    }
-                                }
-                                if !note.body.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
-                                    Text(note.body).font(.system(size: 12)).foregroundStyle(Paper.inkSoft).lineLimit(2)
-                                }
-                                HStack(spacing: 8) {
-                                    Text(note.updatedAt.formatted(date: .abbreviated, time: .omitted))
-                                    if library.placement(for: note.id)?.bookID == nil, let category = note.category { Text(category.title) }
-                                    if let page = library.placement(for: note.id)?.pageReference { Text("Σελίδα \(page)") }
-                                    if !library.photos(for: note.id).isEmpty { Label("\(library.photos(for: note.id).count)", systemImage: "photo") }
-                                }.font(.system(size: 12, weight: .semibold)).foregroundStyle(Paper.inkMute)
-                            }
-                            Spacer(); Image(systemName: "chevron.right").font(.system(size: 13, weight: .bold)).foregroundStyle(Paper.inkMute.opacity(0.7))
-                        }.frame(minHeight: 68).padding(.vertical, 10).contentShape(Rectangle())
-                    }.buttonStyle(.plain)
-                }
-                .draggable("klimax-note:\(note.id.uuidString)")
-                .dropDestination(for: String.self) { items, _ in
-                    guard let raw = items.first, raw.hasPrefix("klimax-note:"),
-                          let id = UUID(uuidString: String(raw.dropFirst("klimax-note:".count)))
-                    else { return false }
-                    library.reorderNote(movingID: id, before: note.id)
-                    return true
-                }
-                .contextMenu {
-                    Button { library.toggleFavorite(noteID: note.id) } label: {
-                        Label(library.placement(for: note.id)?.isFavorite == true ? "Αφαίρεση από αγαπημένα" : "Αγαπημένο", systemImage: library.placement(for: note.id)?.isFavorite == true ? "star.slash" : "star")
-                    }
-                    Button { library.moveNote(note.id, by: -1) } label: { Label("Μετακίνηση επάνω", systemImage: "arrow.up") }
-                    Button { library.moveNote(note.id, by: 1) } label: { Label("Μετακίνηση κάτω", systemImage: "arrow.down") }
-                    Divider()
-                    Button(role: .destructive) {
-                        library.removeNoteData(noteID: note.id)
-                        NotebookStore.shared.delete(note)
-                    } label: { Label("Διαγραφή", systemImage: "trash") }
-                }
-                if index < notes.count - 1 { Divider().overlay(Paper.hairline) }
-            }
+        ForEach(notes) { note in
+            NotebookNoteRow(note: note, allowsReordering: allowsReordering)
+        }.onMove { offsets, destination in
+            guard allowsReordering else { return }
+            library.moveNotes(notes, from: offsets, to: destination)
         }
     }
 }
 
-private struct NotebookBookTile: View {
-    let book: NotebookBook
-    let count: Int
+private struct NotebookNoteRow: View {
+    let note: NotebookNote
+    let allowsReordering: Bool
+    @ObservedObject private var library = NotebookLibraryStore.shared
     var body: some View {
-        VStack(alignment: .leading, spacing: 9) {
-            NotebookBookCover(book: book).frame(width: 126, height: 176)
-            Text(book.title).font(.system(size: 15, weight: .bold)).foregroundStyle(Paper.ink).lineLimit(2).frame(width: 126, alignment: .leading)
-            Text("\(count) σημειώσεις").font(.system(size: 11, weight: .bold)).foregroundStyle(Paper.inkMute)
-        }.frame(width: 126, alignment: .leading)
+            NavigationLink { NotebookRichNoteDetail(noteID: note.id) } label: {
+                HStack(alignment: .top, spacing: 14) {
+                    Image(systemName: note.category?.icon ?? "note.text")
+                        .font(.system(size: 20, weight: .regular)).foregroundStyle(note.category?.tint ?? Gild.accentForeground)
+                        .frame(width: 42, height: 48)
+                    VStack(alignment: .leading, spacing: 5) {
+                        HStack(alignment: .firstTextBaseline, spacing: 8) {
+                            Text(note.title).font(.system(size: 17, weight: .semibold)).foregroundStyle(Paper.ink).lineLimit(2)
+                            if library.placement(for: note.id)?.isFavorite == true {
+                                Image(systemName: "star.fill").font(.caption2).foregroundStyle(Gild.accentForeground)
+                            }
+                        }
+                        if !note.body.isEmpty {
+                            Text(note.body).font(.subheadline).foregroundStyle(Paper.inkSoft).lineLimit(2)
+                        }
+                        if let anchor = note.anchors.first {
+                            Label(anchor.cleanTitle, systemImage: anchor.kind.icon)
+                                .font(.caption).foregroundStyle(anchor.kind.tint).lineLimit(1)
+                        }
+                        HStack(spacing: 8) {
+                            Text(note.updatedAt.formatted(date: .abbreviated, time: .omitted))
+                            if let page = library.placement(for: note.id)?.pageReference { Text("Σελίδα \(page)") }
+                            if !library.photos(for: note.id).isEmpty { Label("\(library.photos(for: note.id).count)", systemImage: "photo") }
+                        }.font(.caption).foregroundStyle(Paper.inkMute)
+                    }.frame(maxWidth: .infinity, alignment: .leading)
+                }.padding(.vertical, 2)
+            }
+            .modifier(NotebookBrowserRow())
+            .swipeActions(edge: .trailing, allowsFullSwipe: false) {
+                Button(role: .destructive) { delete(note) } label: { Label("Διαγραφή", systemImage: "trash") }
+            }
+            .swipeActions(edge: .leading, allowsFullSwipe: false) {
+                Button { library.toggleFavorite(noteID: note.id) } label: {
+                    Label(library.placement(for: note.id)?.isFavorite == true ? "Αφαίρεση αγαπημένου" : "Αγαπημένο",
+                          systemImage: library.placement(for: note.id)?.isFavorite == true ? "star.slash" : "star")
+                }.tint(Gild.accentForeground)
+            }
+            .moveDisabled(!allowsReordering)
+            .contextMenu {
+                Button { library.toggleFavorite(noteID: note.id) } label: { Label("Αγαπημένο", systemImage: "star") }
+                if allowsReordering {
+                    Button { library.moveNote(note.id, by: -1) } label: { Label("Μετακίνηση επάνω", systemImage: "arrow.up") }
+                    Button { library.moveNote(note.id, by: 1) } label: { Label("Μετακίνηση κάτω", systemImage: "arrow.down") }
+                }
+                Button(role: .destructive) { delete(note) } label: { Label("Διαγραφή", systemImage: "trash") }
+            }
+    }
+    private func delete(_ note: NotebookNote) {
+        library.removeNoteData(noteID: note.id)
+        NotebookStore.shared.delete(note)
+    }
+}
+
+private struct NotebookManagedBookRow: View {
+    @ObservedObject private var library = NotebookLibraryStore.shared
+    let book: NotebookBook
+    @State private var editing = false
+    var body: some View {
+        NavigationLink { NotebookBookView(bookID: book.id) } label: {
+            HStack(spacing: 14) {
+                NotebookBookCover(book: book).frame(width: 42, height: 56)
+                VStack(alignment: .leading, spacing: 4) {
+                    Text(book.title).font(.system(size: 17, weight: .semibold)).foregroundStyle(Paper.ink).lineLimit(2)
+                    Text("\(library.allNotes(inBook: book.id).count) σημειώσεις").font(.subheadline).foregroundStyle(Paper.inkMute)
+                }
+                Spacer(minLength: 4)
+                if book.isFavorite == true { Image(systemName: "star.fill").font(.caption2).foregroundStyle(Gild.accentForeground) }
+            }
+        }.modifier(NotebookBrowserRow())
+        .swipeActions(edge: .trailing, allowsFullSwipe: false) {
+            Button(role: .destructive) { library.delete(bookID: book.id) } label: { Label("Αφαίρεση", systemImage: "trash") }
+            Button { editing = true } label: { Label("Επεξεργασία", systemImage: "pencil") }.tint(.gray)
+        }
+        .swipeActions(edge: .leading, allowsFullSwipe: false) {
+            Button { toggleFavorite() } label: { Label("Αγαπημένο", systemImage: book.isFavorite == true ? "star.slash" : "star") }.tint(Gild.accentForeground)
+        }
+        .contextMenu {
+            Button { editing = true } label: { Label("Επεξεργασία", systemImage: "pencil") }
+            Button { toggleFavorite() } label: { Label("Αγαπημένο", systemImage: "star") }
+        }
+        .sheet(isPresented: $editing) { NotebookBookEditor(book: book) }
+    }
+    private func toggleFavorite() {
+        var updated = book
+        updated.isFavorite = book.isFavorite != true
+        library.upsert(book: updated, cover: nil)
     }
 }
 
@@ -1562,5 +1741,5 @@ private struct NotebookBookCover: View {
 private struct NotebookFieldLabel: View {
     let title: String
     init(_ title: String) { self.title = title }
-    var body: some View { Text(title).font(.system(size: 11, weight: .black)).tracking(2.7).foregroundStyle(Paper.gold) }
+    var body: some View { Text(title).font(.system(size: 11, weight: .semibold)).tracking(1.1).foregroundStyle(Paper.inkMute) }
 }

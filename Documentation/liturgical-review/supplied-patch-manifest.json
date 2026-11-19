@@ -1,0 +1,96 @@
+{
+  "schema_version": 1,
+  "application": "Klimax",
+  "created_date": "2026-11-18",
+  "purpose": "Union of earlier reviewed patches; does not certify liturgical content",
+  "files": [
+    {
+      "path": "Klimax/LiturgicalData/BaseLiturgies/basil.el.json",
+      "baseline_sha256": "7c9a768caf75278425e9e4bccb87623f9449510607ef5e6de28c957fb0bdf5ed",
+      "intermediate_sha256": "a99dcd76bb00ed32e2a60938a703231215a1e332252bb2ec2f464d9fe5018f84",
+      "final_sha256": "a99dcd76bb00ed32e2a60938a703231215a1e332252bb2ec2f464d9fe5018f84",
+      "size_bytes": 198911,
+      "from_patch_2": false
+    },
+    {
+      "path": "Klimax/LiturgicalData/BaseLiturgies/chrysostom.el.json",
+      "baseline_sha256": "685838440eba95da8c8b85ce89fb7f234154215d078787a4a6df890064cf9d9f",
+      "intermediate_sha256": "591ad7e8daa6dcbd3907d6ccf5fbe1322f1d26b894cbe2943bb9802208a4e948",
+      "final_sha256": "591ad7e8daa6dcbd3907d6ccf5fbe1322f1d26b894cbe2943bb9802208a4e948",
+      "size_bytes": 179098,
+      "from_patch_2": false
+    },
+    {
+      "path": "Klimax/LiturgicalData/BaseLiturgies/presanctified.el.json",
+      "baseline_sha256": "a62d315f898f7a1a91a0fae824587094858333aa9bbaf00ab297c4b89d75e178",
+      "intermediate_sha256": "b415a18eaac533760b68adc4bad50a8f68fc21b4f9c782c25ee965d130f313a1",
+      "final_sha256": "b415a18eaac533760b68adc4bad50a8f68fc21b4f9c782c25ee965d130f313a1",
+      "size_bytes": 171687,
+      "from_patch_2": false
+    },
+    {
+      "path": "Klimax/LiturgicalData/apostle-date-overrides.json",
+      "baseline_sha256": "2b1057be72439200e3df85bf4e4058dee5f6df05c21c5ceab883719c963d22ff",
+      "intermediate_sha256": "6114bf8ec0ef98f55117d0a723f6ecc864fa1ab0ae3072e65d3a5843f21cb5fd",
+      "final_sha256": "6114bf8ec0ef98f55117d0a723f6ecc864fa1ab0ae3072e65d3a5843f21cb5fd",
+      "size_bytes": 22506,
+      "from_patch_2": false
+    },
+    {
+      "path": "Klimax/LiturgicalData/kanonion-2026.json",
+      "baseline_sha256": "7a59c23ed416820e2c3174cc6d4cffd683b68cd1cd19286f5cc66ee8fea02382",
+      "intermediate_sha256": "43d88004a4c0834c07300bf7b4ef81f46ff3ad376690f49ec2673252e3ef86af",
+      "final_sha256": "21758d95382340440aeb9e203d0ee4f99c28db546e388eb9eb4f41a1b3212667",
+      "size_bytes": 33579,
+      "from_patch_2": true
+    },
+    {
+      "path": "Klimax/LiturgicalData/sunday-offices-2026.json",
+      "baseline_sha256": "dcd97232d6ab5cca366d4290414cfbd56c9dee96abe0c23d9aa4d88945125d21",
+      "intermediate_sha256": "596255a8e1ef6743e69661230c89b3c7d98c823b9a222cfc39715fa68a86b4ce",
+      "final_sha256": "596255a8e1ef6743e69661230c89b3c7d98c823b9a222cfc39715fa68a86b4ce",
+      "size_bytes": 11174461,
+      "from_patch_2": false
+    },
+    {
+      "path": "Klimax/LiturgicalData/typikon-services-2026.json",
+      "baseline_sha256": "a99259ce71752668f3d7e84484ffb6a59a9ecf23ec532de01b2369a2d34a6cde",
+      "intermediate_sha256": "167e5f0c558df704a58a7c7e10b5906a2c30a8bd7afd6a2aefb0d30632f07274",
+      "final_sha256": "167e5f0c558df704a58a7c7e10b5906a2c30a8bd7afd6a2aefb0d30632f07274",
+      "size_bytes": 23195,
+      "from_patch_2": false
+    },
+    {
+      "path": "Klimax/LiturgicalServiceView.swift",
+      "baseline_sha256": "cf951f749ab84fb6429a9d94563a11fae509c1db609bb7531a1849047b0c69a8",
+      "intermediate_sha256": "d5178b516ef0724f1f1c70c7bbaec663ae5269c298064e755c5c4bd9b686dcf9",
+      "final_sha256": "a4706ee7cc21b2cc2560809050a58243db0a82ae6554405161274532877d7495",
+      "size_bytes": 30058,
+      "from_patch_2": true
+    },
+    {
+      "path": "Klimax/LiturgicalServices.swift",
+      "baseline_sha256": "0ab87d14b8340833516277b6853c3efa1eb97b636864b5e607c4d2a4ef7b80eb",
+      "intermediate_sha256": "e1cc0f4c2c7b4fb9cd33f6f74c43d07a5eb0bc58e8a81e1b400db049d43b4b7b",
+      "final_sha256": "4e2458f2ea4e3172665910021f3783070f85ab8f602e26fdbd789a52d208e98d",
+      "size_bytes": 65685,
+      "from_patch_2": true
+    },
+    {
+      "path": "Klimax/PrayerSection.swift",
+      "baseline_sha256": "4360640f7082df233b9d22450147604c56afddb33fe2dac6426fbaff3f26773c",
+      "intermediate_sha256": "f42fbb76a9b315b94d737be653c77aba114c4a6d3916ec71b77a6499617c5337",
+      "final_sha256": "19ffd7acbd38d7becee96e4fb4760fb66ca2c3e319136a4eaff84108d5dd25b1",
+      "size_bytes": 71120,
+      "from_patch_2": true
+    },
+    {
+      "path": "Klimax/prayers.json",
+      "baseline_sha256": "915aba3a02ad91e25a26bedef79681f40e093af61bbd104f8510e29ac6cf2bf3",
+      "intermediate_sha256": "c5462d289ceb37b60c95566a53874cabfe502e726d6fe12e9fa9da6d3e8acc8c",
+      "final_sha256": "c5462d289ceb37b60c95566a53874cabfe502e726d6fe12e9fa9da6d3e8acc8c",
+      "size_bytes": 2988495,
+      "from_patch_2": false
+    }
+  ]
+}

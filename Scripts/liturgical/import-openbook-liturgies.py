@@ -415,7 +415,7 @@ def build(spec: SourceSpec, pages: list[str]) -> dict:
         "id": spec.id,
         "title_el": spec.title,
         "language": "el",
-        "source_status": "approved_openbook_source",
+        "source_status": "transcription_requires_liturgical_review",
         "source": {
             "source_page_url": spec.page_url,
             "source_pdf_url": spec.pdf_url,

@@ -56,8 +56,10 @@ struct ApostleDateOverride: Decodable, Identifiable, Hashable {
     }
 }
 
-/// Ἐτήσια ἐγκεκριμένη ἀντιστοίχιση τοῦ Κυπριακοῦ Τυπικοῦ. Οἱ συμπτώσεις
-/// ἑορτῶν δὲν μποροῦν νὰ προκύψουν πάντοτε ἀπὸ τὸν γενικὸ κυριακάτικο κύκλο.
+/// Ἐτήσιες ἀναγνώσεις. Τὸ «ἐλεγμένο» ἀφορᾷ μόνο τὶς ἀναφορὲς
+/// Εὐαγγελίου/Ἀποστόλου, ΟΧΙ τὴν πλήρη ἀκολουθία.
+/// Availability and editorial verification are separate: bundled annual
+/// readings remain readable while their source review is tracked internally.
 struct YearlySundayEntry: Decodable, Hashable {
     let date: String
     let echos: Int?
@@ -65,9 +67,70 @@ struct YearlySundayEntry: Decodable, Hashable {
     let apostle: ApostleRef
     let gospel: GospelRef
     let additionalGospels: [GospelRef]?
+    let liturgicalOccasion: String?
+    let readingsVerificationStatus: String?
+    let readingsSourceOrganisation: String?
+    let readingsSourceURL: String?
+    let readingsSourceIssue: Int?
+    let readingsReviewDate: String?
+    let readingsSourceEdition: String?
+    let readingsSourcePage: String?
+    let readingsFirstReviewer: String?
+    let readingsSecondReviewer: String?
+
+    var hasAvailableReadings: Bool {
+        Self.validISODate(date) && !gospel.ref.isEmpty && !apostle.ref.isEmpty &&
+            !apostle.book.isEmpty && !gospel.displayEl.isEmpty && !apostle.displayEl.isEmpty
+    }
+
+    var hasCheckedGreekSundayReadings: Bool {
+        guard readingsSourceOrganisation == "Αποστολική Διακονία της Εκκλησίας της Ελλάδος",
+              let reviewDate = readingsReviewDate, Self.validISODate(reviewDate),
+              Self.validISODate(date), !gospel.ref.isEmpty, !apostle.ref.isEmpty,
+              !apostle.book.isEmpty, !gospel.displayEl.isEmpty, !apostle.displayEl.isEmpty
+        else { return false }
+        switch readingsVerificationStatus {
+        case "checked_primary_sunday_sheet":
+            guard let rawURL = readingsSourceURL, let url = URL(string: rawURL),
+                  url.scheme == "https", url.host == "apostoliki-diakonia.gr",
+                  url.pathExtension.lowercased() == "pdf" else { return false }
+            return (readingsSourceIssue ?? 0) > 0
+        case "checked_primary_diptycha":
+            return (readingsSourceEdition?.contains("Δίπτυχα") ?? false) &&
+                (readingsSourceEdition?.contains(String(date.prefix(4))) ?? false) &&
+                !(readingsSourcePage?.isEmpty ?? true) &&
+                !(readingsFirstReviewer?.isEmpty ?? true) &&
+                !(readingsSecondReviewer?.isEmpty ?? true) &&
+                readingsFirstReviewer != readingsSecondReviewer
+        default:
+            return false
+        }
+    }
+
+    private static func validISODate(_ value: String) -> Bool {
+        let formatter = DateFormatter()
+        formatter.calendar = Calendar(identifier: .gregorian)
+        formatter.locale = Locale(identifier: "en_US_POSIX")
+        formatter.timeZone = TimeZone(secondsFromGMT: 0)
+        formatter.dateFormat = "yyyy-MM-dd"
+        formatter.isLenient = false
+        guard let parsed = formatter.date(from: value) else { return false }
+        return formatter.string(from: parsed) == value
+    }
+
     enum CodingKeys: String, CodingKey {
         case date, echos, eothinon, apostle, gospel
         case additionalGospels = "additional_gospels"
+        case liturgicalOccasion = "liturgical_occasion"
+        case readingsVerificationStatus = "readings_verification_status"
+        case readingsSourceOrganisation = "readings_source_organisation"
+        case readingsSourceURL = "readings_source_url"
+        case readingsSourceIssue = "readings_source_issue"
+        case readingsReviewDate = "readings_review_date"
+        case readingsSourceEdition = "readings_source_edition"
+        case readingsSourcePage = "readings_source_page"
+        case readingsFirstReviewer = "readings_first_reviewer"
+        case readingsSecondReviewer = "readings_second_reviewer"
     }
 }
 
@@ -269,15 +332,15 @@ struct SundayServiceDefinition: Decodable, Identifiable, Hashable {
         needsYearlyCalendarVerification = requiresVerification
     }
 
-    init(base: SundayServiceDefinition, gospel: GospelRef, apostle: ApostleRef) {
-        id = base.id; titleEl = base.titleEl; titleEn = base.titleEn; cycle = base.cycle
+    init(base: SundayServiceDefinition, gospel: GospelRef, apostle: ApostleRef, occasion: String? = nil) {
+        id = base.id; titleEl = occasion?.isEmpty == false ? occasion! : base.titleEl; titleEn = base.titleEn; cycle = base.cycle
         relativeToPaschaDays = base.relativeToPaschaDays
         pentecostWeek = base.pentecostWeek
         divineLiturgyGospel = gospel
         divineLiturgyApostle = apostle
         orthrosGospelPolicy = base.orthrosGospelPolicy
         defaultLiturgy = base.defaultLiturgy
-        needsYearlyCalendarVerification = false
+        needsYearlyCalendarVerification = base.needsYearlyCalendarVerification
     }
 }
 
@@ -585,7 +648,7 @@ struct LiturgicalRepository {
             eothina: try decode("eothina-gospels", as: [EothinonDefinition].self),
             overrides: try decode("fixed-feast-overrides", as: [FixedFeastOverride].self),
             apostleDateOverrides: try decode("apostle-date-overrides", as: [ApostleDateOverride].self),
-            yearlySundays: try decode("kanonion-2026", as: [YearlySundayEntry].self),
+            yearlySundays: try loadYearlySundays(),
             koinonika: try? decode("koinonika", as: KoinonikaData.self),
             kontakia: try? decode("kontakia", as: KontakiaData.self),
             prokeimena: try? decode("prokeimena", as: ProkeimenaData.self),
@@ -595,6 +658,41 @@ struct LiturgicalRepository {
         LiturgicalValidation.validate(repository)
         #endif
         return repository
+    }
+
+    /// Ὁ κατάλογος ἐτῶν ἀνακαλύπτεται ἀπὸ τὸ bundle· δὲν ἀντιγράφεται
+    /// τὸ 2026 στὸ 2027. Ἀκόμη καὶ ἂν προστεθεῖ ἀρχείο, χρειάζεται πηγὴ
+    /// καὶ σήμανση ἐλέγχου ἀνὰ συγκεκριμένη Κυριακή.
+    private static func loadYearlySundays() throws -> [YearlySundayEntry] {
+        let urls = Bundle.main.urls(forResourcesWithExtension: "json", subdirectory: nil) ?? []
+        let sources = urls.filter { url in
+            let name = url.deletingPathExtension().lastPathComponent
+            guard name.hasPrefix("kanonion-") else { return false }
+            let suffix = String(name.dropFirst("kanonion-".count))
+            return suffix.count == 4 && Int(suffix) != nil
+        }
+        guard !sources.isEmpty else {
+            throw NSError(domain: "Klimax.Kanonion", code: 1, userInfo: [
+                NSLocalizedDescriptionKey: "Δὲν ὑπάρχει ἐνσωματωμένος ἐτήσιος πίνακας Κυριακῶν."
+            ])
+        }
+        let groups = try sources.map { try JSONDecoder().decode([YearlySundayEntry].self, from: Data(contentsOf: $0)) }
+        let combined = groups.flatMap { $0 }
+        guard Set(combined.map(\.date)).count == combined.count else {
+            throw NSError(domain: "Klimax.Kanonion", code: 2, userInfo: [
+                NSLocalizedDescriptionKey: "Διπλὲς Κυριακὲς στὰ ἐτήσια ἀρχεῖα· ἀπαιτεῖται ἔλεγχος."
+            ])
+        }
+        return combined
+    }
+
+    // The liturgical reader must not inherit an unreviewed live Scripture CMS update.
+    private static var cachedLiturgicalBible: Bible?
+    static func bundledBible() throws -> Bible {
+        if let cachedLiturgicalBible { return cachedLiturgicalBible }
+        let bible = try decode("scripture", as: Bible.self)
+        cachedLiturgicalBible = bible
+        return bible
     }
 
     func baseLiturgy(_ kind: BaseLiturgyKind) throws -> BaseLiturgy {
@@ -616,6 +714,10 @@ enum SundayResolver {
         let calendar = configuredCalendar(configuration)
         let civil = civilUTC(date, calendar: calendar)
         let year = Paschalion.cal.component(.year, from: civil)
+        // Annual records override the established calendar calculation when
+        // present. Their absence must not impose an app-wide year cutoff.
+        let annual = yearlyEntry(for: date, repository: repository,
+                                 configuration: configuration)
 
         let base: SundayServiceDefinition?
         if let override = matchingOverride(date: civil, year: year, repository: repository) {
@@ -640,10 +742,26 @@ enum SundayResolver {
                 }
             }
         }
-        guard let base else { return nil }
-        guard let annual = yearlyEntry(for: date, repository: repository, configuration: configuration)
-        else { return base }
-        return SundayServiceDefinition(base: base, gospel: annual.gospel, apostle: annual.apostle)
+        guard let annual, annual.hasAvailableReadings else {
+            // Late-Pascha years can leave Sundays beyond the stored cycle.
+            // Keep the ordinary service readable without inventing a Gospel.
+            return base ?? SundayServiceDefinition(
+                id: "ordinary-sunday", titleEl: "Κυριακή", cycle: .fixedOverride,
+                gospel: GospelRef(book: .Luke, ref: "", displayEl: "Ευαγγέλιο ημέρας",
+                                 textEl: nil, textSource: nil),
+                orthrosPolicy: .requiresYearlyCalendar, defaultLiturgy: .chrysostom,
+                requiresVerification: true
+            )
+        }
+        // The annual source remains usable when the generic cycle has no row
+        // (e.g. the final January Sunday before the Triodion). Never replace its
+        // readings with an unrelated generic week or the Cyprus schedule.
+        let template = base ?? SundayServiceDefinition(
+            id: "annual-\(annual.date)", titleEl: "Κυριακή", cycle: .fixedOverride,
+            gospel: annual.gospel, orthrosPolicy: .requiresYearlyCalendar,
+            defaultLiturgy: .chrysostom, requiresVerification: true
+        )
+        return SundayServiceDefinition(base: template, gospel: annual.gospel, apostle: annual.apostle, occasion: annual.liturgicalOccasion)
     }
 
     static func liturgySelector(_ sunday: SundayServiceDefinition, date: Date) -> BaseLiturgyKind {
@@ -676,13 +794,13 @@ enum SundayResolver {
     static func echos(for date: Date, sunday: SundayServiceDefinition,
                       repository: LiturgicalRepository? = nil,
                       configuration: LiturgicalConfiguration = .init()) -> Echos? {
-        if let repository,
-           let annual = yearlyEntry(for: date, repository: repository, configuration: configuration) {
-            return annual.echos.flatMap(Echos.init(number:))
-        }
         switch sunday.id {
         case "pascha", "thomas_sunday", "pentecost", "palm_sunday": return nil
         default: break
+        }
+        if let repository,
+           let annual = yearlyEntry(for: date, repository: repository, configuration: configuration) {
+            return annual.echos.flatMap(Echos.init(number:))
         }
         let calendar = configuredCalendar(configuration)
         let civil = civilUTC(date, calendar: calendar)
@@ -818,16 +936,35 @@ enum ScripturePassageResolver {
     /// Ἀνοχὴ στὸν τρόπο γραφῆς id ἀριθμημένων βιβλίων (π.χ. 1corinthians /
     /// firstcorinthians / icorinthians / 1_corinthians).
     private static func bookIDCandidates(_ id: String) -> Set<String> {
-        let low = id.lowercased()
+        let low = id.lowercased().trimmingCharacters(in: .whitespacesAndNewlines)
         var out: Set<String> = [low]
-        let prefixes: [(String, [String])] = [
-            ("1", ["first", "i", "a"]), ("2", ["second", "ii", "b"]), ("3", ["third", "iii", "c"])
+        // Apostolic lectionaries may use long names, while scripture.json uses
+        // compact canonical IDs. Keep short IDs and conventional aliases.
+        let canonical: [String: String] = [
+            "1corinthians": "1cor", "2corinthians": "2cor",
+            "1timothy": "1tim", "2timothy": "2tim",
+            "1thessalonians": "1thess", "2thessalonians": "2thess",
+            "1chronicles": "1chron", "2chronicles": "2chron",
+            "1maccabees": "1macc", "2maccabees": "2macc",
+            "3maccabees": "3macc", "4maccabees": "4macc"
         ]
-        for (digit, words) in prefixes where low.hasPrefix(digit) {
-            let rest = String(low.dropFirst())
+        let compact = low.replacingOccurrences(of: "_", with: "")
+            .replacingOccurrences(of: "-", with: "")
+            .replacingOccurrences(of: " ", with: "")
+        let prefixes: [(String, [String])] = [
+            ("1", ["first", "i", "a"]), ("2", ["second", "ii", "b"]),
+            ("3", ["third", "iii", "c"])
+        ]
+        out.insert(compact)
+        for (digit, words) in prefixes where compact.hasPrefix(digit) {
+            let rest = String(compact.dropFirst())
             out.insert(digit + "_" + rest)
-            for w in words { out.insert(w + rest); out.insert(w + "_" + rest) }
+            for word in words {
+                out.insert(word + rest)
+                out.insert(word + "_" + rest)
+            }
         }
+        if let resolved = canonical[compact] { out.insert(resolved) }
         return out
     }
 
@@ -838,6 +975,15 @@ enum ScripturePassageResolver {
         case .Mark: bookID = "mark"
         case .Luke: bookID = "luke"
         case .John: bookID = "john"
+        }
+        // Greek ecclesiastical John 1:44–52 corresponds to the Bible corpus'
+        // John 1:43–51; show the ecclesiastical verse numbers in the result.
+        if gospel.book == .John && gospel.ref == "1:44-52" {
+            guard let actual = text(forBookID: "john", ref: "1:43-51", in: bible) else { return nil }
+            return actual.split(separator: "\n").enumerated().map { index, raw in
+                guard let separator = raw.range(of: "  ") else { return String(raw) }
+                return "\(44 + index)  \(raw[separator.upperBound...])"
+            }.joined(separator: "\n")
         }
         return text(forBookID: bookID, ref: gospel.ref, in: bible)
     }
@@ -910,6 +1056,8 @@ enum ServiceAssembler {
                          configuration: LiturgicalConfiguration = .init(),
                          bible: Bible? = nil,
                          scheduledEntry: LiturgicalYearEntry? = nil) throws -> SundayServicePackage? {
+        let annualSunday = SundayResolver.yearlyEntry(
+            for: date, repository: repository, configuration: configuration)
         let resolved = SundayResolver.resolve(date, repository: repository, configuration: configuration)
         let scheduledDefinition: SundayServiceDefinition? = scheduledEntry.flatMap { entry in
             guard entry.divineLiturgy, let kind = entry.liturgyKind else { return nil }
@@ -1011,6 +1159,8 @@ enum ServiceAssembler {
                     of: base.placeholders.gospel, with: gospelBlock)
                 if let apostleBlock {
                     text = text.replacingOccurrences(of: base.placeholders.apostle, with: apostleBlock)
+                } else {
+                    text = text.replacingOccurrences(of: base.placeholders.apostle, with: "Απόστολος ημέρας")
                 }
                 if let koinonikonText {
                     text = text.replacingOccurrences(of: base.placeholders.koinonikon, with: koinonikonText)
@@ -1049,13 +1199,24 @@ enum ServiceAssembler {
         }
         let combined = sections.map(\.textEl).filter { !$0.isEmpty }.joined(separator: "\n\n")
         var warnings: [String] = []
-        if SundayResolver.yearlyEntry(for: date, repository: repository,
-                                      configuration: configuration) == nil {
-            warnings.append("Ἡ συγκεκριμένη ἡμερομηνία δὲν καλύπτεται ἀπὸ ἐτήσιο Κυπριακὸ Τυπικό· χρησιμοποιεῖται ὁ γενικὸς κύκλος.")
+        if annualSunday?.hasCheckedGreekSundayReadings == true {
+            warnings.append("Οἱ παραπομπὲς τῆς Κυριακῆς ἔχουν ἐλεγθεῖ μὲ καταγεγραμμένη πηγὴ τῆς Ἀποστολικῆς Διακονίας. Ἡ πλήρης Λειτουργία, τὰ ἡμερήσια τροπάρια, οἱ ρουμπρίκες καὶ τὸ Τυπικὸ χρειάζονται χωριστὴ ἐπιμέλεια.")
+        } else {
+            warnings.append("Εκκρεμεί εσωτερικός έλεγχος της ετήσιας πηγής των αναγνωσμάτων.")
         }
         if base.sourceStatus == "placeholder_only" {
             warnings.append("Τὸ βασικὸ κείμενο τῆς ἀκολουθίας δὲν ἔχει προστεθεῖ ἀκόμη.")
+        } else if base.sourceStatus == "transcription_requires_liturgical_review" {
+            warnings.append("ΠΡΟΣΟΧΗ: Ἡ ψηφιακὴ μεταγραφὴ δὲν ἔχει πιστοποιηθεῖ ἀπὸ τὴν Ἐκκλησία τῆς Ἑλλάδος. Ἐλέγξτε τὴν τάξη καὶ τὶς ἐκφωνήσεις σὲ Ἱερατικὸ / Τριῴδιο.")
         }
+        if kind == .presanctified {
+            warnings.append("Τὰ Προκείμενα καὶ τὰ παλαιοδιαθηκικὰ ἀναγνώσματα διαφέρουν ἀνὰ ἡμέρα καὶ δὲν ἔχουν συμπληρωθεῖ στὴ βασικὴ αὐτὴ ἀκολουθία.")
+        }
+        if internalGospel.isEmpty || internalApostle == nil {
+            warnings.append("Ἕνα ἢ περισσότερα ἀναγνώσματα δὲν ἀνακτήθηκαν πλήρως ἀπὸ τὸ ἐνσωματωμένο βιβλικὸ κείμενο.")
+        }
+        // Calendar-derived readings retain pending editorial status; assembly
+        // never promotes them to annually verified readings.
         // Ἀναστάσιμος ἦχος + ἀριθμὸς ἑωθινοῦ: ὑπολογίστηκαν παραπάνω.
         #if DEBUG
         let echosLog = echos?.displayEl ?? "— (ἑορτή)"
@@ -1167,8 +1328,9 @@ private enum LiturgicalValidation {
         }
         assert(repository.sundays.filter { $0.cycle == .pentecostLuke }
             .allSatisfy(\.needsYearlyCalendarVerification))
-        assert(repository.yearlySundays.count == 52)
-        assert(Set(repository.yearlySundays.map(\.date)).count == 52)
+        let sundays2026 = repository.yearlySundays.filter { $0.date.hasPrefix("2026-") }
+        assert(sundays2026.count == 52)
+        assert(Set(repository.yearlySundays.map(\.date)).count == repository.yearlySundays.count)
 
         if let package = try? ServiceAssembler.assemble(parse("2026-02-01"), repository: repository,
                                                         configuration: configuration) {

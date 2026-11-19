@@ -76,6 +76,6 @@ const pager = home.slice(home.indexOf('ScrollView(.horizontal)'), home.indexOf('
 assert.doesNotMatch(pager, /AthosMediaBrandMenu|AthosPodcastPlayButton|episodeCountText/,
   'Only artwork pages horizontally; controls must be shared stationary overlays.');
 assert.match(home, /Text\(selected\.episodeCountText\)[\s\S]*?\.contentTransition\(\.numericText\(\)\)/);
-assert.match(home, /\.animation\(reduceMotion \? nil : \.smooth\(duration: 0\.32\), value: selection\)/,
+assert.match(home, /\.animation\(reduceMotion \? nil : \.smooth\(duration: [\d.]+(?:, extraBounce: [\d.]+)?\), value: selection\)/,
   'Page indicators animate for swipes as well as direct taps, respecting Reduce Motion.');
 console.log('PASS: all 11 original 1024×1536 posters, exact package hashes, independent hero mappings, full portrait rendering and shared home/detail stages');

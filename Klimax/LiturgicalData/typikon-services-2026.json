@@ -2,13 +2,13 @@
   "schema_version": 1,
   "year": 2026,
   "jurisdiction": "Ἐκκλησία τῆς Κύπρου",
-  "status": "reviewed_annual_index",
+  "status": "source_index_requires_greek_church_comparison",
   "generated_at": "2026-08-14",
   "sources": [
     "https://churchofcyprus.org.cy/all/διακονια/χρησιμες-πληροφοριες/τυπική-διάταξη/έτους-2026",
     "https://www.ec-patr.net/typikon/TYPIKO_2/2026/"
   ],
-  "note": "Κατάλογος προβλεπόμενων τελέσεων· όχι ωρολόγιο συγκεκριμένου ναού.",
+  "note": "Προελεύσεως Εκκλησίας Κύπρου. ΜΗ πιστοποιημένο Τυπικό Εκκλησίας Ελλάδος. Κατάλογος προγραμματισμένων τελέσεων, όχι αναλυτικά ενοριακά Δίπτυχα.",
   "entries": [
     {
       "date": "2026-01-01",

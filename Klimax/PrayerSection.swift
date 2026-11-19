@@ -3,15 +3,11 @@
 //  ───────────────────────────────────────────────────────────────────────────
 //  THE WHOLE PRAYER SCREEN, IN ONE FILE.
 //
-//  This is app CODE (the screen). You add it to the project ONCE and never
-//  touch it again. The prayer CONTENT lives in Sanity — and in a bundled
-//  prayers.json "seed" — exactly like Scripture. So from now on you update
-//  prayers with the SAME Terminal/Sanity step you already use for the Bible,
-//  never by editing code.
-//
-//  The bundled prayers.json is loaded first, so every prayer is available on a
-//  clean installation with no connection. A newer cache and Sanity refresh may
-//  then update that already-visible local corpus.
+//  Ecclesiastical-safety policy (2026-11-18): liturgical texts are loaded from
+//  the app-bundled prayers.json only. Unreviewed CMS/cache updates must NEVER
+//  silently replace a prayer, office, sacrament, or psalm. Annual and textual
+//  changes require an editorially reviewed, versioned app data release.
+//  Presence in prayers.json is NOT proof of ecclesiastical certification.
 //
 //  IN-TEXT LINKS (new): any paragraph in a prayer's body written as
 //      @link:TARGET_ID|Visible label
@@ -222,28 +218,11 @@ final class PrayerStore {
             loadError = "Δεν φορτώθηκαν οι προσευχές: \(error.localizedDescription)"
         }
 
-        // 2) A previous refresh may contain editorial updates. The merge keeps
-        // every bundled prayer, so a stale or partial cache cannot remove one.
-        if let cached = Self.loadCache(), !cached.categories.isEmpty {
-            let resolved = Self.withBundledMissingContent(cached)
-            categories = resolved.categories
-            loadError = nil
-        }
+        // NO live CMS or cached replacement while its texts lack a documented
+        // primary-edition verification and an editorial release signature.
+        // This deliberately prioritizes trustworthy reproducibility over
+        // instantaneous unreviewed content changes.
 
-        // 3) Refresh opportunistically. Failure never hides the local corpus.
-        do {
-            let live = try await Self.fetchFromSanity()
-            if !live.categories.isEmpty {
-                let resolved = Self.withBundledMissingContent(live)
-                categories = resolved.categories
-                loadError = nil
-                Self.saveCache(resolved)
-            }
-        } catch {
-            if categories.isEmpty {
-                loadError = "Δεν φορτώθηκαν οι προσευχές: \(error.localizedDescription)"
-            }
-        }
     }
 
     // One GROQ query that returns prayers already shaped like PrayerData.
@@ -897,9 +876,11 @@ struct PrayerReadingView: View {
     @FocusState private var searchFieldFocused: Bool
     private var officeKind: SundayOfficeKind? { SundayOfficeKind(prayerID: route.prayer.id) }
     private var availableOfficeEntries: [SundayOfficeEntry] {
-        guard let officeKind else { return [] }
-        let allowedDates = Set(officeSchedules.flatMap { $0.entries(for: officeKind.scheduledKind).map(\.date) })
-        return officeCorpora.values.flatMap(\.entries).filter { allowedDates.contains($0.date) }.sorted { $0.date < $1.date }
+        guard officeKind != nil else { return [] }
+        // The daily corpus contains every date of 2026. The 94-item
+        // typikon-services index lists selected celebrations only, and must not
+        // hide ordinary daily Vespers/Orthros from the reader.
+        return officeCorpora.values.flatMap(\.entries).sorted { $0.date < $1.date }
     }
     private var selectedOfficeEntry: SundayOfficeEntry? {
         let key = Self.officeKeyFormatter.string(from: selectedOfficeDate)
@@ -949,6 +930,10 @@ struct PrayerReadingView: View {
                             ContentUnavailableView("Η ακολουθία δεν φορτώθηκε",
                                 systemImage: "exclamationmark.triangle",
                                 description: Text(officeLoadError))
+                        } else if officeKind != nil && selectedOfficeEntry == nil {
+                            ContentUnavailableView("Δεν υπάρχει διαθέσιμο κείμενο",
+                                systemImage: "calendar.badge.exclamationmark",
+                                description: Text("Διάλεξε άλλη ημέρα από το ημερολόγιο."))
                         } else {
                             switch prayer.state {
                             case "linked":   linkedBody
@@ -995,7 +980,9 @@ struct PrayerReadingView: View {
             }
         }
         .animation(.spring(response: 0.32, dampingFraction: 0.84), value: isSearchExpanded)
-        .sheet(isPresented: $showOfficeDatePicker) { officeDatePickerSheet }
+        .sheet(isPresented: $showOfficeDatePicker) { [officeDateDraft] in
+            officeDatePickerSheet(displayedDate: officeDateDraft)
+        }
         .task { await loadOfficeCorpusIfNeeded() }
         .onChange(of: selectedOfficeDate) { _, _ in collapseSearch() }
         .onAppear {
@@ -1007,6 +994,7 @@ struct PrayerReadingView: View {
         VStack(alignment: .leading, spacing: 8) {
             if officeKind != nil, !officeCorpora.isEmpty, !officeSchedules.isEmpty {
                 officeDateNavigationBar.padding(.bottom, 10)
+
             }
             Text(prayer.titleGreek)
                 .font(.system(size: 26, weight: .regular, design: .serif)).foregroundStyle(Paper.ink)
@@ -1028,9 +1016,7 @@ struct PrayerReadingView: View {
                 }
                 .font(.system(size: 12, weight: .semibold, design: .serif))
                 .foregroundStyle(Paper.gold)
-                Text("Τυπική Διάταξη \(Calendar(identifier: .gregorian).component(.year, from: selectedOfficeDate)) · δεν αποτελεί ωρολόγιο συγκεκριμένου ναού")
-                    .font(.system(size: 11, design: .serif))
-                    .foregroundStyle(Paper.inkMute)
+
             }
             Rectangle().fill(Paper.gold.opacity(0.5)).frame(width: 48, height: 1.5).padding(.top, 14)
         }
@@ -1077,14 +1063,13 @@ struct PrayerReadingView: View {
         .buttonStyle(.plain).disabled(!enabled).opacity(enabled ? 1 : 0.35)
     }
 
-    private var officeDatePickerSheet: some View {
+    private func officeDatePickerSheet(displayedDate: Date) -> some View {
         NavigationStack {
             VStack(spacing: 18) {
                 DatePicker("Ημερομηνία", selection: $officeDateDraft,
-                    in: officeDateRange,
                     displayedComponents: .date)
                     .datePickerStyle(.graphical).tint(Paper.gold).padding(.horizontal, 8)
-                Text("Θα εμφανιστεί η πλησιέστερη προβλεπόμενη τέλεση του Τυπικού:\n\(Self.officeGreekFormatter.string(from: closestOfficeDate(to: officeDateDraft) ?? officeDateDraft))")
+                Text("Επιλεγμένη ημερομηνία: \(Self.officeGreekFormatter.string(from: displayedDate)). Επίλεξε την ημέρα που θέλεις να διαβάσεις.")
                     .font(.system(size: 12, design: .serif)).foregroundStyle(Paper.inkMute)
                     .multilineTextAlignment(.center).padding(.horizontal, 20)
                 Spacer()
@@ -1097,7 +1082,7 @@ struct PrayerReadingView: View {
                 }
                 ToolbarItem(placement: .confirmationAction) {
                     Button("Τέλος") {
-                        selectClosestOffice(to: officeDateDraft)
+                        selectedOfficeDate = officeDateDraft
                         showOfficeDatePicker = false
                     }.fontWeight(.semibold)
                 }
@@ -1111,22 +1096,6 @@ struct PrayerReadingView: View {
         else { return nil }
         let target = index + offset
         return entries.indices.contains(target) ? entries[target] : nil
-    }
-
-    private func selectClosestOffice(to date: Date) {
-        guard let resolved = closestOfficeDate(to: date) else { return }
-        selectedOfficeDate = resolved
-    }
-
-    private func closestOfficeDate(to date: Date) -> Date? {
-        availableOfficeEntries.compactMap { Self.officeDate($0.date) }.min {
-            abs($0.timeIntervalSince(date)) < abs($1.timeIntervalSince(date))
-        }
-    }
-
-    private var officeDateRange: ClosedRange<Date> {
-        let dates = availableOfficeEntries.compactMap { Self.officeDate($0.date) }
-        return (dates.first ?? Self.officeDate("2026-01-01")!)...(dates.last ?? Self.officeDate("2026-12-31")!)
     }
 
     private func officeSubtitle(kind: SundayOfficeKind, entry: SundayOfficeEntry) -> String {
@@ -1153,7 +1122,6 @@ struct PrayerReadingView: View {
             }.value
             officeCorpora = corpora
             officeSchedules = schedules
-            selectClosestOffice(to: selectedOfficeDate)
             officeLoadError = nil
         } catch {
             officeLoadError = error.localizedDescription

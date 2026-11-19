@@ -585,6 +585,20 @@ private struct AthosTVHomeHero: View {
                 ForEach(collections) { collection in
                     Button { onSelect(collection) } label: {
                         AthosTVHeroPoster(collection: collection)
+                            .overlay {
+                                AthosTVHeroPoster(collection: collection)
+                                    .blur(radius: 14)
+                                    .mask(LinearGradient(stops: [
+                                        .init(color: .clear, location: 0.52),
+                                        .init(color: .black, location: 0.82)
+                                    ], startPoint: .top, endPoint: .bottom))
+                            }
+                            .mask(LinearGradient(stops: [
+                                .init(color: .black, location: 0.64),
+                                .init(color: .black.opacity(0.55), location: 0.80),
+                                .init(color: .clear, location: 1)
+                            ], startPoint: .top, endPoint: .bottom))
+                            .background(AthosPodcastStyle.background)
                     }
                     .buttonStyle(.plain)
                     .accessibilityLabel("Άνοιγμα σειράς: \(collection.title)")
@@ -603,11 +617,11 @@ private struct AthosTVHomeHero: View {
                 VStack(spacing: 15) {
                     HStack(spacing: 12) {
                         AthosMediaBrandMenu(selection: $mediaMode,
-                            foreground: .white, condensed: true)
+                            foreground: .primary, condensed: true)
                         Spacer(minLength: 0)
                         Text(selected.episodeCountText)
                             .font(.system(size: 13, weight: .semibold).monospacedDigit())
-                            .foregroundStyle(.white.opacity(0.9))
+                            .foregroundStyle(.primary.opacity(0.8))
                             .contentTransition(.numericText())
                             .animation(reduceMotion ? nil : .smooth(duration: 0.3), value: selected.videos.count)
                     }
@@ -616,26 +630,24 @@ private struct AthosTVHomeHero: View {
                             AthosPodcastPlayButton(tone: .black) { onPlay(first) }
                         }
                         AthosGlassIconButton(symbol: "list.bullet", size: 48,
-                            tint: .white, accessibility: "Όλα τα επεισόδια") { onSelect(selected) }
+                            tint: .primary, accessibility: "Όλα τα επεισόδια") { onSelect(selected) }
                     }
                 }
                 .padding(.horizontal, 20).padding(.top, 32).padding(.bottom, 56)
-                .background {
-                    LinearGradient(stops: [.init(color: .clear, location: 0),
-                        .init(color: .black.opacity(0.45), location: 0.35),
-                        .init(color: .black.opacity(0.72), location: 1)],
-                        startPoint: .top, endPoint: .bottom)
-                }
             }
         }
         .overlay(alignment: .bottom) {
-            HStack(spacing: 4) {
-                ForEach(collections) { collection in
+            let activeIndex = collections.firstIndex { $0.id == selected?.id } ?? 0
+            let visibleCount = min(7, collections.count)
+            let firstVisible = min(max(0, activeIndex - 3), max(0, collections.count - visibleCount))
+            HStack(spacing: 0) {
+                ForEach(Array(collections.enumerated()), id: \.element.id) { index, collection in
                     Button {
                         withAnimation(reduceMotion ? nil : .smooth(duration: 0.3)) { selection = collection.id }
                     } label: {
-                        Capsule().fill(.white.opacity(selected?.id == collection.id ? 1 : 0.35))
-                            .frame(width: selected?.id == collection.id ? 23 : 7, height: 7)
+                        Capsule().fill(Color.primary.opacity(activeIndex == index ? 0.9 : 0.28))
+                            .frame(width: activeIndex == index ? 22 : 6, height: 6)
+                            .scaleEffect(activeIndex == index ? 1 : abs(index - activeIndex) > 2 ? 0.72 : 1)
                             .frame(width: 24, height: 32)
                     }
                     .buttonStyle(.plain)
@@ -643,7 +655,13 @@ private struct AthosTVHomeHero: View {
                     .accessibilityAddTraits(selected?.id == collection.id ? .isSelected : [])
                 }
             }
-            .animation(reduceMotion ? nil : .smooth(duration: 0.32), value: selection)
+            .offset(x: -CGFloat(firstVisible) * 24)
+            .frame(width: CGFloat(visibleCount) * 24, alignment: .leading)
+            .mask(LinearGradient(stops: [
+                .init(color: .clear, location: 0), .init(color: .black, location: 0.06),
+                .init(color: .black, location: 0.94), .init(color: .clear, location: 1)
+            ], startPoint: .leading, endPoint: .trailing))
+            .animation(reduceMotion ? nil : .smooth(duration: 0.38, extraBounce: 0), value: selection)
             .padding(.bottom, 8)
         }
         .onGeometryChange(for: CGFloat.self) { $0.size.width } action: { width = $0 }
